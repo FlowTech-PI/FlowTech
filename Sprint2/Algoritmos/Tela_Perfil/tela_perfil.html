@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Perfil</title>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+    <link rel="stylesheet" href="./style.css">
+  </head>
+  <body>
+    <div class="container">
+      <span id="menuH" class="material-symbols-outlined" onclick="clickMenu()">menu</span>
+      <h1 class="titulo">FlowTech</h1>
+      <ul class="itensNaveBar">
+        <li>Início</li>
+        <li>Sobre nós</li>
+        <li>Contato</li>
+      </ul>
+    </div>
+    <div id="hamburguer">
+      <ul class="listaItens">
+        <li>Home</li>
+        <li>Configurações</li>
+        <li>Calculadora Financeira</li>
+        <li>Contato</li>
+        <li>Mapa de calor</li>
+        <li>Sair</li>
+      </ul>
+    </div>
+    <div class="fotoPerfil">
+        <!-- <img src="./perfil.png" alt="imagem de perfil"> -->
+        <span style="margin-top: auto;">Meu Perfil</span>
+    </div>
+    <div class="campos">
+      <div class="camposCima">
+        <div class="nomeCompleto">
+          Nome Completo <br>
+          <input type="text" id="nomeCompleto">
+        </div>
+        <div class="nascimento">
+          Nascimento <br>
+          <input type="text" id="nascimento">
+        </div>
+        <div class="cpf">
+          CPF <br>
+          <input type="text" id="cpf">
+        </div>
+      </div>
+      <div class="camposBaixo">
+        <div class="email">
+          E-mail <br>
+          <input type="text" id="email">
+        </div>
+        <div class="telefone">
+          Telefone <br>
+          <input type="text" id="telefone">
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
+
+<script>
+  function clickMenu(){
+    if(hamburguer.style.display == 'block'){
+      hamburguer.style.display = 'none'
+    } else {
+      hamburguer.style.display = 'block'
+    }
+  }
+</script>
