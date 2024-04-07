@@ -1,0 +1,78 @@
+body {
+ font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+ /* FONTE TEMPORÁRIA ATÉ DECIDIRMOS */
+ margin: 0;
+ padding: 0;
+
+}
+
+.navbar {
+    height: 10vh;
+    display: flex;
+    align-items: center;
+}
+
+.title {
+    margin-left: 15px;
+    font-weight: bold;
+    font-size: x-large;
+}
+
+.containerA {
+    display: flex;
+    margin: 10px;
+    list-style: none;
+    justify-content: space-evenly;
+    width: 150px;
+}
+
+.maindiv {
+    display:flex;
+    height: 100%;
+}
+
+.sidebar {
+    height: 90vh;
+    width: 15%;
+    background-color: #374962;
+    color: white;
+}
+
+.profile {
+    margin: 10px;
+    height: 10%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    border-bottom: white solid;
+}
+
+.pfp {
+    background-color: white;
+    height: 50px;
+    width: 50px;
+    border-radius: 100%;
+    margin-right: none;
+}
+
+.profile_name {
+    color: #97babd;
+    justify-self: flex-start;
+    align-self: flex-end;
+    margin-left: none;
+    margin-bottom: 7px;
+}
+
+.listaside {
+    display: flex;
+    margin-top: 50px;
+    list-style: none;
+    height: 90%;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.title2 {
+    font-weight: bold;
+    font-size: x-large;
+}
