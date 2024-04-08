@@ -9,7 +9,7 @@ body:hover {
     cursor: default;
 }
 
-nav {
+nav, .form {
     background-color: #fff;
 }
 
@@ -23,9 +23,13 @@ nav .container {
     align-items: center;
     justify-content: space-between;
 }
-.titulo, ul, span {
-    color: #1D314D;
+
+.titulo, ul, span, input, button {
     font-weight: bold;
+}
+
+.titulo, .navbar  ul, .navbar span, input, .links span, .links a {
+    color: #1D314D;
 }
 
 .navbar {
@@ -37,11 +41,10 @@ nav .container {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    color: #1D314D;
     align-items: center;
 }
 
-.navbar  li:hover, .navbar span:hover {
+.navbar  li:hover, .navbar span:hover, .links a:hover  {
     color: #144b97;
     cursor: pointer;
 }
@@ -50,6 +53,9 @@ nav .container {
     list-style: none;
     width: 150px;
     margin-right: 100px;
+}
+
+.navbar, input, button {
     font-size: 16px;
 }
 
@@ -68,30 +74,33 @@ main .container{
     height: fit-content;
 }
 
+.form, input, button {
+    border-radius: 10px;
+}
+
 .form {
-    background-color: #fff;
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 20%;
-    height: 500px;
-    margin: 10% 0;
-    border-radius: 10px ;
+    width: 30%;
+    height: 420px;
+    margin: 45px 0 20px 0;
     padding: 10px 0;
 }
 
 input {
     background-color: #cacaca;
     border: none;
-    border-radius: 10px ;
     height: 50px;
     width: 75%;
     margin: 5px 0;
     padding-left: 10px;
     font-family: fantasy;
-    font-size: 16px;
     font-weight: bold;
-    color: #1D314D;
+}
+
+input:focus {
+    outline: none;
 }
 
 button {
@@ -99,9 +108,7 @@ button {
     color: #fff;
     font-family: fantasy;
     font-weight: bold;
-    font-size: 16px;
     border: none;
-    border-radius: 10px;
     height: 40px;
     width: 60%;
     margin: 30px 0 10px 0;
@@ -123,21 +130,14 @@ button:hover {
 
 #termos {
     width: 65%;
-    margin-top: 45%;
+    margin-top: 20%;
 }
 
 .links span, .links a {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    font-size: 10px;
-    color: #1D314D;
-}
-
-
-.links a:hover {
-    color: #144b97;
-    cursor: pointer;
+    font-size: 12px;
 }
 
 
