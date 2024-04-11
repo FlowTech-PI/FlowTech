@@ -79,7 +79,7 @@ body {
   padding: 40px 0;
   color: #fff;
   height: 564px;
-  background-image: url('imagens/fundo_index.png');
+  background-image: url('../imagens/fundo_index.png');
   background-attachment: fixed;
   background-repeat: no-repeat;
   background-size: cover;
@@ -152,7 +152,7 @@ body {
   }
 
   .sobnos {
-    background-image: url('imagens/fundo_sobnos.png');
+    background-image: url('../imagens/fundo_sobnos.png');
     background-attachment: fixed;
     background-repeat: no-repeat;
     background-size: cover;
@@ -256,12 +256,12 @@ body {
   
   @font-face {
     font-family: league-spartan;
-    src: url(fontes/league-spartan/LeagueSpartan-Bold.otf);
+    src: url(../fontes/league-spartan/LeagueSpartan-Bold.otf);
     
   }
 
   @font-face {
     font-family: open-sans;
-    src: url(fontes/OpenSans-Regular.ttf);
+    src: url(../fontes/OpenSans-Regular.ttf);
     
   }
