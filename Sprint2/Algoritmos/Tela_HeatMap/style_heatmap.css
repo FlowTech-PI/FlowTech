@@ -36,6 +36,7 @@ body {
     width: 15%;
     background-color: #374962;
     color: white;
+    
 }
 
 .profile {
@@ -69,10 +70,72 @@ body {
     list-style: none;
     height: 90%;
     flex-direction: column;
-    justify-content: space-evenly;
+    justify-content: flex-start;
+    width: 100%;
+    margin-left: -25px ;
 }
 
 .title2 {
     font-weight: bold;
     font-size: x-large;
+}
+
+.legenda {
+    margin-top: 50px;
+    margin-left: 30px       ;
+    display: flex;
+    flex-direction: column;
+}
+
+.fluxo {
+    font-size: 18px;
+}
+
+.informacoes {
+    margin-top: 50px;
+    display: flex;
+    
+}
+
+.bloco {
+    width: 20px;
+    height: 20px;
+
+}
+
+.cores {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    height: 40vh;
+    align-items: center;
+    width: 50px;
+    align-self: flex-end;
+}
+
+.subtitulo1 {
+    margin-top: 30px;
+    margin-bottom: -25px;
+}
+
+.subtitulo2 {
+    height: fit-content;
+    margin-top: 25px;
+}
+
+.imgMapa {
+    display: flex;
+    align-self: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-left: 150px ;
+}
+
+.tituloImg {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 22px;
+    margin-left: -45px;
 }
