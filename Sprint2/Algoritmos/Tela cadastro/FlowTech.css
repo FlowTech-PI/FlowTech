@@ -158,13 +158,12 @@ select:invalid {
     display: flex;
     margin: 10px;
     font-size: small;
-    font-family: sans-serif;
+    
 }
 
 .nav-list li {
     letter-spacing: 3px;
     margin-left: 10px;
-    font-family: sans-serif;
 }
 
 @font-face {
