@@ -1,6 +1,5 @@
 body {
- font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
- /* FONTE TEMPORÁRIA ATÉ DECIDIRMOS */
+ font-family: league-spartan;
  margin: 0;
  padding: 0;
 
@@ -70,9 +69,10 @@ body {
     list-style: none;
     height: 90%;
     flex-direction: column;
-    justify-content: flex-start;
+    justify-content: space-around;
     width: 100%;
     margin-left: -25px ;
+    height: 25vh;
 }
 
 .title2 {
@@ -139,3 +139,8 @@ body {
     font-size: 22px;
     margin-left: -45px;
 }
+
+@font-face {
+    font-family: league-spartan;
+    src: url(fontes/league-spartan/LeagueSpartan-Bold.otf)
+  }
