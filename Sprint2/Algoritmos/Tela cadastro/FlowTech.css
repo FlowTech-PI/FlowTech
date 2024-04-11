@@ -1,12 +1,14 @@
 body {
     font-family: Arial, sans-serif;
-    background-color: #1D314D;
+    
     margin: 0;
     padding: 0;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
+    background-image: url(background.png);
+    
 }
 
 form {
@@ -19,14 +21,14 @@ form {
 
 
 input[type="submit"] {
-    background-color: green;
+    background-color: #1D314D;
     color: white;
     border: none;
     cursor: pointer;
 }
 
 input[type="submit"]:hover {
-    background-color: #45a049;
+    background-color: #1D314D;
 }
 
 
@@ -92,7 +94,7 @@ select:invalid {
     border-radius: 8px;
     display: flex;
     justify-content: center;
-
+    
 }
 
 .divcaixatexto
@@ -123,11 +125,9 @@ select:invalid {
     margin-left: -5%;
     margin-top: -3%;
     border-radius: 4PX;
+
 }
 
-.a:hover {
-    opacity: 0.7;
-}
 
 .logo {
     font-size: 24px;
@@ -135,6 +135,7 @@ select:invalid {
     text-transform: uppercase;
     letter-spacing: 4px;
     font-weight: bold;
+    font-family: League-Spartan;
 }
 
 .nav {
@@ -142,23 +143,13 @@ select:invalid {
     color: #1D314D;
     justify-content: space-between;
     align-items: center;
-    font-family: Arial, sans-serif;
+    /* font-family: League-Spartan; */
     background: white;
     height: 50px;
     position: fixed;
     width: 100%;
     top: 0;
     left: 0px; 
-    /* display: flex;
-    flex-direction: row;
-    list-style: none;
-    width: 100%;
-    justify-content: space-between;
-    color: #1D314D;
-    align-items: center;
-    background-color: white;  */
-    
-    
 }
 
 
@@ -167,9 +158,15 @@ select:invalid {
     display: flex;
     margin: 10px;
     font-size: small;
+    
 }
 
 .nav-list li {
     letter-spacing: 3px;
     margin-left: 10px;
 }
+
+@font-face {
+    font-family: league-spartan;
+    src: url(../index/fontes/league-spartan/LeagueSpartan-Bold.otf)
+  }
