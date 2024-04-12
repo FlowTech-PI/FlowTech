@@ -167,6 +167,7 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
     height: 100%;
+    scroll-margin-top: 80px;
   }
   
 
