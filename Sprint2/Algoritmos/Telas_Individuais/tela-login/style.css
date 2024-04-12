@@ -1,6 +1,6 @@
 @font-face {
     font-family: league-spartan;
-    src: url(../index/fontes/league-spartan/LeagueSpartan-Bold.otf);
+    src: url(../../Site/fontes/league-spartan/LeagueSpartan-Bold.otf);
 }
 
 body {
@@ -22,6 +22,7 @@ nav, .form {
     display: flex;
     width: 95%;
     margin: auto;
+    padding: 10px;
 }
 
 nav .container {
@@ -92,7 +93,7 @@ main .container{
     align-items: center;
     width: 30%;
     height: 420px;
-    margin: 10% 0 5% 0;
+    margin: 15vh 0;
     padding: 10px 0;
 }
 
