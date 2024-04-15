@@ -19,15 +19,15 @@
             </ul>
         </nav>
     </header>
-
-    <center>
+ 
+   <center>
         <div class="containertitulo">
             <h1>Cadastro</h1>
         </div>
 
             <div class="container">
                 <div class="divcaixatexto"> 
-                    <center>
+                    
                     <div class="caixatexto">
                         <label for="nome"></label>
                         <input placeholder="Nome:" type="text" id="nome" name="nome" class="bloco1" required>
@@ -40,12 +40,13 @@
 
                         <label for="senha"></label>
                         <input placeholder="Senha:" type="password" id="senha" name="senha" class="bloco1" required>
+                        <button class="enviar" onclick="cadastrar()">Cadastrar</button>
                     </div>
-                    </center>
+                
                 </div>
 
                 <div class="divcaixatexto2">
-                    <center>
+                   
                     <div class="caixatexto">
 
                         <label for="nascimento"></label>
@@ -65,12 +66,33 @@
                         <label for="codigodeacesso"></label>
                         <input placeholder="Código de Acesso:" type="password" id="codigodeacesso" name="codigodeacesso" class="bloco2" required>
                     </div>
-                    </center>
-                </div>               
-            </div>   
-                    <input type="submit" value="Cadastrar" class="enviar">
+                    <div class="buttons"> 
+                        
+                        <button class="codigo" onclick="codigo">Solicitar Cód. Acesso</button>
+                    </div>  
+                </div>    
+                         
+            </div>  
+            
+                    <!-- <input type="button" value="cadastrar" class="enviar"> -->
     </center>
-     
+     <div id="div_mensagem"></div>
 </body>
 
 </html>
+<script>
+function cadastrar()
+{
+    if ()
+
+
+}
+
+
+
+
+
+
+
+
+</script>
