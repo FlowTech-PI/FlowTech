@@ -112,7 +112,12 @@
     border-left: 0px;
     border-right: 0px;
     background-color: rgba(128, 128, 128, 0.059);
-    border-radius: 5px 5px 0px 0px;
+    border-radius: 7px 7px 0px 0px;
+    
+  }
+
+  input:focus {
+    outline: none;
   }
   
   /* botao */
