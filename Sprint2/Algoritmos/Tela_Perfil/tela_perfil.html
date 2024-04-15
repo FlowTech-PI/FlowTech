@@ -4,56 +4,67 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Perfil</title>
-    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
-    <link rel="stylesheet" href="./style.css">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./style.css" />
   </head>
   <body>
     <div class="container">
-      <span id="menuH" class="material-symbols-outlined" onclick="clickMenu()">menu</span>
-      <h1 class="titulo">FlowTech</h1>
+      <span id="menuH" class="material-symbols-outlined" onclick="clickMenu()"
+        >menu</span
+      >
+      <h1 class="titulo">FLOWTECH</h1>
       <ul class="itensNaveBar">
         <li>Início</li>
         <li>Sobre nós</li>
         <li>Contato</li>
       </ul>
     </div>
-    <div id="hamburguer">
-      <ul class="listaItens">
-        <li>&#127968; Home</li>
-        <li>⚙️Configurações</li>
-        <li>🖥Calculadora Financeira</li>
-        <li>📞Contato</li>
-        <li>🗺️Mapa de calor</li>
-        <li>Sair</li>
-      </ul>
-    </div>
-    <div id="fp" class="fotoPerfil">
-      <img src="./perfil.png" alt="">
-        <span>Meu Perfil</span>
-    </div>
-    <div class="campos">
-      <div class="camposCima">
-        <div class="nomeCompleto">
-          Nome Completo <br>
-          <input type="text" id="nomeCompleto">
-        </div>
-        <div class="nascimento">
-          Nascimento <br>
-          <input type="text" id="nascimento">
-        </div>
-        <div class="cpf">
-          CPF <br>
-          <input type="text" id="cpf">
+    <div id="mae">
+      <div class="filho_hamburguer">
+        <div id="hamburguer">
+          <ul class="listaItens">
+            <li>&#127968; Home</li>
+            <li>⚙️Configurações</li>
+            <li>🖥Calculadora Financeira</li>
+            <li>📞Contato</li>
+            <li>🗺️Mapa de calor</li>
+            <li>Sair</li>
+          </ul>
         </div>
       </div>
-      <div class="camposBaixo">
-        <div class="email">
-          E-mail <br>
-          <input type="text" id="email">
+      <div class="filho_foto_e_campos">
+        <div id="fp" class="fotoPerfil">
+          <img src="./perfil.png" alt="foto de perfil" />
+          <span>Meu Perfil</span>
         </div>
-        <div class="telefone">
-          Telefone <br>
-          <input type="text" id="telefone">
+        <div class="campos">
+          <div class="camposCima">
+            <div class="nomeCompleto">
+              Nome Completo <br />
+              <input type="text" id="nomeCompleto" />
+            </div>
+            <div class="nascimento">
+              Nascimento <br />
+              <input type="date" id="nascimento" />
+            </div>
+            <div class="cpf">
+              CPF <br />
+              <input placeholder="___.___.___-__" type="text" id="cpf" />
+            </div>
+          </div>
+          <div class="camposBaixo">
+            <div class="email">
+              E-mail <br />
+              <input placeholder="usuario@gmail.com" type="text" id="email" />
+            </div>
+            <div class="telefone">
+              Telefone <br />
+              <input type="text" id="telefone" />
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -61,11 +72,11 @@
 </html>
 
 <script>
-  function clickMenu(){
-    if(hamburguer.style.display == 'block'){
-      hamburguer.style.display = 'none'
+  function clickMenu() {
+    if (hamburguer.style.display == "block") {
+      hamburguer.style.display = "none";
     } else {
-      hamburguer.style.display = 'block'
+      hamburguer.style.display = "block";
     }
   }
 </script>

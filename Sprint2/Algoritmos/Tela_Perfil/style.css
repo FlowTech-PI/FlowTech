@@ -10,8 +10,9 @@ body {
     float: right;
     flex-direction:column;
     background-color: #ffffff;
-    width: 80%;
-    padding-block-end: 10%;
+    width: 100%;
+    height: 50px;
+    padding-block-end: 20%;
   }
   .camposCima{
     display: flex;
@@ -102,39 +103,35 @@ body {
   }
   .fotoPerfil{
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: center;
+    align-items: center;
     background-color: #1D314D;
     width:100vw;
     height: 150px;
   }
   .fotoPerfil img{
-    position: absolute;
-    top: 100px;
-    right: 45%;
-    display: block;
-    justify-content: center;
     width: 100px;
     height: 100px;
     border-radius: 50%;
   }
   .fotoPerfil span{
-    align-items: center;
-    margin-top: auto;
     color: #ffffff;
   }
   #hamburguer{
     background-color:#374962;
     color: #FFFFFF;
-    display: block;
+    display: flex;
     float:left;
     flex-direction: column;
     align-items: top;
     width: 20%;
+    height: 50px;
     padding-block-end: 100%;
-    position: absolute;
-    z-index: 3;
+    /* position: absolute; */
+    /* z-index: 3; */
     top: 80px;
+    padding-block-end: 34.2%;
   }
   .itensNaveBar {
     display:flex;
@@ -144,10 +141,16 @@ body {
     color:#1D314D;
     width: 350px;
     list-style: none;
+    font-family: league-spartan;
   }
   .titulo{
+    font-family: league-spartan;
     color:#1D314D;
     margin-left: 50px;
+  }
+  @font-face{
+    font-family: league-spartan;
+    src: url(../index/fontes/league-spartan/LeagueSpartan-Bold.otf)
   }
   #menuH{
     display: flex;
@@ -155,8 +158,10 @@ body {
     width: 2vw;
     height: 13vh;
     align-content: end;
-    background-color: #EBEBEB;;
+    background-color: #EBEBEB;
+    color: #1D314D;
     cursor: pointer;
+    align-items: center;
   }
   .listaItens{
     list-style: none;
@@ -166,4 +171,16 @@ body {
   .listaItens li{
     /* espaço entre cada item da lista (li) */
     padding: 0px 0px 15px 0px;
+  }
+
+  /* alinhamento - foto perfil */
+
+  .filho_foto_e_campos{
+    display: flex;
+    flex-direction: column;
+    /* width: 100%; */
+  }
+
+  .mae{
+    display: flex;
   }
