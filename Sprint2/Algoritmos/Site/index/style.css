@@ -1,3 +1,7 @@
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -8,6 +12,12 @@ body {
 .header {
   display: flex;
 
+}
+
+.header a {
+  text-decoration: none;
+  color: #07272c;
+  scroll-behavior: smooth;
 }
 
 .container{
@@ -24,6 +34,7 @@ body {
   background-color: #fff;
   padding: 10px;
   z-index: 3;
+  border-bottom: 2px solid #07272c;
   
 }
 
@@ -31,16 +42,7 @@ body {
   color: #0a3339;
 }
 
-.logo{
-  display: flex;
-  
-}
 
-.logo img{
-  height: 90%;
-  width: auto;
-  margin: 5px;
-}
 
 .navbar {
   display: flex;
@@ -157,6 +159,7 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
     height: 100%;
+    scroll-margin-top: 80px;
   }
   
 
