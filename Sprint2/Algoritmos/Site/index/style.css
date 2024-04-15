@@ -42,16 +42,7 @@ body {
   color: #0a3339;
 }
 
-.logo{
-  display: flex;
-  
-}
 
-.logo img{
-  height: 90%;
-  width: auto;
-  margin: 5px;
-}
 
 .navbar {
   display: flex;
