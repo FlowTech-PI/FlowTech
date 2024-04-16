@@ -40,18 +40,10 @@ body {
 
 .titulo{
   color: #0a3339;
+  font-family: league-spartan;
 }
 
-.logo{
-  display: flex;
-  
-}
 
-.logo img{
-  height: 90%;
-  width: auto;
-  margin: 5px;
-}
 
 .navbar {
   display: flex;
@@ -84,6 +76,10 @@ body {
   font-weight: 550;
   cursor: pointer;
 
+}
+
+.navbar .bt a{
+  color: #fff;
 }
 
 .banner{
@@ -277,3 +273,71 @@ body {
     src: url(../fontes/OpenSans-Regular.ttf);
     
   }
+
+  .email{
+    height: 40px;
+    width: 40px;
+    
+  }
+
+  .facebook{
+    height: 40px;
+    width: 40px;
+    
+  }
+
+  .insta{
+    height: 40px;
+    width: 50px;
+    
+  }
+
+  .telefone{
+    height: 40px;
+    width: 40px;
+    
+  }
+
+  
+
+  .footer {
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    flex-direction: column;
+    
+  }
+  
+  .F1 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .contato{
+    font-family: open-sans;
+    font-size: large;
+  }
+
+  li{
+    font-size: larger;
+    margin-left: 8%;
+
+  }
+
+  .F2 ul{
+    list-style: none;
+  }
+
+
+
+ .F2{
+  display: flex;
+  justify-content: space-around;
+ }
+
+ .atendimento{
+  display: flex;
+ }
+
+ 
