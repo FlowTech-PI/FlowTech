@@ -107,7 +107,7 @@ body {
     justify-content: center;
     align-items: center;
     background-color: #1D314D;
-    width:100vw;
+    width:100%;
     height: 150px;
   }
   .fotoPerfil img{
@@ -128,8 +128,6 @@ body {
     width: 20%;
     height: 50px;
     padding-block-end: 100%;
-    /* position: absolute; */
-    /* z-index: 3; */
     top: 80px;
     padding-block-end: 34.2%;
   }
@@ -178,7 +176,7 @@ body {
   .filho_foto_e_campos{
     display: flex;
     flex-direction: column;
-    /* width: 100%; */
+    /* width: 100%;  */
   }
 
   .mae{

@@ -1,0 +1,114 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+
+h1 {
+    color: white;
+    margin: 0;
+    padding: 0;
+}
+
+.box1 {
+    display: flex;
+    align-items: center; 
+}
+
+.box1 p {
+        color: rgb(0, 0, 71);
+        background-color: white;
+        width: 100px;
+        height: 23px;
+        text-align: center;
+        margin: 10px;
+        padding: 0px;
+        border-width: initial;
+        border-style: solid;
+        border-color: initial;
+        border-image: initial;
+        border-radius: 10px;
+    } 
+
+.container p{
+    font-family: open-sans;
+    font-size: 20px;
+}
+.container h3{
+    font-size: 30px;
+    font-family: open-sans;
+    color: rgb(0, 0, 71);
+}
+
+.container{
+    margin-top: 70px;
+    margin-left: 50px;
+}
+
+.container h1{
+    color: rgb(0, 0, 71);
+    font-weight: bold;
+    font-size: 50px;
+    font-family: roboto;
+}
+
+
+.container p{
+    color: black;
+    text-align: justify;
+    width: 30%;
+}
+
+.position {
+    display: flex;
+    justify-content: center; 
+    margin-top: 10%;
+}
+
+.image02{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 17%; 
+    position: absolute;
+    left: 60%;
+    margin-bottom: 20%;
+}
+
+.image-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 15%; 
+    position: absolute;
+    right: 35%;
+    
+    
+}
+
+
+
+.linha1 {
+    background-color: rgb(0, 0, 71);
+    width: 5px;
+    height: 300px;
+    position: absolute;
+    left: 56%;
+}
+
+.segundalinha{
+    background-color: rgb(0, 0, 71);
+    width: 5px;
+    height: 300px;
+    position: absolute;
+    left: 68%;
+}
+
+@font-face{
+    font-family: open-sans;
+    src: url(Fontes/OpenSans-Regular.ttf);
+    font-family: roboto;
+    src: url(Fontes/Roboto-Regular.ttf);
+}

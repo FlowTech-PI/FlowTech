@@ -1,0 +1,279 @@
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  background-color: #fff;
+}
+
+.header {
+  display: flex;
+
+}
+
+.header a {
+  text-decoration: none;
+  color: #07272c;
+  scroll-behavior: smooth;
+}
+
+.container{
+  display: flex;
+  width: 80%;
+  margin: auto;
+}
+
+.header .container{
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  position: fixed;
+  background-color: #fff;
+  padding: 10px;
+  z-index: 3;
+  border-bottom: 2px solid #07272c;
+  
+}
+
+.titulo{
+  color: #0a3339;
+}
+
+.logo{
+  display: flex;
+  
+}
+
+.logo img{
+  height: 90%;
+  width: auto;
+  margin: 5px;
+}
+
+.navbar {
+  display: flex;
+  flex-direction: row;
+  list-style: none;
+  justify-content: space-between;
+  color: #07272c;
+  align-items: center;
+  font-weight: bold;
+
+}
+
+.navbar li {
+  display: flex;
+  justify-content: space-between;
+  margin: 8px; 
+}
+
+.navbar .quem{
+  margin-right: 0px;
+}
+
+.navbar .bt {
+  background-color: #07272c;
+  color: #fff;
+  padding: 8px 35px;
+  border-radius: 50px;
+  font-size: 15px;
+  font-family: sans-serif;
+  font-weight: 550;
+  cursor: pointer;
+
+}
+
+.banner{
+  padding: 40px 0;
+  color: #fff;
+  height: 564px;
+  background-image: url('../imagens/fundo_index.png');
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 800px;
+
+}
+
+  .banner .container{
+    justify-content: flex-start;
+    align-items: center;
+    height: 100%;
+    margin-bottom: -8%;
+  }
+
+  .banner .container .chamado{
+    flex-direction: column;
+  }
+
+  .banner .container p{
+    font-size: 20px;
+    width: 68%;
+    margin-top: 0px;
+  }
+
+  .banner .container h1{
+    margin-top: 0px;
+    font-size: 120px;
+    margin-bottom: 0px;
+    font-family: league-spartan;
+    -webkit-text-fill-color: rgba(255, 255, 255, 0);
+    -webkit-text-stroke-width: 3px;
+    -webkit-text-stroke-color: rgb(255, 255, 255);
+  }
+
+  .banner .container p span{
+    font-weight: bold;
+  }
+
+  .banner .LoginCadastro{
+    display: flex;
+    align-items: center;
+
+    width: 46%;
+  }
+
+  .banner .LoginCadastro .BtLogin{
+    background-color: #ffffff00;
+    color: #fff;
+    border-radius: 50px;
+    border-color: #fff;
+    height: 30px;
+    width: 120px;
+    border-style: solid;
+    cursor: pointer;
+
+  }
+
+  .banner .LoginCadastro .BtCadastro{
+    background-color: #07272c;
+    color: #fff;
+    border-radius: 50px;
+
+    height: 30px;
+    width: 120px;
+    border-style: solid;
+
+    margin-left: 5%;
+    cursor: pointer;
+
+  }
+
+  .sobnos {
+    background-image: url('../imagens/fundo_sobnos.png');
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100%;
+    scroll-margin-top: 80px;
+  }
+  
+
+  .sobnos .container .quemsomos{
+    display: flex;
+    flex-direction: column;
+    margin-left: 50px;
+    position: relative;
+    top: 10%;
+  }
+
+  .sobnos .container h1{
+    color: rgb(0, 0, 71);
+    font-weight: bold;
+    font-size: 50px;
+    font-family: roboto;
+}
+
+  .sobnos .container p{
+    font-family: open-sans;
+    font-size: 20px;
+    color: black;
+    text-align: justify;
+    width: 80%;
+  }
+
+  .sobnos .container h3{
+    font-size: 30px;
+    font-family: open-sans;
+    color: rgb(0, 0, 71);
+  }
+
+  .sobnos .image02{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 17%; 
+    position: relative;
+    top: 100%;
+    margin-bottom: 20%;
+    left: -10%;
+    z-index: 1;
+}
+
+  .sobnos .image-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      top: 100%;
+      z-index: 2;
+  }
+
+  .sobnos .linha1 {
+    background-color: rgb(0, 0, 71);
+    width: 15px;
+    height: 300px;
+    position: relative;
+    top: 120.6%;
+    left: 56%;
+}
+
+  .sobnos .segundalinha{
+      background-color: rgb(0, 0, 71);
+      width: 15px;
+      height: 300px;
+      position: relative;
+      top: 120.6%;
+      left: 68%;
+  }
+
+  .footer .container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    flex-direction: column;
+  }
+
+  .footer .container .F1{
+    font-weight: 800;
+    font-weight: open-sans;
+    color: white;
+    background-color: #384c64;
+    width: 100%;
+  }
+
+  .footer .container .F2{
+    font-weight: 800;
+    font-weight: open-sans;
+    color: white;
+    background-color: #20344c;
+    width: 100%;
+  }
+
+  
+  
+  @font-face {
+    font-family: league-spartan;
+    src: url(../fontes/league-spartan/LeagueSpartan-Bold.otf);
+    
+  }
+
+  @font-face {
+    font-family: open-sans;
+    src: url(../fontes/OpenSans-Regular.ttf);
+    
+  }
