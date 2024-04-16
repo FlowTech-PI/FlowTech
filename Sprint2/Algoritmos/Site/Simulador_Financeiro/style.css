@@ -39,6 +39,7 @@
     position: fixed;
     background-color: #fff;
     padding: 10px;
+    padding-top: 15px;
     z-index: 3;
     border-bottom: 2px solid #07272c;
     
@@ -46,6 +47,7 @@
 
   .titulo{
     color: #0a3339;
+    font-family: league-spartan;
   }
   
   .navbar {
@@ -145,4 +147,10 @@
     border: 1px solid #1D314D;
     border-radius: 5px;
     background-color: #fafafa;
+  }
+
+  @font-face {
+    font-family: league-spartan;
+    src: url(../fontes/league-spartan/LeagueSpartan-Bold.otf);
+    
   }

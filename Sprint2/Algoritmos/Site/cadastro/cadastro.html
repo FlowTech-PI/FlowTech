@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FlowTech | Cadastro </title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <nav class="nav">
+            <a class="logo">FlowTech</a>
+            <ul class="nav-list">
+                <a href="../index/index.html"><li>Home</li></a>
+                <li>|</li>
+                <li>Ajuda</li>
+            </ul>
+        </nav>
+    </header>
+ 
+   <center>
+        <div class="containertitulo">
+            <h1>Cadastro</h1>
+        </div>
+
+            <div class="container">
+                <div class="divcaixatexto"> 
+                    
+                    <div class="caixatexto">
+                        <label for="nome"></label>
+                        <input placeholder="Nome:" type="text" id="nome" name="nome" class="bloco1" required>
+
+                        <label for="cpf"></label>
+                        <input placeholder="CPF: (apenas números)" type="text" id="cpf" name="cpf" class="bloco1" required>
+
+                        <label for="email"></label>
+                        <input placeholder="E-mail:" type="email" id="email" name="email" class="bloco1" required>
+
+                        <label for="senha"></label>
+                        <input placeholder="Senha:" type="password" id="senha" name="senha" class="bloco1" required>
+                        <button class="enviar" onclick="cadastrar()">Cadastrar</button>
+                    </div>
+                
+                </div>
+
+                <div class="divcaixatexto2">
+                   
+                    <div class="caixatexto">
+
+                        <label for="nascimento"></label>
+                        <input placeholder="Nascimento:" type="text" id="nascimento" name="nascimento" class="bloco2" required>
+
+                        <label for="telefone"></label>
+                        <input placeholder="Tel:" type="tel" id="telefone" name="telefone" class="bloco2" required>
+
+                        <label for="niveldeacesso"></label>
+                        <select name="niveldeacesso" id="niveldeacesso" class="bloco2"  required>
+                            <option value="" selected hidden>Nível de Acesso:</option>
+                            <option value="Proprietário">Proprietário</option>
+                            <option value="Gerente">Gerente</option>
+                            <option value="Funcionário">Funcionário</option>
+                        </select>
+                
+                        <label for="codigodeacesso"></label>
+                        <input placeholder="Código de Acesso:" type="password" id="codigodeacesso" name="codigodeacesso" class="bloco2" required>
+                    </div>
+                    <div class="buttons"> 
+                        
+                        <button class="codigo" onclick="codigo">Solicitar Cód. Acesso</button>
+                    </div>  
+                </div>    
+                         
+            </div>  
+            
+    </center>
+     <div id="div_mensagem"></div>
+</body>
+
+</html>
+<script>
+
+</script>

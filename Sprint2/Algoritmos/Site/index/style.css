@@ -40,6 +40,7 @@ body {
 
 .titulo{
   color: #0a3339;
+  font-family: league-spartan;
 }
 
 
@@ -75,6 +76,10 @@ body {
   font-weight: 550;
   cursor: pointer;
 
+}
+
+.navbar .bt a{
+  color: #fff;
 }
 
 .banner{
@@ -334,3 +339,5 @@ body {
  .atendimento{
   display: flex;
  }
+
+ 

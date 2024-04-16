@@ -1,0 +1,169 @@
+@font-face {
+    font-family: league-spartan;
+    src: url(../fontes/league-spartan/LeagueSpartan-Bold.otf);
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    background-image: url(../imagens/fundo_login.png);
+}
+
+body:hover {
+    cursor: default;
+}
+
+nav, .form {
+    background-color: #fff;
+    border-bottom: 2px solid #07272c;
+}
+
+.container {
+    display: flex;
+    width: 95%;
+    margin: auto;
+    padding: 10px;
+}
+
+nav .container {
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 14px;
+}
+
+.titulo {
+    font-family: league-spartan;
+}
+
+ul, span, input, button {
+    font-weight: bold;
+}
+
+.titulo, .navbar  ul, .navbar span, input, .links span, .links a {
+    color: #1D314D;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+}
+
+.navbar  ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: #07272c;
+    scroll-behavior: smooth;
+  }
+
+.navbar a:hover {
+    color: #144b97;
+    cursor: pointer;
+  }
+
+.navbar  li:hover, .navbar span:hover, .links a:hover  {
+    color: #144b97;
+    cursor: pointer;
+}
+
+.navbar ul {
+    list-style: none;
+    width: 150px;
+}
+
+.navbar, input, button {
+    font-size: 16px;
+}
+
+.titulo {
+    font-size: 32px;
+}
+
+.container .titulo .tituloNav{
+    margin-left: -28px ;
+}
+
+a {
+    text-decoration: none;
+}
+
+main .container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: fit-content;
+}
+
+.form, input, button {
+    border-radius: 10px;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 30%;
+    height: 420px;
+    margin: 15vh 0;
+    padding: 10px 0;
+}
+
+input {
+    background-color: #cacaca;
+    border: none;
+    height: 50px;
+    width: 75%;
+    margin: 5px 0;
+    padding-left: 10px;
+    font-family: Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: bold;
+}
+
+input:focus {
+    outline: none;
+}
+
+button {
+    background-color: #1D314D;
+    color: #fff;
+    font-family: sans-serif;
+    font-weight: bold;
+    border: none;
+    height: 40px;
+    width: 60%;
+    margin: 30px 0 10px 0;
+}
+
+button:hover {
+    background-color: #144b97 ;
+    cursor: pointer;
+}
+
+.links {
+    display: flex;
+    justify-content: space-between;
+}
+
+#esqueci_senha {
+    width: 50%;
+}
+
+#termos {
+    width: 65%;
+    margin-top: 20%;
+}
+
+.links span, .links a {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 12px;
+}
+
+
