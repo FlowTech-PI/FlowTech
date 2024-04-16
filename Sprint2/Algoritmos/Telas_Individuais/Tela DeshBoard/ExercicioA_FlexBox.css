@@ -1,0 +1,133 @@
+body {
+    margin: 0;
+}
+
+.container1 {
+    width: 99%;
+    height: 85px;
+    margin: auto;
+    background-color:lightgrey;
+
+    border-radius: 10px;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.container2 {
+    width: 99%;
+    height: 85px;
+    margin: auto;
+    background-color: lightgrey;
+
+    border-radius: 10px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.container3 {
+    width: 99%;
+    height: 85px;
+    margin: auto;
+    background-color: lightgrey;
+
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+}
+
+.container4 {
+    width: 99%;
+    height: 85px;
+    margin: auto;
+    background-color: lightgrey;
+
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.container5 {
+    width: 99%;
+    height: 85px;
+    margin: auto;
+    background-color: lightgrey;
+
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.container6 {
+    width: 99%;
+    height: 85px;
+    margin: auto;
+    background-color: lightgrey;
+
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.bloco-1 {
+    width: 85px;
+    height: 100%;
+    border-radius: 10px;
+    background-color: darkcyan;
+
+    display: flex;  
+    justify-content: center;
+    align-items: center;
+
+}
+.bloco-2 {
+    width: 85px;
+    height: 100%;
+    border-radius: 10px;
+    background-color: lightcoral;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.bloco-3 {
+    width: 85px;
+    height: 100%;
+    border-radius: 10px;
+    background-color:crimson;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.bloco-4 {
+    width: 85px;
+    height: 100%;
+    border-radius: 10px;
+    background-color:orange;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.bloco-5 {
+    width: 85px;
+    height: 100%;
+    border-radius: 10px;
+    background-color:rgb(78, 189, 78);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.bloco-6 {
+    width: 85px;
+    height: 100%;
+    border-radius: 10px;
+    background-color:blue;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   
+}
+
