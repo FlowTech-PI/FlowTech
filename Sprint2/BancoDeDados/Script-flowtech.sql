@@ -67,7 +67,7 @@ contagem bit,
 horario datetime default current_timestamp,
 fkSensor int,
 constraint fkSensorDadoSensor foreign key (fkSensor)
-references Sensor(idSensor)
+references sensor(idSensor)
 );
 
 -- Inserção de Dados 
