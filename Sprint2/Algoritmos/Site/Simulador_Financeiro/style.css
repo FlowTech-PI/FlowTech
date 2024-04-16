@@ -10,6 +10,7 @@
     background-image: url(../imagens/Fundo_Simulador.png);
     background-repeat: no-repeat;
     background-size: cover;
+    background-attachment: fixed;
     color: #333;
     font-size: 16px;
   }
@@ -138,7 +139,7 @@
   }
   
   /* Mensagem de Resultado */
-  #div_mensagem {
+  .simulacao{
     margin-top: 20px;
     padding: 15px;
     border: 1px solid #1D314D;

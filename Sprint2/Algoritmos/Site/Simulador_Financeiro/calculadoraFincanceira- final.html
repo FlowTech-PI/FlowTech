@@ -36,18 +36,20 @@
         Estandes comerciais: <input type="text" id="input_estandesCom"> <br><br>
         Lojas: <input type="text" id="input_lojas"> <br><br>
         Quiosques: <input type="text" id="input_quiosques"> <br><br>
-        <center>
-        <button onclick="lucro()">Calcular receita</button> <br><br>
-        </center>
-        <div id="div_mensagem" style="display: none;"></div>
+        <center><button onclick="lucro()">Calcular receita</button> <br><br> </center>
+        <div id="div_mensagem" style="display: none;"></div> <br> <br>
+        <center><button onclick="limpar()" style="display: none;" id="bt_limpar">Limpar Simulações</button></center>
         </b>
     </div>
 </body>
 </html>
 
 <script>
+    var cont = 0;
     function lucro() {
         div_mensagem.style.display = "block";
+        bt_limpar.style.display = "block";
+
         var nomeEstacao= input_estacao.value;
         var estandes= Number (input_estandes.value);
         var estandesComerciais= Number (input_estandesCom.value);
@@ -62,7 +64,9 @@
         var lucroMensal= lucroEstandes + lucroEstandesComerciais + lucroLojas + lucroQuiosques;
         var lucroAnual= lucroMensal * 12;
 
-        div_mensagem.innerHTML= `Nesse cenário, a receita mensal gerada com o aluguel do espaço para novos comércios é de: <br>
+        cont++;
+        
+        div_mensagem.innerHTML += `<div class="simulacao"> <h3>Simulação ${cont}</h3><br> Nesse cenário, a receita mensal gerada com o aluguel do espaço para novos comércios é de: <br>
         <b style="color: rgb(36, 124, 36);">R$${lucroEstandes}</b> com ${estandes} estandes promocionais (considerando que o aluguel do m² é de <b>R$894</b>); <br>
         <b style="color: rgb(36, 124, 36);">R$${lucroEstandesComerciais}</b> com ${estandesComerciais} estandes comerciais (considerando que o aluguel do m² é de <b>R$397</b>); <br>
         <b style="color: rgb(36, 124, 36);">R$${lucroLojas}</b> com ${lojas} lojas (considerando que o aluguel do m² é de <b>R$308</b>); <br>
@@ -70,7 +74,19 @@
         <b>Totalizando R$${lucroMensal} ao mês e  R$${lucroAnual} ao ano somente na estação ${nomeEstacao}.</b> <br> <br> 
         <b>OBS:</b> o cálculo do valor do aluguel foi feito multiplicando o valor do metro quadrado pelo tamanho do espaço alugado. Na variável do tamanho do espaço, foram utilizados os valores mínimos possíveis para cada categoria apresentada. <br>
         Foram considerados estandes promocionais, quiosques, e estandes comerciais de 4m² e lojas de 20m².  
-        `;
+        </div> <br>`;
+    }
+
+    function limpar() {
+        cont = 0;
+        div_mensagem.innerHTML = "";
+        div_mensagem.style.display = "none";
+        bt_limpar.style.display = "none";
+
+         input_estandes.value = "";
+         input_estandesCom.value = "";
+         input_lojas.value = "";
+         input_quiosques.value = "";
     }
 </script>
 
