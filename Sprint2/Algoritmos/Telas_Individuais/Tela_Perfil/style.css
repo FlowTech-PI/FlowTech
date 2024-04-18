@@ -12,17 +12,18 @@ body {
     background-color: #ffffff;
     width: 100%;
     height: 50px;
-    padding-block-end: 20%;
+    /* padding-block-end: 20%; */
   }
   .camposCima{
     display: flex;
     justify-content: space-around;
-    margin: 50px;
+    margin: 25px;
   }
   .camposBaixo{
     display:flex;
     justify-content: space-around;
-    margin: 50px;
+    flex-direction: column;
+    margin: 25px;
   }
   .nomeCompleto{
     color: black;
@@ -141,6 +142,12 @@ body {
     list-style: none;
     font-family: league-spartan;
   }
+
+  .itensNaveBar a{
+    text-decoration: none;
+    color:#1D314D;
+  }
+
   .titulo{
     font-family: league-spartan;
     color:#1D314D;
@@ -181,4 +188,18 @@ body {
 
   .mae{
     display: flex;
+  }
+
+  /* botões de alterar dados e salvar */
+
+  .botoes {
+    display: flex;
+    justify-content: end;
+  }
+
+  .separacaoBotao{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin: 0 0 40px;
   }
