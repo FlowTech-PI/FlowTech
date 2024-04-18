@@ -93,18 +93,18 @@ a {
     text-decoration: none;
 }
 
-main .container{
+.telaLogin main .container{
     display: flex;
     justify-content: center;
     align-items: center;
     height: fit-content;
 }
 
-.form, input, button {
+.telaLogin .form, input, button {
     border-radius: 10px;
 }
 
-.form {
+.telaLogin .form {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -114,7 +114,7 @@ main .container{
     padding: 10px 0;
 }
 
-input {
+.telaLogin input {
     background-color: #cacaca;
     border: none;
     height: 50px;
@@ -125,11 +125,11 @@ input {
     font-weight: bold;
 }
 
-input:focus {
+.telaLogin input:focus {
     outline: none;
 }
 
-button {
+.telaLogin button {
     background-color: #1D314D;
     color: #fff;
     font-family: sans-serif;
@@ -140,26 +140,26 @@ button {
     margin: 30px 0 10px 0;
 }
 
-button:hover {
+.telaLogin button:hover {
     background-color: #144b97 ;
     cursor: pointer;
 }
 
-.links {
+.telaLogin .links {
     display: flex;
     justify-content: space-between;
 }
 
-#esqueci_senha {
+.telaLogin #esqueci_senha {
     width: 50%;
 }
 
-#termos {
+.telaLogin #termos {
     width: 65%;
     margin-top: 20%;
 }
 
-.links span, .links a {
+.telaLogin .links span, .links a {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -167,3 +167,131 @@ button:hover {
 }
 
 
+.telaCadastro .container {
+    background-color: white;
+    width: 45%;
+    position: relative;
+    border-radius: 8px;
+    display: block;
+    height: auto;
+    padding-left: 2.3%;
+    margin-top: 8%;
+}
+
+.telaCadastro .inputs_cad{
+    display: flex;
+
+}
+
+.telaCadastro .buttons {
+    margin-left: -6%;
+    display: flex;
+    justify-content: space-around;
+}
+
+.telaCadastro .enviar{
+    width: 30%;
+    padding: 10px;
+    border-radius: 4PX;
+    background-color: #1D314D;
+    color: white;
+    border: none;
+    margin-left: 150px;
+    margin: 10px;
+    border-radius: 10px;
+}
+
+.telaCadastro .enviar:hover {
+    background-color: #54657e;
+}
+
+.telaCadastro .codigo {
+    background-color: #1D314D;
+    color: white;
+    border: none;
+    width: 30%;
+    height: 20%;
+    padding: 10px;
+    border-radius: 10px;
+    margin: 10px;
+}
+
+.telaCadastro .codigo:hover {
+    background-color: #54657e;
+}
+
+
+.telaCadastro h1{
+    text-align: center;
+}
+
+
+.telaCadastro input[type="submit"] {
+    background-color: #1D314D;
+    color: white;
+    border: none;
+    cursor: pointer;
+
+}
+
+.telaCadastro input[type="submit"]:hover {
+    background-color: #1D314D;
+}
+
+
+.telaCadastro input::placeholder {
+  
+  opacity: 0.9;
+  color: black;
+ 
+}
+
+.telaCadastro select:invalid {
+    opacity: 0.5;
+    color: black;
+    font-weight: bolder;
+}
+
+.telaCadastro form {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 300px;
+}
+
+.telaCadastro .bloco1 {
+    width: 90%;
+    background-color: #DCDCDC;
+    opacity: 0.5;
+    margin-bottom: 10px;
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.telaCadastro .bloco2 {
+    width: 90%;
+    background-color: #DCDCDC;
+    opacity: 0.5;
+    margin-right: -5pxpx;
+    margin-bottom: 10px;
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.telaCadastro .caixa {
+    height: 40px;
+    width: 20%;
+}
+
+.telaCadastro .links a {
+    justify-content: center;
+}
+
+.telaLogin .container {
+    justify-content: center;
+}
