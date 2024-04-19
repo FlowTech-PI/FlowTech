@@ -1,7 +1,9 @@
+-- Criação do Banco de Dados
 CREATE DATABASE flowtech;
 USE flowtech;
+/*----------------------------------------------------------------------------------------------------------------------------------------*/
 
--- Criação das tabelas 
+-- ENTIDADE EMPRESA
 
 CREATE TABLE empresa
 (
@@ -13,7 +15,16 @@ telefone CHAR(11),
 email VARCHAR(45)
 );
 
-CREATE TABLE funcionario
+INSERT INTO empresa VALUES
+	(DEFAULT, 'ViaQuatro', '07682638000107','09340520', '08007707100', 'comercial.mobilidade@grupoccr.com');
+
+SELECT * FROM empresa;
+
+/*----------------------------------------------------------------------------------------------------------------------------------------*/
+
+-- ENTIDADE FUNCIONÁRIO
+
+CREATE TABLE usuario
 (
 idUsuario INT PRIMARY KEY AUTO_INCREMENT,
 nome VARCHAR(100),
@@ -26,11 +37,21 @@ funcao VARCHAR(45),
 fkAdmin INT,
 fkEmpresa INT,
 CONSTRAINT fkAdminFunc FOREIGN KEY (fkAdmin)
-	REFERENCES funcionario(idUsuario),
+	REFERENCES usuario(idUsuario),
 CONSTRAINT fkEmpresaFunc FOREIGN KEY (fkEmpresa)
 	REFERENCES empresa(idEmpresa),
 CONSTRAINT chkFuncao CHECK (funcao IN('Administrador', 'Gerente', 'Funcionário'))
 );
+
+INSERT INTO usuario VALUES
+	(DEFAULT, 'Josival da Silva Santos', '1972-01-01', '25448868820', '11986457457', 'josival.santos@gmail.com', 'josival0101', 'Administrador', NULL, 1),
+	(DEFAULT, 'Alberto Vicente Alves', '1980-04-22', '29033534843', '11985451260', 'alberto.alves@gmail.com', 'alberto@123', 'Gerente', 1, 1),
+	(DEFAULT, 'Rafael Henrique Silva', '1990-02-20', '53589878841', '11959382646', 'rafael.silva@gmail.com', 'rafael227755', 'Funcionário',2, 1);
+    
+SELECT * FROM funcionario;
+/*----------------------------------------------------------------------------------------------------------------------------------------*/
+
+-- ENTIDADE LINHA
 
 CREATE TABLE linha 
 (
@@ -41,6 +62,14 @@ CONSTRAINT fkEmpresaLinha FOREIGN KEY (fkEmpresa)
 	REFERENCES empresa(idEmpresa)
 );
 
+INSERT INTO linha VALUES
+	(4, 'Amarela', 1);
+
+SELECT * FROM linha;
+/*----------------------------------------------------------------------------------------------------------------------------------------*/
+
+-- ENTIDADE ESTAÇÃO
+
 create table estacao
 (
 idEstacao INT PRIMARY KEY AUTO_INCREMENT,
@@ -49,44 +78,6 @@ fkLinha INT,
 CONSTRAINT fkLinhaEstacao FOREIGN KEY (fklinha)
 	REFERENCES linha(idLinha)
 );
-
-create table sensor
-(
-idSensor INT PRIMARY KEY AUTO_INCREMENT,
-nomeLocal VARCHAR(30),
-tipoSensor VARCHAR(40),
-fkEstacao INT,
-CONSTRAINT fkEstacaoSensor FOREIGN KEY (fkEstacao)
-	REFERENCES estacao(idEstacao)
-);
-
-CREATE TABLE dadoSensor
-(
-idDado INT PRIMARY KEY AUTO_INCREMENT,
-contagem BIT,
-horario DATETIME DEFAULT CURRENT_TIMESTAMP,
-fkSensor INT,
-CONSTRAINT fkSensorDadoSensor FOREIGN KEY (fkSensor)
-	REFERENCES sensor(idSensor)
-);
-
--- Inserção de Dados 
-
-INSERT INTO empresa VALUES
-	(DEFAULT, 'ViaQuatro', '07682638000107','09340520', '08007707100', 'comercial.mobilidade@grupoccr.com');
-
-SELECT * FROM empresa;
-
-INSERT INTO funcionario VALUES
-	(DEFAULT,  'Josival da Silva Santos', '1972-01-01', '25448868820', '11986457457', 'josival.santos@gmail.com', 'josival0101', 'Administrador', null, 1),
-	(DEFAULT,  'Alberto Vicente Alves', '1980-04-22', '29033534843', '11985451260', 'alberto.alves@gmail.com', 'alberto@123', 'Gerente', 1, 1),
-	(DEFAULT,  'Rafael Henrique Silva', '1990-02-20', '53589878841', '11959382646', 'rafael.silva@gmail.com', 'rafael227755', 'Funcionário',2, 1);
-SELECT * FROM funcionario;
-
-INSERT INTO linha VALUES
-	(4, 'Amarela', 1);
-
-SELECT * FROM linha;
 
 INSERT INTO estacao VALUES
 	(DEFAULT, 'Vila Sônia', 4),
@@ -102,6 +93,19 @@ INSERT INTO estacao VALUES
 	(DEFAULT, 'Luz', 4);
 
 SELECT * FROM estacao;
+/*----------------------------------------------------------------------------------------------------------------------------------------*/
+
+-- ENTIDADE SENSOR
+
+create table sensor
+(
+idSensor INT PRIMARY KEY AUTO_INCREMENT,
+nomeLocal VARCHAR(30),
+tipoSensor VARCHAR(40),
+fkEstacao INT,
+CONSTRAINT fkEstacaoSensor FOREIGN KEY (fkEstacao)
+	REFERENCES estacao(idEstacao)
+);
 
 INSERT INTO sensor VALUES
 	(DEFAULT, 'esacada rolante 1', 'Sensor de bloqueio', 8),
@@ -110,6 +114,20 @@ INSERT INTO sensor VALUES
 	(DEFAULT, 'esacada rolante 2', 'Sensor de bloqueio', 1);
 
 SELECT * FROM sensor;
+/*----------------------------------------------------------------------------------------------------------------------------------------*/
+
+-- ENTIDADE DADO SENSOR -> PK COMPOSTA (idDadoSensor E fkSensor)
+
+CREATE TABLE dadoSensor
+(
+idDado INT AUTO_INCREMENT,
+fkSensor INT,
+CONSTRAINT pkDadoSensor PRIMARY KEY (idDado, fkSensor),
+contagem BIT,
+horario DATETIME DEFAULT CURRENT_TIMESTAMP,
+CONSTRAINT fkSensorDadoSensor FOREIGN KEY (fkSensor)
+	REFERENCES sensor(idSensor)
+);
 
 INSERT INTO dadoSensor VALUES
 	(DEFAULT, 1, DEFAULT, 2),
@@ -117,3 +135,34 @@ INSERT INTO dadoSensor VALUES
 	(DEFAULT, 1, DEFAULT, 4);
 
 SELECT * FROM dadoSensor;
+/*----------------------------------------------------------------------------------------------------------------------------------------*/
+ 
+/*-------------------------------------------------------SELECTS COM JOINS ---------------------------------------------------------------*/
+ 
+ -- Empresa e seus Funcionários
+ 
+ SELECT empresa.nome AS Empresa,
+        empresa.email AS 'Email - Empresa',
+		usuario.nome AS Funcionário,
+		usuario.email AS 'Email - Funcionário',
+		usuario.funcao AS Função
+        FROM empresa
+			JOIN usuario ON idEmpresa = fkEmpresa;
+            
+-- Funcionários e seus Supervisores
+            
+SELECT usuario.nome AS Funcionário,
+		usuario.email AS 'Email - Funcionário',
+		usuario.funcao AS Função,
+        ifnull(supervisor.nome, 'Usuário sem Supervisor') AS Supervisor,
+        ifnull(supervisor.email, 'Usuário sem Supervisor') AS 'Email - Supervisor',
+        ifnull(supervisor.funcao, 'Usuário sem Supervisor') AS 'Função - Supervisor'
+		FROM usuario
+			LEFT JOIN usuario AS supervisor ON usuario.fkAdmin = supervisor.idUsuario;
+            
+-- Empresa e suas Linhas
+SELECT concat('A ', empresa.nome ' administra a linha: ') 
+		FROM empresa 
+			JOIN linha ON fkEmpresa = idEmpresa
+	
+ 
