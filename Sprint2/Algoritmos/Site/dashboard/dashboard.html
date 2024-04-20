@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="ptbr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FlowTech | DashBoard</title>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+    <link rel="stylesheet" href="Dash.css">
+  </head>
+  <body>
+    <div class="container">
+      <span id="menuH" class="material-symbols-outlined" onclick="clickMenu()">menu</span>
+      <h1 class="titulo">FlowTech</h1>
+      <ul class="itensNaveBar">
+        <li> <a href="../../Site/index/index.html">Início</a></li>
+        <li>|</li>
+        <li> <a href="../../Site/index/index.html#sobnos">Sobre nós</a></li>
+        <li>|</li>
+        <li> <a href="../../Site/index/index.html#contato">Contato</a></li>
+      </ul>
+    </div>
+    <div id="itens-laterais">
+      <ul class="listaItens">
+        <div id="fp" class="fotoPerfil">
+             <a href="../Tela_Perfil/tela_perfil.html"><img src="../graficos/perfil.png" alt="foto de perfil"></a>
+          </div>
+        <li>🖥Calculadora Financeira</li>
+        <li> DeshBoard</li>
+        <li> Gráficos </li>
+        <li>🗺️Mapa de calor</li>
+        <li>Sair</li>
+      </ul>
+    </div>
+
+    <div class="box-title">
+    <h2 class="title2"> DASHBOARD
+        <h6 class="subtitle2">FLOWTECH</h6>   
+    </h2>
+    </div>
+    
+    <div class="container2">
+        <div class="linha"><b>TOP 3 ESTAÇÕES COM MAIOR FLUXO</b></div>
+        <div class="juncao">   
+          
+            
+            </div>
+        </div>
+    </div>
+    <br>
+    <br>
+    <main class="container_switch">
+
+    <div class="E">
+      <div class="box-grafico" id="div_graf">
+        <div class="box-grafINTERNO" id="div_grafIN">
+          <b>LUZ</b>
+        </div>
+        <label class="switch">
+            <h3> 21.569 <br> pessoas </h3>
+          
+        </label>
+      </div>
+    </div>
+
+    <div class="M">
+      <div class="box-grafico" id="div_graf">
+        <div class="box-grafINTERNO" id="div_grafIN">
+          <b>BUTANTÃ</b>
+        </div>
+        <label class="switch">
+            <h3> 15.569 <br> pessoas </h3>
+        </label>
+      </div>
+    </div>
+
+    <div class="D"> 
+      <div class="box-grafico" id="div_graf">
+        <div class="box-grafINTERNO" id="div_grafIN">
+          <b>PAULISTA</b>
+        </div>
+        <label class="switch">
+            <h3> 12.000 <br> pessoas </h3>
+        </label>
+      </div>  
+    </div>
+    </main>
+
+    <div class="legenda">
+        <div class="flecha">
+            <img src="../imagens/flecha_dash.png" alt="">
+        </div>
+        
+    </div>
+    <br>
+  </body>
+</html>
+
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script>
+   function clickMenu() {
+    var itensLaterais = document.getElementById('itens-laterais');
+    if (itensLaterais.style.display === 'block') {
+      itensLaterais.style.display = 'none';
+    } else {
+      itensLaterais.style.display = 'block';
+    }
+  }
+
+  function BL1() {
+    var BL1Element = document.getElementById('BL1');
+    var BG1Element = document.getElementById('BG1');
+    var div_mensagem = document.getElementById('div_mensagem');
+
+    if (BL1Element.checked && BG1Element.checked) {
+        div_mensagem.innerHTML = '<img style="height: auto; width: auto;" src="Luz_Dias.png">';
+    }
+}
+function BG1() {
+    var BL1Element = document.getElementById('BL1');
+    var BG1Element = document.getElementById('BG1');
+    var div_mensagem = document.getElementById('div_mensagem');
+
+    if (BL1Element.checked && BG1Element.checked) {
+        div_mensagem.innerHTML = '<img style="height: auto; width: auto;" src="Luz_Dias.png">';
+    }
+    else
+      div_mensagem.innerHTML = `` 
+}
+
+function BL1() {
+    var BL1Element = document.getElementById('BL1');
+    var BG2Element = document.getElementById('BG2');
+    var div_mensagem2= document.getElementById('div_mensagem2');
+
+    if (BL1Element.checked && BG2Element.checked) {
+        div_mensagem2.innerHTML = '<img style="height: auto; width: auto;" src="Luz_Fluxo.png">';
+    }
+}
+function BG2() {
+    var BL1Element = document.getElementById('BL1');
+    var BG2Element = document.getElementById('BG2');
+    var div_mensagem2= document.getElementById('div_mensagem2');
+
+    if (BL1Element.checked && BG2Element.checked) {
+        div_mensagem2.innerHTML = '<img style="height: auto; width: auto;" src="Luz_Fluxo.png">';
+    }
+    else
+      div_mensagem2.innerHTML = `` 
+}
+
+function BL1() {
+    var BL1Element = document.getElementById('BL1');
+    var BG3Element = document.getElementById('BG3');
+    var div_mensagem3 = document.getElementById('div_mensagem3');
+
+    if (BL1Element.checked && BG3Element.checked) {
+        div_mensagem3.innerHTML = '<img style="height: auto; width: auto;" src="Luz_Horarios.png">';
+    }
+}
+function BG3() {
+    var BL1Element = document.getElementById('BL1');
+    var BG3Element = document.getElementById('BG3');
+    var div_mensagem3 = document.getElementById('div_mensagem3');
+
+    if (BL1Element.checked && BG3Element.checked) {
+        div_mensagem3.innerHTML = '<img style="height: auto; width: auto;" src="Luz_Horarios.png">';
+    }
+    else
+      div_mensagem3.innerHTML = `` 
+}
+
+
+ </script>
