@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FlowTech | Login</title>
+    <title>FlowTech | Login </title>
 
     <link rel="stylesheet" href="style.css">
 </head>
@@ -23,7 +23,7 @@
         </div>
     </nav>
 
-    <div id="telaCadastro" class="telaCadastro"  style="display: none;">
+    <div id="telaCadastro" class="telaCadastro" style="display: none;">
             <div class="container">
                 <h1>Cadastro</h1>
 
@@ -98,7 +98,7 @@
                 <button onclick="autenticar()">Entrar</button>
 
                 <div class="links" id="esqueci_senha">
-                    <a href="#">Esqueci minha Senha</a>
+                    <a onclick="trocarSenha()">Esqueci minha Senha</a>
                     <span> | </span>
                     <a onclick="trocarCadastro()">Criar Conta</a>
                 </div>
@@ -112,14 +112,57 @@
         </div>
     </main>
 
+    <main id="telaSenha" class="telaSenha" style="display: none;">
+        <div class="container">
+            <div class="form">
+                <h2 class="titulo">Esqueci Minha Senha</h2>
+                
+                <input type="text" id="input_Remail" placeholder="Email">
+                <input type="password" id="input_Rcdg" placeholder="Código">
+
+                <input type="password" id="input_NovaSenha" class="NovaSenha" placeholder="Inserir Nova Senha" style="display: none;">
+
+                <div class="bts">
+                <button onclick="gerar()" class="cdg" id="bt_gerar">Gerar código</button>
+                <button onclick="redefinir()" id="bt_redefinir_senha">Redefinir Senha</button>
+                <button onclick="salvar()" id="bt_salvar_senha" style="display: none;">Salvar Senha</button>
+                </div>
+
+                
+
+
+                <div class="links" id="esqueci_senha">
+                    <a onclick="trocarLogin()">Voltar</a>
+                    <span> | </span>
+                    <a onclick="trocarCadastro()">Criar Conta</a>
+                </div>
+
+                <div class="links" id="termos">
+                    <a href="#">Política de Privacidade</a>
+                    <span> | </span>
+                    <a href="#">Termos de Serviço</a>
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+
+
 
 </body>
 
 </html>
 
 <script>
+    var codigo;
     var email_cad = input_email_cad.value;
     var senha_cad = input_senha_cad.value;
+
+    var email_red = input_Remail.value;
+    
+
+    var NovaSenha = input_NovaSenha.value;
 
     function cadastrar(){
         email_cad = input_email_cad.value;
@@ -131,12 +174,60 @@
     function trocarLogin(){
         telaCadastro.style.display = 'none'
         telaLogin.style.display = 'flex'
+        telaSenha.style.display = 'none'
     }
 
     function trocarCadastro(){
         telaCadastro.style.display = 'flex'
         telaLogin.style.display = 'none'
+        telaSenha.style.display = 'none'
     }
+
+    function trocarSenha(){
+        telaSenha.style.display = 'flex'
+        telaLogin.style.display = 'none'
+        telaCadastro.style.display = 'none'
+    }
+
+    function gerar(){
+        email_red = input_Remail.value;
+
+        if (email_red == ""){
+            alert("Preencha o email que terá a senha redefinida! \nPor meio dele enviaremos o código para redefinição!")
+        } else {
+            var min = 100;
+        var max = 999;
+        var intervalo = max - min;
+        aleatorio = Math.random() * (max - min) + min; // * intervalo + min;
+        aleatorio = aleatorio.toFixed(0);
+        alert(Number(aleatorio)); 
+        }
+        
+    }
+
+    function salvar (){
+        senha_cad = input_NovaSenha.value;
+
+        alert('Senha alterada com sucesso!')
+
+        trocarLogin();
+    }
+
+    function redefinir(){
+        var Rcdg = input_Rcdg.value;
+
+        if(Rcdg == aleatorio){
+            input_Rcdg.style.display = 'none';
+            input_Remail.style.display = 'none';
+            bt_gerar.style.display = 'none';
+            bt_redefinir_senha.style.display = 'none';
+
+
+            bt_salvar_senha.style.display = 'block';
+            input_NovaSenha.style.display = 'block';
+        }
+    }
+
 
     function autenticar(){
         var email_log = input_login.value;
