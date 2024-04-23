@@ -108,10 +108,10 @@ CONSTRAINT fkEstacaoSensor FOREIGN KEY (fkEstacao)
 );
 
 INSERT INTO sensor VALUES
-	(DEFAULT, 'esacada rolante 1', 'Sensor de bloqueio', 8),
-	(DEFAULT, 'Passarela', 'Sensor de bloqueio', 11),
-	(DEFAULT, 'Catraca de entrada', 'Sensor de bloqueio', 2),
-	(DEFAULT, 'esacada rolante 2', 'Sensor de bloqueio', 1);
+	(DEFAULT, 'Esacada Rolante 1', 'Sensor de Bloqueio', 8),
+	(DEFAULT, 'Passarela', 'Sensor de Bloqueio', 11),
+	(DEFAULT, 'Catraca de Entrada', 'Sensor de Bloqueio', 2),
+	(DEFAULT, 'Esacada rolante 2', 'Sensor de Bloqueio', 1);
 
 SELECT * FROM sensor;
 /*----------------------------------------------------------------------------------------------------------------------------------------*/
@@ -130,9 +130,9 @@ CONSTRAINT fkSensorDadoSensor FOREIGN KEY (fkSensor)
 );
 
 INSERT INTO dadoSensor VALUES
-	(DEFAULT, 1, DEFAULT, 2),
-	(DEFAULT, 0, '2024-04-14 06:00:00', 3),
-	(DEFAULT, 1, DEFAULT, 4);
+	(DEFAULT, 2, 1, DEFAULT),
+	(DEFAULT, 3, 0, '2024-04-14 06:00:00'),
+	(DEFAULT, 4, 1, DEFAULT);
 
 SELECT * FROM dadoSensor;
 /*----------------------------------------------------------------------------------------------------------------------------------------*/
@@ -161,8 +161,34 @@ SELECT usuario.nome AS Funcionário,
 			LEFT JOIN usuario AS supervisor ON usuario.fkAdmin = supervisor.idUsuario;
             
 -- Empresa e suas Linhas
-SELECT concat('A ', empresa.nome ' administra a linha: ') 
-		FROM empresa 
-			JOIN linha ON fkEmpresa = idEmpresa
+SELECT concat('A ', empresa.nome, ' administra a linha: ', linha.idLinha, ' - ', linha.nome) AS 'Proprietárias das Linhas'
+		FROM linha 
+			JOIN empresa ON fkEmpresa = idEmpresa;
+            
+-- Estações, suas Linhas e sua Empresa Proprietária
+SELECT concat('A ', estacao.nome, ' pertence à linha ', linha.idLinha, ' - ', linha.nome, ', que é administrada pela ', empresa.nome) AS Estações
+		FROM estacao 
+			JOIN linha ON fkLinha = idLinha
+			JOIN empresa ON fkEmpresa = idEmpresa;
+            
+-- Sensores insalados nas Estações
+SELECT  sensor.nomeLocal AS 'Local de Instalação',
+		sensor.tipoSensor AS 'Tipo de Sensor',
+        estacao.nome AS Estação,
+        concat(linha.idLinha, ' - ', linha.nome) AS Linha
+		FROM sensor
+			JOIN estacao ON fkEstacao = idEstacao
+            JOIN linha ON fkLinha = idLinha;
+            
+-- Dados dos Sensores Onde Houve Fluxo (contagem = 1)
+SELECT  dadoSensor.horario AS 'Data de Registro',
+		sensor.nomeLocal AS 'Local de Instalação',
+		sensor.tipoSensor AS 'Tipo de Sensor',
+        estacao.nome AS Estação,
+        concat(linha.idLinha, ' - ', linha.nome) AS Linha
+		FROM dadoSensor
+			JOIN sensor ON fkSensor = idSensor
+			JOIN estacao ON fkEstacao = idEstacao
+            JOIN linha ON fkLinha = idLinha
+            WHERE contagem = 1;
 	
- 
