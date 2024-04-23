@@ -295,3 +295,95 @@ a {
 .telaLogin .container {
     justify-content: center;
 }
+
+.telaSenha main .container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: fit-content;
+}
+
+.telaSenha .form, input, button {
+    border-radius: 10px;
+}
+
+.telaSenha .form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 30%;
+    height: 420px;
+    margin: 15vh 0;
+    padding: 10px 0;
+}
+
+.telaSenha input {
+    background-color: #cacaca;
+    border: none;
+    height: 200px;
+    width: 75%;
+    margin: 5px 0;
+    padding-left: 10px;
+    font-family: Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: bold;
+}
+
+.telaSenha input:focus {
+    outline: none;
+}
+
+.telaSenha button {
+    background-color: #1D314D;
+    color: #fff;
+    font-family: sans-serif;
+    font-weight: bold;
+    border: none;
+    height: 40px;
+    width: 65%;
+    margin: 30px 0 10px 0;
+
+}
+
+.telaSenha button:hover {
+    background-color: #144b97 ;
+    cursor: pointer;
+}
+
+.telaSenha .links {
+    display: flex;
+    justify-content: space-between;
+}
+
+.telaSenha #esqueci_senha {
+    width: 50%;
+}
+
+.telaSenha #termos {
+    width: 65%;
+    margin-top: 20%;
+}
+
+.telaSenha .links span, .links a {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 12px;
+}
+
+.telaSenha .container {
+    justify-content: center;
+}
+
+.telaSenha .bts {
+    display: flex;
+    justify-content: space-around;
+    width: 75%;
+}
+
+.telaSenha .cdg {
+    margin-right: 5%;
+}
+
+.telaSenha .NovaSenha{
+    height: 50px;
+}
