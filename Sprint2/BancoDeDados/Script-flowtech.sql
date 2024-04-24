@@ -166,7 +166,7 @@ SELECT concat('A ', empresa.nome, ' administra a linha: ', linha.idLinha, ' - ',
 			JOIN empresa ON fkEmpresa = idEmpresa;
             
 -- Estações, suas Linhas e sua Empresa Proprietária
-SELECT concat('A ', estacao.nome, ' pertence à linha ', linha.idLinha, ' - ', linha.nome, ', que é administrada pela ', empresa.nome) AS Estações
+SELECT concat('A estação ', estacao.nome, ' pertence à linha ', linha.idLinha, ' - ', linha.nome, ', que é administrada pela ', empresa.nome) AS Estações
 		FROM estacao 
 			JOIN linha ON fkLinha = idLinha
 			JOIN empresa ON fkEmpresa = idEmpresa;
@@ -181,11 +181,12 @@ SELECT  sensor.nomeLocal AS 'Local de Instalação',
             JOIN linha ON fkLinha = idLinha;
             
 -- Dados dos Sensores Onde Houve Fluxo (contagem = 1)
-SELECT  dadoSensor.horario AS 'Data de Registro',
-		sensor.nomeLocal AS 'Local de Instalação',
+SELECT  sensor.nomeLocal AS 'Local de Instalação',
 		sensor.tipoSensor AS 'Tipo de Sensor',
         estacao.nome AS Estação,
-        concat(linha.idLinha, ' - ', linha.nome) AS Linha
+        concat(linha.idLinha, ' - ', linha.nome) AS Linha,
+        date_format(dadoSensor.horario, '%d/%m/%Y') AS 'Data de Registro',
+		date_format(dadoSensor.horario, '%H:%i:%s') AS 'Horário de Registro'
 		FROM dadoSensor
 			JOIN sensor ON fkSensor = idSensor
 			JOIN estacao ON fkEstacao = idEstacao
