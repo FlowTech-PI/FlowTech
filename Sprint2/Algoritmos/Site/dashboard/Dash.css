@@ -143,8 +143,11 @@ body {
 
 /* Editando o Container onde estão os Botões para exibir os dos graficos */
 
-.container_switch{
-    width: 50%;
+.container_dados{
+    display: flex;
+}
+.params {
+  width: 50%;
     height: 155px;
     margin: 0 0 0 28%;
 
@@ -200,7 +203,7 @@ body {
     border-radius: 10px 10px 0px 0px;
   }
   
-  /* Definindo o design das CheckBox */ 
+  /* Definindo o design do interior dos box */ 
 
   .switch {
     display: flex;
@@ -221,23 +224,19 @@ body {
     cursor: pointer;
   }
 
-  /* Editando o posicionamnedo dos graficos (IMAGENS) no site */
-
-  .Box_ExibirGrafs{
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
-    flex-direction: row;
-    width: auto;
-    height: auto;
-  }
-  
-  /* Editando o tamanho de exibição das imagens. */
-
-  .imagem {
-    max-width: 100px;
-    height: auto;
-  }
+  .container_dados select{
+    background-color: #1D314D;
+    margin-left: 5%;
+    height: 55px;
+    border-radius: 6px;
+    color: #FFFFFF;
+    font-family: roboto;
+    padding: 5px;
+    font-weight: lighter;
+    text-align: center;
+    font-size: 15px;
+    border: 2px solid #000;
+}
 
 
   h6.subtitle2 {
@@ -252,8 +251,99 @@ body {
     margin-top: 0px;
   }
 
+  .flecha{
+    position: relative;
+    top: -30px;
+    z-index: 1;
+    margin-left: 130px;
+  }
+  .legenda{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    top: 150px;
+    margin-left: 6%;
+    
+  }
+
+  .legenda .quadrados{
+    display: flex;
+    justify-content: center;
+    z-index: 2;
+  }
+
+  .legenda .quadrados p{
+    margin-top: 0;
+    margin-right: 10px;
+  }
+
+  .legenda .quadrado1{
+    height: 15px;
+    width: 15px;
+    background-color: #FF3131;
+    border: 2px solid #000;
+    margin-top: 4px;
+  }
+
+  .legenda .quadrado2{
+    height: 15px;
+    width: 15px;
+    background-color: #FF914D;
+    border: 2px solid #000;
+    margin-top: 4px;
+  }
+
+  .legenda .quadrado3{
+    height: 15px;
+    width: 15px;
+    background-color: #FFDE59;
+    border: 2px solid #000;
+    margin-top: 4px;
+  }
+
+  .legenda .quadrado4{
+    height: 15px;
+    width: 15px;
+    background-color: #C2E806;
+    border: 2px solid #000;
+    margin-top: 4px;
+  }
+
+  .legenda .quadrado5{
+    height: 15px;
+    width: 15px;
+    background-color: #4EE888;
+    border: 2px solid #000;
+    margin-top: 4px;
+  }
+
+  .legenda .quadrado6{
+    height: 15px;
+    width: 15px;
+    background-color: #41BB4D;
+    border: 2px solid #000;
+    margin-top: 4px;
+  }
+
+  .ver_mais{
+    background-color: #1D314D;
+    border-radius: 18px;
+    color: #FFFFFF;
+    font-family: roboto;
+    position: relative;
+    left: 22%;
+    height: 40px;
+    width: 130px;
+    font-size: 17px;
+  }
   @font-face {
     font-family: league-spartan;
     src: url(../fontes/league-spartan/LeagueSpartan-Bold.otf);
+    
+  }
+
+  @font-face {
+    font-family: roboto;
+    src: url(../fontes/Roboto-Regular.ttf);
     
   }
