@@ -74,6 +74,7 @@
 </html>
 
 <script>
+  var podeSalvar = false;
   function alterar(){
     var nome = nomeCompleto.value;
     var dtNasc = nascimento.value;
@@ -82,18 +83,22 @@
     var tel = telefone.value;
     var contem_arroba = e_mail.indexOf('@');
     var contem_ponto = e_mail.indexOf('.');
-    
-    if(contem_arroba < 0 || contem_ponto < 0){
-      alert("Email inválido. Verifique se contém '@' e '.'")
-    }
     if(nome == `` || dtNasc == `` || c_p_f == `` || e_mail == `` || tel == ``){
       alert("Todos os campos precisam estar preenchidos!")
+      //return: finaliza a execução da função que está sendo executada 
+      return 
+    } else if((c_p_f.length != 11) || (contem_arroba < 0 || contem_ponto < 0)){
+      alert("Algum campo não está inserido corretamente! \nVerifique: \nSe o CPF possui 11 dígitos \nSe o email possui '@' e '.'")
+      return
     } else {
-      alert("Confirme seus dados antes de salvar!");
+      alert("Confirme seus dados antes de salvar!")
+      podeSalvar = true;
     }
   }
   function salvar(){
-    
+    if(podeSalvar == true){
+      alert("Dados salvos com sucesso!")  
+    }
   }
   function clickMenu() {
     if (hamburguer.style.display == "block") {
