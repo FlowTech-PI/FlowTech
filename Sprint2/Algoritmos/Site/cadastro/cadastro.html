@@ -195,12 +195,18 @@
         if (email_red == ""){
             alert("Preencha o email que terá a senha redefinida! \nPor meio dele enviaremos o código para redefinição!")
         } else {
-            var min = 100;
-        var max = 999;
-        var intervalo = max - min;
-        aleatorio = Math.random() * (max - min) + min; // * intervalo + min;
-        aleatorio = aleatorio.toFixed(0);
-        alert(Number(aleatorio)); 
+        
+        var codigo_recuperar_senha = ''
+
+        for (var cont = 1; cont <= 6; cont++) {
+            aleatorio = Math.random() * (10) + 0.5;
+            aleatorio = aleatorio.toFixed(0)
+            aleatorio = aleatorio - 1;
+            aleatorio = aleatorio.toString()
+            if (cont != 4) codigo_recuperar_senha += aleatorio;
+            else codigo_recuperar_senha += '-' + aleatorio;
+        }
+        alert(`O seu código de acesso para redefinir a senha é: ${codigo_recuperar_senha}`); 
         }
         
     }
