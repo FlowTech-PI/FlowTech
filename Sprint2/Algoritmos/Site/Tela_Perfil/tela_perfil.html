@@ -24,11 +24,9 @@
       <div class="filho_hamburguer">
         <div id="hamburguer">
           <ul class="listaItens">
-            <li>&#127968; Home</li>
-            <li>⚙️Configurações</li>
             <li>🖥Calculadora Financeira</li>
-            <li>📞Contato</li>
             <li>🗺️Mapa de calor</li>
+            <li>📊Gráficos</li>
             <li>Sair</li>
           </ul>
         </div>
@@ -65,8 +63,8 @@
               </div>
             </div>
               <div class="botoes">
-                <button>Alterar Dados</button>
-                <button>Salvar</button>
+                <button onclick="alterar()">Alterar Dados</button>
+                <button onclick="salvar()">Salvar</button>
               </div>
           </div>
         </div>
@@ -76,6 +74,27 @@
 </html>
 
 <script>
+  function alterar(){
+    var nome = nomeCompleto.value;
+    var dtNasc = nascimento.value;
+    var c_p_f = cpf.value; 
+    var e_mail = email.value; 
+    var tel = telefone.value;
+    var contem_arroba = e_mail.indexOf('@');
+    var contem_ponto = e_mail.indexOf('.');
+    
+    if(contem_arroba < 0 || contem_ponto < 0){
+      alert("Email inválido. Verifique se contém '@' e '.'")
+    }
+    if(nome == `` || dtNasc == `` || c_p_f == `` || e_mail == `` || tel == ``){
+      alert("Todos os campos precisam estar preenchidos!")
+    } else {
+      alert("Confirme seus dados antes de salvar!");
+    }
+  }
+  function salvar(){
+    
+  }
   function clickMenu() {
     if (hamburguer.style.display == "block") {
       hamburguer.style.display = "none";
