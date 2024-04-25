@@ -203,3 +203,10 @@ SELECT  sensor.nomeLocal AS 'Local de Instalação',
             JOIN linha ON fkLinha = idLinha
             WHERE contagem = 1;
 	
+/* Soma a quantidade de pessoas de cada sensor */
+CREATE VIEW DadoSensor1 AS (SELECT COUNT(contagem) AS 'Número de pessoas do sensor 1' FROM dadoSensor);
+SELECT * FROM DadoSensor1;
+CREATE VIEW DadoSensor2 AS (SELECT COUNT(contagem) * 4 AS 'Número de pessoas do sensor 2' FROM dadoSensor);
+SELECT * FROM DadoSensor2;
+CREATE VIEW DadoSensor3 AS (SELECT COUNT(contagem) * 3 AS 'Número de pessoas do sensor 3' FROM dadoSensor);
+SELECT * FROM DadoSensor3;	
