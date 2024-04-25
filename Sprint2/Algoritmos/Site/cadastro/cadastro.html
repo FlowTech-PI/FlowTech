@@ -64,19 +64,17 @@
                             <option value="Gerente">Gerente</option>
                             <option value="Funcionário">Funcionário</option>
                         </select>
-                
-                        <label for="codigodeacesso"></label>
-                        <input placeholder="Código de Acesso:" type="password" id="codigodeacesso" name="codigodeacesso" class="bloco2" required>
+                        
                     </div>
-                </div> 
+                </div>
             </div>
 
-            <center>
-                <div class="buttons"> 
-                    <button class="enviar" onclick="cadastrar()">Cadastrar</button>
-                    <button class="codigo" onclick="codigo()">Solicitar Cód. Acesso</button>
-                </div> 
-            </center>
+
+            <div class="buttons"> 
+                <button class="enviar" onclick="cadastrar()">Cadastrar</button>
+                
+            </div> 
+
 
             <div class="links">
                 <a onclick="trocarLogin()">Já tenho Conta</a>
@@ -221,7 +219,7 @@
         telaCadastro.style.display = 'none'
     }
 
-    var codigo_recuperar_senha
+    var codigo_recuperar_senha = ''
 
     function gerar(){
         email_red = input_Remail.value;
@@ -230,7 +228,7 @@
             alert("Preencha o email que terá a senha redefinida! \nPor meio dele enviaremos o código para redefinição!")
         } else {
         
-        codigo_recuperar_senha = ''
+        codigo_recuperar_senha = '';
 
         for (var cont = 1; cont <= 6; cont++) {
             aleatorio = Math.random() * (10) + 0.5;
