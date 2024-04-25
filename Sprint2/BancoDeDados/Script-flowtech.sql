@@ -132,8 +132,18 @@ CONSTRAINT fkSensorDadoSensor FOREIGN KEY (fkSensor)
 INSERT INTO dadoSensor VALUES
 	(DEFAULT, 2, 1, DEFAULT),
 	(DEFAULT, 3, 0, '2024-04-14 06:00:00'),
-	(DEFAULT, 4, 1, DEFAULT);
-
+	(DEFAULT, 4, 1, DEFAULT),
+    (DEFAULT, 1, 1, DEFAULT),
+	(DEFAULT, 3, 0, DEFAULT),
+    (DEFAULT, 2, 1, DEFAULT),
+    (DEFAULT, 4, 1, DEFAULT),
+    (DEFAULT, 3, 0, DEFAULT),
+    (DEFAULT, 4, 0, DEFAULT),
+    (DEFAULT, 1, 0, DEFAULT),
+    (DEFAULT, 2, 1, DEFAULT),
+    (DEFAULT, 2, 1, DEFAULT),
+    (DEFAULT, 3, 1, DEFAULT);
+    
 SELECT * FROM dadoSensor;
 /*----------------------------------------------------------------------------------------------------------------------------------------*/
  
