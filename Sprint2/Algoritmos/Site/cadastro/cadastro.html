@@ -71,10 +71,12 @@
                 </div> 
             </div>
 
-            <div class="buttons"> 
-                <button class="enviar" onclick="cadastrar()">Cadastrar</button>
-                <button class="codigo" onclick="codigo()">Solicitar Cód. Acesso</button>
-            </div> 
+            <center>
+                <div class="buttons"> 
+                    <button class="enviar" onclick="cadastrar()">Cadastrar</button>
+                    <button class="codigo" onclick="codigo()">Solicitar Cód. Acesso</button>
+                </div> 
+            </center>
 
             <div class="links">
                 <a onclick="trocarLogin()">Já tenho Conta</a>
@@ -95,7 +97,7 @@
                 <input type="text" id="input_login" placeholder="Login">
                 <input type="password" id="input_senha" placeholder="Senha">
 
-                <button onclick="autenticar()">Entrar</button>
+                <button onclick="autenticar()" class="enviaron">Entrar</button>
 
                 <div class="links" id="esqueci_senha">
                     <a onclick="trocarSenha()">Esqueci minha Senha</a>
