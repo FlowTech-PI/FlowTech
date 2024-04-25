@@ -226,7 +226,7 @@
         telaCadastro.style.display = 'none'
     }
 
-    var codigo_recuperar_senha = ''
+    var codigo_recuperar_senha
 
     function gerar(){
         email_red = input_Remail.value;
@@ -278,7 +278,7 @@
         var senha_log = input_senha.value;
 
         if (email_log == email_cad && senha_log == senha_cad){
-            window.location.href = "../../Site/dashboard/dashboard.html";
+            window.location.href = "../../Site/graficos/tela_Dash.html";
         } else {
             alert ('Senha ou email incorreto')
         }
