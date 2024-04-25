@@ -130,19 +130,19 @@ CONSTRAINT fkSensorDadoSensor FOREIGN KEY (fkSensor)
 );
 
 INSERT INTO dadoSensor VALUES
-	(DEFAULT, 2, 1, DEFAULT),
-	(DEFAULT, 3, 0, '2024-04-14 06:00:00'),
-	(DEFAULT, 4, 1, DEFAULT),
+	(DEFAULT, 1, 1, DEFAULT),
+	(DEFAULT, 1, 0, '2024-04-14 06:00:00'),
+	(DEFAULT, 1, 1, DEFAULT),
     (DEFAULT, 1, 1, DEFAULT),
-	(DEFAULT, 3, 0, DEFAULT),
-    (DEFAULT, 2, 1, DEFAULT),
-    (DEFAULT, 4, 1, DEFAULT),
-    (DEFAULT, 3, 0, DEFAULT),
-    (DEFAULT, 4, 0, DEFAULT),
+	(DEFAULT, 1, 0, DEFAULT),
+    (DEFAULT, 1, 1, DEFAULT),
+    (DEFAULT, 1, 1, DEFAULT),
     (DEFAULT, 1, 0, DEFAULT),
-    (DEFAULT, 2, 1, DEFAULT),
-    (DEFAULT, 2, 1, DEFAULT),
-    (DEFAULT, 3, 1, DEFAULT);
+    (DEFAULT, 1, 0, DEFAULT),
+    (DEFAULT, 1, 0, DEFAULT),
+    (DEFAULT, 1, 1, DEFAULT),
+    (DEFAULT, 1, 1, DEFAULT),
+    (DEFAULT, 1, 1, DEFAULT);
     
 SELECT * FROM dadoSensor;
 /*----------------------------------------------------------------------------------------------------------------------------------------*/
@@ -150,48 +150,52 @@ SELECT * FROM dadoSensor;
 /*-------------------------------------------------------SELECTS COM JOINS ---------------------------------------------------------------*/
  
  -- Empresa e seus Funcionários
- 
- SELECT empresa.nome AS Empresa,
+CREATE VIEW viewFuncEmpresa AS ( 
+	SELECT empresa.nome AS Empresa,
         empresa.email AS 'Email - Empresa',
 		usuario.nome AS Funcionário,
 		usuario.email AS 'Email - Funcionário',
 		usuario.funcao AS Função
         FROM empresa
-			JOIN usuario ON idEmpresa = fkEmpresa;
+			JOIN usuario ON idEmpresa = fkEmpresa);
             
 -- Funcionários e seus Supervisores
-            
-SELECT usuario.nome AS Funcionário,
+CREATE VIEW viewFuncSupervisor AS (
+	SELECT usuario.nome AS Funcionário,
 		usuario.email AS 'Email - Funcionário',
 		usuario.funcao AS Função,
         ifnull(supervisor.nome, 'Usuário sem Supervisor') AS Supervisor,
         ifnull(supervisor.email, 'Usuário sem Supervisor') AS 'Email - Supervisor',
         ifnull(supervisor.funcao, 'Usuário sem Supervisor') AS 'Função - Supervisor'
 		FROM usuario
-			LEFT JOIN usuario AS supervisor ON usuario.fkAdmin = supervisor.idUsuario;
+			LEFT JOIN usuario AS supervisor ON usuario.fkAdmin = supervisor.idUsuario);
             
 -- Empresa e suas Linhas
-SELECT concat('A ', empresa.nome, ' administra a linha: ', linha.idLinha, ' - ', linha.nome) AS 'Proprietárias das Linhas'
+CREATE VIEW viewEmpresaLinha AS (
+	SELECT concat('A ', empresa.nome, ' administra a linha: ', linha.idLinha, ' - ', linha.nome) AS 'Proprietárias das Linhas'
 		FROM linha 
-			JOIN empresa ON fkEmpresa = idEmpresa;
+			JOIN empresa ON fkEmpresa = idEmpresa);
             
 -- Estações, suas Linhas e sua Empresa Proprietária
-SELECT concat('A estação ', estacao.nome, ' pertence à linha ', linha.idLinha, ' - ', linha.nome, ', que é administrada pela ', empresa.nome) AS Estações
+CREATE VIEW viewEstacaoLinha AS (
+	SELECT concat('A estação ', estacao.nome, ' pertence à linha ', linha.idLinha, ' - ', linha.nome, ', que é administrada pela ', empresa.nome) AS Estações
 		FROM estacao 
 			JOIN linha ON fkLinha = idLinha
-			JOIN empresa ON fkEmpresa = idEmpresa;
+			JOIN empresa ON fkEmpresa = idEmpresa);
             
 -- Sensores insalados nas Estações
-SELECT  sensor.nomeLocal AS 'Local de Instalação',
+CREATE VIEW viewSensorEstacao AS (
+	SELECT  sensor.nomeLocal AS 'Local de Instalação',
 		sensor.tipoSensor AS 'Tipo de Sensor',
         estacao.nome AS Estação,
         concat(linha.idLinha, ' - ', linha.nome) AS Linha
 		FROM sensor
 			JOIN estacao ON fkEstacao = idEstacao
-            JOIN linha ON fkLinha = idLinha;
+            JOIN linha ON fkLinha = idLinha);
             
 -- Dados dos Sensores Onde Houve Fluxo (contagem = 1)
-SELECT  sensor.nomeLocal AS 'Local de Instalação',
+CREATE VIEW dadoSensor1 AS (
+	SELECT  sensor.nomeLocal AS 'Local de Instalação',
 		sensor.tipoSensor AS 'Tipo de Sensor',
         estacao.nome AS Estação,
         concat(linha.idLinha, ' - ', linha.nome) AS Linha,
@@ -201,12 +205,39 @@ SELECT  sensor.nomeLocal AS 'Local de Instalação',
 			JOIN sensor ON fkSensor = idSensor
 			JOIN estacao ON fkEstacao = idEstacao
             JOIN linha ON fkLinha = idLinha
-            WHERE contagem = 1;
+            WHERE contagem = 1);
 	
 /* Soma a quantidade de pessoas de cada sensor */
-CREATE VIEW DadoSensor1 AS (SELECT COUNT(contagem) AS 'Número de pessoas do sensor 1' FROM dadoSensor);
-SELECT * FROM DadoSensor1;
-CREATE VIEW DadoSensor2 AS (SELECT COUNT(contagem) * 4 AS 'Número de pessoas do sensor 2' FROM dadoSensor);
-SELECT * FROM DadoSensor2;
-CREATE VIEW DadoSensor3 AS (SELECT COUNT(contagem) * 3 AS 'Número de pessoas do sensor 3' FROM dadoSensor);
-SELECT * FROM DadoSensor3;	
+CREATE VIEW FluxoSensor1 AS (SELECT COUNT(contagem) AS 'Fluxo de Pessoas do Sensor 1' FROM dadoSensor);
+CREATE VIEW FluxoSensor2 AS (SELECT COUNT(contagem) * 1.8 AS 'Fluxo de Pessoas do Sensor 2' FROM dadoSensor);
+CREATE VIEW FluxoSensor3 AS (SELECT COUNT(contagem) * 1.3 AS 'Fluxo de Pessoas do Sensor 3' FROM dadoSensor);	
+
+-- VIEWS
+
+-- EMPRESAS E SEUS FUNCIONÁRIOS
+SELECT * FROM viewFuncEmpresa;
+
+-- FUNCIONÁRIOS E SEUS SUPERVISORES
+SELECT * FROM viewFuncSupervisor;
+
+-- EMPRESAS E SUAS LINHAS
+SELECT * FROM viewEmpresaLinha;
+
+-- ESTAÇÕES E SUAS LINHAS
+SELECT * FROM viewEstacaoLinha;
+
+-- SENSORES E SUAS ESTAÇÕES
+SELECT * FROM viewSensorEstacao;
+
+-- DADOS DO SENSOR 1
+SELECT * FROM dadoSensor1;
+
+-- FLUXO DE PESSAOS DO SENSOR 1
+SELECT * FROM FluxoSensor1;
+
+-- FLUXO DE PESSAOS DO SENSOR 2
+SELECT * FROM FluxoSensor2;
+
+-- FLUXO DE PESSAOS DO SENSOR 3
+SELECT * FROM FluxoSensor3;
+
