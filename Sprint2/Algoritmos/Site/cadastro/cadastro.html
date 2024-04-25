@@ -221,6 +221,8 @@
         telaCadastro.style.display = 'none'
     }
 
+    var codigo_recuperar_senha = ''
+
     function gerar(){
         email_red = input_Remail.value;
 
@@ -228,15 +230,14 @@
             alert("Preencha o email que terá a senha redefinida! \nPor meio dele enviaremos o código para redefinição!")
         } else {
         
-        var codigo_recuperar_senha = ''
+        codigo_recuperar_senha = ''
 
         for (var cont = 1; cont <= 6; cont++) {
             aleatorio = Math.random() * (10) + 0.5;
             aleatorio = aleatorio.toFixed(0)
             aleatorio = aleatorio - 1;
             aleatorio = aleatorio.toString()
-            if (cont != 4) codigo_recuperar_senha += aleatorio;
-            else codigo_recuperar_senha += '-' + aleatorio;
+            codigo_recuperar_senha += aleatorio;
         }
         alert(`O seu código de acesso para redefinir a senha é: ${codigo_recuperar_senha}`); 
         }
@@ -254,7 +255,7 @@
     function redefinir(){
         var Rcdg = input_Rcdg.value;
 
-        if(Rcdg == aleatorio){
+        if(Rcdg == codigo_recuperar_senha){
             input_Rcdg.style.display = 'none';
             input_Remail.style.display = 'none';
             bt_gerar.style.display = 'none';
