@@ -196,9 +196,9 @@ a {
     background-color: #1D314D;
     color: white;
     border: none;
-    margin-left: 150px;
-    margin: 10px;
+    margin-left: 235px;
     border-radius: 10px;
+    margin-bottom: 10px;
 }
 
 .telaCadastro .enviar:hover {
@@ -285,7 +285,7 @@ a {
 
 .telaCadastro .caixa {
     height: 40px;
-    width: 20%;
+    width: 60%;
 }
 
 .telaCadastro .links a {
@@ -386,4 +386,13 @@ a {
 
 .telaSenha .NovaSenha{
     height: 50px;
+}
+
+
+.divcaixatexto{
+    width: 50%;
+}
+
+.divcaixatexto2{
+    width: 50%;
 }
