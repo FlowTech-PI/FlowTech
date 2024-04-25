@@ -211,6 +211,7 @@ body {
     color: #FFFFFF;
     width: 150px;
     height: 50px;
+    cursor: pointer;
   }
 
   .salvar{
@@ -221,6 +222,7 @@ body {
     color: #FFFFFF;
     width: 150px;
     height: 50px;
+    cursor: pointer;
   }
 
   .separacaoBotao{
