@@ -8,7 +8,7 @@
       href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="./style.css" />
+    <link rel="stylesheet" href="./perfil.css" />
   </head>
   <body>
     <div class="container">
@@ -24,10 +24,9 @@
       <div class="filho_hamburguer">
         <div id="hamburguer">
           <ul class="listaItens">
-            <li>🖥Calculadora Financeira</li>
-            <li>🗺️Mapa de calor</li>
-            <li>📊Gráficos</li>
-            <li>Sair</li>
+            <li> <a href="../Simulador_Financeiro/simulador.html">🖥Calculadora Financeira</a></li>
+            <li> <a href="../dashboard/dashboard.html">📊Gráficos</a></li>
+            <li> <a href="../login/login.html">Sair</a></li>
           </ul>
         </div>
       </div>
@@ -63,8 +62,8 @@
               </div>
             </div>
               <div class="botoes">
-                <button onclick="alterar()">Alterar Dados</button>
-                <button onclick="salvar()">Salvar</button>
+                <button class="alterar" onclick="alterar()">Alterar Dados</button>
+                <button class="salvar" onclick="salvar()">Salvar</button>
               </div>
           </div>
         </div>
@@ -74,6 +73,7 @@
 </html>
 
 <script>
+  var podeSalvar = false;
   function alterar(){
     var nome = nomeCompleto.value;
     var dtNasc = nascimento.value;
@@ -82,18 +82,22 @@
     var tel = telefone.value;
     var contem_arroba = e_mail.indexOf('@');
     var contem_ponto = e_mail.indexOf('.');
-    
-    if(contem_arroba < 0 || contem_ponto < 0){
-      alert("Email inválido. Verifique se contém '@' e '.'")
-    }
     if(nome == `` || dtNasc == `` || c_p_f == `` || e_mail == `` || tel == ``){
       alert("Todos os campos precisam estar preenchidos!")
+      //return: finaliza a execução da função que está sendo executada 
+      return 
+    } else if((c_p_f.length != 11) || (contem_arroba < 0 || contem_ponto < 0)){
+      alert("Algum campo não está inserido corretamente! \nVerifique: \nSe o CPF possui 11 dígitos \nSe o email possui '@' e '.'")
+      return
     } else {
-      alert("Confirme seus dados antes de salvar!");
+      alert("Confirme seus dados antes de salvar!")
+      podeSalvar = true;
     }
   }
   function salvar(){
-    
+    if(podeSalvar == true){
+      alert("Dados salvos com sucesso!")  
+    }
   }
   function clickMenu() {
     if (hamburguer.style.display == "block") {
