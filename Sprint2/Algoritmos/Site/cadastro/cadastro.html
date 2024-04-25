@@ -168,8 +168,12 @@
     var NovaSenha = input_NovaSenha.value;
 
     function cadastrar(){
+        nome_cad = input_nome.value;
+        cpf_cad = input_cpf.value;
         email_cad = input_email_cad.value;
         senha_cad = input_senha_cad.value;
+        nascimento_cad = input_nascimento.value;
+        telefone_cad = input_telefone.value;
 
         if (
       email_cad == "" ||
@@ -182,7 +186,7 @@
 
     ) {
       alert("Preencha todos os campos!")
-      
+      return 
 
     } else if(
          nome_cad.length  <= 1) {
@@ -194,8 +198,9 @@
      } else if (
         cpf_cad.length != 11 ){
             alert("O cpf esta inválido")
-     }
+     } 
 
+     return false
           
 
 
@@ -273,7 +278,7 @@
         var senha_log = input_senha.value;
 
         if (email_log == email_cad && senha_log == senha_cad){
-            window.location.href = "../../Site/graficos/tela_Dash.html";
+            window.location.href = "../../Site/dashboard/dashboard.html";
         } else {
             alert ('Senha ou email incorreto')
         }
