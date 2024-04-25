@@ -155,19 +155,22 @@
 </html>
 
 <script>
-    var codigo;
-    var email_cad = input_email_cad.value;
-    var cpf_cad = input_cpf.value;
-    var senha_cad = input_senha_cad.value;
-    var nome_cad = input_nome.value;
-    var nascimento_cad = input_nascimento.value;
-    var telefone_cad = input_telefone.value;
-    var email_red = input_Remail.value;
+    // Variáveis declaradas como globais para uso em diferentes funções. Todos começam nulo;
+    var codigo; // Ainda não utilizado, código de acesso no cadastro;
+    var email_cad = input_email_cad.value; // Email inserido no cadastro;
+    var cpf_cad = input_cpf.value; // CPF inserido no cadastro;
+    var senha_cad = input_senha_cad.value; // Senha inserido no cadastro;
+    var nome_cad = input_nome.value; // Nome inserido no cadastro;
+    var nascimento_cad = input_nascimento.value; // Data nascimento inserido no cadastro;
+    var telefone_cad = input_telefone.value; // Telefone inserido no cadastro;
     
+    var email_red = input_Remail.value; // Email para redefinir senha;
+    var NovaSenha = input_NovaSenha.value; // Senha redefinida;
+    var codigo_recuperar_senha = '' // Código gerado aleatóriamente para redefinir senha;
 
-    var NovaSenha = input_NovaSenha.value;
-
+    // Ao clicar em "Cadastrar";
     function cadastrar(){
+        // Obtendo dados inseridos nas inputs;
         nome_cad = input_nome.value;
         cpf_cad = input_cpf.value;
         email_cad = input_email_cad.value;
@@ -175,65 +178,54 @@
         nascimento_cad = input_nascimento.value;
         telefone_cad = input_telefone.value;
 
-        if (
-      email_cad == "" ||
-      senha_cad == "" ||
-      nome_cad == "" ||
-      cpf_cad == "" ||
-      nascimento_cad == "" ||
-      telefone_cad == ""
-      
-
-    ) {
-      alert("Preencha todos os campos!") 
-
-    } else if(
-         nome_cad.length  <= 1) {
-            alert("O nome precisa de dois ou mais caracteres")
-
-     } else if(
-        email_cad.indexOf("@") == -1 && email_cad.indexOf(".")) {
-            alert("O email esta inválido")
-     } else if (
-        cpf_cad.length != 11 ){
-            alert("O cpf esta inválido")
-     } else trocarLogin();
-     
+    // Validações das entradas;
+    if (email_cad == "" || senha_cad == "" || nome_cad == "" ||
+        cpf_cad == "" || nascimento_cad == "" || telefone_cad == "") alert("Preencha todos os campos!") 
+    else if (nome_cad.length  <= 1) alert("O nome precisa de dois ou mais caracteres")
+    else if(email_cad.indexOf("@") == -1 && email_cad.indexOf(".")) alert("O email esta inválido")
+    else if (cpf_cad.length != 11 ) alert("O cpf esta inválido")
+    else trocarLogin();
     }
 
+    // Alterar a tela para a de login, mantendo na mesma página HTML;
     function trocarLogin(){
         telaCadastro.style.display = 'none'
         telaLogin.style.display = 'flex'
         telaSenha.style.display = 'none'
     }
 
+    // Alterar a tela para a de cadastro, mantendo na mesma página HTML;
     function trocarCadastro(){
         telaCadastro.style.display = 'flex'
         telaLogin.style.display = 'none'
         telaSenha.style.display = 'none'
     }
 
+    // Alterar a tela para a de esqueceu a senha, mantendo na mesma página HTML;
     function trocarSenha(){
         telaSenha.style.display = 'flex'
         telaLogin.style.display = 'none'
         telaCadastro.style.display = 'none'
     }
 
-    var codigo_recuperar_senha = ''
 
     function gerar(){
+    // Recebendo a entrada de email;
         email_red = input_Remail.value;
 
+    // Validando a entrada de email;
         if (email_red == ""){
             alert("Preencha o email que terá a senha redefinida! \nPor meio dele enviaremos o código para redefinição!")
         } else {
-        
+
+    // Resetando o valor do código final;
         codigo_recuperar_senha = '';
 
+    // Estrutura de repetoção para gerar 6 dígitos aleatórios;
         for (var cont = 1; cont <= 6; cont++) {
-            aleatorio = Math.random() * (10) + 0.5;
-            aleatorio = aleatorio.toFixed(0)
-            aleatorio = aleatorio - 1;
+            aleatorio = Math.random() * (10) + 0.5; // Gera um número de 0.5 até 10.5;
+            aleatorio = aleatorio.toFixed(0) // Fixa ele entre 1 e 10 (0.5 arredonda para 1, 10.5 arredonda para 10);
+            aleatorio = aleatorio - 1; // Mudando para número de 0 à 9;
             aleatorio = aleatorio.toString()
             codigo_recuperar_senha += aleatorio;
         }
