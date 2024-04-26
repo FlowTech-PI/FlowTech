@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FlowTech | DashBoard</title>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+    <link rel="stylesheet" href="Dash.css">
+  </head>
+
+
+  <body>
+    <div class="container">
+      <span id="menuH" class="material-symbols-outlined" onclick="clickMenu()">menu</span>
+      <h1 class="titulo">FlowTech</h1>
+      <ul class="itensNaveBar">
+        <li> <a href="../../Site/index/index.html">Início</a></li>
+        <li>|</li>
+        <li> <a href="../../Site/index/index.html#sobnos">Sobre nós</a></li>
+        <li>|</li>
+        <li> <a href="../../Site/index/index.html#contato">Contato</a></li>
+      </ul>
+    </div>
+
+    <div class="tela" style="display: flex;">
+        <div id="itens-laterais">
+              <div>
+                <ul class="listaItens">
+                    <div id="fp" class="fotoPerfil">
+                      <a href="../Tela_Perfil/tela_perfil.html"><img src="../graficos/perfil.png" alt="foto de perfil"></a>
+                    </div>
+                  <li>🖥Calculadora Financeira</li>
+                  <li> DeshBoard</li>
+                  <li> Gráficos </li>
+                  <li>🗺️Mapa de calor</li>
+                  <li>Sair</li>
+                </ul>
+              </div>
+        </div>
+
+
+        <div class="box-title">
+            <h2 class="title2"> HeatMap
+                <h6 class="subtitle2">FLOWTECH</h6>   
+            </h2>
+        </div>
+        
+        <div class="heatmap">
+          
+        </div>
+    </div>
+    
+    
+    
+  </body>
+</html>
+
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script>
+   function clickMenu() {
+    var itensLaterais = document.getElementById('itens-laterais');
+    if (itensLaterais.style.display === 'block') {
+      itensLaterais.style.display = 'none';
+    } else {
+      itensLaterais.style.display = 'block';
+    }
+  }
+
+  function atualizar() {
+    var freq = select_freq.value;
+
+    if (freq == "dia"){
+        valor_box_e.innerHTML = '21.569 <br> pessoas';
+        valor_box_m.innerHTML = '15.569 <br> pessoas';
+        valor_box_d.innerHTML = '12.000 <br> pessoas';
+    } else if (freq == "semana"){
+        valor_box_e.innerHTML = '150.983 <br> pessoas';
+        valor_box_m.innerHTML = '108.983 <br> pessoas';
+        valor_box_d.innerHTML = '84.000 <br> pessoas';
+    } else if (freq == "mes"){
+        valor_box_e.innerHTML = '647.070 <br> pessoas';
+        valor_box_m.innerHTML = '467.070 <br> pessoas';
+        valor_box_d.innerHTML = '360.000 <br> pessoas';
+    }
+
+
+  }
+
+
+
+ </script>

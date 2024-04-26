@@ -7,6 +7,7 @@ body {
     margin: 0;
     padding: 0;
     background-color:#FFFFFF;
+    overflow-y: hidden;
   }
   /* classes dos campos de inserção de dados */
   .campos{
@@ -131,7 +132,7 @@ body {
     flex-direction: column;
     align-items: top;
     width: 20%;
-    height: 50px;
+    height: 100%;
     padding-block-end: 100%;
     top: 100%;
     padding-block-end: 34.2%;
@@ -160,13 +161,14 @@ body {
     display: flex;
     flex-direction: row;
     width: 2vw;
-    height: 13;
-    align-content: end;
+    height: 30%;
+    margin-top: 2%;
     background-color: #EBEBEB;
     color: #1D314D;
     cursor: pointer;
-    align-items: center;
+    justify-content: center;
   }
+
   .listaItens{
     list-style: none;
     justify-content: space-around;
