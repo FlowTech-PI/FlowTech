@@ -160,7 +160,7 @@ body {
     display: flex;
     flex-direction: row;
     width: 2vw;
-    height: 13vh;
+    height: 13;
     align-content: end;
     background-color: #EBEBEB;
     color: #1D314D;

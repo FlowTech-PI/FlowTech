@@ -59,16 +59,26 @@ body {
   /* espaço entre cada item da lista (li) */
   padding: 0px 0px 20px 0px;
 }
+
+.listaItens a{
+  text-decoration: none;
+  color: #EBEBEB;
+}
+
+.itensNaveBar a{
+  text-decoration: none;
+  color: #1D314D;
+}
+
 .fotoPerfil{
   display: flex;
-  justify-content: center;
   margin: 30px;
-  margin-left: 0;
 }
 .fotoPerfil img{
   width: 100px;
   height: 100px;
   border-radius: 50%;
+  margin-left: 12%;
 }
 
 .box-title{
