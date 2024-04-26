@@ -41,15 +41,14 @@ body {
 }
 #menuH{
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   width: 2vw;
-  margin-top: 18px;
-  margin-left: 5px;
-  height: auto;
-  align-content: center;
-  justify-content: center;
-  background-color: #EBEBEB;;
+  height: 30%;
+  margin-top: 2%;
+  background-color: #EBEBEB;
+  color: #1D314D;
   cursor: pointer;
+  justify-content: center;
 }
 .listaItens{
   list-style: none;
