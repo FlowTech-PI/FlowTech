@@ -1,65 +1,98 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>FlowTech | DashBoard</title>
-    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
-    <link rel="stylesheet" href="Dash.css">
-  </head>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FlowTech | DashBoard</title>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+  <link rel="stylesheet" href="Dash.css">
+  <script src="heatmap.js"></script>
+</head>
 
 
-  <body>
-    <div class="container">
-      <span id="menuH" class="material-symbols-outlined" onclick="clickMenu()">menu</span>
-      <h1 class="titulo">FlowTech</h1>
-      <ul class="itensNaveBar">
-        <li> <a href="../../Site/index/index.html">Início</a></li>
-        <li>|</li>
-        <li> <a href="../../Site/index/index.html#sobnos">Sobre nós</a></li>
-        <li>|</li>
-        <li> <a href="../../Site/index/index.html#contato">Contato</a></li>
-      </ul>
+<body>
+  
+  <div class="container">
+    <span id="menuH" class="material-symbols-outlined" onclick="clickMenu()">menu</span>
+    <h1 class="titulo">FlowTech</h1>
+    <ul class="itensNaveBar">
+      <li> <a href="../../Site/index/index.html">Início</a></li>
+      <li>|</li>
+      <li> <a href="../../Site/index/index.html#sobnos">Sobre nós</a></li>
+      <li>|</li>
+      <li> <a href="../../Site/index/index.html#contato">Contato</a></li>
+    </ul>
+  </div>
+
+  <div class="tela" style="display: flex;">
+    <div id="itens-laterais">
+      <div>
+        <ul class="listaItens">
+          <div id="fp" class="fotoPerfil">
+            <a href="../Tela_Perfil/tela_perfil.html"><img src="../../Site/Tela_Perfil/perfil.png" alt="foto de perfil"></a>
+          </div>
+          <li>🖥Calculadora Financeira</li>
+          <li> DeshBoard</li>
+          <li> Gráficos </li>
+          <li>🗺️Mapa de calor</li>
+          <li>Sair</li>
+        </ul>
+      </div>
     </div>
 
-    <div class="tela" style="display: flex;">
-        <div id="itens-laterais">
-              <div>
-                <ul class="listaItens">
-                    <div id="fp" class="fotoPerfil">
-                      <a href="../Tela_Perfil/tela_perfil.html"><img src="../graficos/perfil.png" alt="foto de perfil"></a>
-                    </div>
-                  <li>🖥Calculadora Financeira</li>
-                  <li> DeshBoard</li>
-                  <li> Gráficos </li>
-                  <li>🗺️Mapa de calor</li>
-                  <li>Sair</li>
-                </ul>
-              </div>
-        </div>
 
+    <div class="conteudo">
+      <div class="box-title">
+        <h2 class="title2"> HeatMap
+          <h6 class="subtitle2">FLOWTECH</h6>
+        </h2>
+      </div>
 
-        <div class="box-title">
-            <h2 class="title2"> HeatMap
-                <h6 class="subtitle2">FLOWTECH</h6>   
-            </h2>
-        </div>
-        
-        <div class="heatmap">
-          
-        </div>
+      <div class="heatmap"></div>
     </div>
-    
-    
-    
-  </body>
+
+  </div>
+
+
+
+</body>
+
 </html>
 
-
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-
 <script>
-   function clickMenu() {
+  var heatmapInstance = h337.create({
+    container: document.querySelector(".heatmap"),
+  });
+
+  
+    var points = [];
+    var max = 100;
+    var min = 0;
+    var width = 850;
+    var height = 490;
+
+    // Gerando um ponto por local da planta
+    var local1 = { x: 140, y: 160, value: Math.floor(Math.random() * 101), radius: 150, };
+    var local2 = { x: 430, y: 110, value: Math.floor(Math.random() * 101), radius: 150, };
+    var local3 = { x: 700, y: 130, value: Math.floor(Math.random() * 101), radius: 150, };
+    var local4 = { x: 80, y: 380, value: Math.floor(Math.random() * 101), radius: 150, };
+    var local5 = { x: 320, y: 350, value: Math.floor(Math.random() * 101), radius: 150, };
+    var local6 = { x: 670, y: 380, value: Math.floor(Math.random() * 101), radius: 180, };
+
+    points = points.concat(local1, local2, local3, local4, local5, local6);
+
+    var data = {
+      max: max,
+      min: min,
+      data: points,
+    }
+
+
+    heatmapInstance.setData(data);
+
+
+  function clickMenu() {
     var itensLaterais = document.getElementById('itens-laterais');
     if (itensLaterais.style.display === 'block') {
       itensLaterais.style.display = 'none';
@@ -68,26 +101,5 @@
     }
   }
 
-  function atualizar() {
-    var freq = select_freq.value;
 
-    if (freq == "dia"){
-        valor_box_e.innerHTML = '21.569 <br> pessoas';
-        valor_box_m.innerHTML = '15.569 <br> pessoas';
-        valor_box_d.innerHTML = '12.000 <br> pessoas';
-    } else if (freq == "semana"){
-        valor_box_e.innerHTML = '150.983 <br> pessoas';
-        valor_box_m.innerHTML = '108.983 <br> pessoas';
-        valor_box_d.innerHTML = '84.000 <br> pessoas';
-    } else if (freq == "mes"){
-        valor_box_e.innerHTML = '647.070 <br> pessoas';
-        valor_box_m.innerHTML = '467.070 <br> pessoas';
-        valor_box_d.innerHTML = '360.000 <br> pessoas';
-    }
-
-
-  }
-
-
-
- </script>
+</script>
