@@ -5,7 +5,6 @@ body {
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     background-color:#FFFFFF;
     overflow-y: visible;
-    overflow-x: visible;
   }
 .container{
   display: flex;
@@ -41,15 +40,14 @@ body {
 }
 #menuH{
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   width: 2vw;
-  margin-top: 18px;
-  margin-left: 5px;
-  height: auto;
-  align-content: center;
-  justify-content: center;
-  background-color: #EBEBEB;;
+  height: 30%;
+  margin-top: 2%;
+  background-color: #EBEBEB;
+  color: #1D314D;
   cursor: pointer;
+  justify-content: center;
 }
 .listaItens{
   list-style: none;
@@ -59,16 +57,26 @@ body {
   /* espaço entre cada item da lista (li) */
   padding: 0px 0px 20px 0px;
 }
+
+.listaItens a{
+  text-decoration: none;
+  color: #EBEBEB;
+}
+
+.itensNaveBar a{
+  text-decoration: none;
+  color: #1D314D;
+}
+
 .fotoPerfil{
   display: flex;
-  justify-content: center;
   margin: 30px;
-  margin-left: 0;
 }
 .fotoPerfil img{
   width: 100px;
   height: 100px;
   border-radius: 50%;
+  margin-left: 12%;
 }
 
 .box-title{
@@ -127,6 +135,7 @@ body {
   height: 200px;
   width: 700px;
   justify-content: space-evenly;
+  overflow-x: hidden;
 }
 .box-estacoes p{
   writing-mode: vertical-rl;
