@@ -16,7 +16,7 @@ email VARCHAR(45)
 );
 
 INSERT INTO empresa VALUES
-	(DEFAULT, 'ViaQuatro', '07682638000107','09340520', '08007707100', 'comercial.mobilidade@grupoccr.com');
+	(DEFAULT, 'ViaQuatro', '07682489000107','04390250', '08007775000', 'comercial.mobilidade@grupoccr.com');
 
 SELECT * FROM empresa;
 
@@ -48,7 +48,7 @@ INSERT INTO usuario VALUES
 	(DEFAULT, 'Alberto Vicente Alves', '1980-04-22', '29033534843', '11985451260', 'alberto.alves@gmail.com', 'alberto@123', 'Gerente', 1, 1),
 	(DEFAULT, 'Rafael Henrique Silva', '1990-02-20', '53589878841', '11959382646', 'rafael.silva@gmail.com', 'rafael227755', 'Funcionário',2, 1);
     
-SELECT * FROM funcionario;
+SELECT * FROM usuario;
 /*----------------------------------------------------------------------------------------------------------------------------------------*/
 
 -- ENTIDADE LINHA
@@ -194,7 +194,7 @@ CREATE VIEW viewSensorEstacao AS (
             JOIN linha ON fkLinha = idLinha);
             
 -- Dados dos Sensores Onde Houve Fluxo (contagem = 1)
-CREATE VIEW dadoSensor1 AS (
+CREATE VIEW viewdadoSensor1 AS (
 	SELECT  sensor.nomeLocal AS 'Local de Instalação',
 		sensor.tipoSensor AS 'Tipo de Sensor',
         estacao.nome AS Estação,
@@ -208,9 +208,9 @@ CREATE VIEW dadoSensor1 AS (
             WHERE contagem = 1);
 	
 /* Soma a quantidade de pessoas de cada sensor */
-CREATE VIEW FluxoSensor1 AS (SELECT COUNT(contagem) AS 'Fluxo de Pessoas do Sensor 1' FROM dadoSensor);
-CREATE VIEW FluxoSensor2 AS (SELECT COUNT(contagem) * 1.8 AS 'Fluxo de Pessoas do Sensor 2' FROM dadoSensor);
-CREATE VIEW FluxoSensor3 AS (SELECT COUNT(contagem) * 1.3 AS 'Fluxo de Pessoas do Sensor 3' FROM dadoSensor);	
+CREATE VIEW viewFluxoSensor1 AS (SELECT COUNT(contagem) AS 'Fluxo de Pessoas do Sensor 1' FROM dadoSensor WHERE contagem = 1);
+CREATE VIEW viewFluxoSensor2 AS (SELECT COUNT(contagem) * 2 AS 'Fluxo de Pessoas do Sensor 2' FROM dadoSensor WHERE contagem = 1);
+CREATE VIEW viewFluxoSensor3 AS (SELECT COUNT(contagem) * 3 AS 'Fluxo de Pessoas do Sensor 3' FROM dadoSensor WHERE contagem = 1);	
 
 -- VIEWS
 
@@ -230,14 +230,14 @@ SELECT * FROM viewEstacaoLinha;
 SELECT * FROM viewSensorEstacao;
 
 -- DADOS DO SENSOR 1
-SELECT * FROM dadoSensor1;
+SELECT * FROM viewdadoSensor1;
 
 -- FLUXO DE PESSAOS DO SENSOR 1
-SELECT * FROM FluxoSensor1;
+SELECT * FROM viewFluxoSensor1;
 
 -- FLUXO DE PESSAOS DO SENSOR 2
-SELECT * FROM FluxoSensor2;
+SELECT * FROM viewFluxoSensor2;
 
 -- FLUXO DE PESSAOS DO SENSOR 3
-SELECT * FROM FluxoSensor3;
+SELECT * FROM viewFluxoSensor3;
 
