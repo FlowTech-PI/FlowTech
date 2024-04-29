@@ -254,11 +254,13 @@
             input_NovaSenha.style.display = 'block';
         }
     }
+
     // Função na tela de mudar a senha para confirmar;
     function salvar (){
         // Obter a senha nova inserida e sobrescrever na senha de cadastro;
         senha_cad = input_NovaSenha.value;
-        if (senha_cad = '') alert('Insira uma senha nova')
+
+        if (senha_cad == '') alert('Insira uma senha nova')
         else alert('Senha alterada com sucesso!')
 
         // Redirecionar para tela de login (Função na linha 190)
