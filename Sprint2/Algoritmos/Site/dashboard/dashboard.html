@@ -1,89 +1,91 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>FlowTech | DashBoard</title>
-    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
-    <link rel="stylesheet" href="Dash.css">
-  </head>
-  <body>
-    <div class="container">
-      <span id="menuH" class="material-symbols-outlined" onclick="clickMenu()">menu</span>
-      <h1 class="titulo">FlowTech</h1>
-      <ul class="itensNaveBar">
-        <li> <a href="../../Site/index/index.html">Início</a></li>
-        <li>|</li>
-        <li> <a href="../../Site/index/index.html#sobnos">Sobre nós</a></li>
-        <li>|</li>
-        <li> <a href="../../Site/index/index.html#contato">Contato</a></li>
-      </ul>
-    </div>
-    <div id="itens-laterais">
-      <ul class="listaItens">
-        <div id="fp" class="fotoPerfil">
-             <a href="../Tela_Perfil/tela_perfil.html"><img src="../Tela_Perfil/perfil.png" alt="foto de perfil"></a>
-          </div>
-          <li> <a href="../Simulador_Financeiro/simulador.html">🖥Calculadora Financeira</a></li>
-          <li> <a href="../graficos/tela_Dash2.0.html">📊Gráficos</a></li>
-          <li> <a href="../login/login.html">Sair</a></li>
-      </ul>
-    </div>
 
-    <div class="box-title">
-    <h2 class="title2"> DASHBOARD
-        <h6 class="subtitle2">FLOWTECH</h6>   
-    </h2>
-    </div>
-    
-    <div class="container2">
-        <div class="linha"><b>TOP 3 ESTAÇÕES COM MAIOR FLUXO</b></div>
-        <div class="juncao">   
-          
-            
-            </div>
-        </div>
-    </div>
-    <br>
-    <br>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FlowTech | DashBoard</title>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+  <link rel="stylesheet" href="Dash.css">
+</head>
 
-    <main class="container_dados">
-      <div class="params">
-
-            <div class="E">
-              <div class="box-grafico" id="div_graf">
-                <div class="box-grafINTERNO" id="div_grafIN">
-                  <b>LUZ</b>
-                </div>
-                <label class="switch">
-                    <h3 id="valor_box_e"> 21.569 <br> pessoas </h3>
-                  
-                </label>
-              </div>
-            </div>
-
-            <div class="M">
-              <div class="box-grafico" id="div_graf">
-                <div class="box-grafINTERNO" id="div_grafIN">
-                  <b>BUTANTÃ</b>
-                </div>
-                <label class="switch">
-                    <h3 id="valor_box_m"> 15.569 <br> pessoas </h3>
-                </label>
-              </div>
-            </div>
-
-            <div class="D"> 
-              <div class="box-grafico" id="div_graf">
-                <div class="box-grafINTERNO" id="div_grafIN">
-                  <b>PAULISTA</b>
-                </div>
-                <label class="switch">
-                    <h3 id="valor_box_d"> 12.000 <br> pessoas </h3>
-                </label>
-              </div>  
-            </div>
+<body>
+  <div class="container">
+    <span id="menuH" class="material-symbols-outlined" onclick="clickMenu()">menu</span>
+    <h1 class="titulo">FlowTech</h1>
+    <ul class="itensNaveBar">
+      <li> <a href="../../Site/index/index.html">Início</a></li>
+      <li>|</li>
+      <li> <a href="../../Site/index/index.html#sobnos">Sobre nós</a></li>
+      <li>|</li>
+      <li> <a href="../../Site/index/index.html#contato">Contato</a></li>
+    </ul>
+  </div>
+  <div id="itens-laterais">
+    <ul class="listaItens">
+      <div id="fp" class="fotoPerfil">
+        <a href="../Tela_Perfil/tela_perfil.html"><img src="../Tela_Perfil/perfil.png" alt="foto de perfil"></a>
       </div>
+      <li> <a href="../Simulador_Financeiro/simulador.html">🖥Calculadora Financeira</a></li>
+      <li> <a href="../graficos/tela_Dash2.0.html">📊Gráficos</a></li>
+      <li> <a href="../login/login.html">Sair</a></li>
+    </ul>
+  </div>
+
+  <div class="box-title">
+    <h2 class="title2"> DASHBOARD
+      <h6 class="subtitle2">FLOWTECH</h6>
+    </h2>
+  </div>
+
+  <div class="container2">
+    <div class="linha"><b>3 ESTAÇÕES COM MAIOR FLUXO</b></div>
+    <div class="juncao">
+
+
+    </div>
+  </div>
+  </div>
+  <br>
+  <br>
+
+  <main class="container_dados">
+    <div class="params">
+
+      <div class="E">
+        <div class="box-grafico" id="div_graf">
+          <div class="box-grafINTERNO" id="div_grafIN">
+            <b id='estacao1'>LUZ</b>
+          </div>
+          <label class="switch">
+            <h3 id="valor_box_e"> 21.569 <br> pessoas </h3>
+
+          </label>
+        </div>
+      </div>
+
+      <div class="M">
+        <div class="box-grafico" id="div_graf">
+          <div class="box-grafINTERNO" id="div_grafIN">
+            <b id='estacao2'>BUTANTÃ</b>
+          </div>
+          <label class="switch">
+            <h3 id="valor_box_m"> 15.569 <br> pessoas </h3>
+          </label>
+        </div>
+      </div>
+
+      <div class="D">
+        <div class="box-grafico" id="div_graf">
+          <div class="box-grafINTERNO" id="div_grafIN">
+            <b id='estacao3'>PAULISTA</b>
+          </div>
+          <label class="switch">
+            <h3 id="valor_box_d"> 12.000 <br> pessoas </h3>
+          </label>
+        </div>
+      </div>
+    </div>
 
     <select name="select_freq" id="select_freq" onchange="atualizar()">
       <option value="dia">Últimas 24 horas</option>
@@ -91,36 +93,43 @@
       <option value="mes">No Mês</option>
     </select>
 
-    </main>
+  </main>
 
-    <center>
+  <center>
     <div class="legenda">
       <div class="quadrados">
-          <div class="quadrado1"></div> <p> >3.000 </p>
-          <div class="quadrado2"></div> <p> >5.000 </p>
-          <div class="quadrado3"></div> <p> >8.000 </p>
-          <div class="quadrado4"></div> <p> >10.000 </p>
-          <div class="quadrado5"></div> <p> >15.000 </p>
-          <div class="quadrado6"></div> <p> >20.000 </p>
+        <div class="quadrado1"></div>
+        <p id='quad1'> >3.000 </p>
+        <div class="quadrado2"></div>
+        <p id='quad2'> >5.000 </p>
+        <div class="quadrado3"></div>
+        <p id='quad3'> >8.000 </p>
+        <div class="quadrado4"></div>
+        <p id='quad4'> >10.000 </p>
+        <div class="quadrado5"></div>
+        <p id='quad5'> >15.000 </p>
+        <div class="quadrado6"></div>
+        <p id='quad6'> >20.000 </p>
       </div>
 
-        <div class="flecha">
-            <img src="../imagens/flecha_dash.png" alt="" width="500px">
-            <a href="../graficos/graficos.html"><button class="ver_mais">Ver Mais -></button></a>
-        </div>   
+      <div class="flecha">
+        <img src="../imagens/flecha_dash.png" alt="" width="500px">
+        <a href="../graficos/graficos.html"><button class="ver_mais">Ver Mais -></button></a>
+      </div>
     </div>
   </center>
-  
 
-    <br>
-  </body>
+
+  <br>
+</body>
+
 </html>
 
 
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
 <script>
-   function clickMenu() {
+  function clickMenu() {
     var itensLaterais = document.getElementById('itens-laterais');
     if (itensLaterais.style.display === 'block') {
       itensLaterais.style.display = 'none';
@@ -132,18 +141,48 @@
   function atualizar() {
     var freq = select_freq.value;
 
-    if (freq == "dia"){
-        valor_box_e.innerHTML = '21.569 <br> pessoas';
-        valor_box_m.innerHTML = '15.569 <br> pessoas';
-        valor_box_d.innerHTML = '12.000 <br> pessoas';
-    } else if (freq == "semana"){
-        valor_box_e.innerHTML = '150.983 <br> pessoas';
-        valor_box_m.innerHTML = '108.983 <br> pessoas';
-        valor_box_d.innerHTML = '84.000 <br> pessoas';
-    } else if (freq == "mes"){
-        valor_box_e.innerHTML = '647.070 <br> pessoas';
-        valor_box_m.innerHTML = '467.070 <br> pessoas';
-        valor_box_d.innerHTML = '360.000 <br> pessoas';
+    if (freq == "dia") {
+      valor_box_e.innerHTML = '21.569 <br> pessoas';
+      valor_box_m.innerHTML = '15.569 <br> pessoas';
+      valor_box_d.innerHTML = '12.000 <br> pessoas';
+      estacao1.innerHTML = 'PINHEIROS';
+      estacao2.innerHTML = 'HIGIENÓPOLIS';
+      estacao3.innerHTML = 'PAULISTA';
+      quad6.innerHTML = ' > 3000'
+      quad5.innerHTML = ' > 5.000'
+      quad4.innerHTML = ' > 8.000'
+      quad3.innerHTML = ' > 10.000'
+      quad2.innerHTML = ' > 15.000'
+      quad1.innerHTML = ' > 20.000'
+
+    } else if (freq == "semana") {
+      valor_box_e.innerHTML = '150.983 <br> pessoas';
+      valor_box_m.innerHTML = '108.983 <br> pessoas';
+      valor_box_d.innerHTML = '84.000 <br> pessoas';
+      estacao1.innerHTML = 'PAULISTA';
+      estacao2.innerHTML = 'VILA SÔNIA';
+      estacao3.innerHTML = 'PINHEIROS';
+      quad6.innerHTML = ' > 150.000'
+      quad5.innerHTML = ' > 100.000'
+      quad4.innerHTML = ' > 80.000'
+      quad3.innerHTML = ' > 10.000'
+      quad2.innerHTML = ' > 15.000'
+      quad1.innerHTML = ' > 20.000'
+
+    } else if (freq == "mes") {
+      valor_box_e.innerHTML = '647.070 <br> pessoas';
+      valor_box_m.innerHTML = '467.070 <br> pessoas';
+      valor_box_d.innerHTML = '360.000 <br> pessoas';
+      estacao1.innerHTML = 'LUZ';
+      estacao2.innerHTML = 'BUTANTÃ';
+      estacao3.innerHTML = 'OSCAR FREIRE';
+      quad6.innerHTML = ' > 600.000'
+      quad5.innerHTML = ' > 400.000'
+      quad4.innerHTML = ' > 300.000'
+      quad3.innerHTML = ' > 150.000'
+      quad2.innerHTML = ' > 100.000'
+      quad1.innerHTML = ' > 50.000'
+
     }
 
 
@@ -151,4 +190,4 @@
 
 
 
- </script>
+</script>
