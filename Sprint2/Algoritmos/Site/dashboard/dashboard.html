@@ -52,7 +52,7 @@
   <main class="container_dados">
     <div class="params">
 
-      <div class="E">
+      <div class="E" id = 'E'>
         <div class="box-grafico" id="div_graf">
           <div class="box-grafINTERNO" id="div_grafIN">
             <b id='estacao1'>LUZ</b>
@@ -64,7 +64,7 @@
         </div>
       </div>
 
-      <div class="M">
+      <div class="M" id = 'M'>
         <div class="box-grafico" id="div_graf">
           <div class="box-grafINTERNO" id="div_grafIN">
             <b id='estacao2'>BUTANTÃ</b>
@@ -75,7 +75,7 @@
         </div>
       </div>
 
-      <div class="D">
+      <div class="D" id = 'D'>
         <div class="box-grafico" id="div_graf">
           <div class="box-grafINTERNO" id="div_grafIN">
             <b id='estacao3'>PAULISTA</b>
@@ -142,20 +142,25 @@
     var freq = select_freq.value;
 
     if (freq == "dia") {
+      E.style.backgroundColor = '#41BB4D';
+      M.style.backgroundColor = '#41BB4D';
+      D.style.backgroundColor = '#FF3131';
       valor_box_e.innerHTML = '21.569 <br> pessoas';
-      valor_box_m.innerHTML = '15.569 <br> pessoas';
-      valor_box_d.innerHTML = '12.000 <br> pessoas';
+      valor_box_m.innerHTML = '21.089 <br> pessoas';
+      valor_box_d.innerHTML = '5.000 <br> pessoas';
       estacao1.innerHTML = 'PINHEIROS';
       estacao2.innerHTML = 'HIGIENÓPOLIS';
       estacao3.innerHTML = 'PAULISTA';
-      quad6.innerHTML = ' > 3000'
-      quad5.innerHTML = ' > 5.000'
-      quad4.innerHTML = ' > 8.000'
-      quad3.innerHTML = ' > 10.000'
-      quad2.innerHTML = ' > 15.000'
-      quad1.innerHTML = ' > 20.000'
+      quad6.innerHTML =  ' > 20.000'
+      quad5.innerHTML =  ' > 15.000'
+      quad4.innerHTML =  ' > 10.000'
+      quad3.innerHTML = ' > 8.000'
+      quad2.innerHTML = ' > 5.000'
+      quad1.innerHTML = ' > 3000'
 
     } else if (freq == "semana") {
+      D.style.backgroundColor = '#C2E806';
+      M.style.backgroundColor = '#4EE888';
       valor_box_e.innerHTML = '150.983 <br> pessoas';
       valor_box_m.innerHTML = '108.983 <br> pessoas';
       valor_box_d.innerHTML = '84.000 <br> pessoas';
@@ -169,10 +174,14 @@
       quad2.innerHTML = ' > 15.000'
       quad1.innerHTML = ' > 20.000'
 
-    } else if (freq == "mes") {
+
+      // OKAY
+    } else if (freq == "mes") { 
+      M.style.backgroundColor = '#C2E806';
+      D.style.backgroundColor = '#FFDE59';
       valor_box_e.innerHTML = '647.070 <br> pessoas';
-      valor_box_m.innerHTML = '467.070 <br> pessoas';
-      valor_box_d.innerHTML = '360.000 <br> pessoas';
+      valor_box_m.innerHTML = '340.070 <br> pessoas';
+      valor_box_d.innerHTML = '230.390 <br> pessoas';
       estacao1.innerHTML = 'LUZ';
       estacao2.innerHTML = 'BUTANTÃ';
       estacao3.innerHTML = 'OSCAR FREIRE';
