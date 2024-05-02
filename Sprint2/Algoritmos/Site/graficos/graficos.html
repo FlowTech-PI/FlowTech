@@ -48,12 +48,13 @@
       <h6 class="subtitle2">FLOWTECH</h6>
     </h2>
   </div>
+  <div class="box-juncao">
   <div class="container2">
     <div class="linha"><b>Linha-4 <br>AMARELA</b></div>
-    <div class="juncao">
-      <div class="box-estacoes">
-        <p class="li-c1"> Luz</p>
-        <p class="li-c2"> República</p>
+      <div class="juncao">
+        <div class="box-estacoes">
+          <p class="li-c1"> Luz</p>
+          <p class="li-c2"> República</p>
         <p class="li-c3"> Higienópolis-Mackenzie</p>
         <p class="li-c4"> Paulista</p>
         <p class="li-c5"> Oscar Freire</p>
@@ -89,31 +90,30 @@
         <label for="BL11" data-label="Opcao 11"></label>
       </div>
     </div>
-  </div>
-  <br>
-  <br>
-  
-  <main class="container_switch">
-
-    <div id="content1" class="content" style="display: none;"></div>
-
-    <div id="content2" class="content" style="display: none;"></div>
-
-    <div id="content3" class="content" style="display: none;"></div>
-
-    <div class="box-grafico" id="div_graf">
-      <div class="box-grafINTERNO" id="div_grafIN">
-        <b>DIAS SEMANAIS DE MAIS MOVIMENTO</b>
-      </div>
-      <label class="switch">
-        <div class="switch-wrapper">
-          <input class="butBotaoGraf" type="checkbox" id="BG1" onclick="BG1()">
-          <span class="switch-button"></span>
+    <br>
+    <br>
+    
+    <main class="container_switch">
+    
+      <div id="content1" class="content" style="display: none;"></div>
+      
+      <div id="content2" class="content" style="display: none;"></div>
+      
+      <div id="content3" class="content" style="display: none;"></div>
+      
+      <div class="box-grafico" id="div_graf">
+        <div class="box-grafINTERNO" id="div_grafIN">
+          <b>DIAS SEMANAIS DE MAIS MOVIMENTO</b>
         </div>
-      </label>
-    </div>
-
-    <div class="box-grafico" id="div_graf">
+        <label class="switch">
+          <div class="switch-wrapper">
+            <input class="butBotaoGraf" type="checkbox" id="BG1" onclick="BG1()">
+            <span class="switch-button"></span>
+          </div>
+        </label>
+      </div>
+      
+      <div class="box-grafico" id="div_graf">
       <div class="box-grafINTERNO" id="div_grafIN">
         <b>MAIOR FLUXO NAS ESTAÇÕES</b>
       </div>
@@ -124,7 +124,7 @@
         </div>
       </label>
     </div>
-
+    
     <div class="box-grafico" id="div_graf">
       <div class="box-grafINTERNO" id="div_grafIN">
         <b>HORARIOS DO FLUXO DE PESSOAS</b>
@@ -136,75 +136,76 @@
         </div>
       </label>
     </div>
-   
-  </main>
-  <br>
-  <div class="Box_ExibirGrafs">
-
-   
-
-   <!-----------------------Gráficos da estação LUZ--------------------------->
-
-    <div id="Lgf1" style="width: 370px; height: 200px; display: none;">
-      <canvas id="myChart"></canvas>
-    </div>
-
-    <div id="Lgf2" style="width: 370px; height: 200px; display: none;">
-      <canvas id="myChart2"></canvas>
-    </div>
-
-    <div id="Lgf3" style="width: 370px; height: 200px; display: none;">
-      <canvas id="myChart3"></canvas>
-    </div>
+  </div>
+  
+</main>
+<br>
+<div class="Box_ExibirGrafs">
+  
+  
+  
+  <!-----------------------Gráficos da estação LUZ--------------------------->
+  
+  <div id="Lgf1" style="width: 370px; height: 200px; display: none;">
+    <canvas id="myChart"></canvas>
+  </div>
+  
+  <div id="Lgf2" style="width: 370px; height: 200px; display: none;">
+    <canvas id="myChart2"></canvas>
+  </div>
+  
+  <div id="Lgf3" style="width: 370px; height: 200px; display: none;">
+    <canvas id="myChart3"></canvas>
+  </div>
 
    <!--------------- Gráficos da estação Republica-------------------->
 
    <div id="Rgf1" style="width: 370px; height: 200px; display: none;">
     <canvas id="myChart4"></canvas>
   </div>
-
+  
   <div id="Rgf2" style="width: 370px; height: 200px; display: none;">
     <canvas id="myChart5"></canvas>
   </div>
-
+  
   <div id="Rgf3" style="width: 370px; height: 200px; display: none;">
     <canvas id="myChart6"></canvas>
   </div>
-
-   <!--------------- Gráficos da estação Higienópolis------------------>
-
-   <div id="Hgf1" style="width: 370px; height: 200px; display: none;">
+  
+  <!--------------- Gráficos da estação Higienópolis------------------>
+  
+  <div id="Hgf1" style="width: 370px; height: 200px; display: none;">
     <canvas id="myChart7"></canvas>
   </div>
-
+  
   <div id="Hgf2" style="width: 370px; height: 200px; display: none;">
     <canvas id="myChart8"></canvas>
   </div>
-
+  
   <div id="Hgf3" style="width: 370px; height: 200px; display: none;">
     <canvas id="myChart9"></canvas>
   </div>
-
+  
   <!------------------Gráficos da estação Paulista------------------>
-
+  
   <div id="PAgf1" style="width: 370px; height: 200px; display: none;">
     <canvas id="myChart10"></canvas>
   </div>
-
+  
   <div id="PAgf2" style="width: 370px; height: 200px; display: none;">
     <canvas id="myChart11"></canvas>
   </div>
-
+  
   <div id="PAgf3" style="width: 370px; height: 200px; display: none;">
     <canvas id="myChart12"></canvas>
   </div>
-
+  
   <!--------------Gráficos da estação Oscar Freire------------------->
-
+  
   <div id="Ogf1" style="width: 370px; height: 200px; display: none;">
     <canvas id="myChart13"></canvas>
   </div>
-
+  
   <div id="Ogf2" style="width: 370px; height: 200px; display: none;">
     <canvas id="myChart14"></canvas>
   </div>
@@ -212,103 +213,104 @@
   <div id="Ogf3" style="width: 370px; height: 200px; display: none;">
     <canvas id="myChart15"></canvas>
   </div>
-
+  
   <!-----------Gráficos da estação Fradique Coutinho----------------->
-
+  
   <div id="FCgf1" style="width: 370px; height: 200px; display: none;">
     <canvas id="myChart16"></canvas>
   </div>
-
+  
   <div id="FCgf2" style="width: 370px; height: 200px; display: none;">
     <canvas id="myChart17"></canvas>
   </div>
-
+  
   <div id="FCgf3" style="width: 370px; height: 200px; display: none;">
     <canvas id="myChart18"></canvas>
   </div>
 
   <!-------------Gráficos da estação Faria Lima---------------------->
-
+  
   <div id="FLgf1" style="width: 370px; height: 200px; display: none;">
     <canvas id="myChart19"></canvas>
   </div>
-
+  
   <div id="FLgf2" style="width: 370px; height: 200px; display: none;">
     <canvas id="myChart20"></canvas>
   </div>
-
+  
   <div id="FLgf3" style="width: 370px; height: 200px; display: none;">
     <canvas id="myChart21"></canvas>
   </div>
-
-
+  
+  
   <!-----------Gráficos da estação Pinheiros------------------------->
-
+  
   <div id="PIgf1" style="width: 370px; height: 200px; display: none;">
     <canvas id="myChart22"></canvas>
   </div>
-
+  
   <div id="PIgf2" style="width: 370px; height: 200px; display: none;">
     <canvas id="myChart23"></canvas>
   </div>
-
+  
   <div id="PIgf3" style="width: 370px; height: 200px; display: none;">
     <canvas id="myChart24"></canvas>
   </div>
-
+  
   <!--------------Gráficos da estação Butantã------------------------>
-
+  
   <div id="Bgf1" style="width: 370px; height: 200px; display: none;">
     <canvas id="myChart25"></canvas>
   </div>
-
+  
   <div id="Bgf2" style="width: 370px; height: 200px; display: none;">
     <canvas id="myChart26"></canvas>
   </div>
-
+  
   <div id="Bgf3" style="width: 370px; height: 200px; display: none;">
     <canvas id="myChart27"></canvas>
   </div>
-
+  
   <!----------Gráficos da estação São Paulo Morumbi------------------>
-
+  
   <div id="SPgf1" style="width: 370px; height: 200px; display: none;">
     <canvas id="myChart28"></canvas>
   </div>
-
+  
   <div id="SPgf2" style="width: 370px; height: 200px; display: none;">
     <canvas id="myChart29"></canvas>
   </div>
-
+  
   <div id="SPgf3" style="width: 370px; height: 200px; display: none;">
     <canvas id="myChart30"></canvas>
   </div>
 
   <!----------Gráficos da estação Vila Sônia------------------------->
-
+  
   <div id="VSgf1" style="width: 370px; height: 200px; display: none;">
     <canvas id="myChart31"></canvas>
   </div>
-
+  
   <div id="VSgf2" style="width: 370px; height: 200px; display: none;">
     <canvas id="myChart32"></canvas>
   </div>
-
+  
   <div id="VSgf3" style="width: 370px; height: 200px; display: none;">
     <canvas id="myChart33"></canvas>
   </div>
-
+  
   <!----------------------------------------------------------------->
-
-  </div>
-
-
-  <br>
-   <a href="../../../ArqComp/index.html"><button class="temporeal">Tempo real</button></a>
+  
+</div>
+</div>
 
 
-   </div>
-  </div>
+<br>
+<a href="../../../ArqComp/index.html"><button class="temporeal">Tempo real</button></a>
+
+
+</div>
+</div>
 
 </body>
 
@@ -360,7 +362,7 @@ function limpar(){
   function clickMenu() {
     var itensLaterais = document.getElementById('itens-laterais');
     if (itensLaterais.style.display === 'block') {
-      itensLaterais.style.display = 'none';
+      itensLaterais.style.display = 'none'
     } else {
       itensLaterais.style.display = 'block';
     }
