@@ -27,7 +27,8 @@
         <a href="../Tela_Perfil/tela_perfil.html"><img src="../Tela_Perfil/perfil.png" alt="foto de perfil"></a>
       </div>
       <li> <a href="../Simulador_Financeiro/simulador.html">🖥Calculadora Financeira</a></li>
-      <li> <a href="../graficos/tela_Dash2.0.html">📊Gráficos</a></li>
+      <li> <a href="../graficos/graficos.html">📊Gráficos</a></li>
+      <li> <a href="../dashboard/dashboard.html">Dash</a></li>
       <li> <a href="../login/login.html">Sair</a></li>
     </ul>
   </div>
@@ -55,7 +56,7 @@
       <div class="E" id = 'E'>
         <div class="box-grafico" id="div_graf">
           <div class="box-grafINTERNO" id="div_grafIN">
-            <b id='estacao1'>LUZ</b>
+            <b id='estacao1'>PINHEIROS</b>
           </div>
           <label class="switch">
             <h3 id="valor_box_e"> 21.569 <br> pessoas </h3>
@@ -67,10 +68,10 @@
       <div class="M" id = 'M'>
         <div class="box-grafico" id="div_graf">
           <div class="box-grafINTERNO" id="div_grafIN">
-            <b id='estacao2'>BUTANTÃ</b>
+            <b id='estacao2'>HIGIENÓPOLIS</b>
           </div>
           <label class="switch">
-            <h3 id="valor_box_m"> 15.569 <br> pessoas </h3>
+            <h3 id="valor_box_m"> 21.089 <br> pessoas </h3>
           </label>
         </div>
       </div>
@@ -81,7 +82,7 @@
             <b id='estacao3'>PAULISTA</b>
           </div>
           <label class="switch">
-            <h3 id="valor_box_d"> 12.000 <br> pessoas </h3>
+            <h3 id="valor_box_d"> 4.410 <br> pessoas </h3>
           </label>
         </div>
       </div>
@@ -129,6 +130,9 @@
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
 <script>
+
+  atualizar();
+
   function clickMenu() {
     var itensLaterais = document.getElementById('itens-laterais');
     if (itensLaterais.style.display === 'block') {
@@ -158,7 +162,10 @@
       quad2.innerHTML = ' > 5.000'
       quad1.innerHTML = ' > 3000'
 
+      piscarD();
+
     } else if (freq == "semana") {
+      E.style.backgroundColor = '#41BB4D';
       D.style.backgroundColor = '#C2E806';
       M.style.backgroundColor = '#4EE888';
       valor_box_e.innerHTML = '150.983 <br> pessoas';
@@ -174,9 +181,12 @@
       quad2.innerHTML = ' > 15.000'
       quad1.innerHTML = ' > 20.000'
 
+      piscarS()
+
 
       // OKAY
     } else if (freq == "mes") { 
+      E.style.backgroundColor = '#41BB4D';
       M.style.backgroundColor = '#C2E806';
       D.style.backgroundColor = '#FFDE59';
       valor_box_e.innerHTML = '647.070 <br> pessoas';
@@ -192,10 +202,93 @@
       quad2.innerHTML = ' > 100.000'
       quad1.innerHTML = ' > 50.000'
 
+      piscarM()
+
     }
 
 
   }
+
+  function piscarD(){
+
+        setTimeout(function(){
+          E.style.backgroundColor = '#209e2d';
+          M.style.backgroundColor = '#209e2d'; 
+        }, 500);
+        
+        setTimeout(function(){
+          E.style.backgroundColor = '#41BB4D';
+          M.style.backgroundColor = '#41BB4D'; 
+        }, 1000);
+
+        setTimeout(function(){
+          E.style.backgroundColor = '#209e2d';
+          M.style.backgroundColor = '#209e2d'; 
+        }, 1500);
+
+        setTimeout(function(){
+          E.style.backgroundColor = '#41BB4D';
+          M.style.backgroundColor = '#41BB4D'; 
+        }, 2000);
+
+        setTimeout(function(){
+          E.style.backgroundColor = '#209e2d';
+          M.style.backgroundColor = '#209e2d'; 
+        }, 2500);
+
+        setTimeout(function(){
+          E.style.backgroundColor = '#41BB4D';
+          M.style.backgroundColor = '#41BB4D'; 
+        }, 3000);
+
+  }
+
+  function piscarS(){
+
+    var delay = 500;
+
+    for( var cont = 0; cont <= 5; cont++){
+
+        setTimeout(function(){
+          E.style.backgroundColor = '#209e2d';
+        }, delay);
+
+        delay += 500;
+
+        setTimeout(function(){
+          E.style.backgroundColor = '#41BB4D';
+        }, delay);
+
+        delay += 500;
+
+    }
+
+        
+
+
+}
+
+function piscarM(){
+
+  var delay = 500;
+
+for( var cont = 0; cont <= 5; cont++){
+
+    setTimeout(function(){
+      E.style.backgroundColor = '#209e2d';
+    }, delay);
+
+    delay += 500;
+
+    setTimeout(function(){
+      E.style.backgroundColor = '#41BB4D';
+    }, delay);
+
+    delay += 500;
+
+}
+
+}
 
 
 
