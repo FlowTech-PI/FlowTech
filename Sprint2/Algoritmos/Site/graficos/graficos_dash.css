@@ -22,8 +22,7 @@ body {
   width: 20%;
   height: auto;
   padding-block-end: 50%;
-  position: absolute;
-  z-index: 3;
+
 }
 .itensNaveBar {
   display:flex;
