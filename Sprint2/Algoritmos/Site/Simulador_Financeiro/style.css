@@ -1,7 +1,7 @@
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+    
     font-family: sans-serif;
   }
   
@@ -17,7 +17,6 @@
 
   .header {
     display: flex;
-  
   }
   
   .header a {
@@ -34,18 +33,21 @@
   
   .header .container{
     display: flex;
-    justify-content: space-between;
+    align-items: center;
+    justify-content: flex-start;
     width: 100%;
     position: fixed;
     background-color: #fff;
     padding: 10px;
-    padding-top: 15px;
     z-index: 3;
     border-bottom: 2px solid #07272c;
-    
+    height: 82px;
+
   }
 
   .titulo{
+    margin-left: 50px;
+    margin-right: 200px;
     color: #0a3339;
     font-family: league-spartan;
   }
@@ -58,6 +60,8 @@
     color: #07272c;
     align-items: center;
     font-weight: bold;
+    font-size: 19.2px;
+    margin-left: 40px;
   
   }
   
@@ -86,6 +90,7 @@
   
   /* div principal (o bloco inteiro) */
   .div {
+    
     width: 800px;
     background-color: white;
     margin: 0 auto;
