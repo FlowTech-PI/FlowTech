@@ -79,17 +79,26 @@ body {
 }
 
 .box-title{
-  margin-left: 25%;
+  margin-left: 10%;
+  font-size: 20px;
   
 }
 .linha{
-  font-size: 15px;
+  font-size: 30px;
   font-style: inherit;
   font: bold;
   display: flex;
-  margin: 0 0 0% 47%;
+  margin: 0 0 0% 42%;
   align-items: center;
   text-align: center;
+}
+.box-juncao{
+  margin-left: 20% ;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  
 }
 
 /* Colocando Linha, o nome de cada Estação e o Nome da linha em um unico Container */
@@ -128,8 +137,7 @@ body {
   white-space: nowrap;
   overflow-x: auto;
   display:flex;
-  justify-content: center;
-  margin: 0 0 0 60px  ;
+  justify-content: left;
   background-color: #ffffff;
   height: 200px;
   width: 700px;
@@ -150,13 +158,13 @@ body {
 /* Editando o Container onde estão os Botões para exibir os dos graficos */
 
 .container_switch{
-    width: 50%;
+    width: 700px;
     height: 155px;
-    margin: 0 0 0 25%;
+    margin-left: 0;
     background-color: lightgrey;
     border-radius: 10px;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: top;
 }
 .box-grafico{
@@ -256,7 +264,7 @@ body {
   .Box_ExibirGrafs{
     display: flex;
     align-items: center;
-    justify-content: space-evenly;
+    justify-content: space-between;
     flex-direction: row;
     width: auto;
     height: auto;
@@ -273,5 +281,5 @@ body {
     width: 150px;
     height: 50px;
     cursor: pointer;
-    margin-left: 80%;
+    margin-left: 100%;
  }
