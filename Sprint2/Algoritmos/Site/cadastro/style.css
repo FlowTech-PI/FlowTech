@@ -14,9 +14,44 @@ body:hover {
     cursor: default;
 }
 
-nav, .form {
+.header1 {
+    display: flex;
+
+}
+
+.header1 a {
+    text-decoration: none;
+    color: #07272c;
+    scroll-behavior: smooth;
+}
+
+.container1 {
+    display: flex;
+    width: 80%;
+    margin: auto;
+}
+
+.header1 .container1 {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
+    position: fixed;
     background-color: #fff;
+    padding: 10px;
+    z-index: 3;
     border-bottom: 2px solid #07272c;
+    height: 82px;
+
+}
+
+.titulo1 {
+    color: #0a3339;
+    font-family: league-spartan;
+    margin-left: 50px;
+    margin-right: 200px;
+    margin-top: 0;
+    margin-bottom: 0;
 }
 
 .container {
@@ -26,58 +61,98 @@ nav, .form {
     padding: 10px;
 }
 
-nav .container {
-    align-items: center;
+.navbar1 {
+    display: flex;
+    flex-direction: row;
+    list-style: none;
     justify-content: space-between;
-    padding-bottom: 14px;
+    color: #07272c;
+    align-items: center;
+    font-weight: bold;
+    font-family: sans-serif;
+
 }
 
-.titulo {
-    font-family: league-spartan;
+.navbar1 li {
+    display: flex;
+    justify-content: space-between;
+    margin: 8px;
+    font-size: 19.2px;
 }
 
-ul, span, input, .buttons {
+.navbar1 .quem {
+    margin-right: 0px;
+}
+
+.navbar1 .bt1 {
+    background-color: #07272c;
+    color: #fff;
+    padding: 8px 35px;
+    border-radius: 50px;
+    font-size: 15px;
+    font-family: sans-serif;
+    font-weight: 550;
+    cursor: pointer;
+}
+
+.navbar .bt1 a {
+    color: #fff;
+}
+
+ul,
+span,
+input,
+.buttons {
     font-weight: bold;
 }
 
-.titulo, .navbar  ul, .navbar span, input, .links span, .links a {
+.titulo,
+.navbar ul,
+.navbar span,
+input,
+.links span,
+.links a {
     color: #1D314D;
 }
 
 .navbar {
     display: flex;
     justify-content: space-between;
+    padding-left: 40px;
 }
 
-.navbar  ul {
+.navbar ul {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+    font-size: 19.2px;
+    list-style: none;
+    padding-left: 0px;
+
 }
 
 .navbar a {
     text-decoration: none;
     color: #07272c;
     scroll-behavior: smooth;
-  }
+}
 
 .navbar a:hover {
     color: #144b97;
     cursor: pointer;
-  }
+}
 
-.navbar  li:hover, .navbar span:hover, .links a:hover  {
+.navbar li:hover,
+.navbar span:hover,
+.links a:hover {
     color: #144b97;
     cursor: pointer;
 }
 
-.navbar ul {
-    list-style: none;
-    width: 150px;
-}
-
-.navbar, input, .enviaron {
+.navbar,
+input,
+.enviaron {
     font-size: 16px;
 }
 
@@ -85,9 +160,7 @@ ul, span, input, .buttons {
     font-size: 32px;
 }
 
-.container .titulo .tituloNav{
-    margin-left: -28px ;
-}
+
 
 a {
     text-decoration: none;
@@ -298,14 +371,16 @@ a {
     justify-content: center;
 }
 
-.telaSenha main .container{
+.telaSenha main .container {
     display: flex;
     justify-content: center;
     align-items: center;
     height: fit-content;
 }
 
-.telaSenha .form, input, button {
+.telaSenha .form,
+input,
+button {
     border-radius: 10px;
 }
 
@@ -347,7 +422,7 @@ a {
 }
 
 .telaSenha button:hover {
-    background-color: #144b97 ;
+    background-color: #144b97;
     cursor: pointer;
 }
 
@@ -365,7 +440,8 @@ a {
     margin-top: 20%;
 }
 
-.telaSenha .links span, .links a {
+.telaSenha .links span,
+.links a {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -386,15 +462,56 @@ a {
     margin-right: 5%;
 }
 
-.telaSenha .NovaSenha{
+.telaSenha .NovaSenha {
     height: 50px;
 }
 
 
-.divcaixatexto{
+.divcaixatexto {
     width: 50%;
 }
 
-.divcaixatexto2{
+.divcaixatexto2 {
     width: 50%;
+}
+
+nav, .form {
+    background-color: #fff;
+    border-bottom: 2px solid #07272c;
+}
+
+.telaLogin .form, input, .enviaron {
+    border-radius: 10px;
+}
+
+.telaLogin .form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 30%;
+    height: 420px;
+    margin: 15vh 0;
+    padding: 10px 0;
+}
+
+.telaCadastro form {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 300px;
+}
+
+.telaSenha .form, input, button {
+    border-radius: 10px;
+}
+
+.telaSenha .form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 30%;
+    height: 420px;
+    margin: 15vh 0;
+    padding: 10px 0;
 }

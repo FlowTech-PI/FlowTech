@@ -1,27 +1,36 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 
+<!-- Apesar de estar como o nome de "Tela de Login", essa página simula um login e cadastro sem conexão a um bando de dados, por isso
+        foi necessário manter na mesma página HTML o login, cadastro e "esqueci a senha" -->
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FlowTech | Login & Cadastro </title>
+    <title>FlowTech | Login & Cadastro</title>
 
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    <nav>
-        <div class="container">
-            <a class="titulo" href="#"><div class="tituloNav">FLOWTECH</div></a>
-            <div class="navbar">
-                <ul>
-                    <li><a href="../index/index.html">Home</a></li>
-                    |
-                    <li>Ajuda</li>
-                </ul>
-            </div>
+    <div class="header1">
+        <div class="container1">
+    
+            <h1 class="titulo1">FLOWTECH</h1>
+        
+          <ul class="navbar1">
+              <li> <a href="../index/index.html">Inicio</a></li>
+              <li>|</li>
+              <li> <a href="../index/index.html">Quem somos?</a></li>
+              <li>|</li>
+              <li> <a href="../index/index.html">Contato</a></li>
+              <li>|</li>
+              <li> <a href="../Simulador_Financeiro/simulador.html">Simulador Financeiro</a></li>
+              <a href="../cadastro/cadastro.html"><li class="bt1"> CADASTRAR-SE</li></a>
+              <a href="../login/login.html"><li class="bt1">LOGIN</li></a>       
+          </ul>
         </div>
-    </nav>
+      </div>
 
     <div id="telaCadastro" class="telaCadastro" style="display: none;">
             <div class="container">
@@ -33,10 +42,10 @@
                     
                     <div class="caixatexto">
                         <label for="nome"></label>
-                        <input placeholder="Nome:" type="text" id="nome" name="nome" class="bloco1" required>
+                        <input placeholder="Nome:" type="text" id="input_nome" name="nome" class="bloco1" required>
 
                         <label for="cpf"></label>
-                        <input placeholder="CPF: (apenas números)" type="text" id="cpf" name="cpf" class="bloco1" required>
+                        <input placeholder="CPF: (apenas números)" type="text" id="input_cpf" name="cpf" class="bloco1" required>
 
                         <label for="email"></label>
                         <input placeholder="E-mail:" type="email" id="input_email_cad" name="email" class="bloco1" required>
@@ -52,10 +61,10 @@
                     <div class="caixatexto">
 
                         <label for="nascimento"></label>
-                        <input placeholder="Nascimento:" type="text" id="nascimento" name="nascimento" class="bloco2" required>
+                        <input placeholder="Nascimento:" type="text" id="input_nascimento" name="nascimento" class="bloco2" required>
 
                         <label for="telefone"></label>
-                        <input placeholder="Tel:" type="tel" id="telefone" name="telefone" class="bloco2" required>
+                        <input placeholder="Tel:" type="tel" id="input_telefone" name="telefone" class="bloco2" required>
 
                         <label for="niveldeacesso"></label>
                         <select name="niveldeacesso" id="niveldeacesso" class="bloco2"  required>
@@ -64,17 +73,17 @@
                             <option value="Gerente">Gerente</option>
                             <option value="Funcionário">Funcionário</option>
                         </select>
-                
-                        <label for="codigodeacesso"></label>
-                        <input placeholder="Código de Acesso:" type="password" id="codigodeacesso" name="codigodeacesso" class="bloco2" required>
+                        
                     </div>
-                </div> 
+                </div>
             </div>
+
 
             <div class="buttons"> 
                 <button class="enviar" onclick="cadastrar()">Cadastrar</button>
-                <button class="codigo" onclick="codigo()">Solicitar Cód. Acesso</button>
+                
             </div> 
+
 
             <div class="links">
                 <a onclick="trocarLogin()">Já tenho Conta</a>
@@ -90,12 +99,12 @@
     <main id="telaLogin" class="telaLogin">
         <div class="container">
             <div class="form">
-                <h2 class="titulo">Login</h2>
+                <h2 class="titulo">LOGIN</h2>
                 
                 <input type="text" id="input_login" placeholder="Login">
                 <input type="password" id="input_senha" placeholder="Senha">
 
-                <button onclick="autenticar()">Entrar</button>
+                <button onclick="autenticar()" class="enviaron">Entrar</button>
 
                 <div class="links" id="esqueci_senha">
                     <a onclick="trocarSenha()">Esqueci minha Senha</a>
@@ -155,88 +164,131 @@
 </html>
 
 <script>
-    var codigo;
-    var email_cad = input_email_cad.value;
-    var senha_cad = input_senha_cad.value;
-
-    var email_red = input_Remail.value;
+    // Variáveis declaradas como globais para uso em diferentes funções. Todos começam nulo;
+    var codigo; // Ainda não utilizado, código de acesso no cadastro;
+    var email_cad = input_email_cad.value; // Email inserido no cadastro;
+    var cpf_cad = input_cpf.value; // CPF inserido no cadastro;
+    var senha_cad = input_senha_cad.value; // Senha inserido no cadastro;
+    var nome_cad = input_nome.value; // Nome inserido no cadastro;
+    var nascimento_cad = input_nascimento.value; // Data nascimento inserido no cadastro;
+    var telefone_cad = input_telefone.value; // Telefone inserido no cadastro;
     
+    var email_red = input_Remail.value; // Email para redefinir senha;
+    var NovaSenha = input_NovaSenha.value; // Senha redefinida;
+    var codigo_recuperar_senha = '' // Código gerado aleatóriamente para redefinir senha;
 
-    var NovaSenha = input_NovaSenha.value;
-
+    // Ao clicar em "Cadastrar";
     function cadastrar(){
+        // Obtendo dados inseridos nas inputs;
+        nome_cad = input_nome.value;
+        cpf_cad = input_cpf.value;
         email_cad = input_email_cad.value;
         senha_cad = input_senha_cad.value;
+        nascimento_cad = input_nascimento.value;
+        telefone_cad = input_telefone.value;
 
-        trocarLogin();
+    // Validações das entradas;
+    if (email_cad == "" || senha_cad == "" || nome_cad == "" ||
+        cpf_cad == "" || nascimento_cad == "" || telefone_cad == "") alert("Preencha todos os campos!") 
+    else if (nome_cad.length  <= 1) alert("O nome precisa de dois ou mais caracteres")
+    else if(email_cad.indexOf("@") == -1 && email_cad.indexOf(".")) alert("O email esta inválido")
+    else if (cpf_cad.length != 11 ) alert("O cpf esta inválido")
+    else trocarLogin();
     }
 
+    // Alterar a tela para a de login, mantendo na mesma página HTML;
     function trocarLogin(){
         telaCadastro.style.display = 'none'
         telaLogin.style.display = 'flex'
         telaSenha.style.display = 'none'
     }
 
+    // Alterar a tela para a de cadastro, mantendo na mesma página HTML;
     function trocarCadastro(){
         telaCadastro.style.display = 'flex'
         telaLogin.style.display = 'none'
         telaSenha.style.display = 'none'
     }
 
+    // Alterar a tela para a de esqueceu a senha, mantendo na mesma página HTML;
     function trocarSenha(){
         telaSenha.style.display = 'flex'
         telaLogin.style.display = 'none'
         telaCadastro.style.display = 'none'
     }
 
+
     function gerar(){
+    // Recebendo a entrada de email;
         email_red = input_Remail.value;
 
+    // Validando a entrada de email;
         if (email_red == ""){
             alert("Preencha o email que terá a senha redefinida! \nPor meio dele enviaremos o código para redefinição!")
         } else {
-            var min = 100;
-        var max = 999;
-        var intervalo = max - min;
-        aleatorio = Math.random() * (max - min) + min; // * intervalo + min;
-        aleatorio = aleatorio.toFixed(0);
-        alert(Number(aleatorio)); 
+
+    // Resetando o valor do código final;
+        codigo_recuperar_senha = '';
+
+    // Estrutura de repetoção para gerar 6 dígitos aleatórios;
+        for (var cont = 1; cont <= 6; cont++) {
+            aleatorio = Math.random() * (10) + 0.5; // Gera um número de 0.5 até 10.5;
+            aleatorio = aleatorio.toFixed(0) // Fixa ele entre 1 e 10 (0.5 arredonda para 1, 10.5 arredonda para 10);
+            aleatorio = aleatorio - 1; // Mudando para número de 0 à 9;
+            aleatorio = aleatorio.toString() // Transformando o número em texto para concatenar;
+            codigo_recuperar_senha += aleatorio; // Concatenando número;
+        }
+        // Alerta com o código obtido no for;
+        alert(`O seu código de acesso para redefinir a senha é: ${codigo_recuperar_senha}`); 
         }
         
     }
-
-    function salvar (){
-        senha_cad = input_NovaSenha.value;
-
-        alert('Senha alterada com sucesso!')
-
-        trocarLogin();
-    }
-
+    // Na tela de alterar senha, após inserir o código e validá-lo, redireciona para a tela de redefinir; 
     function redefinir(){
+        // Obtendo código inserido;
         var Rcdg = input_Rcdg.value;
 
-        if(Rcdg == aleatorio){
+        // Verificando se o código inserido é igual ao código gerado;
+        if(Rcdg == codigo_recuperar_senha){
+            // Alera para a tela de mudar a senha, mantendo na mesma página de HTML;
             input_Rcdg.style.display = 'none';
             input_Remail.style.display = 'none';
             bt_gerar.style.display = 'none';
             bt_redefinir_senha.style.display = 'none';
-
 
             bt_salvar_senha.style.display = 'block';
             input_NovaSenha.style.display = 'block';
         }
     }
 
+    // Função na tela de mudar a senha para confirmar;
+    function salvar (){
+        // Obter a senha nova inserida e sobrescrever na senha de cadastro;
+        senha_cad = input_NovaSenha.value;
 
+        if (senha_cad == '') alert('Insira uma senha nova')
+        else alert('Senha alterada com sucesso!')
+
+        // Redirecionar para tela de login (Função na linha 190)
+        trocarLogin();
+    }
+
+
+    // Função na tela de login para entrar na dashboard;
     function autenticar(){
-        var email_log = input_login.value;
-        var senha_log = input_senha.value;
+        // Recebendo inputs;
+        var email_log = input_login.value; // Recebendo entrada de email;
+        var senha_log = input_senha.value; // Recebendo entrada de senha;
 
+        // Validando se a entrada de login e senha são iguais aos inseridos no cadastro;
         if (email_log == email_cad && senha_log == senha_cad){
+            // Redirecionamento para outra página HTML, a da dashboard
             window.location.href = "../../Site/dashboard/dashboard.html";
         } else {
+            // Alerta de erro
             alert ('Senha ou email incorreto')
         }
     }
+
+
 </script>
