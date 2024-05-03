@@ -73,14 +73,14 @@
     var height = 490;
 
     // Gerando um ponto por local da planta
-    var local1 = { x: 140, y: 160, value: Math.floor(Math.random() * 101), radius: 150, };
-    var local2 = { x: 430, y: 110, value: Math.floor(Math.random() * 101), radius: 150, };
-    var local3 = { x: 700, y: 130, value: Math.floor(Math.random() * 101), radius: 150, };
-    var local4 = { x: 80, y: 380, value: Math.floor(Math.random() * 101), radius: 150, };
-    var local5 = { x: 320, y: 350, value: Math.floor(Math.random() * 101), radius: 150, };
-    var local6 = { x: 670, y: 380, value: Math.floor(Math.random() * 101), radius: 180, };
+    var escada1 = { x: 237, y: 350, value: Math.floor(Math.random() * 101), radius: 40, };
+    var escada2 = { x: 265, y: 300, value: Math.floor(Math.random() * 101), radius: 40, };
+    var escada3 = { x: 545, y: 345, value: Math.floor(Math.random() * 101), radius: 40, };
+    var passarela1 = { x: 515, y: 370, value: Math.floor(Math.random() * 101), radius: 40, };
+    var passarela2 = { x: 620, y: 250, value: Math.floor(Math.random() * 101), radius: 40, };
+    var catraca = { x: 690, y: 172, value: Math.floor(Math.random() * 101), radius: 40, };
 
-    points = points.concat(local1, local2, local3, local4, local5, local6);
+    points = points.concat(escada1, escada2, escada3, passarela1, passarela2, catraca);
 
     var data = {
       max: max,
