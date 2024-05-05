@@ -36,15 +36,15 @@ body {
   padding: 10px;
   z-index: 3;
   border-bottom: 2px solid #07272c;
-  height: 82px;
+  height: 11vh;
   
 }
 
 .titulo{
   color: #0a3339;
   font-family: league-spartan;
-  margin-left: 50px;
-  margin-right: 200px;
+  margin-left: 6vw;
+  margin-right: 14vw;
   margin-top: 0;
   margin-bottom: 0;
 }

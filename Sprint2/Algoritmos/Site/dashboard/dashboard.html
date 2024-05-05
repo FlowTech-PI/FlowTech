@@ -8,20 +8,30 @@
   <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
   <link rel="stylesheet" href="Dash.css">
 </head>
-
 <body>
-  <div class="container">
-    <span id="menuH" class="material-symbols-outlined" onclick="clickMenu()">menu</span>
-    <h1 class="titulo">FlowTech</h1>
-    <ul class="itensNaveBar">
-      <li> <a href="../../Site/index/index.html">Início</a></li>
-      <li>|</li>
-      <li> <a href="../../Site/index/index.html#sobnos">Sobre nós</a></li>
-      <li>|</li>
-      <li> <a href="../../Site/index/index.html#contato">Contato</a></li>
-    </ul>
-  </div>
   
+  <div class="header1">
+    <div class="container1">
+      
+      <span id="menuH" class="material-symbols-outlined" onclick="clickMenu()">menu</span>
+        <h1 class="titulo1">FLOWTECH</h1>
+    
+      <ul class="navbar1">
+          <li> <a href="../index/index.html">Inicio</a></li>
+          <li>|</li>
+          <li> <a href="../index/index.html">Quem somos?</a></li>
+          <li>|</li>
+          <li> <a href="../index/index.html">Contato</a></li>
+          <li>|</li>
+          <li> <a href="../Simulador_Financeiro/simulador.html">Simulador Financeiro</a></li>
+          <a href="../cadastro/cadastro.html"><li class="bt1"> CADASTRAR-SE</li></a>
+          <a href="../login/login.html"><li class="bt1">LOGIN</li></a>       
+      </ul>
+    </div>
+  </div>
+  <div class="gap"></div>
+
+<div class="main_conteudo">
   <div id="itens-laterais">
     <ul class="listaItens">
       <div id="fp" class="fotoPerfil">
@@ -34,7 +44,7 @@
       <li> <a href="../login/login.html">Sair</a></li>
     </ul>
   </div>
-
+<div class="itens_principais">
   <div class="box-title">
     <h2 class="title2"> DASHBOARD
       <h6 class="subtitle2">FLOWTECH</h6>
@@ -48,12 +58,14 @@
 
     </div>
   </div>
-  </div>
+
   <br>
   <br>
 
   <main class="container_dados">
     <div class="params">
+
+      <div class="gap2"></div>
 
       <div class="E" id = 'E'>
         <div class="box-grafico" id="div_graf">
@@ -67,6 +79,8 @@
         </div>
       </div>
 
+      <div class="gap2"></div>
+
       <div class="M" id = 'M'>
         <div class="box-grafico" id="div_graf">
           <div class="box-grafINTERNO" id="div_grafIN">
@@ -77,6 +91,8 @@
           </label>
         </div>
       </div>
+
+      <div class="gap2"></div>
 
       <div class="D" id = 'D'>
         <div class="box-grafico" id="div_graf">
@@ -117,13 +133,15 @@
 
       <div class="flecha">
         <img src="../imagens/flecha_dash.png" alt="" width="500px">
-        <a href="../graficos/graficos.html"><button class="ver_mais">Ver Mais -></button></a>
+        <a href="../graficos/graficos.html"><button class="ver_mais" style="margin-left: 100%;">Ver Mais -></button></a>
       </div>
     </div>
   </center>
 
 
   <br>
+</div>
+</div>
 </body>
 
 </html>
