@@ -20,6 +20,11 @@ body {
   scroll-behavior: smooth;
 }
 
+a {
+  text-decoration: none;
+  color: #ffffff;
+}
+
 .container{
   display: flex;
   width: 80%;
