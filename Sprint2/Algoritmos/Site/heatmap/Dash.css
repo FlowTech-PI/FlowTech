@@ -97,6 +97,21 @@ h2.title2 {
   margin-left: 5%;
 }
 
+select {
+    background-color: #1D314D;
+    margin-left: 5%;
+    height: 55px;
+    border-radius: 6px;
+    color: #FFFFFF;
+    font-family: roboto;
+    padding: 5px;
+    font-weight: lighter;
+    text-align: center;
+    font-size: 15px;
+    border: 2px solid #000;
+    width: 200px;
+}
+
 
 
   @font-face {
