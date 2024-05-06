@@ -32,14 +32,16 @@ body {
   list-style: none;
 }
 
+.listaItens a{
+  text-decoration: none;
+  color: #EBEBEB;
+}
+
 .itensNaveBar a{
   text-decoration: none;
   color: #1D314D;
 }
-.titulo{
-  color:#1D314D;
-  margin-left: 50px;
-}
+
 #menuH{
   display: flex;
   flex-direction: column;
