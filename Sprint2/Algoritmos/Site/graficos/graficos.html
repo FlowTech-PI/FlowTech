@@ -11,17 +11,32 @@
 </head>
 
 <body>
-  <div class="container">
-    <span id="menuH" class="material-symbols-outlined" onclick="clickMenu()">menu</span>
-    <h1 class="titulo">FlowTech</h1>
-    <ul class="itensNaveBar">
-      <li> <a href="../../Site/index/index.html">Início</a></li>
-      <li>|</li>
-      <li> <a href="../../Site/index/index.html#sobnos">Sobre nós</a></li>
-      <li>|</li>
-      <li> <a href="../../Site/index/index.html#contato">Contato</a></li>
-    </ul>
+  <div class="header1">
+    <div class="container1">
+      
+      <span id="menuH" class="material-symbols-outlined" onclick="clickMenu()" style="background-color: white;">menu</span>
+      <!-- <link rel="stylesheet" href="../dashboard/Dash.css"> -->
+        <h1 rel="stylesheet" href="../dashboard/Dash.css" class="titulo1">FLOWTECH</h1>
+    
+      <ul class="navbar1">
+          <li> <a href="../index/index.html">Inicio</a></li>
+          <li>|</li>
+          <li> <a href="../index/index.html">Quem somos?</a></li>
+          <li>|</li>
+          <li> <a href="../index/index.html">Contato</a></li>
+          <li>|</li>
+          <li> <a href="../Simulador_Financeiro/simulador.html">Simulador Financeiro</a></li>
+          <li>|</li>
+          <li> <a><u>Dashboard</u></a></li>
+          <li>|</li>
+          <li> <a href="../graficos/graficos.html">Gráficos</a></li>
+          <li>|</li>
+          <li> <a href="../heatmap/heatmap.html">Heatmap</a></li>
+      </ul>
+    </div>
   </div>
+
+  <div class="gap"></div>
 
 
   <div class="tela" style="display: flex;">
@@ -46,7 +61,7 @@
 
   <div class="box-title">
     <h2 class="title2"> GRAFICOS
-      <h6 class="subtitle2">FLOWTECH</h6>
+      <!-- <h6 class="subtitle2">FLOWTECH</h6> -->
     </h2>
   </div>
   <div class="box-juncao">
@@ -353,11 +368,13 @@ function limpar(){
     SPgf3.style.display = 'none'
     VSgf1.style.display = 'none'
     VSgf2.style.display = 'none'
-    VSgf3.style.display = 'none'
+    VSgf3.style.display = 'none';
 
-    Document.getElementById('BG1').checked = false;
-    Document.getElementById('BG2').checked = false;
-    Document.getElementById('BG3').checked = false;
+
+
+    document.getElementById("BG1").checked = false;
+    document.getElementById('BG2').checked = false;
+    document.getElementById('BG3').checked = false;
   }
   
   function clickMenu() {
