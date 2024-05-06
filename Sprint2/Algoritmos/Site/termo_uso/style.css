@@ -1,0 +1,161 @@
+* {
+    margin: 0;
+    padding: 0;
+    
+    font-family: sans-serif;
+  }
+  
+  /* Corpo da página */
+  body {
+    background-image: url(../imagens/Fundo_Simulador.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    color: #333;
+    font-size: 16px;
+  }
+
+  .header {
+    display: flex;
+  }
+  
+  .header a {
+    text-decoration: none;
+    color: #07272c;
+    scroll-behavior: smooth;
+  }
+  
+  .container{
+    display: flex;
+    width: 80%;
+    margin: auto;
+  }
+  
+  .header .container{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
+    position: fixed;
+    background-color: #fff;
+    padding: 10px;
+    z-index: 3;
+    border-bottom: 2px solid #07272c;
+    height: 11vh;
+
+  }
+
+  .titulo{
+    margin-left: 50px;
+    margin-right: 200px;
+    color: #0a3339;
+    font-family: league-spartan;
+  }
+  
+  .navbar {
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    justify-content: space-between;
+    color: #07272c;
+    align-items: center;
+    font-weight: bold;
+    font-size: 19.2px;
+    margin-left: 40px;
+  
+  }
+  
+  .navbar li {
+    display: flex;
+    justify-content: space-between;
+    margin: 8px; 
+  }
+  
+  .navbar .quem{
+    margin-right: 0px;
+  }
+  
+  .navbar .bt {
+    background-color: #07272c;
+    color: #fff;
+    padding: 8px 35px;
+    border-radius: 50px;
+    font-size: 15px;
+    font-family: sans-serif;
+    font-weight: 550;
+    cursor: pointer;
+  
+  }
+
+  
+  /* div principal (o bloco inteiro) */
+  .div {
+    
+    width: 800px;
+    background-color: white;
+    margin: 0 auto;
+    padding: 20px;
+    border: 4px solid #d0ccd4;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-top: 85px;
+  }
+  
+  /* titulo */
+  .div h2 {
+    color: #1D314D;
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    text-align: center;
+  }
+  
+  /* inputs */
+  .div input {
+    width: 300px;
+    padding: 5px;
+    border: 1px solid #1D314D;
+    margin-bottom: 10px;
+    border-top: 0px;
+    border-left: 0px;
+    border-right: 0px;
+    background-color: rgba(128, 128, 128, 0.059);
+    border-radius: 7px 7px 0px 0px;
+    
+  }
+
+  input:focus {
+    outline: none;
+  }
+  
+  /* botao */
+  .div button {
+    background-color: #374962;
+    color: #fff;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  
+  button:hover {
+    background-color: #1D314D;
+  }
+  
+  /* Mensagem de Resultado */
+  .simulacao{
+    margin-top: 20px;
+    padding: 15px;
+    border: 1px solid #1D314D;
+    border-radius: 5px;
+    background-color: #fafafa;
+  }
+
+  @font-face {
+    font-family: league-spartan;
+    src: url(../fontes/league-spartan/LeagueSpartan-Bold.otf);
+    
+  }

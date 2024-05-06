@@ -34,7 +34,7 @@ body:hover {
 .header1 .container1 {
     display: flex;
     align-items: center;
-    justify-content: flex-start;
+    justify-content: space-around;
     width: 100%;
     position: fixed;
     background-color: #fff;
@@ -48,7 +48,7 @@ body:hover {
 .titulo1 {
     color: #0a3339;
     font-family: league-spartan;
-    margin-left: 6vw;
+    margin-left: 3vw;
     margin-right: 14vw;
     margin-top: 0;
     margin-bottom: 0;
@@ -70,7 +70,6 @@ body:hover {
     align-items: center;
     font-weight: bold;
     font-family: sans-serif;
-
 }
 
 .navbar1 li {
@@ -183,8 +182,8 @@ a {
     align-items: center;
     width: 30%;
     height: 420px;
-    margin: 15vh 0;
     padding: 10px 0;
+    margin-top: 12%;
 }
 
 .telaLogin input {
@@ -248,7 +247,8 @@ a {
     display: block;
     height: auto;
     padding-left: 2.3%;
-    margin-top: 8%;
+    margin-top: 12%;
+    padding-bottom: 2%;
 }
 
 .telaCadastro .inputs_cad{
@@ -336,26 +336,31 @@ a {
 
 .telaCadastro .bloco1 {
     width: 90%;
-    background-color: #DCDCDC;
+    background-color: #9f9f9f;
     opacity: 0.5;
     margin-bottom: 10px;
     padding: 15px;
     border: 1px solid #ccc;
-    border-radius: 4px;
+    border-radius: 8px;
     box-sizing: border-box;
+    font-family: Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: bold;
+
 }
 
 
 .telaCadastro .bloco2 {
     width: 90%;
-    background-color: #DCDCDC;
+    background-color: #9f9f9f;
     opacity: 0.5;
     margin-right: -5pxpx;
     margin-bottom: 10px;
     padding: 15px;
     border: 1px solid #ccc;
-    border-radius: 4px;
+    border-radius: 8px;
     box-sizing: border-box;
+    font-family: Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: bold;
 }
 
 .telaCadastro .caixa {
@@ -490,7 +495,7 @@ nav, .form {
     align-items: center;
     width: 30%;
     height: 420px;
-    margin: 15vh 0;
+    margin: 12%;
     padding: 10px 0;
 }
 

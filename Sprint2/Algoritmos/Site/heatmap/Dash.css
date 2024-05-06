@@ -32,14 +32,16 @@ body {
   list-style: none;
 }
 
+.listaItens a{
+  text-decoration: none;
+  color: #EBEBEB;
+}
+
 .itensNaveBar a{
   text-decoration: none;
   color: #1D314D;
 }
-.titulo{
-  color:#1D314D;
-  margin-left: 50px;
-}
+
 #menuH{
   display: flex;
   flex-direction: column;
@@ -93,6 +95,21 @@ h2.title2 {
   background-image: url(Planta_Paulista.png);
   background-size: cover;
   margin-left: 5%;
+}
+
+select {
+    background-color: #1D314D;
+    margin-left: 5%;
+    height: 55px;
+    border-radius: 6px;
+    color: #FFFFFF;
+    font-family: roboto;
+    padding: 5px;
+    font-weight: lighter;
+    text-align: center;
+    font-size: 15px;
+    border: 2px solid #000;
+    width: 200px;
 }
 
 
