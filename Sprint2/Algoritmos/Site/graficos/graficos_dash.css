@@ -52,6 +52,10 @@ body {
   list-style: none;
   justify-content: space-around;
 }
+.conteudo{
+  width: 100%;
+}
+
 .listaItens li{
   /* espaço entre cada item da lista (li) */
   padding: 0px 0px 20px 0px;
@@ -79,7 +83,7 @@ body {
 }
 
 .box-title{
-  margin-left: 10%;
+  margin-left: 5%;
   font-size: 20px;
   
 }
@@ -93,7 +97,7 @@ body {
   text-align: center;
 }
 .box-juncao{
-  margin-left: 20% ;
+  margin-left: 0% ;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -131,7 +135,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-evenly;
-  margin-left: 0  ;
+  margin-left: 0;
 }
 .box-estacoes{
   white-space: nowrap;
@@ -143,6 +147,7 @@ body {
   width: 700px;
   justify-content: space-evenly;
   overflow-x: hidden;
+  margin-left: 8%;
 }
 .box-estacoes p{
   writing-mode: vertical-rl;
@@ -150,7 +155,7 @@ body {
   white-space: nowrap;
   display: inline-block;
   text-align: start;
-  margin: 0;
+  margin: 0% 0 0 3%;
   justify-content: space-evenly;
   
 }
@@ -281,5 +286,5 @@ body {
     width: 150px;
     height: 50px;
     cursor: pointer;
-    margin-left: 100%;
+    margin-left: 64%;
  }
