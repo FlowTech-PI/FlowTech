@@ -218,7 +218,6 @@ body {
     display: flex;
     float:left;
     flex-direction: column;
-    align-items: top;
     width: 20%;
     height: 100%;
     padding-block-end: 100%;
@@ -246,14 +245,14 @@ body {
   }
 
   #menuH{
-    display: flex;
-    flex-direction: row;
+    flex-direction: column;
     width: 2vw;
-    height: 30%;
-    background-color: #FFFFFF;
-    color: #1D314D;
-    cursor: pointer;
+    margin-left: 5px;
+    height: 6vh;
+    align-content: center;
     justify-content: center;
+    background-color: white;;
+    cursor: pointer;
   }
 
   .listaItens{
