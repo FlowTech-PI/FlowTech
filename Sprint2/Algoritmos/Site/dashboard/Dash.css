@@ -35,7 +35,7 @@ body {
     padding: 10px;
     z-index: 3;
     border-bottom: 2px solid #07272c;
-    height: 11vh;
+    height: 6vh;
 
 }
 
@@ -95,7 +95,7 @@ body {
 
 .gap {
   width: 11vw;
-  height: 11vh;
+  height: 6vh;
   padding: 10px;
 }
 
@@ -114,7 +114,7 @@ body {
   align-items: top;
   width: 20vw;
   z-index: 3;
-  height: 89vh;
+  height: 94vh;
   border: 2px solid #07272c;
 }
 .itensNaveBar {
@@ -137,13 +137,14 @@ body {
 }
 #menuH{
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   width: 2vw;
-  height: 30%;
-  background-color: #FFFFFF;
-  color: #1D314D;
-  cursor: pointer;
+  margin-left: 5px;
+  height: 6vh;
+  align-content: center;
   justify-content: center;
+  background-color: white;;
+  cursor: pointer;
 }
 .listaItens{
   list-style: none;
@@ -207,11 +208,11 @@ body {
 .main_conteudo {
   width: 100vw;
   display: flex;
-  height: 89vh;
+  height: 94vh;
 }
 
 .itens_principais {
-  height: 89vh;
+  height: 94vh;
   display: block;
   width: 100vw;  
 }
