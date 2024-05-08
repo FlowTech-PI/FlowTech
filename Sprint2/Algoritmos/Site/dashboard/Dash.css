@@ -403,6 +403,7 @@ body {
     background-color: #FF3131;
     border: 2px solid #000;
     margin-top: 4px;
+    margin-right: 3px;
   }
 
   .legenda .quadrado2{
@@ -411,6 +412,8 @@ body {
     background-color: #FF914D;
     border: 2px solid #000;
     margin-top: 4px;
+    margin-right: 3px;
+
   }
 
   .legenda .quadrado3{
@@ -419,6 +422,8 @@ body {
     background-color: #FFDE59;
     border: 2px solid #000;
     margin-top: 4px;
+    margin-right: 3px;
+
   }
 
   .legenda .quadrado4{
@@ -427,6 +432,8 @@ body {
     background-color: #C2E806;
     border: 2px solid #000;
     margin-top: 4px;
+    margin-right: 3px;
+
   }
 
   .legenda .quadrado5{
@@ -435,6 +442,8 @@ body {
     background-color: #4EE888;
     border: 2px solid #000;
     margin-top: 4px;
+    margin-right: 3px;
+
   }
 
   .legenda .quadrado6{
@@ -443,6 +452,8 @@ body {
     background-color: #41BB4D;
     border: 2px solid #000;
     margin-top: 4px;
+    margin-right: 3px;
+
   }
 
   .ver_mais{
