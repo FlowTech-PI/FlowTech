@@ -13,6 +13,7 @@ body {
 
 }
 
+
 .header1 a {
     text-decoration: none;
     color: #07272c;
@@ -150,7 +151,7 @@ body {
 .listaItens{
   list-style: none;
   justify-content: space-around;
-  margin-top: 40%;
+  margin-top: 30px;
 }
 .listaItens li{
   /* espaço entre cada item da lista (li) */
@@ -161,6 +162,7 @@ body {
   justify-content: center;
   margin: 30px;
   margin-left: 0px;
+  margin-top: 0;
 }
 .fotoPerfil img{
   width: 100px;
