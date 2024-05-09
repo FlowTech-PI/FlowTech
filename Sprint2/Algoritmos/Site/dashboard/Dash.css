@@ -380,21 +380,39 @@ body {
     display: flex;
     flex-direction: column;
     position: relative;
-    top: 150px;
-    margin-left: 6%;
+    top: 60px;
+    margin-left: 40%;
     
   }
 
-  .legenda .quadrados{
+  .legenda .quadrado-primeiro{
     display: flex;
     justify-content: center;
-    z-index: 2;
-    margin-left: -8%;
+    /* align-items: center; */
+    margin-left: -30vh;
+    
+    width: 20%;
+    height: 70%;
+    flex-direction: column;
+  }
+  .legenda .quadrado-segundo{
+    display: flex;
+    margin-left: 40vh;
+    width: 120%;
+    height: 70%;
+    flex-direction: column;
+    margin-top: -115px;
+    
   }
 
-  .legenda .quadrados p{
-    margin-top: 0;
-    margin-right: 10px;
+  .legenda .quadrado-primeiro p{
+    margin-top: -3.5vh;
+    
+    
+  }
+  
+  .legenda .quadrado-segundo p{
+    margin-top: -3.5vh;
   }
 
   .legenda .quadrado1{
@@ -403,6 +421,7 @@ body {
     background-color: #FF3131;
     border: 2px solid #000;
     margin-top: 4px;
+    margin-right: 1px;
   }
 
   .legenda .quadrado2{
@@ -411,6 +430,8 @@ body {
     background-color: #FF914D;
     border: 2px solid #000;
     margin-top: 4px;
+    margin-right: 3px;
+
   }
 
   .legenda .quadrado3{
@@ -419,6 +440,8 @@ body {
     background-color: #FFDE59;
     border: 2px solid #000;
     margin-top: 4px;
+    margin-right: 3px;
+
   }
 
   .legenda .quadrado4{
@@ -427,6 +450,8 @@ body {
     background-color: #C2E806;
     border: 2px solid #000;
     margin-top: 4px;
+    margin-right: 3px;
+
   }
 
   .legenda .quadrado5{
@@ -435,6 +460,8 @@ body {
     background-color: #4EE888;
     border: 2px solid #000;
     margin-top: 4px;
+    margin-right: 3px;
+
   }
 
   .legenda .quadrado6{
@@ -443,6 +470,8 @@ body {
     background-color: #41BB4D;
     border: 2px solid #000;
     margin-top: 4px;
+    margin-right: 3px;
+
   }
 
   .ver_mais{
