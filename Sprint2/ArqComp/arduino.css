@@ -211,12 +211,12 @@ select {
 
   @font-face {
     font-family: league-spartan;
-    src: url(../fontes/league-spartan/LeagueSpartan-Bold.otf);
+    src: url(../Algoritmos/Site/fontes/league-spartan/LeagueSpartan-Bold.otf);
     
   }
 
   @font-face {
     font-family: roboto;
-    src: url(../fontes/Roboto-Regular.ttf);
+    src: url(../Algoritmos/Site/fontes/Roboto-Regular.ttf);
     
   }
