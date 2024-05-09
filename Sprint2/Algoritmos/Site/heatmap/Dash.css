@@ -190,6 +190,19 @@ h2.title2 {
   margin-left: 5%;
 }
 
+
+.texto-oficial{
+  margin-top: 40%;
+}
+
+ .adicionar{
+  color:#1D314D;
+  font-family: roboto;
+  font-weight: bold;
+  size: 10%;
+
+}
+
 select {
     background-color: #1D314D;
     margin-left: 5%;
