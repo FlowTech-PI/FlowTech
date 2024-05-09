@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>FlowTech | HeatMap</title>
+    <title>FlowTech | Gráfico ao Vivo</title>
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
     
     <link rel="stylesheet" href="arduino.css">
@@ -32,17 +32,17 @@
                 <h1 class="titulo1">FLOWTECH</h1>
             
               <ul class="navbar1">
-                  <li> <a href="../index/index.html">Início</a></li>
+                  <li> <a href="../Algoritmos/Site/index/index.html">Início</a></li>
                   <li>|</li>
-                  <li> <a href="../Tela_Perfil/tela_perfil.html">Perfil</a></li>
+                  <li> <a href="../Algoritmos/Site/Tela_Perfil/tela_perfil.html">Perfil</a></li>
                   <li>|</li>
-                  <li> <a href="../Simulador_Financeiro/simulador.html">Simulador Financeiro</a></li>
+                  <li> <a href="../Algoritmos/Site/Simulador_Financeiro/simulador.html">Simulador Financeiro</a></li>
                   <li>|</li>
-                  <li> <a href="../heatmap/heatmap.html">Dashboard</a></li>
+                  <li> <a href="../Algoritmos/Site/dashboard/dashboard.html">Dashboard</a></li>
                   <li>|</li>
-                  <li> <a href="../graficos/graficos.html">Gráficos</a></li>
+                  <li> <a href="../Algoritmos/Site/graficos/graficos.html"><u>Gráficos</u></a></li>
                   <li>|</li>
-                  <li> <a" href="../heatmap/heatmap.html"><u>Heatmap</u></a></li>
+                  <li> <a href="../Algoritmos/Site/heatmap/heatmap.html">Heatmap</a></li>
               </ul>
             </div>
           </div>
@@ -239,6 +239,16 @@
         //     }
         // );
         /* -- chave */
+
+//         function clickMenu() {
+//     var itensLaterais = document.getElementById('itens-laterais');
+//     if (itensLaterais.style.display === 'block') {
+//       itensLaterais.style.display = 'none';
+//     } else {
+//       itensLaterais.style.display = 'block';
+//     }
+//   }
+
         var contextoChave = document.getElementById('chave').getContext('2d');
         contextoChave.canvas.width = 1000;
         contextoChave.canvas.height = 300;

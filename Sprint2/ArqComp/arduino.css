@@ -13,6 +13,7 @@ body {
 
 }
 
+
 .header1 a {
     text-decoration: none;
     color: #07272c;
@@ -150,7 +151,7 @@ body {
 .listaItens{
   list-style: none;
   justify-content: space-around;
-  margin-top: 40%;
+  margin-top: 30px;
 }
 .listaItens li{
   /* espaço entre cada item da lista (li) */
@@ -161,6 +162,7 @@ body {
   justify-content: center;
   margin: 30px;
   margin-left: 0px;
+  margin-top: 0;
 }
 .fotoPerfil img{
   width: 100px;
@@ -211,12 +213,12 @@ select {
 
   @font-face {
     font-family: league-spartan;
-    src: url(../fontes/league-spartan/LeagueSpartan-Bold.otf);
+    src: url(../Algoritmos/Site/fontes/league-spartan/LeagueSpartan-Bold.otf);
     
   }
 
   @font-face {
     font-family: roboto;
-    src: url(../fontes/Roboto-Regular.ttf);
+    src: url(../Algoritmos/Site/fontes/Roboto-Regular.ttf);
     
   }
