@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<!-- Apesar de estar como o nome de "Tela de Login", essa página simula um login e cadastro sem conexão a um bando de dados, por isso
+        foi necessário manter na mesma página HTML o login, cadastro e "esqueci a senha" -->
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FlowTech | Login & Cadastro</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="header1">
+        <div class="container1">
+    
+            <h1 class="titulo1">FLOWTECH</h1>
+        
+          <ul class="navbar1">
+              <li> <a href="../index/index.html">Início</a></li>
+              <li>|</li>
+              <li> <a href="../index/index.html">Quem somos?</a></li>
+              <li>|</li>
+              <li> <a href="../index/index.html">Contato</a></li>
+              <li>|</li>
+              <li> <a href="../Simulador_Financeiro/simulador.html">Simulador Financeiro</a></li>
+          </ul>
+        </div>
+      </div>
+
+
+
+    <main id="telaLogin" class="telaLogin">
+        <div class="container">
+            <div class="form">
+                <h2 class="titulo">Login</h2>
+                
+                <input type="text" id="email_input" placeholder="Login">
+                <input type="password" id="senha_input" placeholder="Senha">
+
+                <button onclick="autenticar()" class="enviaron">Entrar</button>
+
+                <div class="links" id="esqueci_senha">
+                    <a onclick="trocarSenha()">Esqueci minha Senha</a>
+                    <span> | </span>
+                    <a onclick="trocarCadastro()">Criar Conta</a>
+                </div>
+
+                <div class="links" id="termos">
+                    <a href="../privacidade/privacidade.html">Política de Privacidade</a>
+                    <span> | </span>
+                    <a href="../termo_uso/uso.html">Termos de Uso</a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <main id="telaSenha" class="telaSenha" style="display: none;">
+        <div class="container">
+            <div class="form">
+                <h2 class="titulo">Esqueci Minha Senha</h2>
+                
+                <input type="text" id="input_Remail" placeholder="Email">
+                <input type="password" id="input_Rcdg" placeholder="Código">
+
+                <input type="password" id="input_NovaSenha" class="NovaSenha" placeholder="Inserir Nova Senha" style="display: none;">
+
+                <div class="bts">
+                <button onclick="gerar()" class="cdg" id="bt_gerar">Enviar código por email</button>
+                <button onclick="redefinir()" id="bt_redefinir_senha">Redefinir Senha</button>
+                <button onclick="salvar()" id="bt_salvar_senha" style="display: none;">Salvar Senha</button>
+                </div>
+
+                
+
+
+                <div class="links" id="esqueci_senha">
+                    <a onclick="trocarLogin()">Voltar</a>
+                    <span> | </span>
+                    <a onclick="trocarCadastro()">Criar Conta</a>
+                </div>
+
+                <div class="links" id="termos">
+                    <a href="#">Política de Privacidade</a>
+                    <span> | </span>
+                    <a href="#">Termos de Serviço</a>
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+
+
+
+</body>
+
+</html>
+
+<script>
+
+
+    function entrar() {
+        aguardar();
+
+        var emailVar = email_input.value;
+        var senhaVar = senha_input.value;
+
+        if (emailVar == "" || senhaVar == "") {
+            cardErro.style.display = "block"
+            mensagem_erro.innerHTML = "(Mensagem de erro para todos os campos em branco)";
+            finalizarAguardar();
+            return false;
+        }
+        else {
+            setInterval(sumirMensagem, 5000)
+        }
+
+        console.log("FORM LOGIN: ", emailVar);
+        console.log("FORM SENHA: ", senhaVar);
+
+        fetch("/usuarios/autenticar", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                emailServer: emailVar,
+                senhaServer: senhaVar
+            })
+        }).then(function (resposta) {
+            console.log("ESTOU NO THEN DO entrar()!")
+
+            if (resposta.ok) {
+                console.log(resposta);
+
+                resposta.json().then(json => {
+                    console.log(json);
+                    console.log(JSON.stringify(json));
+                    sessionStorage.EMAIL_USUARIO = json.email;
+                    sessionStorage.NOME_USUARIO = json.nome;
+                    sessionStorage.ID_USUARIO = json.id;
+                    sessionStorage.AQUARIOS = JSON.stringify(json.aquarios)
+
+                    setTimeout(function () {
+                        window.location = "./dashboard/cards.html";
+                    }, 1000); // apenas para exibir o loading
+
+                });
+
+            } else {
+
+                console.log("Houve um erro ao tentar realizar o login!");
+
+                resposta.text().then(texto => {
+                    console.error(texto);
+                    finalizarAguardar(texto);
+                });
+            }
+
+        }).catch(function (erro) {
+            console.log(erro);
+        })
+
+        return false;
+    }
+
+    function sumirMensagem() {
+        cardErro.style.display = "none"
+    }
+
+</script>

@@ -1,0 +1,523 @@
+@font-face {
+    font-family: league-spartan;
+    src: url(../fontes/league-spartan/LeagueSpartan-Bold.otf);
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    background-image: url(../imagens/fundo_login.png);
+}
+
+body:hover {
+    cursor: default;
+}
+
+.header1 {
+    display: flex;
+
+}
+
+.header1 a {
+    text-decoration: none;
+    color: #07272c;
+    scroll-behavior: smooth;
+}
+
+.container1 {
+    display: flex;
+    width: 80%;
+    margin: auto;
+}
+
+.header1 .container1 {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 100%;
+    position: fixed;
+    background-color: #fff;
+    padding: 10px;
+    z-index: 3;
+    border-bottom: 2px solid #07272c;
+    height: 6vh;
+
+}
+
+.titulo1 {
+    color: #0a3339;
+    font-family: league-spartan;
+    margin-left: 3vw;
+    margin-right: 14vw;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.container {
+    display: flex;
+    width: 95%;
+    margin: auto;
+    padding: 10px;
+}
+
+.navbar1 {
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    justify-content: space-between;
+    color: #07272c;
+    align-items: center;
+    font-weight: bold;
+    font-family: sans-serif;
+}
+
+.navbar1 li {
+    display: flex;
+    justify-content: space-between;
+    margin: 8px;
+    font-size: 19.2px;
+}
+
+.navbar1 .quem {
+    margin-right: 0px;
+}
+
+.navbar1 .bt1 {
+    background-color: #07272c;
+    color: #fff;
+    padding: 8px 35px;
+    border-radius: 50px;
+    font-size: 15px;
+    font-family: sans-serif;
+    font-weight: 550;
+    cursor: pointer;
+}
+
+.navbar .bt1 a {
+    color: #fff;
+}
+
+ul,
+span,
+input,
+.buttons {
+    font-weight: bold;
+}
+
+.titulo,
+.navbar ul,
+.navbar span,
+input,
+.links span,
+.links a {
+    color: #1D314D;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    padding-left: 40px;
+}
+
+.navbar ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 19.2px;
+    list-style: none;
+    padding-left: 0px;
+
+}
+
+.navbar a {
+    text-decoration: none;
+    color: #07272c;
+    scroll-behavior: smooth;
+}
+
+.navbar a:hover {
+    color: #144b97;
+    cursor: pointer;
+}
+
+.navbar li:hover,
+.navbar span:hover,
+.links a:hover {
+    color: #144b97;
+    cursor: pointer;
+}
+
+.navbar,
+input,
+.enviaron {
+    font-size: 16px;
+}
+
+.titulo {
+    font-size: 32px;
+}
+
+
+
+a {
+    text-decoration: none;
+}
+
+.telaLogin main .container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: fit-content;
+}
+
+.telaLogin .form, input, .enviaron {
+    border-radius: 10px;
+}
+
+.telaLogin .form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 30%;
+    height: 420px;
+    padding: 10px 0;
+    margin-top: 12%;
+}
+
+.telaLogin input {
+    background-color: #cacaca;
+    border: none;
+    height: 50px;
+    width: 75%;
+    margin: 5px 0;
+    padding-left: 10px;
+    font-family: Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: bold;
+}
+
+.telaLogin input:focus {
+    outline: none;
+}
+
+.telaLogin .enviaron {
+    background-color: #1D314D;
+    color: #fff;
+    font-family: sans-serif;
+    font-weight: bold;
+    border: none;
+    height: 40px;
+    width: 60%;
+    margin: 30px 0 10px 0;
+}
+
+.telaLogin .enviaron:hover {
+    background-color: #144b97 ;
+    cursor: pointer;
+}
+
+.telaLogin .links {
+    display: flex;
+    justify-content: space-between;
+}
+
+.telaLogin #esqueci_senha {
+    width: 50%;
+}
+
+.telaLogin #termos {
+    width: 65%;
+    margin-top: 20%;
+}
+
+.telaLogin .links span, .links a {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 12px;
+}
+
+
+.telaCadastro .container {
+    background-color: white;
+    width: 45%;
+    position: relative;
+    border-radius: 8px;
+    display: block;
+    height: auto;
+    padding-left: 2.3%;
+    margin-top: 12%;
+    padding-bottom: 2%;
+}
+
+.telaCadastro .inputs_cad{
+    display: flex;
+
+}
+
+.telaCadastro .enviaron {
+    margin-left: -6%;
+    display: flex;
+    justify-content: space-around;
+}
+
+.telaCadastro .enviar{
+    width: 30%;
+    padding: 10px;
+    border-radius: 4PX;
+    background-color: #1D314D;
+    color: white;
+    border: none;
+    margin-left: 235px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.telaCadastro .enviar:hover {
+    background-color: #54657e;
+}
+
+.telaCadastro .codigo {
+    background-color: #1D314D;
+    color: white;
+    border: none;
+    width: 30%;
+    height: 20%;
+    padding: 10px;
+    border-radius: 10px;
+    margin: 10px;
+}
+
+.telaCadastro .codigo:hover {
+    background-color: #54657e;
+}
+
+
+.telaCadastro h1{
+    text-align: center;
+    color: #1D314D;
+}
+
+
+.telaCadastro input[type="submit"] {
+    background-color: #1D314D;
+    color: white;
+    border: none;
+    cursor: pointer;
+
+}
+
+.telaCadastro input[type="submit"]:hover {
+    background-color: #1D314D;
+}
+
+
+.telaCadastro input::placeholder {
+  
+  opacity: 0.9;
+  color: black;
+ 
+}
+
+.telaCadastro select:invalid {
+    opacity: 0.5;
+    color: black;
+    font-weight: bolder;
+}
+
+.telaCadastro form {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 300px;
+}
+
+.telaCadastro .bloco1 {
+    width: 90%;
+    background-color: #9f9f9f;
+    opacity: 0.5;
+    margin-bottom: 10px;
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-sizing: border-box;
+    font-family: Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: bold;
+
+
+}
+
+
+.telaCadastro .bloco2 {
+    width: 90%;
+    background-color: #9f9f9f;
+    opacity: 0.5;
+    margin-right: -5pxpx;
+    margin-bottom: 10px;
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-sizing: border-box;
+    font-family: Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: bold;
+}
+
+.telaCadastro .caixa {
+    height: 40px;
+    width: 60%;
+}
+
+.telaCadastro .links a {
+    justify-content: center;
+}
+
+.telaLogin .container {
+    justify-content: center;
+}
+
+.telaSenha main .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: fit-content;
+}
+
+.telaSenha .form,
+input,
+button {
+    border-radius: 10px;
+}
+
+.telaSenha .form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 30%;
+    height: 420px;
+    margin: 15vh 0;
+    padding: 10px 0;
+}
+
+.telaSenha input {
+    background-color: #cacaca;
+    border: none;
+    height: 200px;
+    width: 75%;
+    margin: 5px 0;
+    padding-left: 10px;
+    font-family: Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: bold;
+}
+
+.telaSenha input:focus {
+    outline: none;
+}
+
+.telaSenha button {
+    background-color: #1D314D;
+    color: #fff;
+    font-family: sans-serif;
+    font-weight: bold;
+    border: none;
+    height: 40px;
+    width: 65%;
+    margin: 30px 0 10px 0;
+
+}
+
+.telaSenha button:hover {
+    background-color: #144b97;
+    cursor: pointer;
+}
+
+.telaSenha .links {
+    display: flex;
+    justify-content: space-between;
+}
+
+.telaSenha #esqueci_senha {
+    width: 50%;
+}
+
+.telaSenha #termos {
+    width: 65%;
+    margin-top: 20%;
+}
+
+.telaSenha .links span,
+.links a {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 12px;
+}
+
+.telaSenha .container {
+    justify-content: center;
+}
+
+.telaSenha .bts {
+    display: flex;
+    justify-content: space-around;
+    width: 75%;
+}
+
+.telaSenha .cdg {
+    margin-right: 5%;
+}
+
+.telaSenha .NovaSenha {
+    height: 50px;
+}
+
+
+.divcaixatexto {
+    width: 50%;
+}
+
+.divcaixatexto2 {
+    width: 50%;
+}
+
+nav, .form {
+    background-color: #fff;
+    border-bottom: 2px solid #07272c;
+}
+
+.telaLogin .form, input, .enviaron {
+    border-radius: 10px;
+}
+
+.telaLogin .form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 30%;
+    height: 420px;
+    margin: 12%;
+    padding: 10px 0;
+}
+
+.telaCadastro form {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 300px;
+}
+
+.telaSenha .form, input, button {
+    border-radius: 10px;
+}
+
+.telaSenha .form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 30%;
+    height: 420px;
+    margin: 15vh 0;
+    padding: 10px 0;
+}

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FlowTech | HeatMap</title>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+  <link rel="stylesheet" href="Dash.css">
+  <script src="heatmap.js"></script>
+</head>
+
+
+<body>
+  
+  <div class="header1">
+    <div class="container1">
+      
+      <span id="menuH" class="material-symbols-outlined" onclick="clickMenu()">menu</span>
+        <h1 class="titulo1">FLOWTECH</h1>
+    
+      <ul class="navbar1">
+          <li> <a href="../index/index.html">Início</a></li>
+          <li>|</li>
+          <li> <a href="../Tela_Perfil/tela_perfil.html">Perfil</a></li>
+          <li>|</li>
+          <li> <a href="../Simulador_Financeiro/simulador.html">Simulador Financeiro</a></li>
+          <li>|</li>
+          <li> <a href="../heatmap/heatmap.html">Dashboard</a></li>
+          <li>|</li>
+          <li> <a href="../graficos/graficos.html">Gráficos</a></li>
+          <li>|</li>
+          <li> <a" href="../heatmap/heatmap.html"><u>Heatmap</u></a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="gap"></div>
+
+  <div class="tela" style="display: flex;">
+    <div id="itens-laterais">
+      <div>
+        <ul class="listaItens">
+          <div id="fp" class="fotoPerfil">
+            <a href="../Tela_Perfil/tela_perfil.html"><img src="../../Site/Tela_Perfil/perfil.png" alt="foto de perfil"></a>
+          </div>
+            <li> <a href="../Simulador_Financeiro/simulador.html">🖥 Calculadora Financeira</a></li>
+            <li> <a href="../graficos/graficos.html">📊 Gráficos</a></li>
+            <li> <a href="../dashboard/dashboard.html">🖥️ Dashboard</a></li>
+            <li> <a href="../heatmap/heatmap.html">🗺️ HeatMap </a></li>
+            <li> <a href="../login/login.html">Sair</a></li>
+        </ul>
+      </div>
+    </div>
+
+
+    <div class="conteudo">
+      <div class="box-title">
+        <h2 class="title2"> HeatMap
+          <h6 class="subtitle2">FLOWTECH</h6>
+        </h2>
+      </div>
+
+      <select name="select_est" id="select_est" onchange="atualizar()">
+        <option value="Paulista">Paulista</option>
+        
+       
+      </select>
+
+      <div class="heatmap"></div>
+    </div>
+
+
+    <div class="texto-oficial">
+      <p class="adicionar">Para adicionar mais estações, entrar em contato com a FLOWTECH através dos nossos meios de comunicações oficiais</p>
+    </div>
+    
+
+  </div>
+
+
+
+
+
+</body>
+
+</html>
+
+<script>
+  var heatmapInstance = h337.create({
+    container: document.querySelector(".heatmap"),
+  });
+
+  
+    var points = [];
+    var max = 100;
+    var min = 0;
+    var width = 850;
+    var height = 490;
+
+    // Gerando um ponto por local da planta
+    var escada1 = { x: 237, y: 350, value: Math.floor(Math.random() * 101), radius: 40, };
+    var escada2 = { x: 265, y: 300, value: Math.floor(Math.random() * 101), radius: 40, };
+    var escada3 = { x: 545, y: 345, value: Math.floor(Math.random() * 101), radius: 40, };
+    var passarela1 = { x: 515, y: 370, value: Math.floor(Math.random() * 101), radius: 40, };
+    var passarela2 = { x: 620, y: 250, value: Math.floor(Math.random() * 101), radius: 40, };
+    var catraca = { x: 690, y: 172, value: Math.floor(Math.random() * 101), radius: 40, };
+
+    points = points.concat(escada1, escada2, escada3, passarela1, passarela2, catraca);
+
+    var data = {
+      max: max,
+      min: min,
+      data: points,
+    }
+
+
+    heatmapInstance.setData(data);
+
+
+  function clickMenu() {
+    var itensLaterais = document.getElementById('itens-laterais');
+    if (itensLaterais.style.display === 'block') {
+      itensLaterais.style.display = 'none';
+    } else {
+      itensLaterais.style.display = 'block';
+    }
+  }
+
+
+</script>
