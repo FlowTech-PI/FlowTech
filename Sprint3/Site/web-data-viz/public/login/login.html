@@ -40,7 +40,7 @@
                 <input type="text" id="email_input" placeholder="Login">
                 <input type="password" id="senha_input" placeholder="Senha">
 
-                <button onclick="autenticar()" class="enviaron">Entrar</button>
+                <button onclick="entrar()" class="enviaron">Entrar</button>
 
                 <div class="links" id="esqueci_senha">
                     <a onclick="trocarSenha()">Esqueci minha Senha</a>
@@ -103,7 +103,7 @@
 
 
     function entrar() {
-        aguardar();
+        
 
         var emailVar = email_input.value;
         var senhaVar = senha_input.value;
@@ -111,12 +111,10 @@
         if (emailVar == "" || senhaVar == "") {
             cardErro.style.display = "block"
             mensagem_erro.innerHTML = "(Mensagem de erro para todos os campos em branco)";
-            finalizarAguardar();
+            
             return false;
         }
-        else {
-            setInterval(sumirMensagem, 5000)
-        }
+        
 
         console.log("FORM LOGIN: ", emailVar);
         console.log("FORM SENHA: ", senhaVar);
@@ -142,10 +140,10 @@
                     sessionStorage.EMAIL_USUARIO = json.email;
                     sessionStorage.NOME_USUARIO = json.nome;
                     sessionStorage.ID_USUARIO = json.id;
-                    sessionStorage.AQUARIOS = JSON.stringify(json.aquarios)
+                    
 
                     setTimeout(function () {
-                        window.location = "./dashboard/cards.html";
+                        window.location = "../dashboard/dashboard.html";
                     }, 1000); // apenas para exibir o loading
 
                 });
@@ -156,7 +154,7 @@
 
                 resposta.text().then(texto => {
                     console.error(texto);
-                    finalizarAguardar(texto);
+                    
                 });
             }
 
@@ -167,8 +165,6 @@
         return false;
     }
 
-    function sumirMensagem() {
-        cardErro.style.display = "none"
-    }
+
 
 </script>

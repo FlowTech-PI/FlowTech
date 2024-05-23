@@ -50,6 +50,7 @@
 
                         <label for="senha"></label>
                         <input placeholder="Senha" type="password" id="senha_input" name="senha" class="bloco1" required>
+
                     </div>
                 
                 </div>
@@ -59,7 +60,7 @@
                     <div class="caixatexto">
 
                         <label for="nascimento"></label>
-                        <input placeholder="Nascimento" type="text" id="input_nascimento" name="nascimento" class="bloco2" required>
+                        <input placeholder="Nascimento" type="date" id="input_nascimento" name="nascimento" class="bloco2" required>
 
                         <label for="telefone"></label>
                         <input placeholder="Telefone" type="tel" id="input_telefone" name="telefone" class="bloco2" required>
@@ -67,9 +68,15 @@
                         <label for="niveldeacesso"></label>
                         <select name="niveldeacesso" id="niveldeacesso" class="bloco2"  required>
                             <option value="" selected hidden>Nível de Acesso</option>
-                            <option value="Proprietário">Proprietário</option>
+                            <option value="Administrador">Administrador</option>
                             <option value="Gerente">Gerente</option>
                             <option value="Funcionário">Funcionário</option>
+                        </select>
+
+                        <label for="empresa"></label>
+                        <select name="empresa" id="empresa" class="bloco2"  required>
+                            <option value="" selected hidden>Selecione a empresa</option>
+                            <option value="1">viaQuatro</option>
                         </select>
                         
                     </div>
@@ -170,6 +177,7 @@
     var nomeVar = nome_input.value;
     var emailVar = email_input.value;
     var senhaVar = senha_input.value;
+    var empresaVar = empresa.value;
 
     var cpfVar = input_cpf.value;
     var nascVar = input_nascimento.value;
@@ -198,24 +206,17 @@
         telefoneServer: telVar,
         nascimentoServer: nascVar,
         nivelacessoServer: nivelVar,
+        empresaServer: empresaVar
       }),
     })
       .then(function (resposta) {
         console.log("resposta: ", resposta);
 
         if (resposta.ok) {
-          cardErro.style.display = "block";
-
-          mensagem_erro.innerHTML =
-            "Cadastro realizado com sucesso! Redirecionando para tela de Login...";
-
+          
           setTimeout(() => {
-            window.location = "login.html";
-          }, "2000");
-
-        
-
-
+            window.location = "../login/login.html";
+          }, "1000");
          
         } else {
           throw "Houve um erro ao tentar realizar o cadastro!";
