@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FlowTech | Esqueci Minha Senha</title>
+
+    <link rel="stylesheet" href="../CSS/styleFormulario.css">
+</head>
+
+<body>
+    <div class="header">
+        <div class="container">
+
+            <h1 class="titulo">FLOWTECH</h1>
+
+            <ul class="navbar">
+                <li> <a href="../index.html">Início</a></li>
+                <li>|</li>
+                <li> <a href="../index.html#sobnos">Quem somos?</a></li>
+                <li>|</li>
+                <li> <a href="../index.html#contato">Contato</a></li>
+                <li>|</li>
+                <li> <a href="simulador.html">Simulador Financeiro</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <main id="telaSenha" class="formulario">
+        <div class="container">
+            <h1 class="titulo">Esqueci Minha Senha</h1>
+
+            <div class="campos">
+                <div class="group1">
+                    <input class="inputs" type="text" id="input_Remail" placeholder="Email">
+                    <input class="inputs" type="password" id="input_Rcdg" placeholder="Código">
+                </div>
+            </div>
+
+            <div class="campos" style="display: none;">
+                <div class="group1">
+                    <input class="inputs" type="password" id="input_NovaSenha" placeholder="Inserir Nova Senha">
+                    <input class="inputs" type="password" id="input_ConfirmarNovaSenha"
+                        placeholder="Confirmar Nova Senha">
+                </div>
+            </div>
+
+            <div class="buttons">
+                <button class="btnEnviar" onclick="gerar()" class="cdg" id="bt_gerar">Enviar código por email</button>
+
+                <button class="btnEnviar" onclick="redefinir()" id="bt_redefinir_senha">Redefinir Senha</button>
+            </div>
+
+            <div class="buttons" style="display: none;">
+                <button class="btnEnviar onclick=" salvar()" id="bt_salvar_senha">Salvar Senha</button>
+            </div>
+
+            <div class="links" id="ajuda">
+                <a href="login.html">Voltar</a>
+                <span> | </span>
+                <a href="cadastro.html">Criar Conta</a>
+            </div>
+
+            <div class="links" id="documentos">
+                <a href="privacidade.html">Política de Privacidade</a>
+                <span> | </span>
+                <a href="termos.html">Termos de Serviço</a>
+            </div>
+
+        </div>
+        </div>
+    </main>

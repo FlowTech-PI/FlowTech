@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<!-- Apesar de estar como o nome de "Tela de Login", essa página simula um login e cadastro sem conexão a um bando de dados, por isso
+        foi necessário manter na mesma página HTML o login, cadastro e "esqueci a senha" -->
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FlowTech | Login & Cadastro</title>
+
+    <link rel="stylesheet" href="../CSS/styleFormulario.css">
+</head>
+
+<body>
+    <div class="header">
+        <div class="container">
+
+            <h1 class="titulo">FLOWTECH</h1>
+
+            <ul class="navbar">
+                <li> <a href="../index.html">Início</a></li>
+                <li>|</li>
+                <li> <a href="../index.html#sobnos">Quem somos?</a></li>
+                <li>|</li>
+                <li> <a href="../index.html#contato">Contato</a></li>
+                <li>|</li>
+                <li> <a href="simulador.html">Simulador Financeiro</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <main id="telaLogin" class="formulario">
+        <div class="container">
+            <h2 class="titulo">Login</h2>
+
+            <div class="campos">
+                <div class="group1">
+                    <input class="inputs" type="text" id="input_email" placeholder="Login">
+                    <input class="inputs" type="password" id="input_senha" placeholder="Senha">
+                </div>
+            </div>
+
+            <div class="buttons">
+                <button class="btnEnviar" onclick="entrar()" class="enviaron">Entrar</button>
+            </div>
+
+            <div class="links" id="ajuda">
+                <a href="esqueciSenha.html">Esqueci minha Senha</a>
+                <span> | </span>
+                <a href="cadastro.html">Criar Conta</a>
+            </div>
+
+            <div class="links" id="documentos">
+                <a href="privacidade.html">Política de Privacidade</a>
+                <span> | </span>
+                <a href="termos.html">Termos de Uso</a>
+            </div>
+        </div>
+        </div>
+    </main>
+</body>
+
+</html>
+
+<script>
+    function entrar() {
+        var emailVar = input_email.value;
+        var senhaVar = input_senha.value;
+
+        if (emailVar == "" || senhaVar == "") {
+            cardErro.style.display = "block"
+            mensagem_erro.innerHTML = "(Mensagem de erro para todos os campos em branco)";
+            
+            return false;
+        }
+        
+        console.log("FORM LOGIN: ", emailVar);
+        console.log("FORM SENHA: ", senhaVar);
+
+        fetch("/usuarios/autenticar", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                emailServer: emailVar,
+                senhaServer: senhaVar
+            })
+        }).then(function (resposta) {
+            console.log("ESTOU NO THEN DO entrar()!")
+
+            if (resposta.ok) {
+                console.log(resposta);
+
+                resposta.json().then(json => {
+                    console.log(json);
+                    console.log(JSON.stringify(json));
+                    sessionStorage.EMAIL_USUARIO = json.email;
+                    sessionStorage.NOME_USUARIO = json.nome;
+                    sessionStorage.ID_USUARIO = json.id;
+                    
+
+                    setTimeout(function () {
+                        window.location = "dashboard.html";
+                    }, 1000); // apenas para exibir o loading
+
+                });
+
+            } else {
+
+                console.log("Houve um erro ao tentar realizar o login!");
+
+                resposta.text().then(texto => {
+                    console.error(texto);
+                    
+                });
+            }
+
+        }).catch(function (erro) {
+            console.log(erro);
+        })
+        return false;
+    }
+</script>

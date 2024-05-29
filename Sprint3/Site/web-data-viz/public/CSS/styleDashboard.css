@@ -1,0 +1,271 @@
+@import url(fontes/fonts.css);
+@import url(../CSS/styleNavbar.css);
+
+#Dashboard {
+  overflow: hidden;
+}
+
+.main_conteudo {
+  width: 100vw;
+  display: flex;
+  height: 90vh;
+  margin-top: 2.5%;
+  padding-top: 1%;
+}
+
+/*------------------------------------- Menu Lateral ------------------------------------*/
+
+#itens-laterais {
+  background-color: #374962;
+  color: #FFF;
+  display: block;
+  float: left;
+  flex-direction: column;
+  align-items: top;
+  width: 20vw;
+  z-index: 2;
+  height: 94vh;
+  border: 2px solid #07272c;
+}
+
+.listaItens {
+  list-style: none;
+  justify-content: space-around;
+}
+
+.listaItens li {
+  /* espaço entre cada item da lista (li) */
+  padding: 0px 0px 20px 0px;
+}
+
+.listaItens a {
+  text-decoration: none;
+  color: #EBEBEB;
+}
+
+.fotoPerfil {
+  display: flex;
+  margin: 30px;
+}
+
+.fotoPerfil img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  margin-left: 12%;
+}
+
+.box-title {
+  margin: 2% 0 0 2%;
+}
+
+.conteudo {
+  display: block;
+  width: 100vw;
+}
+
+.conteudo h1 {
+  font-family: League-Spartan;
+  font-size: 40px;
+  font-weight: bold;
+  color: #1D314D;
+  text-align: center;
+  margin-left: -12%;
+}
+
+/*---------------------------------- Dados da Dashboard ---------------------------------*/
+.main_conteudo .container {
+  width: 60%;
+  height: 25%;
+  margin: 5% 0 0 20%;
+  justify-content: center;
+}
+
+.dataGroup {
+  width: 80%;
+  height: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.dataBox {
+  width: 25%;
+  height: 90%;
+  border: 2px solid #000;
+  border-radius: 10px;
+}
+
+.textBox {
+  width: 100%;
+  height: 25%;
+  background-color: #1D314D;
+  border-bottom: 2px solid #000;
+  border-radius: 5px 5px 0 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.textBox span {
+  color: #FFF;
+  font-family: Roboto;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.data {
+  margin-top: 20%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.data span {
+  text-align: center;
+  color: #1D314D;
+  font-family: Roboto-Black;
+  font-size: 32px;
+}
+
+.conteudo select {
+  margin: 0.5% 0 0 5%;
+  height: 20%;
+  background-color: #1D314D;
+  border: none;
+  border-radius: 10px;
+  color: #FFF;
+  font-family: Roboto-Black;
+  font-size: 16px;
+  text-align: center;
+  padding: 5px;
+  outline: none;
+}
+
+.conteudo select:hover {
+  background-color: #144b97;
+  cursor: pointer;
+}
+
+.box-title h2,
+.box-title h6 {
+  margin-top: 0px;
+  color: #1D314D;
+}
+
+.box-title h2 {
+  margin-bottom: 0px;
+  font-size: 35px;
+}
+
+/*---------------------------------------- Legenda ----------------------------------------*/
+.legenda {
+  display: inline-flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 5% 0% 0% 30%;
+  width: 30%;
+  height: 20%;
+  border: 2px solid #1D314D;
+  border-radius: 10px;
+}
+
+.legenda .bloco {
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+  width: 45%;
+}
+
+.legenda .bloco .group {
+  height: 100%;
+  margin-left: 8%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.legenda .bloco .quadrado {
+  width: 15px;
+  height: 15px;
+  border: 2px solid #000;
+}
+
+.legenda .bloco .group #quad1 {
+  background-color: #FF3131;
+}
+
+.legenda .bloco .group #quad2 {
+  background-color: #FF914D;
+}
+
+.legenda .bloco .group #quad3 {
+  background-color: #FFDE59;
+}
+
+.legenda .bloco .group #quad4 {
+  background-color: #C2E806;
+}
+
+.legenda .bloco .group #quad5 {
+  background-color: #4EE888;
+}
+
+.legenda .bloco .group #quad6 {
+  background-color: #41BB4D;
+}
+
+.ver_mais {
+  background-color: #1D314D;
+  border-radius: 18px;
+  border: none;
+  font-family: Roboto;
+  height: 40px;
+  width: 130px;
+  font-size: 17px;
+  margin: 0 0 0 72%;
+}
+
+.ver_mais a {
+  text-decoration: none;
+  color: #FFF;
+}
+
+.ver_mais:hover {
+  background-color: #144b97;
+  cursor: pointer;
+}
+
+/*---------------------------------- Heatmap ---------------------------------*/
+#select_estacao {
+  width: 10%;
+  height: 5%;
+  margin: 1% 0 0 1.5%;
+}
+
+.heatmap {  
+  height: 490px;
+  width: 850px;
+  background-image: url(IMG/planta_paulista.png);
+  background-size: cover;
+  margin: 1.5% auto;
+}
+
+.texto-oficial{
+  margin-top: 2.5%
+}
+
+.texto-oficial p {
+  color:#1D314D;
+  font-family: Roboto;
+  font-weight: bold;
+  text-align: center;
+}
+
+#dataHeatmap .container {
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  flex-direction: column;
+  justify-content: flex-start;
+}

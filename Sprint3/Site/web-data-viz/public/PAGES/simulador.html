@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="ptbr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../CSS/styleFormulario.css">
+    <title>FlowTech | Simulador Financeiro</title>
+</head>
+
+<body id="Simulador_Financeiro">
+    <div class="header">
+        <div class="container">
+
+            <h1 class="titulo">FLOWTECH</h1>
+
+            <ul class="navbar">
+                <li> <a href="../index.html">Início</a></li>
+                <li>|</li>
+                <li> <a href="../index.html#sobnos">Quem somos?</a></li>
+                <li>|</li>
+                <li> <a href="../index.html#contato">Contato</a></li>
+                <li>|</li>
+                <li><u>Simulador Financeiro</u></li>
+                <a href="cadastro.html">
+                    <li class="bt"> CADASTRAR-SE</li>
+                </a>
+                <a href="login.html">
+                    <li class="bt"> LOGIN</li>
+                </a>
+            </ul>
+        </div>
+    </div>
+
+    <main id="Simulador" class="formulario">
+        <div class="container">
+            <h1 class="titulo">Simulador Financeiro</h1>
+
+            <div id="estacao" class="campos">
+                <div class="group1">
+                    <span>Nome da Estação da Linha 4-Amarela:</span>
+                    <input class="inputs" type="text" id="input_estacao" placeholder="Ex: Paulista ">
+                </div>
+            </div>
+
+            <p>Considerando os 4 tipos de comercio no metrô listados abaixo, digite a quantidade desejada para os seus novos comércios...</p>
+
+            <div class="campos">
+                <div class="group1">
+                    <span>Estandes Promocionais</span>
+                    <input class="inputs" type="text" id="input_estandes" placeholder="Ex: 8">
+
+                    <span>Estandes Comerciais</span>
+                    <input class="inputs" type="text" id="input_estandesCom" placeholder="Ex: 10">
+                </div>
+
+                <div class="group2">
+                    <span>Lojas</span>
+                    <input class="inputs" type="text" id="input_lojas" placeholder="Ex: 6">
+
+                    <span>Quiosques</span>
+                    <input class="inputs" type="text" id="input_quiosques" placeholder="Ex: 3">
+                </div>
+            </div>
+
+            <div class="buttons">
+                <button class="btnEnviar" onclick="lucro()">Calcular receita</button>
+            </div>
+
+            <div id="div_mensagem" style="display: none;"></div>
+            
+            <div class="buttons">
+                <button class="btnEnviar" onclick="limpar()" id="btnLimpar" style="display: none;">Limpar Simulações</button>
+            </div>
+        </div>
+    </main>
+
+    <div class="footer" id="contato">
+        <div class="container">
+            <div class="F1">
+                <p class="contato">Entre em contato :</p>
+                <img class="email" src="../CSS/IMG/email.png" alt="">
+                <img class="facebook" src="../CSS/IMG/facebook.png" alt="">
+                <img class="insta" src="../CSS/IMG/instagram.png" alt="">
+                <img class="telefone" src="../CSS/IMG/telefone.png" alt="">
+            </div>
+
+            <div class="F2">
+                <div class="link">
+                    <ul>
+                        <li><a href="../index.html#inicio">Home</a></li>
+
+                        <li> <a href="../index.html#sobnos"> Quem somos </a></li>
+                        <li><a href="simulador.html">Simulador Financeiro</a></li>
+                    </ul>
+                </div>
+
+                <div class="atendimento">
+                    <div class="imagem">
+                        <img src="../CSS/IMG/atendimento.png" alt="" width="100px" height="100px">
+                    </div>
+                    <div class="texto">
+                        <p>Serviço de atendimento ao cliente</p>
+                        <p>0800 XXXX XXXX</p>
+                        <p>Segunda à Sexta das 8h às 17h (exceto feriados)</p>
+                    </div>
+                </div>
+
+                <div class="politica">
+                    <p><a href="privacidade.html">Política de privacidade ></a></p>
+                    <p><a href="termos.html">Termos de uso ></a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
+
+<script>
+    var cont = 0;
+
+    function lucro() {
+        div_mensagem.style.display = "block";
+        btnLimpar.style.display = "block";
+
+        var nomeEstacao = input_estacao.value;
+        var estandes = Number(input_estandes.value);
+        var estandesComerciais = Number(input_estandesCom.value);
+        var lojas = Number(input_lojas.value);
+        var quiosques = Number(input_quiosques.value);
+
+        var lucroEstandes = estandes * 894 * 4;
+        var lucroEstandesComerciais = estandesComerciais * 397 * 4;
+        var lucroLojas = lojas * 308 * 20;
+        var lucroQuiosques = quiosques * 702 * 4;
+
+        var lucroMensal = lucroEstandes + lucroEstandesComerciais + lucroLojas + lucroQuiosques;
+        var lucroAnual = lucroMensal * 12;
+
+        cont++;
+
+        div_mensagem.innerHTML += `
+        <br><div class="simulacao">
+            <h3>Simulação ${cont}</h3>  
+            Nesse cenário, a receita mensal gerada com o aluguel do espaço para novos comércios é de: <br>
+
+            <b style="color: green;">R$${lucroEstandes}</b> com ${estandes} estandes promocionais (considerando que o aluguel do m² é de <b>R$894</b>). <br>
+            <b style="color: green;">R$${lucroEstandesComerciais}</b> com ${estandesComerciais} estandes comerciais (considerando que o aluguel do m² é de <b>R$397</b>). <br>
+            <b style="color: green;">R$${lucroLojas}</b> com ${lojas} lojas (considerando que o aluguel do m² é de <b>R$308</b>). <br>
+            <b style="color: green;">R$${lucroQuiosques}</b> com ${quiosques} quiosques (considerando que o aluguel do m² é de <b>R$702</b>). <br> <br>
+            <b>Totalizando R$${lucroMensal} ao mês e  R$${lucroAnual} ao ano somente na estação ${nomeEstacao}.</b><br><br>
+
+            <b style="color: red">OBS:</b><br> 
+            • O cálculo do valor do aluguel foi feito multiplicando o valor do metro quadrado pelo tamanho do espaço alugado.<br><br>
+            • Na variável do tamanho do espaço, foram utilizados os valores mínimos possíveis para cada categoria apresentada.<br><br>
+            • Foram considerados estandes promocionais, quiosques, e estandes comerciais de 4m² e lojas de 20m².  
+        </div>`;
+    }
+
+    //FUNÇÃO PARA LIMPAR AS OUTRAS SIMULAÇÕES E REALIZAR NOVAS
+
+    function limpar() {
+        cont = 0;
+        div_mensagem.innerHTML = "";
+        div_mensagem.style.display = "none";
+        btnLimpar.style.display = "none";
+
+        input_estandes.value = "";
+        input_estandesCom.value = "";
+        input_lojas.value = "";
+        input_quiosques.value = "";
+    }
+</script>

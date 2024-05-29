@@ -1,0 +1,212 @@
+@import url(fontes/fonts.css);
+
+html {
+  scroll-behavior: smooth;
+}
+
+html::-webkit-scrollbar {
+  display: none;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Roboto;
+  background-color: #fff;
+}
+
+body:hover {
+  cursor: default;
+}
+
+/* Navbar */
+.header {
+  display: flex;
+}
+
+.container {
+  display: flex;
+  width: 80%;
+  margin: auto;
+}
+
+.header .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  position: fixed;
+  background-color: #fff;
+  padding: 10px;
+  z-index: 3;
+  border-bottom: 2px solid #1D314D;
+  height: 6vh;
+}
+
+.titulo {
+  color: #1D314D;
+  font-family: League-Spartan;
+  margin: 0 14vw 0 6vw;
+  font-size: 32px;
+}
+
+.navbar {
+  display: flex;
+  flex-direction: row;
+  list-style: none;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: bold;
+  font-family: Roboto;
+}
+
+.navbar a,
+.navbar li {
+  color: #1D314D;
+  font-size: 19.2px;
+}
+
+.navbar a {
+  text-decoration: none;
+  scroll-behavior: smooth;
+}
+
+.navbar li {
+  display: flex;
+  justify-content: space-between;
+  margin: 8px;
+}
+
+u {
+  color: #144b97;
+}
+
+.navbar .quem {
+  margin-right: 0px;
+}
+
+.navbar .bt {
+  background-color: #1D314D;
+  color: #fff;
+  padding: 8px 35px;
+  border-radius: 50px;
+  font-size: 15px;
+  font-family: Roboto;
+  font-weight: 550;
+}
+
+.navbar .bt:hover {
+  background-color: #144b97;
+  cursor: pointer;
+}
+
+.navbar li a:hover {
+  color: #144b97;
+  cursor: pointer;
+}
+
+.menu {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: 15vw;
+}
+
+.menu .titulo {
+  margin-left: 10%;
+}
+
+#menuH {
+  height: 100%;
+  cursor: pointer;
+}
+
+#NavDashboard .navbar {
+  margin-right: 30%;
+}
+
+
+/* Footer */
+.footer {
+  display: flex;
+  justify-content: right;
+  align-items: center;
+  flex-direction: column;
+}
+
+.footer .container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 0;
+  flex-direction: column;
+}
+
+.footer .container .F1,
+.footer .container .F2 {
+  font-weight: 800;
+  font-weight: Roboto;
+  color: white;
+  width: 100%;
+}
+
+.footer .container .F1 {
+  background-color: #384c64;
+}
+
+.footer .container .F2 {
+  background-color: #20344c;
+}
+
+.email,
+.facebook,
+.telefone {
+  height: 40px;
+  width: 40px;
+}
+
+.insta {
+  height: 40px;
+  width: 50px;
+}
+
+.F1 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.contato {
+  font-family: Roboto;
+  font-size: large;
+}
+
+li {
+  font-size: larger;
+  margin-left: 8%;
+
+}
+
+.F2 ul {
+  list-style: none;
+}
+
+.F2 {
+  display: flex;
+  justify-content: space-around;
+}
+
+.atendimento {
+  display: flex;
+}
+
+.footer a {
+  text-decoration: none;
+  color: #fff;
+}
+
+.footer a:hover {
+  color: #144b97;
+  cursor: pointer;
+}

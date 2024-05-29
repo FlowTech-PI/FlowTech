@@ -1,0 +1,241 @@
+@import url(fontes/fonts.css);
+@import url(styleNavbar.css);
+
+body {
+    background-image: url(IMG/fundo_formulario.png);
+}
+
+.container .navbar {
+    margin-right: 6vw;
+}
+
+.container {
+    width: 95%;
+    padding: 10px;
+}
+
+.links {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.links a,
+.links span {
+    font-size: 12px;
+    text-decoration: none;
+    color: #1D314D;
+}
+
+.links a:hover {
+    color: #144b97;
+    cursor: pointer;
+}
+
+.formulario .container {
+    background-color: white;
+    width: 45%;
+    position: relative;
+    border-radius: 8px;
+    display: block;
+    height: auto;
+    margin-top: 12%;
+    padding: 1% 2%;
+}
+
+.formulario .titulo {
+    margin: 0;
+    text-align: center;
+}
+
+.formulario .campos {
+    margin-top: 20px;
+    display: flex;
+}
+
+.group1,
+.group2 {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    width: 50%;
+}
+
+.formulario .inputs {
+    width: 90%;
+    background-color: #9f9f9f80;
+    margin-bottom: 10px;
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-sizing: border-box;
+    color: #1D314D;
+    font-size: 14px;
+    font-family: Roboto;
+    font-weight: bold;
+    outline: none;
+}
+
+.formulario .inputs::placeholder {
+    opacity: 0.6;
+    color: black;
+}
+
+
+.formulario .buttons {
+    display: flex;
+    justify-content: center;
+}
+
+.formulario .btnEnviar {
+    width: 150px;
+    margin: 20px 100px 10px 100px;
+    padding: 10px;
+    background-color: #1D314D;
+    color: white;
+    font-size: 14px;
+    font-family: League-Spartan;
+    border: none;
+    border-radius: 10px;
+    outline: none;
+}
+
+.formulario .btnEnviar:hover, .formulario .btnEnviar:focus {
+    background-color: #144b97;
+    cursor: pointer;
+}
+
+.formulario select:hover {
+    cursor: pointer;
+}
+
+.formulario select:invalid {
+    opacity: 0.5;
+    color: black;
+    font-weight: bolder;
+}
+
+/* Formulário de Login */
+#telaLogin .container,
+#telaSenha .container {
+    width: 30%;
+}
+
+#telaLogin .campos,
+#telaSenha .campos {
+    margin-top: 10px;
+    justify-content: center;
+}
+
+#telaLogin .inputs,
+#telaSenha .inputs {
+    margin-top: 10px;
+}
+
+#telaLogin .links a,
+#telaSenha .links a {
+    margin: 0 10px;
+}
+
+#telaLogin #documentos,
+#telaSenha #documentos {
+    margin-top: 50px;
+}
+
+/* Formulário Esqueci Minha Senha */
+#telaSenha #bt_gerar {
+    width: 200px;
+}
+
+#telaSenha .btnEnviar {
+    margin: 20px 20px 10px 20px
+}
+
+/* Simulador Financeiro */
+#Simulador_Financeiro,
+#Politicas_Privacidade,
+#Termos_Uso
+ {
+    background-image: url(../CSS/IMG/fundo_simulador.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+#Simulador .container {
+    margin: 10% auto;
+}
+
+#Simulador span {
+    color: #1D314D;
+    font-weight: bold;
+    font-size: 16px;
+    font-family: League-Spartan;
+    align-self: flex-start;
+    margin: 0 0 10px 25px;
+}
+
+#Simulador #estacao .group1 {
+    width: 100%;
+    flex-direction: row;
+}
+
+#Simulador #estacao .inputs {
+    width: 45%;
+    margin-left: 90px;
+}
+
+#Simulador #estacao span {
+    margin-left: 40px;
+    align-self: center;
+}
+
+#Simulador p {
+    font-family: Roboto;
+    font-size: 14px;
+    text-align: center;
+}
+
+.simulacao {
+    margin-top: 20px;
+    padding: 15px;
+    border: 1px solid #1D314D;
+    border-radius: 5px;
+    background-color: #fafafa;
+    font-family: Roboto;
+    font-size: 14px;
+}
+
+.simulacao h3 {
+    color: #144b97;
+    font-size: 16px;
+}
+
+#btnLimpar {
+    width: 200px;
+}
+
+/* Políticas de Privacidade e Termos de Uso */
+
+#Privacidade .container, #Termos .container {
+    margin: 8% auto;
+    width: 800px;
+    background-color: white;
+    padding: 20px;
+    border: 4px solid #d0ccd4;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#Privacidade h2, #Termos h2 {
+    color: #144b97;
+}
+
+#Privacidade h3, #Termos h3 {
+    color: #1D314D;
+}
+
+#Privacidade h4, #Termos h4 {
+    color: #144b97;
+}

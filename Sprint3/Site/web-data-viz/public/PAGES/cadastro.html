@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FlowTech |Cadastro</title>
+
+    <link rel="stylesheet" href="../CSS/styleFormulario.css">
+</head>
+
+<body>
+    <div class="header">
+        <div class="container">
+
+            <h1 class="titulo">FLOWTECH</h1>
+
+            <ul class="navbar">
+                <li> <a href="../index.html">Início</a></li>
+                <li>|</li>
+                <li> <a href="../index.html#sobnos">Quem somos?</a></li>
+                <li>|</li>
+                <li> <a href="../index.html#contato">Contato</a></li>
+                <li>|</li>
+                <li> <a href="simulador.html">Simulador Financeiro</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <main id="telaCadastro" class="formulario">
+        <div class="container">
+            <h1 class="titulo">Cadastro</h1>
+
+            <div class="campos">
+                <div class="group1">
+                    <input class="inputs" type="text" id="input_nome" placeholder="Nome"     required>
+
+                    <input class="inputs" type="text" id="input_cpf" placeholder="CPF (apenas números)" required>
+
+                    <input class="inputs" type="email" id="input_email" placeholder="E-mail" required>
+
+                    <input class="inputs" type="password" id="input_senha" placeholder="Senha" required>
+                </div>
+
+                <div class="group2">
+                    <input class="inputs" type="date" id="input_nascimento" placeholder="Nascimento" required>
+
+                    <input class="inputs" type="tel" id="input_telefone" placeholder="Telefone" required>
+
+                    <select class="inputs" id="select_empresa" required>
+                        <option value="" selected hidden>Selecione a empresa</option>
+                        <option value="1">viaQuatro</option>
+                    </select>
+
+                    <select class="inputs" id="select_nivelAcesso" required>
+                        <option value="" selected hidden>Nível de Acesso</option>
+                        <option value="Administrador">Administrador</option>
+                        <option value="Gerente">Gerente</option>
+                        <option value="Funcionário">Funcionário</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="buttons">
+                <button class="btnEnviar" onclick="cadastrar()">Cadastrar</button>
+            </div>
+
+            <div class="links">
+                <a href="login.html">Já tenho Conta</a>
+            </div>
+
+        </div>
+    </main>
+
+</body>
+
+</html>
+
+<script>
+    function cadastrar() {
+      //Recupere o valor da nova input pelo nome do id
+      // Agora vá para o método fetch logo abaixo
+
+      var nomeVar = input_nome.value;
+      var cpfVar = input_cpf.value;
+      var emailVar = input_email.value;
+      var senhaVar = input_senha.value;
+      var nascVar = input_nascimento.value;
+      var telVar = input_telefone.value;
+      var empresaVar = select_empresa.value;
+      var nivelVar = select_nivelAcesso.value;
+  
+      // Enviando o valor da nova input
+      fetch("/usuarios/cadastrar", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          // crie um atributo que recebe o valor recuperado aqui
+          // Agora vá para o arquivo routes/usuario.js
+          nomeServer: nomeVar,
+          emailServer: emailVar,
+          senhaServer: senhaVar,
+          cpfServer: cpfVar,
+          telServer: telVar,
+          nascServer: nascVar,
+          empresaServer: empresaVar,
+          nivelAcessoServer: nivelVar
+        }),
+      })
+        .then(function (resposta) {
+          console.log("resposta: ", resposta);
+  
+          if (resposta.ok) {
+            
+            setTimeout(() => {
+              window.location = "login.html";
+            }, "1000");
+           
+          } else {
+            throw "Houve um erro ao tentar realizar o cadastro!";
+          }
+        })
+        .catch(function (resposta) {
+          console.log(`#ERRO: ${resposta}`);
+          
+        });
+  
+      return false;
+    }
+  
+    function listar() {
+      fetch("/empresas/listar", {
+        method: "GET",
+      })
+        .then(function (resposta) {
+          resposta.json().then((empresas) => {
+            empresas.forEach((empresa) => {
+              listaEmpresas.innerHTML += `<option value='${empresa.id}'>${empresa.cnpj}</option>`;
+            });
+          });
+        })
+        .catch(function (resposta) {
+          console.log(`#ERRO: ${resposta}`);
+        });
+    }
+  
+    function sumirMensagem() {
+      cardErro.style.display = "none";
+    }
+  </script>

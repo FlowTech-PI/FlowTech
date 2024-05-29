@@ -1,0 +1,165 @@
+@import url(fontes/fonts.css);
+@import url(styleNavbar.css);
+
+.banner{
+  padding: 40px 0;
+  color: #fff;
+  height: 564px;
+  background-image: url(IMG/fundo_index.png);
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 800px;
+}
+
+  .banner .container{
+    justify-content: flex-start;
+    align-items: center;
+    height: 100%;
+    margin-bottom: -8%;
+  }
+
+  .banner .container .chamado{
+    flex-direction: column;
+  }
+
+  .banner .container p{
+    font-size: 20px;
+    width: 68%;
+    margin-top: 0px;
+  }
+
+  .banner .container h1{
+    margin-top: 0px;
+    font-size: 120px;
+    margin-bottom: 0px;
+    font-family: League-Spartan;
+    -webkit-text-fill-color: rgba(255, 255, 255, 0);
+    -webkit-text-stroke-width: 3px;
+    -webkit-text-stroke-color: rgb(255, 255, 255);
+  }
+
+  .banner .container p span{
+    font-weight: bold;
+  }
+
+  .banner .LoginCadastro{
+    display: flex;
+    align-items: center;
+
+    width: 46%;
+  }
+
+  .banner .LoginCadastro .BtLogin,
+  .banner .LoginCadastro .BtCadastro {
+    color: #fff;
+    font-family: Roboto;
+    font-size: 14px;
+    font-weight: bold;
+    border-radius: 50px;
+    height: 30px;
+    width: 120px;
+  }
+
+  .banner .LoginCadastro .BtLogin{
+    background-color: transparent;
+    border-color: #fff;
+    border-style: solid;
+  }
+
+  .banner .LoginCadastro .BtCadastro{
+    background-color: #1D314D;
+    border-style: none;
+    margin-left: 5%;
+  }
+
+  .LoginCadastro .BtLogin:hover {
+    border-color: #144b97;
+    color: #144b97;
+    cursor: pointer;
+  }
+
+  .LoginCadastro .BtCadastro:hover {
+    background-color: #144b97;
+    cursor: pointer;
+  }
+
+  .sobnos {
+    background-image: url(IMG/fundo_sobnos.png);
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100%;
+    scroll-margin-top: 80px;
+  }
+  
+
+  .sobnos .container .quemsomos{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    top: 10%;
+  }
+
+  .sobnos .container h1{
+    color: #1D314D;
+    font-weight: bold;
+    font-size: 50px;
+    font-family: Roboto;
+}
+
+  .sobnos .container p{
+    font-family: Roboto;
+    font-size: 20px;
+    color: black;
+    text-align: justify;
+    width: 80%;
+  }
+
+  .sobnos .container h3{
+    font-size: 30px;
+    font-family: Roboto;
+    color: #1D314D;
+  }
+
+  .sobnos .image02{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 17%; 
+    position: relative;
+    top: 100%;
+    margin-bottom: 20%;
+    left: -10%;
+    z-index: 1;
+}
+
+  .sobnos .image01 {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      top: 110%;
+      z-index: 2;
+  }
+
+  .sobnos .linha1 {
+    background-color: #1D314D;
+    width: 15px;
+    height: 350px;
+    position: relative;
+    top: 120.6%;
+    left: 58%;
+}
+
+  .sobnos .linha2{
+      background-color: #1D314D;
+      width: 15px;
+      height: 300px;
+      position: relative;
+      top: 120.6%;
+      left: 68%;
+  }
+
+
+ 
