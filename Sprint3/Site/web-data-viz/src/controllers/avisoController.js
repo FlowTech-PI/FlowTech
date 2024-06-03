@@ -15,28 +15,29 @@ function listar(req, res) {
 }
 
 function listarPorUsuario(req, res) {
-    var idUsuario = req.params.idUsuario;
+    var h1 = req.params.h1;
+    var h2 = req.params.h2;
 
-    avisoModel.listarPorUsuario(idUsuario)
-        .then(
-            function (resultado) {
-                if (resultado.length > 0) {
-                    res.status(200).json(resultado);
-                } else {
-                    res.status(204).send("Nenhum resultado encontrado!");
-                }
-            }
-        )
-        .catch(
-            function (erro) {
-                console.log(erro);
-                console.log(
-                    "Houve um erro ao buscar os avisos: ",
-                    erro.sqlMessage
-                );
-                res.status(500).json(erro.sqlMessage);
-            }
-        );
+   avisoModel.listarPorUsuario(h1, h2)
+       .then(
+           function (resultado) {
+               if (resultado.length > 0) {
+                   res.status(200).json(resultado[0]);
+               } else {
+                   res.status(204).send("Nenhum resultado encontrado!");
+               }
+           }
+       )
+       .catch(
+           function (erro) {
+               console.log(erro);
+               console.log(
+                   "Houve um erro ao buscar os avisos: ",
+                   erro.sqlMessage
+               );
+               res.status(500).json(erro.sqlMessage);
+           }
+       );
 }
 
 function pesquisarDescricao(req, res) {
