@@ -60,13 +60,47 @@
       </div>
 
       <div class="container">
-        <select id="select_estacao" onchange="atualizar()">
-          <option value="Paulista">Paulista</option>
-        </select>
-        
+        <div>
+          <select name="select_est" id="select_est" onchange="atualizar()">
+            <option value="Paulista">Paulista</option>
+          </select>
+
+
+      </div>
+      
+
+      <div class="filtros" style="display: flex;">
         <div class="heatmap"></div>
-        
-        <div class="texto-oficial">
+
+
+        <div class="roll">        
+            <div class="wrapper">
+              <div class="values">
+                <span id="range1">
+                  00:00
+                </span>
+                <span> &dash; </span>
+                <span id="range2">
+                  12:00
+                </span>
+              </div>
+              <div class="container1">
+                <div class="slider-track"></div>
+                  <input type="range" min="0" max="24" value="10" id="slider-1" oninput="slideOne(), atualizarFeed()">
+                  <input type="range" min="0" max="24" value="14" id="slider-2" oninput="slideTwo(), atualizarFeed()">
+              </div>
+            </div>
+
+            <div class="indice">
+              <p>Utilizando o slider acima, insira o intervalo de horário que você gostaria de consultar</p>
+            </div>
+      </div>
+
+      </div>
+      
+
+
+    </div>
           <p>
             <b style="color: red;">Atenção:</b>
             Para adicionar mais estações, entrar em contato com a FLOWTECH através dos nossos meios de comunicações oficiais
