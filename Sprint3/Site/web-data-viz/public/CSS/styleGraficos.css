@@ -202,6 +202,27 @@ body {
   
 }
 
+.box-title{
+  margin-left: 3%;
+  margin-top: 1%;
+}
+
+.box-title h2,
+.box-title h6 {
+  margin-top: 0px;
+  color: #1D314D;
+}
+
+.box-title h2 {
+  margin-bottom: 0px;
+  font-size: 35px;
+}
+
+.box-title h6 {
+  font-size: 20px;
+  color: #374962;
+}
+
 /* Colocando Linha, o nome de cada Estação e o Nome da linha em um unico Container */
 
 .juncao{
