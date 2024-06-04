@@ -82,11 +82,24 @@ function deletar(idAviso) {
     return database.executar(instrucaoSql);
 }
 
+function plotarSemana() {
+    console.log("ACESSEI O AVISO  MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function plotarSemana()");
+    var instrucaoSql = `
+    SELECT FluxoHora FROM (SELECT (sum(contagem)) as FluxoHora, date_format(horario, '%a') as dia 
+        FROM dadoSensor 
+        WHERE horario BETWEEN DATE_SUB(CURDATE(), INTERVAL 2 MONTH) AND CURDATE()
+        GROUP BY dia ORDER BY FIELD(dia, 'Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat')) as subQuerry;
+    `;
+    console.log("Executando a instrução SQL: \n" + instrucaoSql);
+    return database.executar(instrucaoSql);
+}
+
 module.exports = {
     listar,
     listarPorUsuario,
     pesquisarDescricao,
     publicar,
     editar,
-    deletar
+    deletar,
+    plotarSemana
 }

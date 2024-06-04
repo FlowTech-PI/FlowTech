@@ -10,7 +10,7 @@
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 
-<body>
+<body onload="plotar()">
   <div class="header1">
     <div class="container1">
       
@@ -331,6 +331,9 @@
 
 
 <script>
+
+
+
 
 function limpar(){
     Lgf1.style.display = 'none'
@@ -903,6 +906,34 @@ limpar();    var BL9Element = document.getElementById('BL9');
 <!----------  Luz---------------->
    <!-------Gráficos-------->
 <script>
+  function plotar() {
+
+    fetch(`/avisos/plotarSemana`)
+    .then(function (resposta) {
+      if (resposta.ok) {
+        if (resposta.status == 204) {
+                   throw "Nenhum resultado encontrado!!";
+        }
+        resposta.json().then(json => {
+                  console.log(json);
+                  console.log(JSON.stringify(json));
+                  domingo = json.domingo
+                  segunda = json.segunda
+                  terca = json.terca
+                  quarta = json.quarta
+                  quinta = json.quinta
+                  sexta = json.sexta
+                  sabado = json.sabado 
+
+              });
+           } else {
+               throw ('Houve um erro na API!');
+           }
+       }).catch(function (resposta) {
+           console.error(resposta);
+
+       });
+
   const labels = [
     'Domingo',
     'Segunda',
@@ -1986,7 +2017,7 @@ const config7 = {
 
   //-------------------------------------------------------->
 
-
+  }
 </script>
 
 <!----------------Gráficos da estação Luz------------------------->

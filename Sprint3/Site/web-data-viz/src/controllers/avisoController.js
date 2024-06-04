@@ -127,11 +127,36 @@ function deletar(req, res) {
         );
 }
 
+function plotarSemana(req, res) {
+    avisoModel.plotarSemana().then(function (resultado) {
+        if (resultado.length > 0) {
+            res.json({
+                domingo: resultado[0].FluxoHora,
+                segunda: resultado[1].FluxoHora,
+                terca: resultado[2].FluxoHora,
+                quarta: resultado[3].FluxoHora,
+                quinta: resultado[4].FluxoHora,
+                sexta: resultado[5].FluxoHora,
+                sabado: resultado[6].FluxoHora
+            });
+
+        } else {
+            res.status(204).send("Nenhum resultado encontrado!")
+            
+        }
+    }).catch(function (erro) {
+        console.log(erro);
+        console.log("Houve um erro ao buscar os avisos: ", erro.sqlMessage);
+        res.status(500).json(erro.sqlMessage);
+    });
+}
+
 module.exports = {
     listar,
     listarPorUsuario,
     pesquisarDescricao,
     publicar,
     editar,
-    deletar
+    deletar,
+    plotarSemana
 }

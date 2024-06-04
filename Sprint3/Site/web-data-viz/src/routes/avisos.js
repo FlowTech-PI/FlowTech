@@ -27,4 +27,8 @@ router.delete("/deletar/:idAviso", function (req, res) {
     avisoController.deletar(req, res);
 });
 
+router.get("/plotarSemana", function (req, res) {
+    avisoController.plotarSemana(req, res);
+});
+
 module.exports = router;
