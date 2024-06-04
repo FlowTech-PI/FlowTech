@@ -241,3 +241,71 @@ SELECT * FROM viewFluxoSensor2;
 -- FLUXO DE PESSAOS DO SENSOR 3
 SELECT * FROM viewFluxoSensor3;
 
+-- SELECT TESTE PARA A DASHBOARD
+SELECT * FROM dadoSensor;
+
+-- MELHOR PARA A VISUALIZAÇÃO DO SELECT :)
+INSERT INTO dadoSensor VALUES
+	(DEFAULT, 1, 1, '2024-04-15 06:00:00'),
+	(DEFAULT, 1, 0, '2024-04-15 06:00:00'),
+	(DEFAULT, 1, 1, '2024-04-16 06:00:00'),
+	(DEFAULT, 1, 0, '2024-04-16 06:00:00'),
+	(DEFAULT, 1, 1, '2024-04-17 06:00:00'),
+	(DEFAULT, 1, 0, '2024-04-17 06:00:00'),
+	(DEFAULT, 1, 1, '2024-04-18 06:00:00'),
+	(DEFAULT, 1, 0, '2024-04-18 06:00:00'),
+	(DEFAULT, 1, 1, '2024-04-19 06:00:00'),
+	(DEFAULT, 1, 0, '2024-04-19 06:00:00'),
+	(DEFAULT, 1, 1, '2024-04-20 06:00:00'),
+	(DEFAULT, 1, 0, '2024-04-20 06:00:00'),
+	(DEFAULT, 1, 1, '2024-04-21 06:00:00'),
+	(DEFAULT, 1, 0, '2024-04-21 06:00:00'),
+	(DEFAULT, 1, 1, '2024-04-22 06:00:00'),
+	(DEFAULT, 1, 0, '2024-04-22 06:00:00');
+    
+INSERT INTO dadoSensor VALUES
+	(DEFAULT, 1, 1, '2024-02-15 06:00:00'),
+	(DEFAULT, 1, 0, '2024-02-15 06:00:00'),
+	(DEFAULT, 1, 1, '2024-02-16 06:00:00');
+
+-- SELECT máximo de entradas possíveis (nesse caso 277 * 13 ~= 3600, número de entradas por hora), Entradas em que o sensor captura, em escala do máximo, e a porcentagem
+-- entre ambos. Ainda não sei se vamos fazer dessa maneira.
+SELECT count(contagem) * 277 as total, sum(contagem) * 277 as fluxo, concat(truncate((sum(contagem) * 277)/(count(contagem) * 277) * 100, 0), '%') as 'Porcentagem de Movimento' FROM dadoSensor;
+SELECT count(contagem) * 277 as total, sum(contagem) * 252 as fluxo, concat(truncate((sum(contagem) * 252)/(count(contagem) * 277) * 100, 0), '%') as 'Porcentagem de Movimento' FROM dadoSensor;
+SELECT count(contagem) * 277 as total, sum(contagem) * 221 as fluxo, concat(truncate((sum(contagem) * 221)/(count(contagem) * 277) * 100, 0), '%') as 'Porcentagem de Movimento' FROM dadoSensor;
+SELECT count(contagem) * 277 as total, sum(contagem) * 200 as fluxo, concat(truncate((sum(contagem) * 200)/(count(contagem) * 277) * 100, 0), '%') as 'Porcentagem de Movimento' FROM dadoSensor;
+SELECT count(contagem) * 277 as total, sum(contagem) * 229 as fluxo, concat(truncate((sum(contagem) * 229)/(count(contagem) * 277) * 100, 0), '%') as 'Porcentagem de Movimento' FROM dadoSensor;
+SELECT count(contagem) * 277 as total, sum(contagem) * 300 as fluxo, concat(truncate((sum(contagem) * 300)/(count(contagem) * 277) * 100, 0), '%') as 'Porcentagem de Movimento' FROM dadoSensor;
+SELECT count(contagem) * 277 as total, sum(contagem) * 345 as fluxo, concat(truncate((sum(contagem) * 345)/(count(contagem) * 277) * 100, 0), '%') as 'Porcentagem de Movimento' FROM dadoSensor;
+
+-- SEPARANDO FLUXO TOTAL POR DIA DA SEMANA. É POSSÍVEL, EM UM CENÁRIO REAL, COLOCAR O LIMIT EM 3600 OU UM 'WHERE HORARIO > 8:00 AND < 9:00'.
+SELECT (sum(contagem) + 2856) as FluxoHora, date_format(horario, '%a') as dia FROM dadoSensor GROUP BY dia; -- POSSÍVEL DE MANUSEAR NO MOMENTO, DADOS NÃO ABSURDOS;
+SELECT (sum(contagem)) as FluxoHora, date_format(horario, '%a') as dia FROM dadoSensor GROUP BY dia; -- POSSÍVEL DE MANUSEAR NO MOMENTO, DADOS NÃO ABSURDOS;
+SELECT (sum(contagem)) as FluxoHora, date_format(horario, '%a') as dia FROM dadoSensor GROUP BY dia; -- POSSÍVEL DE MANUSEAR NO MOMENTO, DADOS NÃO ABSURDOS;
+
+-- MÉDIA POR HORA DOS ÚLTIMOS 1 MÊS    
+SELECT * FROM dadoSensor;
+
+SELECT * FROM dadoSensor
+	WHERE horario BETWEEN DATE_SUB(CURDATE(), INTERVAL 1 MONTH) AND CURDATE();
+
+SELECT sum(contagem) as contagem FROM dadoSensor ;
+
+	SELECT (sum(contagem)) as FluxoHora, date_format(horario, '%a') as dia 
+		FROM dadoSensor 
+		WHERE horario BETWEEN DATE_SUB(CURDATE(), INTERVAL 2 MONTH) AND CURDATE()
+		GROUP BY dia ORDER BY FIELD(dia, 'Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat');
+    
+
+        
+	SELECT (sum(contagem)) as FluxoHora 
+		FROM dadoSensor 
+		WHERE horario BETWEEN DATE_SUB(CURDATE(), INTERVAL 2 MONTH) AND CURDATE()
+		GROUP BY date_format(horario, '%a') ORDER BY FIELD((date_format(horario, '%a')), 'Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat');
+        
+	SELECT FluxoHora FROM (SELECT (sum(contagem)) as FluxoHora, date_format(horario, '%a') as dia 
+		FROM dadoSensor 
+		WHERE horario BETWEEN DATE_SUB(CURDATE(), INTERVAL 2 MONTH) AND CURDATE()
+		GROUP BY dia ORDER BY FIELD(dia, 'Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat')) as subQuerry;
+        
+	SELECT * FROM usuario;
