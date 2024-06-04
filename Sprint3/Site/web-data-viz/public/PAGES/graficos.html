@@ -917,23 +917,16 @@ limpar();    var BL9Element = document.getElementById('BL9');
         resposta.json().then(json => {
                   console.log(json);
                   console.log(JSON.stringify(json));
-                  domingo = json.domingo
-                  segunda = json.segunda
-                  terca = json.terca
-                  quarta = json.quarta
-                  quinta = json.quinta
-                  sexta = json.sexta
-                  sabado = json.sabado 
+                  var domingo = json.domingo
+                  var segunda = json.segunda
+                  var terca = json.terca
+                  var quarta = json.quarta
+                  var quinta = json.quinta
+                  var sexta = json.sexta
+                  var sabado = json.sabado 
 
-              });
-           } else {
-               throw ('Houve um erro na API!');
-           }
-       }).catch(function (resposta) {
-           console.error(resposta);
-
-       });
-
+              
+           
   const labels = [
     'Domingo',
     'Segunda',
@@ -949,7 +942,7 @@ limpar();    var BL9Element = document.getElementById('BL9');
     datasets: [{
       label: 'Dias de maior fluxo na Estação Luz',
       backgroundColor: 'MediumSlateBlue',
-      data: [13, 22, 25, 23, 21, 22, 14],
+      data: [domingo, segunda, terca, quarta, quinta, sexta, sabado],
     }
     ]
 
@@ -1025,7 +1018,7 @@ limpar();    var BL9Element = document.getElementById('BL9');
     datasets: [{
       label: 'Dias de maior fluxo na Estação Republica',
       backgroundColor: 'MediumSlateBlue',
-      data: [10, 18, 14, 15, 13, 18, 11],
+      data: [domingo, segunda, terca, quarta, quinta, sexta, sabado],
     }
     ]
 
@@ -1103,7 +1096,7 @@ limpar();    var BL9Element = document.getElementById('BL9');
     datasets: [{
       label: 'Dias de maior fluxo na Estação Higienópolis',
       backgroundColor: 'MediumSlateBlue',
-      data: [9, 16, 18, 18, 18, 17, 10],
+      data: [domingo ,segunda, terca, quarta, quinta, sexta, sabado],
     }
     ]
 
@@ -1181,7 +1174,7 @@ const labels10 = [
     datasets: [{
       label: 'Dias de maior fluxo na Estação Paulista',
       backgroundColor: 'MediumSlateBlue',
-      data: [13, 29, 28, 25, 22, 31, 17],
+      data: [domingo, segunda, terca, quarta, quinta, sexta, sabado],
     }
     ]
 
@@ -1258,7 +1251,7 @@ const labels10 = [
     datasets: [{
       label: 'Dias de maior fluxo na Estação Oscar Freire',
       backgroundColor: 'MediumSlateBlue',
-      data: [16, 18, 16, 16, 17, 18, 16],
+      data: [domingo, segunda, terca, quarta, quinta, sexta, sabado],
     }
     ]
 
@@ -1337,7 +1330,7 @@ const labels10 = [
     datasets: [{
       label: 'Dias de maior fluxo na Estação Fradique Coutinho',
       backgroundColor: 'MediumSlateBlue',
-      data: [10, 12, 11, 10, 10, 12, 10],
+      data: [domingo, segunda, terca, quarta, quinta, sexta, sabado],
     }
     ]
 
@@ -1414,7 +1407,7 @@ const labels10 = [
     datasets: [{
       label: 'Dias de maior fluxo na Estação Faria Lima',
       backgroundColor: 'MediumSlateBlue',
-      data: [7, 15, 12, 12, 12, 15, 6],
+      data: [domingo, segunda, terca, quarta, quinta, sexta, sabado]
     }
     ]
 
@@ -1493,7 +1486,7 @@ const labels10 = [
     datasets: [{
       label: 'Dias de maior fluxo na Estação Pinheiros',
       backgroundColor: 'MediumSlateBlue',
-      data: [7, 13, 14, 15, 12, 13, 8],
+      data: [domingo, segunda, terca, quarta, quinta, sexta, sabado]
     }
     ]
 
@@ -1572,7 +1565,7 @@ const labels10 = [
     datasets: [{
       label: 'Dias de maior fluxo na Estação Butantã',
       backgroundColor: 'MediumSlateBlue',
-      data: [4, 8, 9, 9, 7, 6, 5],
+      data: [domingo, segunda, terca, quarta, quinta, sexta, sabado]
     }
     ]
 
@@ -1651,7 +1644,7 @@ const labels10 = [
     datasets: [{
       label: 'Dias de maior fluxo na Estação São Paulo Morumbi',
       backgroundColor: 'MediumSlateBlue',
-      data: [4, 14, 12, 14, 12, 13, 6],
+      data: [domingo, segunda, terca, quarta, quinta, sexta, sabado]
     }
     ]
 
@@ -1730,7 +1723,7 @@ const labels10 = [
     datasets: [{
       label: 'Dias de maior fluxo na Estação Vila Sônia',
       backgroundColor: 'MediumSlateBlue',
-      data: [10, 17, 18, 15, 12, 13, 10],
+      data: [domingo, segunda, terca, quarta, quinta, sexta, sabado],
     }
     ]
 
@@ -2017,12 +2010,11 @@ const config7 = {
 
   //-------------------------------------------------------->
 
-  }
-</script>
 
-<!----------------Gráficos da estação Luz------------------------->
 
-<script>
+// <!----------------Gráficos da estação Luz------------------------->
+
+
   const myChart = new Chart(
     document.getElementById('myChart'),
     config
@@ -2187,6 +2179,18 @@ const myChart10 = new Chart(
     document.getElementById('myChart33'),
     config33
   );
+
+});
+
+} else {
+           throw ('Houve um erro na API!');
+       }
+   }).catch(function (resposta) {
+       console.error(resposta);
+
+   });
+
+}
 
   //-------------------------------------------------------->
 
