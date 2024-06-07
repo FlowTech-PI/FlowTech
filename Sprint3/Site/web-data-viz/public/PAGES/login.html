@@ -42,7 +42,7 @@
             </div>
 
             <div class="buttons">
-                <button class="btnEnviar" onclick="entrar()" class="enviaron">Entrar</button>
+                <button class="btnEnviar" onclick="criptar()" class="enviaron">Entrar</button>
             </div>
 
             <div class="links" id="ajuda">
@@ -64,9 +64,229 @@
 </html>
 
 <script>
+  let senhaVar = '';
+  let novaSenha = '';
+
+function criptar() {
+    senhaVar = input_senha.value;
+    let tamanho_senha = senhaVar.length;
+    let primeiro_caracter = senhaVar[0];
+    let mid_caracter = senhaVar[parseInt(tamanho_senha/2)];
+    let ultimo_caracter = senhaVar[tamanho_senha - 1];
+
+    //-------------------------------------------- Primeiro Caracter -------------------------------------------------------------
+
+    if(primeiro_caracter == '0') primeiro_caracter = '#Z';
+    else if(primeiro_caracter == '1') primeiro_caracter = '#D';
+    else if(primeiro_caracter == '2') primeiro_caracter = '#A';
+    else if(primeiro_caracter == '3') primeiro_caracter = '#B';
+    else if(primeiro_caracter == '4') primeiro_caracter = '#X';
+    else if(primeiro_caracter == '5') primeiro_caracter = '#T';
+    else if(primeiro_caracter == '6') primeiro_caracter = '#W';
+    else if(primeiro_caracter == '7') primeiro_caracter = '#S';
+    else if(primeiro_caracter == '8') primeiro_caracter = '#I';
+    else if(primeiro_caracter == '9') primeiro_caracter = '#M';
+    
+    else if(primeiro_caracter == 'A') primeiro_caracter = 'Vma20';
+    else if(primeiro_caracter == 'B') primeiro_caracter = 'Cma23';
+    else if(primeiro_caracter == 'C') primeiro_caracter = 'Cma19';
+    else if(primeiro_caracter == 'D') primeiro_caracter = 'Cma12';
+    else if(primeiro_caracter == 'E') primeiro_caracter = 'Vma9';
+    else if(primeiro_caracter == 'F') primeiro_caracter = 'Cma21';
+    else if(primeiro_caracter == 'G') primeiro_caracter = 'Cma13';
+    else if(primeiro_caracter == 'H') primeiro_caracter = 'Cma7';
+    else if(primeiro_caracter == 'I') primeiro_caracter = 'Vma24';
+    else if(primeiro_caracter == 'J') primeiro_caracter = 'Cma17';
+    else if(primeiro_caracter == 'K') primeiro_caracter = 'Cma15';
+    else if(primeiro_caracter == 'L') primeiro_caracter = 'Cma10';
+    else if(primeiro_caracter == 'M') primeiro_caracter = 'Cma8';
+    else if(primeiro_caracter == 'N') primeiro_caracter = 'Cma25';
+    else if(primeiro_caracter == 'O') primeiro_caracter = 'Vma14';
+    else if(primeiro_caracter == 'P') primeiro_caracter = 'Cma11';
+    else if(primeiro_caracter == 'Q') primeiro_caracter = 'Cma16';
+    else if(primeiro_caracter == 'R') primeiro_caracter = 'Cma22';
+    else if(primeiro_caracter == 'S') primeiro_caracter = 'Cma18';
+    else if(primeiro_caracter == 'T') primeiro_caracter = 'Cma6';
+    else if(primeiro_caracter == 'U') primeiro_caracter = 'Vma0';
+    else if(primeiro_caracter == 'V') primeiro_caracter = 'Cma1';
+    else if(primeiro_caracter == 'W') primeiro_caracter = 'Cma2';
+    else if(primeiro_caracter == 'X') primeiro_caracter = 'Cma5';
+    else if(primeiro_caracter == 'Y') primeiro_caracter = 'Cma3';
+    else if(primeiro_caracter == 'Z') primeiro_caracter = 'Cma4';
+    
+    else if(primeiro_caracter == 'a') primeiro_caracter = 'Vmi20';
+    else if(primeiro_caracter == 'b') primeiro_caracter = 'Cmi23';
+    else if(primeiro_caracter == 'c') primeiro_caracter = 'Cmi19';
+    else if(primeiro_caracter == 'd') primeiro_caracter = 'Cmi12';
+    else if(primeiro_caracter == 'e') primeiro_caracter = 'Vmi9';
+    else if(primeiro_caracter == 'f') primeiro_caracter = 'Cmi21';
+    else if(primeiro_caracter == 'g') primeiro_caracter = 'Cmi13';
+    else if(primeiro_caracter == 'h') primeiro_caracter = 'Cmi7';
+    else if(primeiro_caracter == 'i') primeiro_caracter = 'Vmi24';
+    else if(primeiro_caracter == 'j') primeiro_caracter = 'Cmi17';
+    else if(primeiro_caracter == 'k') primeiro_caracter = 'Cmi15';
+    else if(primeiro_caracter == 'l') primeiro_caracter = 'Cmi10';
+    else if(primeiro_caracter == 'm') primeiro_caracter = 'Cmi8';
+    else if(primeiro_caracter == 'n') primeiro_caracter = 'Cmi25';
+    else if(primeiro_caracter == 'o') primeiro_caracter = 'Vmi14';
+    else if(primeiro_caracter == 'p') primeiro_caracter = 'Cmi11';
+    else if(primeiro_caracter == 'q') primeiro_caracter = 'Cmi16';
+    else if(primeiro_caracter == 'r') primeiro_caracter = 'Cmi22';
+    else if(primeiro_caracter == 's') primeiro_caracter = 'Cmi18';
+    else if(primeiro_caracter == 't') primeiro_caracter = 'Cmi6';
+    else if(primeiro_caracter == 'u') primeiro_caracter = 'Vmi0';
+    else if(primeiro_caracter == 'v') primeiro_caracter = 'Cmi1';
+    else if(primeiro_caracter == 'w') primeiro_caracter = 'Cmi2';
+    else if(primeiro_caracter == 'x') primeiro_caracter = 'Cmi5';
+    else if(primeiro_caracter == 'y') primeiro_caracter = 'Cmi3';
+    else if(primeiro_caracter == 'z') primeiro_caracter = 'Cmi4';
+
+    //-------------------------------------------- Caracter do Meio -------------------------------------------------------------
+
+    if(mid_caracter == '0') mid_caracter = '#Z';
+    else if(mid_caracter == '1') mid_caracter = '#D';
+    else if(mid_caracter == '2') mid_caracter = '#A';
+    else if(mid_caracter == '3') mid_caracter = '#B';
+    else if(mid_caracter == '4') mid_caracter = '#X';
+    else if(mid_caracter == '5') mid_caracter = '#T';
+    else if(mid_caracter == '6') mid_caracter = '#W';
+    else if(mid_caracter == '7') mid_caracter = '#S';
+    else if(mid_caracter == '8') mid_caracter = '#I';
+    else if(mid_caracter == '9') mid_caracter = '#M';
+    
+    else if(mid_caracter == 'A') mid_caracter = 'Vma20';
+    else if(mid_caracter == 'B') mid_caracter = 'Cma23';
+    else if(mid_caracter == 'C') mid_caracter = 'Cma19';
+    else if(mid_caracter == 'D') mid_caracter = 'Cma12';
+    else if(mid_caracter == 'E') mid_caracter = 'Vma9';
+    else if(mid_caracter == 'F') mid_caracter = 'Cma21';
+    else if(mid_caracter == 'G') mid_caracter = 'Cma13';
+    else if(mid_caracter == 'H') mid_caracter = 'Cma7';
+    else if(mid_caracter == 'I') mid_caracter = 'Vma24';
+    else if(mid_caracter == 'J') mid_caracter = 'Cma17';
+    else if(mid_caracter == 'K') mid_caracter = 'Cma15';
+    else if(mid_caracter == 'L') mid_caracter = 'Cma10';
+    else if(mid_caracter == 'M') mid_caracter = 'Cma8';
+    else if(mid_caracter == 'N') mid_caracter = 'Cma25';
+    else if(mid_caracter == 'O') mid_caracter = 'Vma14';
+    else if(mid_caracter == 'P') mid_caracter = 'Cma11';
+    else if(mid_caracter == 'Q') mid_caracter = 'Cma16';
+    else if(mid_caracter == 'R') mid_caracter = 'Cma22';
+    else if(mid_caracter == 'S') mid_caracter = 'Cma18';
+    else if(mid_caracter == 'T') mid_caracter = 'Cma6';
+    else if(mid_caracter == 'U') mid_caracter = 'Vma0';
+    else if(mid_caracter == 'V') mid_caracter = 'Cma1';
+    else if(mid_caracter == 'W') mid_caracter = 'Cma2';
+    else if(mid_caracter == 'X') mid_caracter = 'Cma5';
+    else if(mid_caracter == 'Y') mid_caracter = 'Cma3';
+    else if(mid_caracter == 'Z') mid_caracter = 'Cma4';
+    
+    else if(mid_caracter == 'a') mid_caracter = 'Vmi20';
+    else if(mid_caracter == 'b') mid_caracter = 'Cmi23';
+    else if(mid_caracter == 'c') mid_caracter = 'Cmi19';
+    else if(mid_caracter == 'd') mid_caracter = 'Cmi12';
+    else if(mid_caracter == 'e') mid_caracter = 'Vmi9';
+    else if(mid_caracter == 'f') mid_caracter = 'Cmi21';
+    else if(mid_caracter == 'g') mid_caracter = 'Cmi13';
+    else if(mid_caracter == 'h') mid_caracter = 'Cmi7';
+    else if(mid_caracter == 'i') mid_caracter = 'Vmi24';
+    else if(mid_caracter == 'j') mid_caracter = 'Cmi17';
+    else if(mid_caracter == 'k') mid_caracter = 'Cmi15';
+    else if(mid_caracter == 'l') mid_caracter = 'Cmi10';
+    else if(mid_caracter == 'm') mid_caracter = 'Cmi8';
+    else if(mid_caracter == 'n') mid_caracter = 'Cmi25';
+    else if(mid_caracter == 'o') mid_caracter = 'Vmi14';
+    else if(mid_caracter == 'p') mid_caracter = 'Cmi11';
+    else if(mid_caracter == 'q') mid_caracter = 'Cmi16';
+    else if(mid_caracter == 'r') mid_caracter = 'Cmi22';
+    else if(mid_caracter == 's') mid_caracter = 'Cmi18';
+    else if(mid_caracter == 't') mid_caracter = 'Cmi6';
+    else if(mid_caracter == 'u') mid_caracter = 'Vmi0';
+    else if(mid_caracter == 'v') mid_caracter = 'Cmi1';
+    else if(mid_caracter == 'w') mid_caracter = 'Cmi2';
+    else if(mid_caracter == 'x') mid_caracter = 'Cmi5';
+    else if(mid_caracter == 'y') mid_caracter = 'Cmi3';
+    else if(mid_caracter == 'z') mid_caracter = 'Cmi4';
+
+    //-------------------------------------------- Ultimo Caracter -------------------------------------------------------------
+
+    if(ultimo_caracter == '0') ultimo_caracter = '#Z';
+    else if(ultimo_caracter == '1') ultimo_caracter = '#D';
+    else if(ultimo_caracter == '2') ultimo_caracter = '#A';
+    else if(ultimo_caracter == '3') ultimo_caracter = '#B';
+    else if(ultimo_caracter == '4') ultimo_caracter = '#X';
+    else if(ultimo_caracter == '5') ultimo_caracter = '#T';
+    else if(ultimo_caracter == '6') ultimo_caracter = '#W';
+    else if(ultimo_caracter == '7') ultimo_caracter = '#S';
+    else if(ultimo_caracter == '8') ultimo_caracter = '#I';
+    else if(ultimo_caracter == '9') ultimo_caracter = '#M';
+    
+    else if(ultimo_caracter == 'A') ultimo_caracter = 'Vma20';
+    else if(ultimo_caracter == 'B') ultimo_caracter = 'Cma23';
+    else if(ultimo_caracter == 'C') ultimo_caracter = 'Cma19';
+    else if(ultimo_caracter == 'D') ultimo_caracter = 'Cma12';
+    else if(ultimo_caracter == 'E') ultimo_caracter = 'Vma9';
+    else if(ultimo_caracter == 'F') ultimo_caracter = 'Cma21';
+    else if(ultimo_caracter == 'G') ultimo_caracter = 'Cma13';
+    else if(ultimo_caracter == 'H') ultimo_caracter = 'Cma7';
+    else if(ultimo_caracter == 'I') ultimo_caracter = 'Vma24';
+    else if(ultimo_caracter == 'J') ultimo_caracter = 'Cma17';
+    else if(ultimo_caracter == 'K') ultimo_caracter = 'Cma15';
+    else if(ultimo_caracter == 'L') ultimo_caracter = 'Cma10';
+    else if(ultimo_caracter == 'M') ultimo_caracter = 'Cma8';
+    else if(ultimo_caracter == 'N') ultimo_caracter = 'Cma25';
+    else if(ultimo_caracter == 'O') ultimo_caracter = 'Vma14';
+    else if(ultimo_caracter == 'P') ultimo_caracter = 'Cma11';
+    else if(ultimo_caracter == 'Q') ultimo_caracter = 'Cma16';
+    else if(ultimo_caracter == 'R') ultimo_caracter = 'Cma22';
+    else if(ultimo_caracter == 'S') ultimo_caracter = 'Cma18';
+    else if(ultimo_caracter == 'T') ultimo_caracter = 'Cma6';
+    else if(ultimo_caracter == 'U') ultimo_caracter = 'Vma0';
+    else if(ultimo_caracter == 'V') ultimo_caracter = 'Cma1';
+    else if(ultimo_caracter == 'W') ultimo_caracter = 'Cma2';
+    else if(ultimo_caracter == 'X') ultimo_caracter = 'Cma5';
+    else if(ultimo_caracter == 'Y') ultimo_caracter = 'Cma3';
+    else if(ultimo_caracter == 'Z') ultimo_caracter = 'Cma4';
+    
+    else if(ultimo_caracter == 'a') ultimo_caracter = 'Vmi20';
+    else if(ultimo_caracter == 'b') ultimo_caracter = 'Cmi23';
+    else if(ultimo_caracter == 'c') ultimo_caracter = 'Cmi19';
+    else if(ultimo_caracter == 'd') ultimo_caracter = 'Cmi12';
+    else if(ultimo_caracter == 'e') ultimo_caracter = 'Vmi9';
+    else if(ultimo_caracter == 'f') ultimo_caracter = 'Cmi21';
+    else if(ultimo_caracter == 'g') ultimo_caracter = 'Cmi13';
+    else if(ultimo_caracter == 'h') ultimo_caracter = 'Cmi7';
+    else if(ultimo_caracter == 'i') ultimo_caracter = 'Vmi24';
+    else if(ultimo_caracter == 'j') ultimo_caracter = 'Cmi17';
+    else if(ultimo_caracter == 'k') ultimo_caracter = 'Cmi15';
+    else if(ultimo_caracter == 'l') ultimo_caracter = 'Cmi10';
+    else if(ultimo_caracter == 'm') ultimo_caracter = 'Cmi8';
+    else if(ultimo_caracter == 'n') ultimo_caracter = 'Cmi25';
+    else if(ultimo_caracter == 'o') ultimo_caracter = 'Vmi14';
+    else if(ultimo_caracter == 'p') ultimo_caracter = 'Cmi11';
+    else if(ultimo_caracter == 'q') ultimo_caracter = 'Cmi16';
+    else if(ultimo_caracter == 'r') ultimo_caracter = 'Cmi22';
+    else if(ultimo_caracter == 's') ultimo_caracter = 'Cmi18';
+    else if(ultimo_caracter == 't') ultimo_caracter = 'Cmi6';
+    else if(ultimo_caracter == 'u') ultimo_caracter = 'Vmi0';
+    else if(ultimo_caracter == 'v') ultimo_caracter = 'Cmi1';
+    else if(ultimo_caracter == 'w') ultimo_caracter = 'Cmi2';
+    else if(ultimo_caracter == 'x') ultimo_caracter = 'Cmi5';
+    else if(ultimo_caracter == 'y') ultimo_caracter = 'Cmi3';
+    else if(ultimo_caracter == 'z') ultimo_caracter = 'Cmi4';
+
+    for(index = 0; index < tamanho_senha; index++) {
+        if (index == 0) novaSenha = primeiro_caracter;  
+        else if(index == parseInt(tamanho_senha/2)) novaSenha += mid_caracter;  
+        else if (index == tamanho_senha - 1) novaSenha += ultimo_caracter;
+        else novaSenha += senhaVar[index];
+    }
+    senhaVar = novaSenha;
+    entrar();
+}
+
     function entrar() {
         var emailVar = input_email.value;
-        var senhaVar = input_senha.value;
 
         if (emailVar == "" || senhaVar == "") {
             cardErro.style.display = "block"
