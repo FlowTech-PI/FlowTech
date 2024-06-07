@@ -151,6 +151,30 @@ function plotarSemana(req, res) {
     });
 }
 
+function plotarPorSensor(req, res) {
+    var fkEstacao = req.params.paramEstacao[0]
+    console.log("ESTOU NO CONTROLLER COM O VALOR DE FKESTAÇÃO DE:",fkEstacao)
+    avisoModel.plotarPorSensor(fkEstacao)
+        .then (function (resultado) {
+            if (resultado.length == 4) {
+                res.json({
+                    dadoSensor1: resultado[0].FluxoPorSensor,
+                    dadoSensor2: resultado[1].FluxoPorSensor,
+                    dadoSensor3: resultado[2].FluxoPorSensor,
+                    dadoSensor4: resultado[3].FluxoPorSensor
+                })
+            } else if (resultado.length > 4) {
+                console.log("Foram encontrados mais campos que o esperado");
+            } else {
+                console.log("Foram encontrados menos campos que o esperado");
+            }
+        }).catch(function(erro){
+            console.log(erro);
+            console.log("Houve um erro ao buscar os avisos: ", erro.sqlMessage);
+            res.status(500).json(erro.sqlMessage);
+        })
+}
+
 module.exports = {
     listar,
     listarPorUsuario,
@@ -158,5 +182,6 @@ module.exports = {
     publicar,
     editar,
     deletar,
-    plotarSemana
+    plotarSemana,
+    plotarPorSensor
 }

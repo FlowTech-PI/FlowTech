@@ -309,3 +309,56 @@ SELECT sum(contagem) as contagem FROM dadoSensor ;
 		GROUP BY dia ORDER BY FIELD(dia, 'Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat')) as subQuerry;
         
 	SELECT * FROM usuario;
+    
+-- ////// --
+    
+SELECT estacao.nome AS Estação,
+	sum(contagem) AS Contagem 
+    FROM estacao 
+	right join sensor ON fkSensor = idSensor
+    right join dado on fkEstacao = idEstacao
+    WHERE horario BETWEEN DATE_SUB(CURDATE(), INTERVAL 2 MONTH) AND CURDATE()
+    GROUP BY fkSensor;
+    
+SELECT sum(contagem) as fluxoPorSensor FROM dadoSensor 
+	right JOIN sensor ON fkSensor = idSensor
+    right join estacao on fkEstacao = idEstacao
+    WHERE horario BETWEEN DATE_SUB(CURDATE(), INTERVAL 2 MONTH) AND CURDATE() 
+    GROUP BY idSensor, fkEstacao;
+    
+SELECT sum(contagem) as FluxoHora, date_format(horario, '%H') as hora FROM dadoSensor
+	GROUP BY hora
+    ORDER BY hora;
+
+SELECT FluxoHora FROM (SELECT sum(contagem) as FluxoHora, date_format(horario, '%H') as hora FROM dadoSensor
+	GROUP BY hora
+    ORDER BY hora) as subquerry;
+
+DESCRIBE estacao;
+DESCRIBE sensor;
+SELECT * FROM sensor;
+SELECT * FROM dadoSensor;
+
+INSERT INTO sensor VALUES
+	(default, 'Escada Rolante', 'Sensor de Bloqueio', 3),
+	(default, 'Passarela', 'Sensor de Bloqueio', 3),
+	(default, 'Elevador', 'Sensor de Bloqueio', 3),
+	(default, 'Catraca de Entrada', 'Sensor de Bloqueio', 3);
+    
+INSERT INTO dadoSensor VALUES
+	(DEFAULT, 5, 1, '2024-04-15 06:00:00'),
+	(DEFAULT, 5, 0, '2024-04-15 06:00:00'),
+	(DEFAULT, 5, 1, '2024-04-16 06:00:00'),
+	(DEFAULT, 6, 0, '2024-04-16 06:00:00'),
+	(DEFAULT, 6, 1, '2024-04-17 06:00:00'),
+	(DEFAULT, 6, 0, '2024-04-17 06:00:00'),
+	(DEFAULT, 7, 1, '2024-04-18 06:00:00'),
+	(DEFAULT, 7, 0, '2024-04-18 06:00:00'),
+	(DEFAULT, 7, 1, '2024-04-19 06:00:00'),
+	(DEFAULT, 8, 0, '2024-04-19 06:00:00'),
+	(DEFAULT, 8, 1, '2024-04-20 06:00:00'),
+	(DEFAULT, 8, 0, '2024-04-20 06:00:00'),
+	(DEFAULT, 8, 1, '2024-04-21 06:00:00'),
+	(DEFAULT, 7, 0, '2024-04-21 06:00:00'),
+	(DEFAULT, 6, 1, '2024-04-22 06:00:00'),
+	(DEFAULT, 5, 0, '2024-04-22 06:00:00');

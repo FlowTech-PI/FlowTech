@@ -94,6 +94,18 @@ function plotarSemana() {
     return database.executar(instrucaoSql);
 }
 
+function plotarPorSensor(fkEstacao) {
+    console.log ("ACESSEI O AVISO  MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function plotarPorSensor()");
+    var instrucaoSql = `
+SELECT sum(contagem) as FluxoPorSensor FROM dadoSensor 
+	JOIN sensor ON fkSensor = idSensor
+    WHERE horario BETWEEN DATE_SUB(CURDATE(), INTERVAL 2 MONTH) AND CURDATE() AND fkEstacao = ${fkEstacao}
+    GROUP BY fkSensor, fkEstacao;
+    `
+    console.log("Executando a instrução SQL: \n", instrucaoSql);
+    return database.executar(instrucaoSql);
+}
+
 module.exports = {
     listar,
     listarPorUsuario,
@@ -101,5 +113,6 @@ module.exports = {
     publicar,
     editar,
     deletar,
-    plotarSemana
+    plotarSemana,
+    plotarPorSensor
 }
