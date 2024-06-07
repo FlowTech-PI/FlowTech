@@ -89,7 +89,8 @@ body {
 }
 
 .formulario .btnEnviar {
-    width: 150px;
+    width: 120px;
+    height: 40px;
     margin: 20px 100px 10px 100px;
     padding: 10px;
     background-color: #1D314D;
@@ -148,8 +149,12 @@ body {
     width: 200px;
 }
 
+#telaSenha #bt_redefinir_senha {
+    width: 140px;
+}
+
 #telaSenha .btnEnviar {
-    margin: 20px 20px 10px 20px
+    margin: 20px 20px 10px 20px;
 }
 
 /* Simulador Financeiro */
@@ -182,12 +187,12 @@ body {
 }
 
 #Simulador #estacao .inputs {
-    width: 45%;
-    margin-left: 90px;
+    width: 40%;
+    margin-left: 65px;
 }
 
 #Simulador #estacao span {
-    margin-left: 40px;
+    margin-left: 10px;
     align-self: center;
 }
 

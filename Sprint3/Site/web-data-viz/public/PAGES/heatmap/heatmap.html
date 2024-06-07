@@ -1,117 +1,109 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FlowTech | HeatMap</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../../CSS/styleDashboard.css" />
+    <script src="../../JS/heatmap.js"></script>
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>FlowTech | HeatMap</title>
-  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
-  <link rel="stylesheet" href="../../CSS/styleDashboard.css">
-  <script src="../../JS/heatmap.js"></script>
-</head>
+  <body id="Dashboard">
+    <div class="header">
+      <div id="NavDashboard" class="container">
+        <div class="menu">
+          <span
+            id="menuH"
+            class="material-symbols-outlined"
+            onclick="clickMenu()"
+            >menu</span
+          >
+          <h1 class="titulo">FLOWTECH</h1>
+        </div>
 
-
-<body id="Dashboard">
-  <div class="header">
-    <div id="NavDashboard" class="container">
-      
-      <div class="menu">
-        <span id="menuH" class="material-symbols-outlined" onclick="clickMenu()">menu</span>
-        <h1 class="titulo">FLOWTECH</h1>
-      </div>
-    
-      <ul class="navbar">
-          <li> <a href="../../index.html">Início</a></li>
+        <ul class="navbar">
+          <li><a href="../../index.html">Início</a></li>
           <li>|</li>
-          <li> <a href="../perfil.html">Perfil</a></li>
+          <li><a href="../perfil.html">Perfil</a></li>
           <li>|</li>
-          <li> <a href="../simulador.html">Simulador Financeiro</a></li>
+          <li><a href="../simulador.html">Simulador Financeiro</a></li>
           <li>|</li>
-          <li> <a href="../dashboard.html">Dashboard</a></li>
+          <li><a href="../dashboard.html">Dashboard</a></li>
           <li>|</li>
-          <li> <a href="../graficos.html">Gráficos</a></li>
+          <li><a href="../graficos.html">Gráficos</a></li>
           <li>|</li>
           <li><u>Heatmap</u></li>
-      </ul>
-    </div>
-  </div>
-
-  <div class="main_conteudo">
-    <div id="itens-laterais">
-      <div>
-        <ul class="listaItens">
-          <div id="fp" class="fotoPerfil">
-            <a href="../perfil.html"><img src="../../CSS/IMG/perfil.png" alt="foto de perfil"></a>
-          </div>
-            <li> <a href="../simulador.html">🖥 Calculadora Financeira</a></li>
-            <li> <a href="../graficos.html">📊 Gráficos</a></li>
-            <li> <a href="../dashboard.html">🖥️ Dashboard</a></li>
-            <li> <a href="heatmap.html">🗺️ HeatMap </a></li>
-            <li> <a href="../../index.html">Sair</a></li>
         </ul>
       </div>
     </div>
 
-    <div class="conteudo" id="dataHeatmap">
-      <div class="box-title">
-        <h2> HeatMap
-        <h6>FLOWTECH</h6>
-        </h2>
+    <div class="main_conteudo">
+      <div id="itens-laterais">
+        <div>
+          <ul class="listaItens">
+            <div id="fp" class="fotoPerfil">
+              <a href="../perfil.html"
+                ><img src="../../CSS/IMG/perfil.png" alt="foto de perfil"
+              /></a>
+            </div>
+            <li><a href="../simulador.html">🖥 Simulador Financeiro</a></li>
+            <li><a href="../graficos.html">📊 Gráficos</a></li>
+            <li><a href="../dashboard.html">🖥️ Dashboard</a></li>
+            <li><a href="heatmap.html">🗺️ HeatMap </a></li>
+            <li><a href="../../index.html">Sair</a></li>
+          </ul>
+        </div>
       </div>
 
-      <div class="container">
-        <div>
-          <select name="select_est" id="select_est" onchange="atualizar()">
+      <div class="conteudo" id="dataHeatmap">
+        <div class="box-title">
+          <h2>
+            HeatMap
+            <h6>FLOWTECH</h6>
+          </h2>
+        </div>
+
+        <div class="filtros">
+          <select id="select_estacao" onchange="atualizar()">
             <option value="Paulista">Paulista</option>
           </select>
 
-
-      </div>
-      
-
-      <div class="filtros" style="display: flex;">
-        <div class="heatmap"></div>
-
-
-        <div class="roll">        
-            <div class="wrapper">
-              <div class="values">
-                <span id="range1">
-                  00:00
-                </span>
-                <span> &dash; </span>
-                <span id="range2">
-                  12:00
-                </span>
-              </div>
-              <div class="container1">
-                <div class="slider-track"></div>
-                  <input type="range" min="0" max="24" value="10" id="slider-1" oninput="slideOne(), atualizarFeed()">
-                  <input type="range" min="0" max="24" value="14" id="slider-2" oninput="slideTwo(), atualizarFeed()">
-              </div>
+          <div class="wrapper">
+            <div class="values">
+              <span id="range1">
+                0
+              </span>
+              <span> &dash; </span>
+              <span id="range2">
+                100
+              </span>
             </div>
-
-            <div class="indice">
-              <p>Utilizando o slider acima, insira o intervalo de horário que você gostaria de consultar</p>
+            <div class="sliderContainer">
+              <div class="slider-track"></div>
+              <input type="range" min="0" max="23" value="10" id="slider-1" oninput="slideOne(), atualizarFeed()">
+              <input type="range" min="0" max="23" value="12" id="slider-2" oninput="slideTwo(), atualizarFeed()">
             </div>
-      </div>
+          </div>
+        </div>
 
-      </div>
-      
+        <div class="container">
+          <div class="heatmap"></div>
 
-
-    </div>
-          <p>
-            <b style="color: red;">Atenção:</b>
-            Para adicionar mais estações, entrar em contato com a FLOWTECH através dos nossos meios de comunicações oficiais
-          </p>
+          <div class="texto-oficial">
+            <p>
+              <b style="color: red">Atenção:</b>
+              Para adicionar mais estações, entrar em contato com a FLOWTECH
+              através dos nossos meios de comunicações oficiais
+            </p>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-
-</body>
-
+  </body>
 </html>
 
 <script>
@@ -136,43 +128,41 @@
    }
  }
 
-
  window.onload = function () {
-   atualizarFeed();
-   slideOne();
-   slideTwo();
- };
+  atualizarFeed();
+  slideOne();
+  slideTwo();
+};
 
- let sliderOne = document.getElementById("slider-1");
- let sliderTwo = document.getElementById("slider-2");
- let displayValOne = document.getElementById("range1");
- let displayValTwo = document.getElementById("range2");
- let minGap = 0;
- let sliderTrack = document.querySelector(".slider-track");
- let sliderMaxValue = document.getElementById("slider-1").max;
+let sliderOne = document.getElementById("slider-1");
+let sliderTwo = document.getElementById("slider-2");
+let displayValOne = document.getElementById("range1");
+let displayValTwo = document.getElementById("range2");
+let minGap = 1;
+let sliderTrack = document.querySelector(".slider-track");
+let sliderMaxValue = document.getElementById("slider-1").max;
 
 function slideOne() {
- if (parseInt(sliderTwo.value) - parseInt(sliderOne.value) <= minGap) {
-   sliderOne.value = parseInt(sliderTwo.value) - minGap;
- }
- displayValOne.textContent = sliderOne.value + ':00';
- fillColor();
+  if (parseInt(sliderTwo.value) - parseInt(sliderOne.value) <= minGap) {
+    sliderOne.value = parseInt(sliderTwo.value) - minGap;
+  }
+  if (sliderOne.value < 10) displayValOne.textContent = '0' + sliderOne.value + ':00';
+  else displayValOne.textContent = sliderOne.value + ':00 ';
+  fillColor();
 }
-
 function slideTwo() {
- if (parseInt(sliderTwo.value) - parseInt(sliderOne.value) <= minGap) {
-   sliderTwo.value = parseInt(sliderOne.value) + minGap;
- }
- displayValTwo.textContent = sliderTwo.value + ':00';
- fillColor();
+  if (parseInt(sliderTwo.value) - parseInt(sliderOne.value) <= minGap) {
+    sliderTwo.value = parseInt(sliderOne.value) + minGap;
+  }
+  if (sliderTwo.value < 10) displayValTwo.textContent = '0' + sliderTwo.value + ':00';
+  else displayValTwo.textContent = sliderTwo.value + ':00';
+  fillColor();
 }
-
 function fillColor() {
- percent1 = (sliderOne.value / sliderMaxValue) * 100;
- percent2 = (sliderTwo.value / sliderMaxValue) * 100;
- sliderTrack.style.background = `linear-gradient(to right, #dadae5 ${percent1}% , #3264fe ${percent1}% , #3264fe ${percent2}%, #dadae5 ${percent2}%)`;
+  percent1 = (sliderOne.value / sliderMaxValue) * 100;
+  percent2 = (sliderTwo.value / sliderMaxValue) * 100;
+  sliderTrack.style.background = `linear-gradient(to right, #b3b3bd ${percent1}% , #144b97 ${percent1}% , #144b97 ${percent2}%, #b3b3bd ${percent2}%)`;
 }
-
 
 var intervalo = []
 
@@ -203,12 +193,12 @@ function atualizarFeed() {
 
    var dif = h2 - h1;
 
-   var escada1 = { x: 237 - 85, y: 350 + 10, value: dado * 0.7, radius: 40, };
-   var escada2 = { x: 265 - 85, y: 300 + 10, value: dado * 0.9, radius: 40, };
-   var escada3 = { x: 545 - 95, y: 345, value: dado, radius: 40, };
-   var passarela1 = { x: 515 - 85, y: 370 + 10, value: dado * 1.2, radius: 40, };
-   var passarela2 = { x: 620 - 85, y: 250 + 5, value: dado * 1, radius: 40, };
-   var catraca = { x: 690 - 90, y: 172 + 10, value: dado * 0.8, radius: 40, };
+   var escada1 = { x: 237, y: 350, value: dado * 0.7, radius: 40, };
+   var escada2 = { x: 265, y: 300, value: dado * 0.9, radius: 40, };
+   var escada3 = { x: 545, y: 345, value: dado, radius: 40, };
+   var passarela1 = { x: 515, y: 370, value: dado * 1.2, radius: 40, };
+   var passarela2 = { x: 620, y: 250, value: dado * 1, radius: 40, };
+   var catraca = { x: 690, y: 172, value: dado * 0.8, radius: 40, };
 
    points = [escada1, escada2, escada3, passarela1, passarela2, catraca];
 
@@ -231,5 +221,4 @@ function atualizarFeed() {
 
        });
    }
-
 </script>

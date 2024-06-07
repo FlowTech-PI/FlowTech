@@ -46,7 +46,6 @@ body:hover {
 .titulo {
   color: #1D314D;
   font-family: League-Spartan;
-  margin: 0 14vw 0 6vw;
   font-size: 32px;
 }
 
@@ -77,31 +76,36 @@ body:hover {
   margin: 8px;
 }
 
+.navbar li a:hover {
+  color: #144b97;
+  cursor: pointer;
+}
+
 u {
   color: #144b97;
 }
 
-.navbar .quem {
-  margin-right: 0px;
+.buttons-cadastro {
+  padding-right: 20px;
 }
 
-.navbar .bt {
+.buttons-cadastro a {
+  color: #FFF;
+  text-decoration: none;
+}
+
+.buttons-cadastro button {
   background-color: #1D314D;
-  color: #fff;
   padding: 8px 35px;
   border-radius: 50px;
+  border: none;
   font-size: 15px;
   font-family: Roboto;
-  font-weight: 550;
+  font-weight: bold;
 }
 
-.navbar .bt:hover {
+.buttons-cadastro button:hover {
   background-color: #144b97;
-  cursor: pointer;
-}
-
-.navbar li a:hover {
-  color: #144b97;
   cursor: pointer;
 }
 
@@ -122,9 +126,8 @@ u {
 }
 
 #NavDashboard .navbar {
-  margin-right: 20%;
+  margin-right: 25%;
 }
-
 
 /* Footer */
 .footer {

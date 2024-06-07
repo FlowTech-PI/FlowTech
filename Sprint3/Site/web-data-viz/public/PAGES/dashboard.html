@@ -23,11 +23,11 @@
         <li>|</li>
         <li> <a href="perfil.html">Perfil</a></li>
         <li>|</li>
-        <li> <a href="simulador.html">Simulador Financeiro</a></li>
+        <li><a href="simulador.html">Simulador Financeiro</a></li>
         <li>|</li>
         <li><u>Dashboard</u></li>
         <li>|</li>
-        <li> <a href="graficos.html">Gráficos</a></li>
+        <li><a href="graficos.html">Gráficos</a></li>
         <li>|</li>
         <li><a href="heatmap/heatmap.html">Heatmap</a></li>
       </ul>
@@ -50,11 +50,17 @@
 
     <div class="conteudo">
       <div class="box-title">
-        <h2>DASHBOARD</h2>
+        <h2>Dashboard</h2>
         <h6>FLOWTECH</h6>
       </div>
 
-      <h1>3 ESTAÇÕES COM MAIOR FLUXO</h1>
+        <select id="select_freq" onchange="atualizar()">
+          <option value="dia">Últimas 24 horas</option>
+          <option value="semana">Na Semana</option>
+          <option value="mes">No Mês</option>
+        </select>
+        
+        <h1>3 ESTAÇÕES COM MAIOR FLUXO</h1>
 
       <!------------------------- Dados da Dashboard -------------------------------------->
       <div class="container">
@@ -65,7 +71,7 @@
               <span id="estacao1">PINHEIROS</span>
             </div>
             <div class="data">
-              <span id="data_BoxE">21.569 Pessoas</span>
+              <span id="data_BoxE">21.569 Capturas</span>
             </div>
           </div>
 
@@ -74,7 +80,7 @@
               <span id="estacao2">HIGIENÓPOLIS</span>
             </div>
             <div class="data">
-              <span id="data_BoxM">21.089 Pessoas</span>
+              <span id="data_BoxM">21.089 Capturas</span>
             </div>
           </div>
 
@@ -83,26 +89,20 @@
               <span id="estacao3">PAULISTA</span>
             </div>
             <div class="data">
-              <span id="data_BoxD">4.410 Pessoas</span>
+              <span id="data_BoxD">4.410 Capturas</span>
             </div>
           </div>
 
         </div>
-
-        <select id="select_freq" onchange="atualizar()">
-          <option value="dia">Últimas 24 horas</option>
-          <option value="semana">Na Semana</option>
-          <option value="mes">No Mês</option>
-        </select>
       </div>
 
       <!------------------------------- legenda -------------------------------------------->
       <div class="legenda">
         <div class="bloco">
           <div class="group">
-            <div class="quadrado" id="quad1"></div>
-            <div class="quadrado" id="quad2"></div>
-            <div class="quadrado" id="quad3"></div>
+            <div class="quadrado" id="quad1" style="background-color: #FF3131;"></div>
+            <div class="quadrado" id="quad2" style="background-color: #FF914D;"></div>
+            <div class="quadrado" id="quad3" style="background-color: #FFDE59;"></div>
           </div>
           <div class="group">
             <p id="parametro1"> > 3.000 </p>
@@ -113,9 +113,9 @@
 
         <div class="bloco">
           <div class="group">
-            <div class="quadrado" id="quad4"></div>
-            <div class="quadrado" id="quad5"></div>
-            <div class="quadrado" id="quad6"></div>
+            <div class="quadrado" id="quad4" style="background-color: #C2E806;"></div>
+            <div class="quadrado" id="quad5" style="background-color: #4EE888;"></div>
+            <div class="quadrado" id="quad6" style="background-color: #41BB4D;"></div>
           </div>
           <div class="group">
             <p id="parametro4"> > 10.000 </p>
@@ -124,8 +124,8 @@
           </div>
         </div>
       </div>
-      <button class="ver_mais"><a href="graficos.html">Ver Mais -></a></button>
     </div>
+  </div>
 </body>
 
 </html>
@@ -152,9 +152,9 @@
       E.style.backgroundColor = '#41BB4D';
       M.style.backgroundColor = '#41BB4D';
       D.style.backgroundColor = '#FF3131';
-      data_BoxE.innerHTML = '21.569 <br> pessoas';
-      data_BoxM.innerHTML = '21.089 <br> pessoas';
-      data_BoxD.innerHTML = '4.410 <br> pessoas';
+      data_BoxE.innerHTML = '21.569 <br> Capturas';
+      data_BoxM.innerHTML = '21.089 <br> Capturas';
+      data_BoxD.innerHTML = '4.410 <br> Capturas';
       estacao1.innerHTML = 'PINHEIROS';
       estacao2.innerHTML = 'HIGIENÓPOLIS';
       estacao3.innerHTML = 'PAULISTA';
@@ -171,9 +171,9 @@
       E.style.backgroundColor = '#41BB4D';
       D.style.backgroundColor = '#C2E806';
       M.style.backgroundColor = '#4EE888';
-      data_BoxE.innerHTML = '150.983 <br> pessoas';
-      data_BoxM.innerHTML = '108.983 <br> pessoas';
-      data_BoxD.innerHTML = '84.000 <br> pessoas';
+      data_BoxE.innerHTML = '150.983 <br> Capturas';
+      data_BoxM.innerHTML = '108.983 <br> Capturas';
+      data_BoxD.innerHTML = '84.000 <br> Capturas';
       estacao1.innerHTML = 'PAULISTA';
       estacao2.innerHTML = 'VILA SÔNIA';
       estacao3.innerHTML = 'PINHEIROS';
@@ -191,9 +191,9 @@
       E.style.backgroundColor = '#41BB4D';
       M.style.backgroundColor = '#C2E806';
       D.style.backgroundColor = '#FFDE59';
-      data_BoxE.innerHTML = '647.070 <br> pessoas';
-      data_BoxM.innerHTML = '340.070 <br> pessoas';
-      data_BoxD.innerHTML = '230.390 <br> pessoas';
+      data_BoxE.innerHTML = '647.070 <br> Capturas';
+      data_BoxM.innerHTML = '340.070 <br> Capturas';
+      data_BoxD.innerHTML = '230.390 <br> Capturas';
       estacao1.innerHTML = 'LUZ';
       estacao2.innerHTML = 'BUTANTÃ';
       estacao3.innerHTML = 'OSCAR FREIRE';
