@@ -919,7 +919,7 @@ limpar();    var BL9Element = document.getElementById('BL9');
 
   function plotar() {
     plotar1()
-    plotar2()
+    // plotar2()
     // plotar1()
     }
 
@@ -951,16 +951,9 @@ limpar();    var BL9Element = document.getElementById('BL9');
         if (resposta.status == 204) {
                    throw "Nenhum resultado encontrado!!";
         }
-        resposta.json().then(json => {
-                  console.log(json);
-                  console.log(JSON.stringify(json));
-                  var domingo = json.domingo
-                  var segunda = json.segunda
-                  var terca = json.terca
-                  var quarta = json.quarta
-                  var quinta = json.quinta
-                  var sexta = json.sexta
-                  var sabado = json.sabado 
+        resposta.json().then(dadosPlotar1 => {
+                  console.log(dadosPlotar1);
+                  console.log(JSON.stringify(dadosPlotar1));
   const labels = [
     'Domingo',
     'Segunda',

@@ -130,14 +130,96 @@ function deletar(req, res) {
 function plotarSemana(req, res) {
     avisoModel.plotarSemana().then(function (resultado) {
         if (resultado.length > 0) {
-            res.json({
-                domingo: resultado[0].FluxoHora,
-                segunda: resultado[1].FluxoHora,
-                terca: resultado[2].FluxoHora,
-                quarta: resultado[3].FluxoHora,
-                quinta: resultado[4].FluxoHora,
-                sexta: resultado[5].FluxoHora,
-                sabado: resultado[6].FluxoHora
+            res.json({ 
+                    Luz : {
+                    domingo: resultado[ 0].fluxoDiaSemana,
+                    segunda: resultado[ 1].fluxoDiaSemana,
+                    terca:   resultado[ 2].fluxoDiaSemana,
+                    quarta:  resultado[ 3].fluxoDiaSemana,
+                    quinta:  resultado[ 4].fluxoDiaSemana,
+                    sexta:   resultado[ 5].fluxoDiaSemana,
+                    sábado:  resultado[ 6].fluxoDiaSemana               
+                }, Republica :    {
+                    domingo: resultado[ 7].fluxoDiaSemana,
+                    segunda: resultado[ 8].fluxoDiaSemana,
+                    terca:   resultado[ 9].fluxoDiaSemana,
+                    quarta:  resultado[10].fluxoDiaSemana,
+                    quinta:  resultado[18].fluxoDiaSemana,
+                    sexta:   resultado[19].fluxoDiaSemana,
+                    sábado:  resultado[20].fluxoDiaSemana               
+                }, Higienópolis : {
+                    domingo: resultado[14].fluxoDiaSemana,
+                    segunda: resultado[15].fluxoDiaSemana,
+                    terca:   resultado[16].fluxoDiaSemana,
+                    quarta:  resultado[17].fluxoDiaSemana,
+                    quinta:  resultado[18].fluxoDiaSemana,
+                    sexta:   resultado[19].fluxoDiaSemana,
+                    sábado:  resultado[20].fluxoDiaSemana                
+                }, Paulista :     {
+                    domingo: resultado[21].fluxoDiaSemana,
+                    segunda: resultado[22].fluxoDiaSemana,
+                    terca:   resultado[23].fluxoDiaSemana,
+                    quarta:  resultado[24].fluxoDiaSemana,
+                    quinta:  resultado[25].fluxoDiaSemana,
+                    sexta:   resultado[26].fluxoDiaSemana,
+                    sábado:  resultado[27].fluxoDiaSemana                
+                }, Oscar_Freire : {
+                    domingo: resultado[28].fluxoDiaSemana,
+                    segunda: resultado[29].fluxoDiaSemana,
+                    terca:   resultado[30].fluxoDiaSemana,
+                    quarta:  resultado[31].fluxoDiaSemana,
+                    quinta:  resultado[32].fluxoDiaSemana,
+                    sexta:   resultado[33].fluxoDiaSemana,
+                    sábado:  resultado[34].fluxoDiaSemana                
+                }, Fradique_Coutinho : {
+                    domingo: resultado[35].fluxoDiaSemana,
+                    segunda: resultado[36].fluxoDiaSemana,
+                    terca:   resultado[37].fluxoDiaSemana,
+                    quarta:  resultado[38].fluxoDiaSemana,
+                    quinta:  resultado[39].fluxoDiaSemana,
+                    sexta:   resultado[40].fluxoDiaSemana,
+                    sábado:  resultado[41].fluxoDiaSemana                
+                }, Faria_Lima : {
+                    domingo: resultado[42].fluxoDiaSemana,
+                    segunda: resultado[43].fluxoDiaSemana,
+                    terca:   resultado[44].fluxoDiaSemana,
+                    quarta:  resultado[45].fluxoDiaSemana,
+                    quinta:  resultado[46].fluxoDiaSemana,
+                    sexta:   resultado[47].fluxoDiaSemana,
+                    sábado:  resultado[48].fluxoDiaSemana                
+                }, Pinheiros :  {
+                    domingo: resultado[49].fluxoDiaSemana,
+                    segunda: resultado[50].fluxoDiaSemana,
+                    terca:   resultado[51].fluxoDiaSemana,
+                    quarta:  resultado[52].fluxoDiaSemana,
+                    quinta:  resultado[53].fluxoDiaSemana,
+                    sexta:   resultado[54].fluxoDiaSemana,
+                    sábado:  resultado[55].fluxoDiaSemana                
+                }, Butantã: {
+                    domingo: resultado[56].fluxoDiaSemana,
+                    segunda: resultado[57].fluxoDiaSemana,
+                    terca:   resultado[58].fluxoDiaSemana,
+                    quarta:  resultado[59].fluxoDiaSemana,
+                    quinta:  resultado[60].fluxoDiaSemana,
+                    sexta:   resultado[61].fluxoDiaSemana,
+                    sábado:  resultado[62].fluxoDiaSemana                
+                }, SP_Morumbi : {
+                    domingo: resultado[63].fluxoDiaSemana,
+                    segunda: resultado[64].fluxoDiaSemana,
+                    terca:   resultado[65].fluxoDiaSemana,
+                    quarta:  resultado[66].fluxoDiaSemana,
+                    quinta:  resultado[67].fluxoDiaSemana,
+                    sexta:   resultado[68].fluxoDiaSemana,
+                    sábado:  resultado[69].fluxoDiaSemana                
+                }, Vila_Sônia : {
+                    domingo: resultado[70].fluxoDiaSemana,
+                    segunda: resultado[71].fluxoDiaSemana,
+                    terca:   resultado[72].fluxoDiaSemana,
+                    quarta:  resultado[73].fluxoDiaSemana,
+                    quinta:  resultado[74].fluxoDiaSemana,
+                    sexta:   resultado[75].fluxoDiaSemana,
+                    sábado:  resultado[76].fluxoDiaSemana                
+                }
             });
 
         } else {
