@@ -47,7 +47,7 @@ CONSTRAINT chkFuncao CHECK (funcao IN('Administrador', 'Gerente', 'Funcionário'
 INSERT INTO usuario VALUES
 	(DEFAULT, 'Josival da Silva Santos', '1972-01-01', '25448868820', '11986457457', 'josival.santos@gmail.com', 'josival0101', 'Administrador', NULL, 1),
 	(DEFAULT, 'Alberto Vicente Alves', '1980-04-22', '29033534843', '11985451260', 'alberto.alves@gmail.com', 'alberto@123', 'Gerente', 1, 1),
-	(DEFAULT, 'Rafael Henrique Silva', '1990-02-20', '53589878841', '11959382646', 'rafael.silva@gmail.com', 'rafael227755', 'Funcionário',2, 1);
+	(DEFAULT, 'Rafael Henrique Silva', '1990-02-20', '53589878841', '11959382646', 'rafael.silva@gmail.com', 'Cmi22afael#A2775#T', 'Funcionário',2, 1);
     
 SELECT * FROM usuario;
 /*----------------------------------------------------------------------------------------------------------------------------------------*/
@@ -194,85 +194,238 @@ CONSTRAINT fkSensorDadoSensor FOREIGN KEY (fkSensor)
 	REFERENCES sensor(idSensor)
 );
 
-    INSERT INTO dadoSensor VALUES 
-		(default,  1, 0, '2024-06-07 5:00:00'),
-		(default,  7, 0, '2024-06-07 5:00:00'),
-		(default, 13, 0, '2024-06-07 5:00:00'),
-		(default, 19, 0, '2024-06-07 5:00:00'),
-		(default, 25, 0, '2024-06-07 5:00:00'),
-		(default, 31, 0, '2024-06-07 5:00:00'),
-		(default, 37, 0, '2024-06-07 5:00:00'),
-		(default, 43, 0, '2024-06-07 5:00:00'),
-		(default, 49, 0, '2024-06-07 5:00:00'),
-		(default, 55, 0, '2024-06-07 5:00:00'),
-		(default, 61, 0, '2024-06-07 5:00:00'),
-        (default,  1, 0, '2024-06-06 5:00:00'),
-		(default,  7, 0, '2024-06-06 5:00:00'),
-		(default, 13, 0, '2024-06-06 5:00:00'),
-		(default, 19, 0, '2024-06-06 5:00:00'),
-		(default, 25, 0, '2024-06-06 5:00:00'),
-		(default, 31, 0, '2024-06-06 5:00:00'),
-		(default, 37, 0, '2024-06-06 5:00:00'),
-		(default, 43, 0, '2024-06-06 5:00:00'),
-		(default, 49, 0, '2024-06-06 5:00:00'),
-		(default, 55, 0, '2024-06-06 5:00:00'),
-		(default, 61, 0, '2024-06-06 5:00:00'),
-		(default,  1, 0, '2024-06-05 5:00:00'),
-		(default,  7, 0, '2024-06-05 5:00:00'),
-		(default, 13, 0, '2024-06-05 5:00:00'),
-		(default, 19, 0, '2024-06-05 5:00:00'),
-		(default, 25, 0, '2024-06-05 5:00:00'),
-		(default, 31, 0, '2024-06-05 5:00:00'),
-		(default, 37, 0, '2024-06-05 5:00:00'),
-		(default, 43, 0, '2024-06-05 5:00:00'),
-		(default, 49, 0, '2024-06-05 5:00:00'),
-		(default, 55, 0, '2024-06-05 5:00:00'),
-		(default, 61, 0, '2024-06-05 5:00:00'),
-		(default,  1, 0, '2024-06-04 5:00:00'),
-		(default,  7, 0, '2024-06-04 5:00:00'),
-		(default, 13, 0, '2024-06-04 5:00:00'),
-		(default, 19, 0, '2024-06-04 5:00:00'),
-		(default, 25, 0, '2024-06-04 5:00:00'),
-		(default, 31, 0, '2024-06-04 5:00:00'),
-		(default, 37, 0, '2024-06-04 5:00:00'),
-		(default, 43, 0, '2024-06-04 5:00:00'),
-		(default, 49, 0, '2024-06-04 5:00:00'),
-		(default, 55, 0, '2024-06-04 5:00:00'),
-		(default, 61, 0, '2024-06-04 5:00:00'),
-		(default,  1, 0, '2024-06-03 5:00:00'),
-		(default,  7, 0, '2024-06-03 5:00:00'),
-		(default, 13, 0, '2024-06-03 5:00:00'),
-		(default, 19, 0, '2024-06-03 5:00:00'),
-		(default, 25, 0, '2024-06-03 5:00:00'),
-		(default, 31, 0, '2024-06-03 5:00:00'),
-		(default, 37, 0, '2024-06-03 5:00:00'),
-		(default, 43, 0, '2024-06-03 5:00:00'),
-		(default, 49, 0, '2024-06-03 5:00:00'),
-		(default, 55, 0, '2024-06-03 5:00:00'),
-		(default, 61, 0, '2024-06-03 5:00:00'),
-		(default,  1, 0, '2024-06-02 5:00:00'),
-		(default,  7, 0, '2024-06-02 5:00:00'),
-		(default, 13, 0, '2024-06-02 5:00:00'),
-		(default, 19, 0, '2024-06-02 5:00:00'),
-		(default, 25, 0, '2024-06-02 5:00:00'),
-		(default, 31, 0, '2024-06-02 5:00:00'),
-		(default, 37, 0, '2024-06-02 5:00:00'),
-		(default, 43, 0, '2024-06-02 5:00:00'),
-		(default, 49, 0, '2024-06-02 5:00:00'),
-		(default, 55, 0, '2024-06-02 5:00:00'),
-		(default, 61, 0, '2024-06-02 5:00:00'),
-		(default,  1, 0, '2024-06-01 5:00:00'),
-		(default,  7, 0, '2024-06-01 5:00:00'),
-		(default, 13, 0, '2024-06-01 5:00:00'),
-		(default, 19, 0, '2024-06-01 5:00:00'),
-		(default, 25, 0, '2024-06-01 5:00:00'),
-		(default, 31, 0, '2024-06-01 5:00:00'),
-		(default, 37, 0, '2024-06-01 5:00:00'),
-		(default, 43, 0, '2024-06-01 5:00:00'),
-		(default, 49, 0, '2024-06-01 5:00:00'),
-		(default, 55, 0, '2024-06-01 5:00:00'),
-		(default, 61, 0, '2024-06-01 5:00:00');
-    
+INSERT INTO dadoSensor VALUES 
+	(default,  1, 0, '2024-06-07 4:00:00'),
+	(default,  7, 0, '2024-06-07 4:00:00'),
+	(default, 13, 0, '2024-06-07 4:00:00'),
+	(default, 19, 0, '2024-06-07 4:00:00'),
+	(default, 25, 0, '2024-06-07 4:00:00'),
+	(default, 31, 0, '2024-06-07 4:00:00'),
+	(default, 37, 0, '2024-06-07 4:00:00'),
+	(default, 43, 0, '2024-06-07 4:00:00'),
+	(default, 49, 0, '2024-06-07 4:00:00'),
+	(default, 55, 0, '2024-06-07 4:00:00'),
+	(default, 61, 0, '2024-06-07 4:00:00'),
+	(default,  1, 0, '2024-06-07 5:00:00'),
+	(default,  7, 0, '2024-06-07 5:00:00'),
+	(default, 13, 0, '2024-06-07 5:00:00'),
+	(default, 19, 0, '2024-06-07 5:00:00'),
+	(default, 25, 0, '2024-06-07 5:00:00'),
+	(default, 31, 0, '2024-06-07 5:00:00'),
+	(default, 37, 0, '2024-06-07 5:00:00'),
+	(default, 43, 0, '2024-06-07 5:00:00'),
+	(default, 49, 0, '2024-06-07 5:00:00'),
+	(default, 55, 0, '2024-06-07 5:00:00'),
+	(default, 61, 0, '2024-06-07 5:00:00'),
+    (default,  1, 0, '2024-06-06 6:00:00'),
+	(default,  7, 0, '2024-06-06 6:00:00'),
+	(default, 13, 0, '2024-06-06 6:00:00'),
+	(default, 19, 0, '2024-06-06 6:00:00'),
+	(default, 25, 0, '2024-06-06 6:00:00'),
+	(default, 31, 0, '2024-06-06 6:00:00'),
+	(default, 37, 0, '2024-06-06 6:00:00'),
+	(default, 43, 0, '2024-06-06 6:00:00'),
+	(default, 49, 0, '2024-06-06 6:00:00'),
+	(default, 55, 0, '2024-06-06 6:00:00'),
+	(default, 61, 0, '2024-06-06 6:00:00'),
+	(default,  1, 0, '2024-06-05 7:00:00'),
+	(default,  7, 0, '2024-06-05 7:00:00'),
+	(default, 13, 0, '2024-06-05 7:00:00'),
+	(default, 19, 0, '2024-06-05 7:00:00'),
+	(default, 25, 0, '2024-06-05 7:00:00'),
+	(default, 31, 0, '2024-06-05 7:00:00'),
+	(default, 37, 0, '2024-06-05 7:00:00'),
+	(default, 43, 0, '2024-06-05 7:00:00'),
+	(default, 49, 0, '2024-06-05 7:00:00'),
+	(default, 55, 0, '2024-06-05 7:00:00'),
+	(default, 61, 0, '2024-06-05 7:00:00'),
+	(default,  1, 0, '2024-06-04 8:00:00'),
+	(default,  7, 0, '2024-06-04 8:00:00'),
+	(default, 13, 0, '2024-06-04 8:00:00'),
+	(default, 19, 0, '2024-06-04 8:00:00'),
+	(default, 25, 0, '2024-06-04 8:00:00'),
+	(default, 31, 0, '2024-06-04 8:00:00'),
+	(default, 37, 0, '2024-06-04 8:00:00'),
+	(default, 43, 0, '2024-06-04 8:00:00'),
+	(default, 49, 0, '2024-06-04 8:00:00'),
+	(default, 55, 0, '2024-06-04 8:00:00'),
+	(default, 61, 0, '2024-06-04 8:00:00'),
+	(default,  1, 0, '2024-06-03 9:00:00'),
+	(default,  7, 0, '2024-06-03 9:00:00'),
+	(default, 13, 0, '2024-06-03 9:00:00'),
+	(default, 19, 0, '2024-06-03 9:00:00'),
+	(default, 25, 0, '2024-06-03 9:00:00'),
+	(default, 31, 0, '2024-06-03 9:00:00'),
+	(default, 37, 0, '2024-06-03 9:00:00'),
+	(default, 43, 0, '2024-06-03 9:00:00'),
+	(default, 49, 0, '2024-06-03 9:00:00'),
+	(default, 55, 0, '2024-06-03 9:00:00'),
+	(default, 61, 0, '2024-06-03 9:00:00'),
+	(default,  1, 0, '2024-06-02 10:00:00'),
+	(default,  7, 0, '2024-06-02 10:00:00'),
+	(default, 13, 0, '2024-06-02 10:00:00'),
+	(default, 19, 0, '2024-06-02 10:00:00'),
+	(default, 25, 0, '2024-06-02 10:00:00'),
+	(default, 31, 0, '2024-06-02 10:00:00'),
+	(default, 37, 0, '2024-06-02 10:00:00'),
+	(default, 43, 0, '2024-06-02 10:00:00'),
+	(default, 49, 0, '2024-06-02 10:00:00'),
+	(default, 55, 0, '2024-06-02 10:00:00'),
+	(default, 61, 0, '2024-06-02 10:00:00'),
+	(default,  1, 0, '2024-06-01 11:00:00'),
+	(default,  7, 0, '2024-06-01 11:00:00'),
+	(default, 13, 0, '2024-06-01 11:00:00'),
+	(default, 19, 0, '2024-06-01 11:00:00'),
+	(default, 25, 0, '2024-06-01 11:00:00'),
+	(default, 31, 0, '2024-06-01 11:00:00'),
+	(default, 37, 0, '2024-06-01 11:00:00'),
+	(default, 43, 0, '2024-06-01 11:00:00'),
+	(default, 49, 0, '2024-06-01 11:00:00'),
+	(default, 55, 0, '2024-06-01 11:00:00'),
+	(default, 61, 0, '2024-06-01 11:00:00'),
+	(default,  1, 0, '2024-06-01 12:00:00'),
+	(default,  7, 0, '2024-06-01 12:00:00'),
+	(default, 13, 0, '2024-06-01 12:00:00'),
+	(default, 19, 0, '2024-06-01 12:00:00'),
+	(default, 25, 0, '2024-06-01 12:00:00'),
+	(default, 31, 0, '2024-06-01 12:00:00'),
+	(default, 37, 0, '2024-06-01 12:00:00'),
+	(default, 43, 0, '2024-06-01 12:00:00'),
+	(default, 49, 0, '2024-06-01 12:00:00'),
+	(default, 55, 0, '2024-06-01 12:00:00'),
+	(default, 61, 0, '2024-06-01 12:00:00'),
+	(default,  1, 0, '2024-06-01 13:00:00'),
+	(default,  7, 0, '2024-06-01 13:00:00'),
+	(default, 13, 0, '2024-06-01 13:00:00'),
+	(default, 19, 0, '2024-06-01 13:00:00'),
+	(default, 25, 0, '2024-06-01 13:00:00'),
+	(default, 31, 0, '2024-06-01 13:00:00'),
+	(default, 37, 0, '2024-06-01 13:00:00'),
+	(default, 43, 0, '2024-06-01 13:00:00'),
+	(default, 49, 0, '2024-06-01 13:00:00'),
+	(default, 55, 0, '2024-06-01 13:00:00'),
+	(default, 61, 0, '2024-06-01 13:00:00'),
+	(default,  1, 0, '2024-06-01 14:00:00'),
+	(default,  7, 0, '2024-06-01 14:00:00'),
+	(default, 13, 0, '2024-06-01 14:00:00'),
+	(default, 19, 0, '2024-06-01 14:00:00'),
+	(default, 25, 0, '2024-06-01 14:00:00'),
+	(default, 31, 0, '2024-06-01 14:00:00'),
+	(default, 37, 0, '2024-06-01 14:00:00'),
+	(default, 43, 0, '2024-06-01 14:00:00'),
+	(default, 49, 0, '2024-06-01 14:00:00'),
+	(default, 55, 0, '2024-06-01 14:00:00'),
+	(default, 61, 0, '2024-06-01 14:00:00'),
+	(default,  1, 0, '2024-06-01 15:00:00'),
+	(default,  7, 0, '2024-06-01 15:00:00'),
+	(default, 13, 0, '2024-06-01 15:00:00'),
+	(default, 19, 0, '2024-06-01 15:00:00'),
+	(default, 25, 0, '2024-06-01 15:00:00'),
+	(default, 31, 0, '2024-06-01 15:00:00'),
+	(default, 37, 0, '2024-06-01 15:00:00'),
+	(default, 43, 0, '2024-06-01 15:00:00'),
+	(default, 49, 0, '2024-06-01 15:00:00'),
+	(default, 55, 0, '2024-06-01 15:00:00'),
+	(default, 61, 0, '2024-06-01 15:00:00'),
+	(default,  1, 0, '2024-06-01 16:00:00'),
+	(default,  7, 0, '2024-06-01 16:00:00'),
+	(default, 13, 0, '2024-06-01 16:00:00'),
+	(default, 19, 0, '2024-06-01 16:00:00'),
+	(default, 25, 0, '2024-06-01 16:00:00'),
+	(default, 31, 0, '2024-06-01 16:00:00'),
+	(default, 37, 0, '2024-06-01 16:00:00'),
+	(default, 43, 0, '2024-06-01 16:00:00'),
+	(default, 49, 0, '2024-06-01 16:00:00'),
+	(default, 55, 0, '2024-06-01 16:00:00'),
+	(default, 61, 0, '2024-06-01 16:00:00'),
+	(default,  1, 0, '2024-06-01 17:00:00'),
+	(default,  7, 0, '2024-06-01 17:00:00'),
+	(default, 13, 0, '2024-06-01 17:00:00'),
+	(default, 19, 0, '2024-06-01 17:00:00'),
+	(default, 25, 0, '2024-06-01 17:00:00'),
+	(default, 31, 0, '2024-06-01 17:00:00'),
+	(default, 37, 0, '2024-06-01 17:00:00'),
+	(default, 43, 0, '2024-06-01 17:00:00'),
+	(default, 49, 0, '2024-06-01 17:00:00'),
+	(default, 55, 0, '2024-06-01 17:00:00'),
+	(default, 61, 0, '2024-06-01 17:00:00'),
+	(default,  1, 0, '2024-06-01 18:00:00'),
+	(default,  7, 0, '2024-06-01 18:00:00'),
+	(default, 13, 0, '2024-06-01 18:00:00'),
+	(default, 19, 0, '2024-06-01 18:00:00'),
+	(default, 25, 0, '2024-06-01 18:00:00'),
+	(default, 31, 0, '2024-06-01 18:00:00'),
+	(default, 37, 0, '2024-06-01 18:00:00'),
+	(default, 43, 0, '2024-06-01 18:00:00'),
+	(default, 49, 0, '2024-06-01 18:00:00'),
+	(default, 55, 0, '2024-06-01 18:00:00'),
+	(default, 61, 0, '2024-06-01 18:00:00'),
+	(default,  1, 0, '2024-06-01 19:00:00'),
+	(default,  7, 0, '2024-06-01 19:00:00'),
+	(default, 13, 0, '2024-06-01 19:00:00'),
+	(default, 19, 0, '2024-06-01 19:00:00'),
+	(default, 25, 0, '2024-06-01 19:00:00'),
+	(default, 31, 0, '2024-06-01 19:00:00'),
+	(default, 37, 0, '2024-06-01 19:00:00'),
+	(default, 43, 0, '2024-06-01 19:00:00'),
+	(default, 49, 0, '2024-06-01 19:00:00'),
+	(default, 55, 0, '2024-06-01 19:00:00'),
+	(default, 61, 0, '2024-06-01 19:00:00'),
+	(default,  1, 0, '2024-06-01 20:00:00'),
+	(default,  7, 0, '2024-06-01 20:00:00'),
+	(default, 13, 0, '2024-06-01 20:00:00'),
+	(default, 19, 0, '2024-06-01 20:00:00'),
+	(default, 25, 0, '2024-06-01 20:00:00'),
+	(default, 31, 0, '2024-06-01 20:00:00'),
+	(default, 37, 0, '2024-06-01 20:00:00'),
+	(default, 43, 0, '2024-06-01 20:00:00'),
+	(default, 49, 0, '2024-06-01 20:00:00'),
+	(default, 55, 0, '2024-06-01 20:00:00'),
+	(default, 61, 0, '2024-06-01 20:00:00'),
+	(default,  1, 0, '2024-06-01 21:00:00'),
+	(default,  7, 0, '2024-06-01 21:00:00'),
+	(default, 13, 0, '2024-06-01 21:00:00'),
+	(default, 19, 0, '2024-06-01 21:00:00'),
+	(default, 25, 0, '2024-06-01 21:00:00'),
+	(default, 31, 0, '2024-06-01 21:00:00'),
+	(default, 37, 0, '2024-06-01 21:00:00'),
+	(default, 43, 0, '2024-06-01 21:00:00'),
+	(default, 49, 0, '2024-06-01 21:00:00'),
+	(default, 55, 0, '2024-06-01 21:00:00'),
+	(default, 61, 0, '2024-06-01 21:00:00'),
+	(default,  1, 0, '2024-06-01 22:00:00'),
+	(default,  7, 0, '2024-06-01 22:00:00'),
+	(default, 13, 0, '2024-06-01 22:00:00'),
+	(default, 19, 0, '2024-06-01 22:00:00'),
+	(default, 25, 0, '2024-06-01 22:00:00'),
+	(default, 31, 0, '2024-06-01 22:00:00'),
+	(default, 37, 0, '2024-06-01 22:00:00'),
+	(default, 43, 0, '2024-06-01 22:00:00'),
+	(default, 49, 0, '2024-06-01 22:00:00'),
+	(default, 55, 0, '2024-06-01 22:00:00'),
+	(default, 61, 0, '2024-06-01 22:00:00'),
+	(default,  1, 0, '2024-06-01 23:00:00'),
+	(default,  7, 0, '2024-06-01 23:00:00'),
+	(default, 13, 0, '2024-06-01 23:00:00'),
+	(default, 19, 0, '2024-06-01 23:00:00'),
+	(default, 25, 0, '2024-06-01 23:00:00'),
+	(default, 31, 0, '2024-06-01 23:00:00'),
+	(default, 37, 0, '2024-06-01 23:00:00'),
+	(default, 43, 0, '2024-06-01 23:00:00'),
+	(default, 49, 0, '2024-06-01 23:00:00'),
+	(default, 55, 0, '2024-06-01 23:00:00'),
+	(default, 61, 0, '2024-06-01 23:00:00'),
+	(default,  1, 0, '2024-06-01 00:00:00'),
+	(default,  7, 0, '2024-06-01 00:00:00'),
+	(default, 13, 0, '2024-06-01 00:00:00'),
+	(default, 19, 0, '2024-06-01 00:00:00'),
+	(default, 25, 0, '2024-06-01 00:00:00'),
+	(default, 31, 0, '2024-06-01 00:00:00'),
+	(default, 37, 0, '2024-06-01 00:00:00'),
+	(default, 43, 0, '2024-06-01 00:00:00'),
+	(default, 49, 0, '2024-06-01 00:00:00'),
+	(default, 55, 0, '2024-06-01 00:00:00'),
+	(default, 61, 0, '2024-06-01 00:00:00');
 SELECT * FROM dadoSensor;
 /*----------------------------------------------------------------------------------------------------------------------------------------*/
  
@@ -369,118 +522,9 @@ SELECT * FROM viewFluxoSensor2;
 
 -- FLUXO DE PESSAOS DO SENSOR 3
 SELECT * FROM viewFluxoSensor3;
-
--- SELECT TESTE PARA A DASHBOARD
-SELECT * FROM dadoSensor;
-
--- MÉDIA POR HORA DOS ÚLTIMOS 1 MÊS    
-
-SELECT * FROM dadoSensor
-	WHERE horario BETWEEN DATE_SUB(CURDATE(), INTERVAL 1 MONTH) AND CURDATE();
-
-SELECT sum(contagem) as contagem FROM dadoSensor ;
-
-	SELECT (sum(contagem)) as FluxoHora, date_format(horario, '%a') as dia 
-		FROM dadoSensor 
-		WHERE horario BETWEEN DATE_SUB(CURDATE(), INTERVAL 2 MONTH) AND CURDATE()
-		GROUP BY dia ORDER BY FIELD(dia, 'Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat');
     
 
-        
-	SELECT (sum(contagem)) as FluxoHora 
-		FROM dadoSensor 
-		WHERE horario BETWEEN DATE_SUB(CURDATE(), INTERVAL 2 MONTH) AND CURDATE()
-		GROUP BY date_format(horario, '%a') ORDER BY FIELD((date_format(horario, '%a')), 'Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat');
-        
-	SELECT FluxoHora FROM (SELECT (sum(contagem)) as FluxoHora, date_format(horario, '%a') as dia 
-		FROM dadoSensor 
-		WHERE horario BETWEEN DATE_SUB(CURDATE(), INTERVAL 2 MONTH) AND CURDATE()
-		GROUP BY dia ORDER BY FIELD(dia, 'Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat')) as subQuerry;
-        
-	SELECT * FROM usuario;
-    
--- ////// --
-    
-SELECT estacao.nome AS Estação,
-	sum(contagem) AS Contagem 
-    FROM dadoSensor 
-	right join sensor ON fkSensor = idSensor
-    left join estacao on fkEstacao = idEstacao
-    WHERE horario BETWEEN DATE_SUB(CURDATE(), INTERVAL 2 MONTH) AND CURDATE()
-    GROUP BY idSensor;
-    
-    
--- OBRIGADO MURILLO !!!!!!!!!!!!!!!!!!!!!!! <3 ¨¨\_(`u´)_/¨¨ 
-    
-SELECT estacao.nome, nomeLocal, ifnull(sum(contagem), 0) from dadoSensor
-	right join sensor on fkSensor = idSensor
-    join estacao on fkEstacao = idEstacao
-    group by idSensor;
-    
-SELECT sum(contagem) as fluxoPorSensor FROM dadoSensor 
-	right JOIN sensor ON fkSensor = idSensor
-    right join estacao on fkEstacao = idEstacao
-    WHERE horario BETWEEN DATE_SUB(CURDATE(), INTERVAL 2 MONTH) AND CURDATE() 
-    GROUP BY idSensor, fkEstacao;
-    
-SELECT sum(contagem) as FluxoHora, date_format(horario, '%H') as hora FROM dadoSensor
-	GROUP BY hora
-    ORDER BY hora;
-
-SELECT FluxoHora FROM (SELECT sum(contagem) as FluxoHora, date_format(horario, '%H') as hora FROM dadoSensor
-	GROUP BY hora
-    ORDER BY hora) as subquerry;
-
-DESCRIBE estacao;
-DESCRIBE sensor;
-SELECT * FROM sensor;
-SELECT * FROM dadoSensor;
-
-/*
-INSERT INTO sensor VALUES
-	(default, 'Escada Rolante', 'Sensor de Bloqueio', 3),
-	(default, 'Passarela', 'Sensor de Bloqueio', 3),
-	(default, 'Elevador', 'Sensor de Bloqueio', 3),
-	(default, 'Catraca de Entrada', 'Sensor de Bloqueio', 3);
-    */
-    
-    SELECT * FROM sensor;
-    describe dadoSensor;
-        
-INSERT INTO dadoSensor VALUES 
-	(default, 20, 0, default);
-    
-SELECT fluxoHora FROM  (SELECT estacao.nome, nomeLocal, ifnull(sum(contagem), 0) as fluxoHora from dadoSensor
-	right join sensor on fkSensor = idSensor
-    join estacao on fkEstacao = idEstacao
-    group by idSensor) AS b;
-
-SELECT ifnull(sum(contagem), 0), date_format(horario, '%a') as dia , estacao.nome
-        FROM dadoSensor
-        RIGHT JOIN sensor ON fkSensor = idSensor
-        JOIN estacao ON idEstacao = fkEstacao
-        WHERE horario BETWEEN DATE_SUB(CURDATE(), INTERVAL 1 MONTH) AND CURDATE()
-        GROUP BY dia, estacao.idEstacao ORDER BY idEstacao DESC, FIELD(dia, 'Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat') ;
-        
-
-SELECT * FROM usuario;
-
-UPDATE usuario SET senha = 'Cmi22afael#A2775#T' WHERE idUsuario = 3;
-SELECT ifnull(sum(contagem), 0) as fluxoDiaSemana, date_format(horario, '%a') as dia , estacao.nome
-        FROM dadoSensor
-        RIGHT JOIN sensor ON fkSensor = idSensor
-        JOIN estacao ON idEstacao = fkEstacao
-        WHERE horario BETWEEN DATE_SUB(CURDATE(), INTERVAL 1 MONTH) AND CURDATE()
-        GROUP BY dia, estacao.idEstacao ORDER BY idEstacao DESC, FIELD(dia, 'Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat');
-	
-SELECT ifnull(sum(contagem), 0) as fluxoDiaSemana, date_format(horario, '%a') as dia , estacao.nome
-        FROM dadoSensor
-        RIGHT JOIN sensor ON fkSensor = idSensor
-        JOIN estacao ON idEstacao = fkEstacao
-        WHERE horario BETWEEN DATE_SUB(CURDATE(), INTERVAL 1 MONTH) AND CURDATE()
-        GROUP BY dia, estacao.idEstacao ORDER BY idEstacao DESC, FIELD(dia, 'Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat');
-
--- ------------------------------------ CRIANDO AS VIEWS ---------------------------------------------------- --
+-- Criando as views para dashboards;
 
 CREATE VIEW plotar1 AS SELECT fluxoDiaSemana FROM (SELECT ifnull(sum(contagem), 0) as fluxoDiaSemana, date_format(horario, '%a') as dia , estacao.nome
         FROM dadoSensor
@@ -495,27 +539,15 @@ CREATE VIEW plotar2 AS SELECT fluxoPorSensor FROM  (SELECT estacao.nome, nomeLoc
 	right join sensor on fkSensor = idSensor
     join estacao on fkEstacao = idEstacao
     group by idSensor ORDER BY idEstacao DESC, nomeLocal) AS querry2;
+
 SELECT * FROM plotar2;
 
-    SELECT FluxoHora FROM (SELECT ifnull(sum(contagem), 0) as FluxoHora, date_format(horario, '%a') as dia , estacao.nome
-        FROM dadoSensor
-        RIGHT JOIN sensor ON fkSensor = idSensor
-        JOIN estacao ON idEstacao = fkEstacao
-        WHERE horario BETWEEN DATE_SUB(CURDATE(), INTERVAL 1 MONTH) AND CURDATE()
-        GROUP BY dia, estacao.idEstacao ORDER BY idEstacao DESC, FIELD(dia, 'Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat')) as subQuerry;
-
-SELECT * FROM estacao ORDER BY idEstacao DESC;
-
-SELECT ifnull(sum(contagem), 0) as fluxoPorHora, date_format(horario, '%H') as dia , estacao.nome
-        FROM dadoSensor
-        RIGHT JOIN sensor ON fkSensor = idSensor
-        JOIN estacao ON idEstacao = fkEstacao
-        WHERE horario BETWEEN DATE_SUB(CURDATE(), INTERVAL 1 MONTH) AND CURDATE()
-        GROUP BY dia, estacao.idEstacao ORDER BY idEstacao DESC, FIELD(dia, '4', '0');
-
-SELECT fluxoPorHora FROM (SELECT ifnull(sum(contagem), 0) as fluxoPorHora, date_format(horario, '%H') as dia , estacao.nome
+CREATE VIEW plotar3 AS SELECT fluxoPorHora FROM (SELECT ifnull(sum(contagem), 0) as fluxoPorHora, date_format(horario, '%H') as dia , estacao.nome
         FROM dadoSensor
         RIGHT JOIN sensor ON fkSensor = idSensor
         JOIN estacao ON idEstacao = fkEstacao
         WHERE horario BETWEEN DATE_SUB(CURDATE(), INTERVAL 1 MONTH) AND CURDATE()
         GROUP BY dia, estacao.idEstacao ORDER BY idEstacao DESC, FIELD(dia, '4', '0')) as querry3;
+
+SELECT * FROM plotar3;
+
