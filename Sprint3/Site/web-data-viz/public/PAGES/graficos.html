@@ -917,23 +917,24 @@ limpar();    var BL9Element = document.getElementById('BL9');
 
   let fkEstacao = 0;
 
+  const array_dados = [];
+
   function plotar() {
-    plotar1()
-    // plotar2()
-    // plotar1()
+    plotar2()
+    setTimeout(()=> plotar1(),500)  
     }
 
-  function plotar2(paramEstacao) {
+  function plotar2() {
     // Esse select obtém: soma dos dados POR sensor POR estação dos últimos 2 meses (pode ser alterado, recomendo fazer média por hora...)
       
-            fetch(`/avisos/plotarPorSensor/${paramEstacao}`).then(function (resposta){
+            fetch(`/avisos/plotarPorSensor`)
+              .then(function (resposta){
               if (resposta.ok) {
-              resposta.json().then(json =>{
-                var dado_1 = json.dadoSensor1
-                var dado_2 = json.dadoSensor2
-                var dado_3 = json.dadoSensor3
-                var dado_4 = json.dadoSensor4
-                console.log('dado1:', dado_1, 'dado2:', dado_2, 'dado3:', dado_3, 'dado4:', dado_4)
+              resposta.json().then(dadosPlotar2 =>{
+                console.log(dadosPlotar2)
+                console.log(JSON.stringify(dadosPlotar2));
+                array_dados.push({dadosPorSensor : dadosPlotar2})
+                // console.log('dado1:', dado_1, 'dado2:', dado_2, 'dado3:', dado_3, 'dado4:', dado_4)
               })
         }
       })
@@ -954,6 +955,8 @@ limpar();    var BL9Element = document.getElementById('BL9');
         resposta.json().then(dadosPlotar1 => {
                   console.log(dadosPlotar1);
                   console.log(JSON.stringify(dadosPlotar1));
+                  array_dados.push({dadosPorDiaSemana : dadosPlotar1});
+
   const labels = [
     'Domingo',
     'Segunda',

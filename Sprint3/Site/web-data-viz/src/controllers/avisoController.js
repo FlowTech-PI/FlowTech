@@ -234,18 +234,91 @@ function plotarSemana(req, res) {
 }
 
 function plotarPorSensor(req, res) {
-    var fkEstacao = req.params.paramEstacao[0]
-    console.log("ESTOU NO CONTROLLER COM O VALOR DE FKESTAÇÃO DE:",fkEstacao)
-    avisoModel.plotarPorSensor(fkEstacao)
+    console.log("ESTOU NO CONTROLLER DE PLOTAR POR SENSOR")
+    avisoModel.plotarPorSensor()
         .then (function (resultado) {
-            if (resultado.length == 4) {
+            if (resultado.length == 66) {
                 res.json({
-                    dadoSensor1: resultado[0].FluxoPorSensor,
-                    dadoSensor2: resultado[1].FluxoPorSensor,
-                    dadoSensor3: resultado[2].FluxoPorSensor,
-                    dadoSensor4: resultado[3].FluxoPorSensor
+                    Luz : {
+                        catracaEntrada:  resultado[ 0].fluxoPorSensor,
+                        escadaRolante1:  resultado[ 1].fluxoPorSensor,
+                        escadaRolante2:  resultado[ 2].fluxoPorSensor,
+                        escadaRolante3:  resultado[ 3].fluxoPorSensor,
+                        passarela1:      resultado[ 4].fluxoPorSensor,
+                        passarela2:      resultado[ 5].fluxoPorSensor
+                    }, Republica :    {
+                        catracaEntrada:  resultado[ 6].fluxoPorSensor,
+                        escadaRolante1:  resultado[ 7].fluxoPorSensor,
+                        escadaRolante2:  resultado[ 8].fluxoPorSensor,
+                        escadaRolante3:  resultado[ 9].fluxoPorSensor,
+                        passarela1:      resultado[10].fluxoPorSensor,
+                        passarela2:      resultado[11].fluxoPorSensor         
+                    }, Higienópolis : {
+                        catracaEntrada:  resultado[12].fluxoPorSensor,
+                        escadaRolante1:  resultado[13].fluxoPorSensor,
+                        escadaRolante2:  resultado[14].fluxoPorSensor,
+                        escadaRolante3:  resultado[15].fluxoPorSensor,
+                        passarela1:      resultado[16].fluxoPorSensor,
+                        passarela2:      resultado[17].fluxoPorSensor           
+                    }, Paulista :     {
+                        catracaEntrada:  resultado[18].fluxoPorSensor,
+                        escadaRolante1:  resultado[19].fluxoPorSensor,
+                        escadaRolante2:  resultado[20].fluxoPorSensor,
+                        escadaRolante3:  resultado[21].fluxoPorSensor,
+                        passarela1:      resultado[22].fluxoPorSensor,
+                        passarela2:      resultado[23].fluxoPorSensor             
+                    }, Oscar_Freire : {
+                        catracaEntrada:  resultado[24].fluxoPorSensor,
+                        escadaRolante1:  resultado[25].fluxoPorSensor,
+                        escadaRolante2:  resultado[26].fluxoPorSensor,
+                        escadaRolante3:  resultado[27].fluxoPorSensor,
+                        passarela1:      resultado[28].fluxoPorSensor,
+                        passarela2:      resultado[29].fluxoPorSensor                    
+                    }, Fradique_Coutinho : {
+                        catracaEntrada:  resultado[30].fluxoPorSensor,
+                        escadaRolante1:  resultado[31].fluxoPorSensor,
+                        escadaRolante2:  resultado[32].fluxoPorSensor,
+                        escadaRolante3:  resultado[33].fluxoPorSensor,
+                        passarela1:      resultado[34].fluxoPorSensor,
+                        passarela2:      resultado[35].fluxoPorSensor                
+                    }, Faria_Lima : {
+                        catracaEntrada:  resultado[36].fluxoPorSensor,
+                        escadaRolante1:  resultado[37].fluxoPorSensor,
+                        escadaRolante2:  resultado[38].fluxoPorSensor,
+                        escadaRolante3:  resultado[39].fluxoPorSensor,
+                        passarela1:      resultado[40].fluxoPorSensor,
+                        passarela2:      resultado[41].fluxoPorSensor                 
+                    }, Pinheiros :  {
+                        catracaEntrada:  resultado[42].fluxoPorSensor,
+                        escadaRolante1:  resultado[43].fluxoPorSensor,
+                        escadaRolante2:  resultado[44].fluxoPorSensor,
+                        escadaRolante3:  resultado[45].fluxoPorSensor,
+                        passarela1:      resultado[46].fluxoPorSensor,
+                        passarela2:      resultado[47].fluxoPorSensor                      
+                    }, Butantã: {
+                        catracaEntrada:  resultado[48].fluxoPorSensor,
+                        escadaRolante1:  resultado[49].fluxoPorSensor,
+                        escadaRolante2:  resultado[50].fluxoPorSensor,
+                        escadaRolante3:  resultado[51].fluxoPorSensor,
+                        passarela1:      resultado[52].fluxoPorSensor,
+                        passarela2:      resultado[53].fluxoPorSensor               
+                    }, SP_Morumbi : {
+                        catracaEntrada:  resultado[54].fluxoPorSensor,
+                        escadaRolante1:  resultado[55].fluxoPorSensor,
+                        escadaRolante2:  resultado[56].fluxoPorSensor,
+                        escadaRolante3:  resultado[57].fluxoPorSensor,
+                        passarela1:      resultado[58].fluxoPorSensor,
+                        passarela2:      resultado[59].fluxoPorSensor                      
+                    }, Vila_Sônia : {
+                        catracaEntrada:  resultado[60].fluxoPorSensor,
+                        escadaRolante1:  resultado[61].fluxoPorSensor,
+                        escadaRolante2:  resultado[62].fluxoPorSensor,
+                        escadaRolante3:  resultado[63].fluxoPorSensor,
+                        passarela1:      resultado[64].fluxoPorSensor,
+                        passarela2:      resultado[65].fluxoPorSensor                   
+                    }
                 })
-            } else if (resultado.length > 4) {
+            } else if (resultado.length > 66) {
                 console.log("Foram encontrados mais campos que o esperado");
             } else {
                 console.log("Foram encontrados menos campos que o esperado");
