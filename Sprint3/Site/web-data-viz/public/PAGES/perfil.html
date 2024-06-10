@@ -54,26 +54,26 @@
           <div class="camposCima">
             <div class="nomeCompleto">
               Nome Completo <br />
-              <input placeholder="Fulano Lorem Ipsum" type="text" id="nomeCompleto" value="João da Silva"/>
+              <input placeholder="Fulano Lorem Ipsum" type="text" id="nomeCompleto" value=""/>
             </div>
             <div class="nascimento">
               Nascimento <br />
-              <input type="date" id="nascimento" value="2000-05-09"/>
+              <input type="date" id="nascimento" value=""/>
             </div>
             <div class="cpf">
               CPF <br />
-              <input placeholder="___.___.___-__" type="text" id="cpf" value="12345678910"/>
+              <input placeholder="___.___.___-__" type="text" id="cpf" value=""/>
             </div>
           </div>
           <div class="camposBaixo">
             <div class="separacaoBotao">
               <div class="email">
                 E-mail <br />
-                <input placeholder="usuario@gmail.com" type="text" id="email" value="joaoS@gmail.com"/>
+                <input placeholder="usuario@gmail.com" type="text" id="email" value=""/>
               </div>
               <div class="telefone">
                 Telefone <br />
-                <input placeholder="(11) 99999-8888" type="text" id="telefone" value="11 98765-4321"/>
+                <input placeholder="(11) 99999-8888" type="text" id="telefone" value=""/>
               </div>
             </div>
               <div class="botoes">
@@ -89,7 +89,10 @@
 
 <script>
   var podeSalvar = false;
+
+  
   function alterar(){
+    var idUsuario = sessionStorage.ID_USUARIO;
     var nome = nomeCompleto.value;
     var dtNasc = nascimento.value;
     var c_p_f = cpf.value; 
@@ -105,15 +108,41 @@
       alert("Algum campo não está inserido corretamente! \nVerifique: \nSe o CPF possui 11 dígitos \nSe o email possui '@' e '.'")
       return
     } else {
-      alert("Confirme seus dados antes de salvar!")
+      alert("Confirme seus dados antes de salvar! " + sessionStorage.ID_USUARIO);
       podeSalvar = true;
-    }
-  }
+    
+      fetch("/usuarios/atualizar/", {
+          method: "PUT",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+          nome,
+          dtNasc,
+          c_p_f,
+          e_mail,
+          tel,
+          idUsuarioServer : sessionStorage.ID_USUARIO
+        }),
+      }).then(function (resposta) {
+        console.log("resposta: ", resposta);
+        if (resposta.ok) {
+          console.log("Atualização realizada com sucesso");
+        } else {
+          throw "Houve um erro ao tentar realizar a atualização";
+        }
+      }).catch(function (resposta) {
+          console.log(`#ERRO: ${resposta}`);
+      });
+}
+}
+
   function salvar(){
     if(podeSalvar == true){
       alert("Dados salvos com sucesso!")  
     }
   }
+
   function clickMenu() {
     if (hamburguer.style.display == "block") {
       hamburguer.style.display = "none";
@@ -121,4 +150,5 @@
       hamburguer.style.display = "block";
     }
   }
+
 </script>

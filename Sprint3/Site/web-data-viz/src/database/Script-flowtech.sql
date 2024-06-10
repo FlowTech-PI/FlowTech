@@ -48,6 +48,8 @@ INSERT INTO usuario VALUES
 	(DEFAULT, 'Alberto Vicente Alves', '1980-04-22', '29033534843', '11985451260', 'alberto.alves@gmail.com', 'alberto@123', 'Gerente', 1, 1),
 	(DEFAULT, 'Rafael Henrique Silva', '1990-02-20', '53589878841', '11959382646', 'rafael.silva@gmail.com', 'rafael227755', 'Funcionário',2, 1);
     
+UPDATE usuario SET nome = 'Brandão', dtNasc = '1989-05-17', cpf = '26548769074', email = 'fernando.brandao@gmail.com', telefone = '11954367521' WHERE idUsuario = 2;
+
 SELECT * FROM usuario;
 /*----------------------------------------------------------------------------------------------------------------------------------------*/
 
