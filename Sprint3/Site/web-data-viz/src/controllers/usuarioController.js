@@ -23,7 +23,7 @@ function autenticar(req, res) {
                         
                                 if (resultadoAutenticar.length > 0) {
                                     res.json({
-                                        id: resultadoAutenticar[0].id,
+                                        id: resultadoAutenticar[0].idUsuario,
                                         email: resultadoAutenticar[0].email,
                                         nome: resultadoAutenticar[0].nome,
                                         senha: resultadoAutenticar[0].senha
@@ -90,7 +90,30 @@ function cadastrar(req, res) {
     }
 }
 
+function atualizar(req, res){
+    var nome = req.body.nome;
+    var dtNasc = req.body.dtNasc;
+    var c_p_f = req.body.c_p_f;
+    var e_mail = req.body.e_mail;
+    var tel = req.body.tel;
+    var idUsuario = req.body.idUsuarioServer;
+
+    usuarioModel.atualizar(nome, dtNasc, c_p_f, e_mail, tel, idUsuario).then(
+        function(resultado) {
+            res.json(resultado);
+        }
+    )
+    .catch(
+        function (erro) {
+            console.log(erro);
+            console.log("Houve um erro ao realizar o update: " + erro.sqlMessage);
+            res.status(500).json(erro.sqlMessage);
+        }
+    ) 
+}
+
 module.exports = {
     autenticar,
-    cadastrar
+    cadastrar,
+    atualizar
 }
