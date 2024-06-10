@@ -35,4 +35,8 @@ router.get("/plotarPorSensor", function(req, res) {
     avisoController.plotarPorSensor(req, res);
 })
 
+router.get("/plotarPorHorario", function(req, res) {
+    avisoController.plotarPorHorario(req, res);
+})
+
 module.exports = router;

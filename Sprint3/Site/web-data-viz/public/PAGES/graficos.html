@@ -80,27 +80,27 @@
         <p class="li-c11">Vila Sônia</p>
       </div>
       <div class="box-linha">
-        <input type="radio" id="BL1" name="grupo1" onclick="BL1(); plotar2(11) ">
+        <input type="radio" id="BL1" name="grupo1" onclick="BL1();  ">
         <label for="BL1" data-label="Opcao 1"></label>
-        <input type="radio" id="BL2" name="grupo1" onclick="BL2(); plotar2(10)">
+        <input type="radio" id="BL2" name="grupo1" onclick="BL2(); ">
         <label for="BL2" data-label="Opcao 2"></label>
-        <input type="radio" id="BL3" name="grupo1" onclick="BL3(); plotar2(9) ">
+        <input type="radio" id="BL3" name="grupo1" onclick="BL3();  ">
         <label for="BL3" data-label="Opcao 3"></label>
-        <input type="radio" id="BL4" name="grupo1" onclick="BL4(); plotar2(8)">
+        <input type="radio" id="BL4" name="grupo1" onclick="BL4(); ">
         <label for="BL4" data-label="Opcao 4"></label>
-        <input type="radio" id="BL5" name="grupo1" onclick="BL5(); plotar2(7) ">
+        <input type="radio" id="BL5" name="grupo1" onclick="BL5();  ">
         <label for="BL5" data-label="Opcao 5"></label>
-        <input type="radio" id="BL6" name="grupo1" onclick="BL6(); plotar2(6) ">
+        <input type="radio" id="BL6" name="grupo1" onclick="BL6();  ">
         <label for="BL6" data-label="Opcao 6"></label>
-        <input type="radio" id="BL7" name="grupo1" onclick="BL7(); plotar2(5) ">
+        <input type="radio" id="BL7" name="grupo1" onclick="BL7();  ">
         <label for="BL7" data-label="Opcao 7"></label>
-        <input type="radio" id="BL8" name="grupo1" onclick="BL8(); plotar2(4) ">
+        <input type="radio" id="BL8" name="grupo1" onclick="BL8();  ">
         <label for="BL8" data-label="Opcao 8"></label>
-        <input type="radio" id="BL9" name="grupo1" onclick="BL9(); plotar2(3)">
+        <input type="radio" id="BL9" name="grupo1" onclick="BL9(); ">
         <label for="BL9" data-label="Opcao 9"></label>
-        <input type="radio" id="BL10" name="grupo1" onclick="BL10(); plotar2(2) ">
+        <input type="radio" id="BL10" name="grupo1" onclick="BL10();  ">
         <label for="BL10" data-label="Opcao 10"></label>
-        <input type="radio" id="BL11" name="grupo1" onclick="BL11(); plotar2(1) ">
+        <input type="radio" id="BL11" name="grupo1" onclick="BL11();  ">
         <label for="BL11" data-label="Opcao 11"></label>
       </div>
     </div>
@@ -921,7 +921,7 @@ limpar();    var BL9Element = document.getElementById('BL9');
 
   function plotar() {
     plotar2()
-    setTimeout(()=> plotar1(),500)  
+    // setTimeout(()=> plotar1(),500)  
     }
 
   function plotar2() {
@@ -936,13 +936,27 @@ limpar();    var BL9Element = document.getElementById('BL9');
                 array_dados.push({dadosPorSensor : dadosPlotar2})
                 // console.log('dado1:', dado_1, 'dado2:', dado_2, 'dado3:', dado_3, 'dado4:', dado_4)
               })
+              setTimeout(()=> plotar3(), 4000)
         }
       })
   }
-  // method: "POST",
-  // headers: {
-  //   "Content-Type": "application/json"
-  // }
+
+  function plotar3() {
+
+      fetch(`/avisos/plotarPorHorario`)
+              .then(function (resposta){
+              if (resposta.ok) {
+              resposta.json().then(dadosPlotar3 =>{
+                console.log(dadosPlotar3)
+                console.log(JSON.stringify(dadosPlotar3));
+                array_dados.push({dadosPorHorario : dadosPlotar3})
+                // console.log('dado1:', dado_1, 'dado2:', dado_2, 'dado3:', dado_3, 'dado4:', dado_4)
+              })
+        }
+      },
+      setTimeout(()=> plotar1(), 1000)
+    )
+  }
   
   function plotar1() {
 
@@ -972,17 +986,25 @@ limpar();    var BL9Element = document.getElementById('BL9');
     datasets: [{
       label: 'Dias de maior fluxo na Estação Luz',
       backgroundColor: 'MediumSlateBlue',
-      data: [domingo, segunda, terca, quarta, quinta, sexta, sabado],
+      data: [array_dados[2].dadosPorDiaSemana.Luz.domingo,
+      array_dados[2].dadosPorDiaSemana.Luz.segunda, 
+      array_dados[2].dadosPorDiaSemana.Luz.terca, 
+      array_dados[2].dadosPorDiaSemana.Luz.quarta, 
+      array_dados[2].dadosPorDiaSemana.Luz.quinta, 
+      array_dados[2].dadosPorDiaSemana.Luz.sexta, 
+      array_dados[2].dadosPorDiaSemana.Luz.sabado],
     }
     ]
 
   };
 
   const labels2 = [
-    'Entrada',
-    'Saida',
+    'Catraca',
     'Escada Rolante 1',
     'Escada Rolante 2',
+    'Escada Rolante 3',
+    'Passarela 1',
+    'Passarela 2'
   ];
 
   const data2 = {
@@ -990,7 +1012,14 @@ limpar();    var BL9Element = document.getElementById('BL9');
     datasets: [{
       label: 'Maior Fluxo na Estação Luz',
       backgroundColor: 'Tomato',
-      data: [22, 24, 27, 23],
+      data: [
+        array_dados[0].dadosPorSensor.Luz.catracaEntrada,
+        array_dados[0].dadosPorSensor.Luz.escadaRolante1,
+        array_dados[0].dadosPorSensor.Luz.escadaRolante2,
+        array_dados[0].dadosPorSensor.Luz.escadaRolante3,
+        array_dados[0].dadosPorSensor.Luz.passarela1,
+        array_dados[0].dadosPorSensor.Luz.passarela2
+      ],
     }
     ]
   };
@@ -1024,7 +1053,28 @@ limpar();    var BL9Element = document.getElementById('BL9');
     datasets: [{
       label: 'Horario do Fluxo na Estação Luz',
       backgroundColor: 'Goldenrod',
-      data: [19, 20, 21, 26, 24, 22, 19, 18, 17, 16, 17, 19, 19, 20, 21, 26, 24, 22, 19, 15, 10],
+      data: [
+      array_dados[1].dadosPorHorario.Luz.H04,
+      array_dados[1].dadosPorHorario.Luz.H05,
+      array_dados[1].dadosPorHorario.Luz.H06,
+      array_dados[1].dadosPorHorario.Luz.H07,
+      array_dados[1].dadosPorHorario.Luz.H08,
+      array_dados[1].dadosPorHorario.Luz.H09,
+      array_dados[1].dadosPorHorario.Luz.H10,
+      array_dados[1].dadosPorHorario.Luz.H11,
+      array_dados[1].dadosPorHorario.Luz.H12,
+      array_dados[1].dadosPorHorario.Luz.H13,
+      array_dados[1].dadosPorHorario.Luz.H14,
+      array_dados[1].dadosPorHorario.Luz.H15,
+      array_dados[1].dadosPorHorario.Luz.H16,
+      array_dados[1].dadosPorHorario.Luz.H17,
+      array_dados[1].dadosPorHorario.Luz.H18,
+      array_dados[1].dadosPorHorario.Luz.H19,
+      array_dados[1].dadosPorHorario.Luz.H20,
+      array_dados[1].dadosPorHorario.Luz.H21,
+      array_dados[1].dadosPorHorario.Luz.H22,
+      array_dados[1].dadosPorHorario.Luz.H23,
+      array_dados[1].dadosPorHorario.Luz.H00],
     }
     ]
 
@@ -1048,17 +1098,28 @@ limpar();    var BL9Element = document.getElementById('BL9');
     datasets: [{
       label: 'Dias de maior fluxo na Estação Republica',
       backgroundColor: 'MediumSlateBlue',
-      data: [domingo, segunda, terca, quarta, quinta, sexta, sabado],
+      data: [
+      array_dados[2].dadosPorDiaSemana.Republica.domingo,
+	    array_dados[2].dadosPorDiaSemana.Republica.segunda,  
+	    array_dados[2].dadosPorDiaSemana.Republica.terca, 
+	    array_dados[2].dadosPorDiaSemana.Republica.quarta, 
+	    array_dados[2].dadosPorDiaSemana.Republica.quinta, 
+	    array_dados[2].dadosPorDiaSemana.Republica.sexta, 
+	    array_dados[2].dadosPorDiaSemana.Republica.sabado
+      ],
     }
     ]
 
   };
 
   const labels5 = [
-    'Entrada',
-    'Saida',
-    'Escada Rolante 1',
-    'Escada Rolante 2',
+    'Domingo',
+    'Segunda',
+    'Terça',
+    'Quarta',
+    'Quinta',
+    'Sexta',
+    'Sábado',
   ];
 
   const data5 = {
@@ -1126,7 +1187,13 @@ limpar();    var BL9Element = document.getElementById('BL9');
     datasets: [{
       label: 'Dias de maior fluxo na Estação Higienópolis',
       backgroundColor: 'MediumSlateBlue',
-      data: [domingo ,segunda, terca, quarta, quinta, sexta, sabado],
+      data: [array_dados[2].dadosPorDiaSemana.domingo,
+      array_dados[2].dadosPorDiaSemana.Luz.segunda, 
+      array_dados[2].dadosPorDiaSemana.Luz.terca, 
+      array_dados[2].dadosPorDiaSemana.Luz.quarta, 
+      array_dados[2].dadosPorDiaSemana.Luz.quinta, 
+      array_dados[2].dadosPorDiaSemana.Luz.sexta, 
+      array_dados[2].dadosPorDiaSemana.Luz.sabado],
     }
     ]
 
