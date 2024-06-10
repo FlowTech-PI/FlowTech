@@ -1,4 +1,5 @@
 -- Criação do Banco de Dados
+-- DROP DATABASE flowtech;
 CREATE DATABASE flowtech;
 USE flowtech;
 /*----------------------------------------------------------------------------------------------------------------------------------------*/
@@ -108,10 +109,74 @@ CONSTRAINT fkEstacaoSensor FOREIGN KEY (fkEstacao)
 );
 
 INSERT INTO sensor VALUES
-	(DEFAULT, 'Esacada Rolante 1', 'Sensor de Bloqueio', 8),
-	(DEFAULT, 'Passarela', 'Sensor de Bloqueio', 11),
+	(DEFAULT, 'Esacada Rolante 1', 'Sensor de Bloqueio', 1),
+	(DEFAULT, 'Esacada Rolante 2', 'Sensor de Bloqueio', 1),
+	(DEFAULT, 'Esacada Rolante 3', 'Sensor de Bloqueio', 1),
+	(DEFAULT, 'Passarela 1', 'Sensor de Bloqueio', 1),
+	(DEFAULT, 'Passarela 2', 'Sensor de Bloqueio', 1),
+	(DEFAULT, 'Catraca de Entrada', 'Sensor de Bloqueio', 1),
+	(DEFAULT, 'Esacada Rolante 1', 'Sensor de Bloqueio', 2),
+	(DEFAULT, 'Esacada Rolante 2', 'Sensor de Bloqueio', 2),
+	(DEFAULT, 'Esacada Rolante 3', 'Sensor de Bloqueio', 2),
+	(DEFAULT, 'Passarela 1', 'Sensor de Bloqueio', 2),
+	(DEFAULT, 'Passarela 2', 'Sensor de Bloqueio', 2),
 	(DEFAULT, 'Catraca de Entrada', 'Sensor de Bloqueio', 2),
-	(DEFAULT, 'Esacada rolante 2', 'Sensor de Bloqueio', 1);
+	(DEFAULT, 'Esacada Rolante 1', 'Sensor de Bloqueio', 3),
+	(DEFAULT, 'Esacada Rolante 2', 'Sensor de Bloqueio', 3),
+	(DEFAULT, 'Esacada Rolante 3', 'Sensor de Bloqueio', 3),
+	(DEFAULT, 'Passarela 1', 'Sensor de Bloqueio', 3),
+	(DEFAULT, 'Passarela 2', 'Sensor de Bloqueio', 3),
+	(DEFAULT, 'Catraca de Entrada', 'Sensor de Bloqueio', 3),
+	(DEFAULT, 'Esacada Rolante 1', 'Sensor de Bloqueio', 4),
+	(DEFAULT, 'Esacada Rolante 2', 'Sensor de Bloqueio', 4),
+	(DEFAULT, 'Esacada Rolante 3', 'Sensor de Bloqueio', 4),
+	(DEFAULT, 'Passarela 1', 'Sensor de Bloqueio', 4),
+	(DEFAULT, 'Passarela 2', 'Sensor de Bloqueio', 4),
+	(DEFAULT, 'Catraca de Entrada', 'Sensor de Bloqueio', 4),
+	(DEFAULT, 'Esacada Rolante 1', 'Sensor de Bloqueio', 5),
+	(DEFAULT, 'Esacada Rolante 2', 'Sensor de Bloqueio', 5),
+	(DEFAULT, 'Esacada Rolante 3', 'Sensor de Bloqueio', 5),
+	(DEFAULT, 'Passarela 1', 'Sensor de Bloqueio', 5),
+	(DEFAULT, 'Passarela 2', 'Sensor de Bloqueio', 5),
+	(DEFAULT, 'Catraca de Entrada', 'Sensor de Bloqueio', 5),
+	(DEFAULT, 'Esacada Rolante 1', 'Sensor de Bloqueio', 6),
+	(DEFAULT, 'Esacada Rolante 2', 'Sensor de Bloqueio', 6),
+	(DEFAULT, 'Esacada Rolante 3', 'Sensor de Bloqueio', 6),
+	(DEFAULT, 'Passarela 1', 'Sensor de Bloqueio', 6),
+	(DEFAULT, 'Passarela 2', 'Sensor de Bloqueio', 6),
+	(DEFAULT, 'Catraca de Entrada', 'Sensor de Bloqueio', 6);
+
+INSERT INTO sensor VALUES
+	(DEFAULT, 'Esacada Rolante 1', 'Sensor de Bloqueio', 7),
+	(DEFAULT, 'Esacada Rolante 2', 'Sensor de Bloqueio', 7),
+	(DEFAULT, 'Esacada Rolante 3', 'Sensor de Bloqueio', 7),
+	(DEFAULT, 'Passarela 1', 'Sensor de Bloqueio', 7),
+	(DEFAULT, 'Passarela 2', 'Sensor de Bloqueio', 7),
+	(DEFAULT, 'Catraca de Entrada', 'Sensor de Bloqueio', 7),
+	(DEFAULT, 'Esacada Rolante 1', 'Sensor de Bloqueio', 8),
+	(DEFAULT, 'Esacada Rolante 2', 'Sensor de Bloqueio', 8),
+	(DEFAULT, 'Esacada Rolante 3', 'Sensor de Bloqueio', 8),
+	(DEFAULT, 'Passarela 1', 'Sensor de Bloqueio', 8),
+	(DEFAULT, 'Passarela 2', 'Sensor de Bloqueio', 8),
+	(DEFAULT, 'Catraca de Entrada', 'Sensor de Bloqueio', 8),
+	(DEFAULT, 'Esacada Rolante 1', 'Sensor de Bloqueio', 9),
+	(DEFAULT, 'Esacada Rolante 2', 'Sensor de Bloqueio', 9),
+	(DEFAULT, 'Esacada Rolante 3', 'Sensor de Bloqueio', 9),
+	(DEFAULT, 'Passarela 1', 'Sensor de Bloqueio', 9),
+	(DEFAULT, 'Passarela 2', 'Sensor de Bloqueio', 9),
+	(DEFAULT, 'Catraca de Entrada', 'Sensor de Bloqueio', 9),
+	(DEFAULT, 'Esacada Rolante 1', 'Sensor de Bloqueio', 10),
+	(DEFAULT, 'Esacada Rolante 2', 'Sensor de Bloqueio', 10),
+	(DEFAULT, 'Esacada Rolante 3', 'Sensor de Bloqueio', 10),
+	(DEFAULT, 'Passarela 1', 'Sensor de Bloqueio', 10),
+	(DEFAULT, 'Passarela 2', 'Sensor de Bloqueio', 10),
+	(DEFAULT, 'Catraca de Entrada', 'Sensor de Bloqueio', 10),
+	(DEFAULT, 'Esacada Rolante 1', 'Sensor de Bloqueio', 11),
+	(DEFAULT, 'Esacada Rolante 2', 'Sensor de Bloqueio', 11),
+	(DEFAULT, 'Esacada Rolante 3', 'Sensor de Bloqueio', 11),
+	(DEFAULT, 'Passarela 1', 'Sensor de Bloqueio', 11),
+	(DEFAULT, 'Passarela 2', 'Sensor de Bloqueio', 11),
+	(DEFAULT, 'Catraca de Entrada', 'Sensor de Bloqueio', 11);
 
 SELECT * FROM sensor;
 /*----------------------------------------------------------------------------------------------------------------------------------------*/
@@ -129,20 +194,84 @@ CONSTRAINT fkSensorDadoSensor FOREIGN KEY (fkSensor)
 	REFERENCES sensor(idSensor)
 );
 
-INSERT INTO dadoSensor VALUES
-	(DEFAULT, 1, 1, DEFAULT),
-	(DEFAULT, 1, 0, '2024-04-14 06:00:00'),
-	(DEFAULT, 1, 1, DEFAULT),
-    (DEFAULT, 1, 1, DEFAULT),
-	(DEFAULT, 1, 0, DEFAULT),
-    (DEFAULT, 1, 1, DEFAULT),
-    (DEFAULT, 1, 1, DEFAULT),
-    (DEFAULT, 1, 0, DEFAULT),
-    (DEFAULT, 1, 0, DEFAULT),
-    (DEFAULT, 1, 0, DEFAULT),
-    (DEFAULT, 1, 1, DEFAULT),
-    (DEFAULT, 1, 1, DEFAULT),
-    (DEFAULT, 1, 1, DEFAULT);
+    INSERT INTO dadoSensor VALUES 
+		(default,  1, 0, '2024-06-07 5:00:00'),
+		(default,  7, 0, '2024-06-07 5:00:00'),
+		(default, 13, 0, '2024-06-07 5:00:00'),
+		(default, 19, 0, '2024-06-07 5:00:00'),
+		(default, 25, 0, '2024-06-07 5:00:00'),
+		(default, 31, 0, '2024-06-07 5:00:00'),
+		(default, 37, 0, '2024-06-07 5:00:00'),
+		(default, 43, 0, '2024-06-07 5:00:00'),
+		(default, 49, 0, '2024-06-07 5:00:00'),
+		(default, 55, 0, '2024-06-07 5:00:00'),
+		(default, 61, 0, '2024-06-07 5:00:00'),
+        (default,  1, 0, '2024-06-06 5:00:00'),
+		(default,  7, 0, '2024-06-06 5:00:00'),
+		(default, 13, 0, '2024-06-06 5:00:00'),
+		(default, 19, 0, '2024-06-06 5:00:00'),
+		(default, 25, 0, '2024-06-06 5:00:00'),
+		(default, 31, 0, '2024-06-06 5:00:00'),
+		(default, 37, 0, '2024-06-06 5:00:00'),
+		(default, 43, 0, '2024-06-06 5:00:00'),
+		(default, 49, 0, '2024-06-06 5:00:00'),
+		(default, 55, 0, '2024-06-06 5:00:00'),
+		(default, 61, 0, '2024-06-06 5:00:00'),
+		(default,  1, 0, '2024-06-05 5:00:00'),
+		(default,  7, 0, '2024-06-05 5:00:00'),
+		(default, 13, 0, '2024-06-05 5:00:00'),
+		(default, 19, 0, '2024-06-05 5:00:00'),
+		(default, 25, 0, '2024-06-05 5:00:00'),
+		(default, 31, 0, '2024-06-05 5:00:00'),
+		(default, 37, 0, '2024-06-05 5:00:00'),
+		(default, 43, 0, '2024-06-05 5:00:00'),
+		(default, 49, 0, '2024-06-05 5:00:00'),
+		(default, 55, 0, '2024-06-05 5:00:00'),
+		(default, 61, 0, '2024-06-05 5:00:00'),
+		(default,  1, 0, '2024-06-04 5:00:00'),
+		(default,  7, 0, '2024-06-04 5:00:00'),
+		(default, 13, 0, '2024-06-04 5:00:00'),
+		(default, 19, 0, '2024-06-04 5:00:00'),
+		(default, 25, 0, '2024-06-04 5:00:00'),
+		(default, 31, 0, '2024-06-04 5:00:00'),
+		(default, 37, 0, '2024-06-04 5:00:00'),
+		(default, 43, 0, '2024-06-04 5:00:00'),
+		(default, 49, 0, '2024-06-04 5:00:00'),
+		(default, 55, 0, '2024-06-04 5:00:00'),
+		(default, 61, 0, '2024-06-04 5:00:00'),
+		(default,  1, 0, '2024-06-03 5:00:00'),
+		(default,  7, 0, '2024-06-03 5:00:00'),
+		(default, 13, 0, '2024-06-03 5:00:00'),
+		(default, 19, 0, '2024-06-03 5:00:00'),
+		(default, 25, 0, '2024-06-03 5:00:00'),
+		(default, 31, 0, '2024-06-03 5:00:00'),
+		(default, 37, 0, '2024-06-03 5:00:00'),
+		(default, 43, 0, '2024-06-03 5:00:00'),
+		(default, 49, 0, '2024-06-03 5:00:00'),
+		(default, 55, 0, '2024-06-03 5:00:00'),
+		(default, 61, 0, '2024-06-03 5:00:00'),
+		(default,  1, 0, '2024-06-02 5:00:00'),
+		(default,  7, 0, '2024-06-02 5:00:00'),
+		(default, 13, 0, '2024-06-02 5:00:00'),
+		(default, 19, 0, '2024-06-02 5:00:00'),
+		(default, 25, 0, '2024-06-02 5:00:00'),
+		(default, 31, 0, '2024-06-02 5:00:00'),
+		(default, 37, 0, '2024-06-02 5:00:00'),
+		(default, 43, 0, '2024-06-02 5:00:00'),
+		(default, 49, 0, '2024-06-02 5:00:00'),
+		(default, 55, 0, '2024-06-02 5:00:00'),
+		(default, 61, 0, '2024-06-02 5:00:00'),
+		(default,  1, 0, '2024-06-01 5:00:00'),
+		(default,  7, 0, '2024-06-01 5:00:00'),
+		(default, 13, 0, '2024-06-01 5:00:00'),
+		(default, 19, 0, '2024-06-01 5:00:00'),
+		(default, 25, 0, '2024-06-01 5:00:00'),
+		(default, 31, 0, '2024-06-01 5:00:00'),
+		(default, 37, 0, '2024-06-01 5:00:00'),
+		(default, 43, 0, '2024-06-01 5:00:00'),
+		(default, 49, 0, '2024-06-01 5:00:00'),
+		(default, 55, 0, '2024-06-01 5:00:00'),
+		(default, 61, 0, '2024-06-01 5:00:00');
     
 SELECT * FROM dadoSensor;
 /*----------------------------------------------------------------------------------------------------------------------------------------*/
@@ -244,47 +373,7 @@ SELECT * FROM viewFluxoSensor3;
 -- SELECT TESTE PARA A DASHBOARD
 SELECT * FROM dadoSensor;
 
--- MELHOR PARA A VISUALIZAÇÃO DO SELECT :)
-INSERT INTO dadoSensor VALUES
-	(DEFAULT, 1, 1, '2024-04-15 06:00:00'),
-	(DEFAULT, 1, 0, '2024-04-15 06:00:00'),
-	(DEFAULT, 1, 1, '2024-04-16 06:00:00'),
-	(DEFAULT, 1, 0, '2024-04-16 06:00:00'),
-	(DEFAULT, 1, 1, '2024-04-17 06:00:00'),
-	(DEFAULT, 1, 0, '2024-04-17 06:00:00'),
-	(DEFAULT, 1, 1, '2024-04-18 06:00:00'),
-	(DEFAULT, 1, 0, '2024-04-18 06:00:00'),
-	(DEFAULT, 1, 1, '2024-04-19 06:00:00'),
-	(DEFAULT, 1, 0, '2024-04-19 06:00:00'),
-	(DEFAULT, 1, 1, '2024-04-20 06:00:00'),
-	(DEFAULT, 1, 0, '2024-04-20 06:00:00'),
-	(DEFAULT, 1, 1, '2024-04-21 06:00:00'),
-	(DEFAULT, 1, 0, '2024-04-21 06:00:00'),
-	(DEFAULT, 1, 1, '2024-04-22 06:00:00'),
-	(DEFAULT, 1, 0, '2024-04-22 06:00:00');
-    
-INSERT INTO dadoSensor VALUES
-	(DEFAULT, 1, 1, '2024-02-15 06:00:00'),
-	(DEFAULT, 1, 0, '2024-02-15 06:00:00'),
-	(DEFAULT, 1, 1, '2024-02-16 06:00:00');
-
--- SELECT máximo de entradas possíveis (nesse caso 277 * 13 ~= 3600, número de entradas por hora), Entradas em que o sensor captura, em escala do máximo, e a porcentagem
--- entre ambos. Ainda não sei se vamos fazer dessa maneira.
-SELECT count(contagem) * 277 as total, sum(contagem) * 277 as fluxo, concat(truncate((sum(contagem) * 277)/(count(contagem) * 277) * 100, 0), '%') as 'Porcentagem de Movimento' FROM dadoSensor;
-SELECT count(contagem) * 277 as total, sum(contagem) * 252 as fluxo, concat(truncate((sum(contagem) * 252)/(count(contagem) * 277) * 100, 0), '%') as 'Porcentagem de Movimento' FROM dadoSensor;
-SELECT count(contagem) * 277 as total, sum(contagem) * 221 as fluxo, concat(truncate((sum(contagem) * 221)/(count(contagem) * 277) * 100, 0), '%') as 'Porcentagem de Movimento' FROM dadoSensor;
-SELECT count(contagem) * 277 as total, sum(contagem) * 200 as fluxo, concat(truncate((sum(contagem) * 200)/(count(contagem) * 277) * 100, 0), '%') as 'Porcentagem de Movimento' FROM dadoSensor;
-SELECT count(contagem) * 277 as total, sum(contagem) * 229 as fluxo, concat(truncate((sum(contagem) * 229)/(count(contagem) * 277) * 100, 0), '%') as 'Porcentagem de Movimento' FROM dadoSensor;
-SELECT count(contagem) * 277 as total, sum(contagem) * 300 as fluxo, concat(truncate((sum(contagem) * 300)/(count(contagem) * 277) * 100, 0), '%') as 'Porcentagem de Movimento' FROM dadoSensor;
-SELECT count(contagem) * 277 as total, sum(contagem) * 345 as fluxo, concat(truncate((sum(contagem) * 345)/(count(contagem) * 277) * 100, 0), '%') as 'Porcentagem de Movimento' FROM dadoSensor;
-
--- SEPARANDO FLUXO TOTAL POR DIA DA SEMANA. É POSSÍVEL, EM UM CENÁRIO REAL, COLOCAR O LIMIT EM 3600 OU UM 'WHERE HORARIO > 8:00 AND < 9:00'.
-SELECT (sum(contagem) + 2856) as FluxoHora, date_format(horario, '%a') as dia FROM dadoSensor GROUP BY dia; -- POSSÍVEL DE MANUSEAR NO MOMENTO, DADOS NÃO ABSURDOS;
-SELECT (sum(contagem)) as FluxoHora, date_format(horario, '%a') as dia FROM dadoSensor GROUP BY dia; -- POSSÍVEL DE MANUSEAR NO MOMENTO, DADOS NÃO ABSURDOS;
-SELECT (sum(contagem)) as FluxoHora, date_format(horario, '%a') as dia FROM dadoSensor GROUP BY dia; -- POSSÍVEL DE MANUSEAR NO MOMENTO, DADOS NÃO ABSURDOS;
-
 -- MÉDIA POR HORA DOS ÚLTIMOS 1 MÊS    
-SELECT * FROM dadoSensor;
 
 SELECT * FROM dadoSensor
 	WHERE horario BETWEEN DATE_SUB(CURDATE(), INTERVAL 1 MONTH) AND CURDATE();
@@ -309,3 +398,124 @@ SELECT sum(contagem) as contagem FROM dadoSensor ;
 		GROUP BY dia ORDER BY FIELD(dia, 'Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat')) as subQuerry;
         
 	SELECT * FROM usuario;
+    
+-- ////// --
+    
+SELECT estacao.nome AS Estação,
+	sum(contagem) AS Contagem 
+    FROM dadoSensor 
+	right join sensor ON fkSensor = idSensor
+    left join estacao on fkEstacao = idEstacao
+    WHERE horario BETWEEN DATE_SUB(CURDATE(), INTERVAL 2 MONTH) AND CURDATE()
+    GROUP BY idSensor;
+    
+    
+-- OBRIGADO MURILLO !!!!!!!!!!!!!!!!!!!!!!! <3 ¨¨\_(`u´)_/¨¨ 
+    
+SELECT estacao.nome, nomeLocal, ifnull(sum(contagem), 0) from dadoSensor
+	right join sensor on fkSensor = idSensor
+    join estacao on fkEstacao = idEstacao
+    group by idSensor;
+    
+SELECT sum(contagem) as fluxoPorSensor FROM dadoSensor 
+	right JOIN sensor ON fkSensor = idSensor
+    right join estacao on fkEstacao = idEstacao
+    WHERE horario BETWEEN DATE_SUB(CURDATE(), INTERVAL 2 MONTH) AND CURDATE() 
+    GROUP BY idSensor, fkEstacao;
+    
+SELECT sum(contagem) as FluxoHora, date_format(horario, '%H') as hora FROM dadoSensor
+	GROUP BY hora
+    ORDER BY hora;
+
+SELECT FluxoHora FROM (SELECT sum(contagem) as FluxoHora, date_format(horario, '%H') as hora FROM dadoSensor
+	GROUP BY hora
+    ORDER BY hora) as subquerry;
+
+DESCRIBE estacao;
+DESCRIBE sensor;
+SELECT * FROM sensor;
+SELECT * FROM dadoSensor;
+
+/*
+INSERT INTO sensor VALUES
+	(default, 'Escada Rolante', 'Sensor de Bloqueio', 3),
+	(default, 'Passarela', 'Sensor de Bloqueio', 3),
+	(default, 'Elevador', 'Sensor de Bloqueio', 3),
+	(default, 'Catraca de Entrada', 'Sensor de Bloqueio', 3);
+    */
+    
+    SELECT * FROM sensor;
+    describe dadoSensor;
+        
+INSERT INTO dadoSensor VALUES 
+	(default, 20, 0, default);
+    
+SELECT fluxoHora FROM  (SELECT estacao.nome, nomeLocal, ifnull(sum(contagem), 0) as fluxoHora from dadoSensor
+	right join sensor on fkSensor = idSensor
+    join estacao on fkEstacao = idEstacao
+    group by idSensor) AS b;
+
+SELECT ifnull(sum(contagem), 0), date_format(horario, '%a') as dia , estacao.nome
+        FROM dadoSensor
+        RIGHT JOIN sensor ON fkSensor = idSensor
+        JOIN estacao ON idEstacao = fkEstacao
+        WHERE horario BETWEEN DATE_SUB(CURDATE(), INTERVAL 1 MONTH) AND CURDATE()
+        GROUP BY dia, estacao.idEstacao ORDER BY idEstacao DESC, FIELD(dia, 'Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat') ;
+        
+
+SELECT * FROM usuario;
+
+UPDATE usuario SET senha = 'Cmi22afael#A2775#T' WHERE idUsuario = 3;
+SELECT ifnull(sum(contagem), 0) as fluxoDiaSemana, date_format(horario, '%a') as dia , estacao.nome
+        FROM dadoSensor
+        RIGHT JOIN sensor ON fkSensor = idSensor
+        JOIN estacao ON idEstacao = fkEstacao
+        WHERE horario BETWEEN DATE_SUB(CURDATE(), INTERVAL 1 MONTH) AND CURDATE()
+        GROUP BY dia, estacao.idEstacao ORDER BY idEstacao DESC, FIELD(dia, 'Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat');
+	
+SELECT ifnull(sum(contagem), 0) as fluxoDiaSemana, date_format(horario, '%a') as dia , estacao.nome
+        FROM dadoSensor
+        RIGHT JOIN sensor ON fkSensor = idSensor
+        JOIN estacao ON idEstacao = fkEstacao
+        WHERE horario BETWEEN DATE_SUB(CURDATE(), INTERVAL 1 MONTH) AND CURDATE()
+        GROUP BY dia, estacao.idEstacao ORDER BY idEstacao DESC, FIELD(dia, 'Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat');
+
+-- ------------------------------------ CRIANDO AS VIEWS ---------------------------------------------------- --
+
+CREATE VIEW plotar1 AS SELECT fluxoDiaSemana FROM (SELECT ifnull(sum(contagem), 0) as fluxoDiaSemana, date_format(horario, '%a') as dia , estacao.nome
+        FROM dadoSensor
+        RIGHT JOIN sensor ON fkSensor = idSensor
+        JOIN estacao ON idEstacao = fkEstacao
+        WHERE horario BETWEEN DATE_SUB(CURDATE(), INTERVAL 1 MONTH) AND CURDATE()
+        GROUP BY dia, estacao.idEstacao ORDER BY idEstacao DESC, FIELD(dia, 'Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat')) as subQuerry;
+
+SELECT * FROM plotar1;
+
+CREATE VIEW plotar2 AS SELECT fluxoPorSensor FROM  (SELECT estacao.nome, nomeLocal, ifnull(sum(contagem), 0) as fluxoPorSensor from dadoSensor
+	right join sensor on fkSensor = idSensor
+    join estacao on fkEstacao = idEstacao
+    group by idSensor ORDER BY idEstacao DESC, nomeLocal) AS querry2;
+SELECT * FROM plotar2;
+
+    SELECT FluxoHora FROM (SELECT ifnull(sum(contagem), 0) as FluxoHora, date_format(horario, '%a') as dia , estacao.nome
+        FROM dadoSensor
+        RIGHT JOIN sensor ON fkSensor = idSensor
+        JOIN estacao ON idEstacao = fkEstacao
+        WHERE horario BETWEEN DATE_SUB(CURDATE(), INTERVAL 1 MONTH) AND CURDATE()
+        GROUP BY dia, estacao.idEstacao ORDER BY idEstacao DESC, FIELD(dia, 'Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat')) as subQuerry;
+
+SELECT * FROM estacao ORDER BY idEstacao DESC;
+
+SELECT ifnull(sum(contagem), 0) as fluxoPorHora, date_format(horario, '%H') as dia , estacao.nome
+        FROM dadoSensor
+        RIGHT JOIN sensor ON fkSensor = idSensor
+        JOIN estacao ON idEstacao = fkEstacao
+        WHERE horario BETWEEN DATE_SUB(CURDATE(), INTERVAL 1 MONTH) AND CURDATE()
+        GROUP BY dia, estacao.idEstacao ORDER BY idEstacao DESC, FIELD(dia, '4', '0');
+
+SELECT fluxoPorHora FROM (SELECT ifnull(sum(contagem), 0) as fluxoPorHora, date_format(horario, '%H') as dia , estacao.nome
+        FROM dadoSensor
+        RIGHT JOIN sensor ON fkSensor = idSensor
+        JOIN estacao ON idEstacao = fkEstacao
+        WHERE horario BETWEEN DATE_SUB(CURDATE(), INTERVAL 1 MONTH) AND CURDATE()
+        GROUP BY dia, estacao.idEstacao ORDER BY idEstacao DESC, FIELD(dia, '4', '0')) as querry3;

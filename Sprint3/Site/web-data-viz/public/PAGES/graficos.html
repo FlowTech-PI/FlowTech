@@ -80,27 +80,27 @@
         <p class="li-c11">Vila Sônia</p>
       </div>
       <div class="box-linha">
-        <input type="radio" id="BL1" name="grupo1" onclick="BL1()">
+        <input type="radio" id="BL1" name="grupo1" onclick="BL1(); plotar2(11) ">
         <label for="BL1" data-label="Opcao 1"></label>
-        <input type="radio" id="BL2" name="grupo1" onclick="BL2()">
+        <input type="radio" id="BL2" name="grupo1" onclick="BL2(); plotar2(10)">
         <label for="BL2" data-label="Opcao 2"></label>
-        <input type="radio" id="BL3" name="grupo1" onclick="BL3()">
+        <input type="radio" id="BL3" name="grupo1" onclick="BL3(); plotar2(9) ">
         <label for="BL3" data-label="Opcao 3"></label>
-        <input type="radio" id="BL4" name="grupo1" onclick="BL4()">
+        <input type="radio" id="BL4" name="grupo1" onclick="BL4(); plotar2(8)">
         <label for="BL4" data-label="Opcao 4"></label>
-        <input type="radio" id="BL5" name="grupo1" onclick="BL5()">
+        <input type="radio" id="BL5" name="grupo1" onclick="BL5(); plotar2(7) ">
         <label for="BL5" data-label="Opcao 5"></label>
-        <input type="radio" id="BL6" name="grupo1" onclick="BL6()">
+        <input type="radio" id="BL6" name="grupo1" onclick="BL6(); plotar2(6) ">
         <label for="BL6" data-label="Opcao 6"></label>
-        <input type="radio" id="BL7" name="grupo1" onclick="BL7()">
+        <input type="radio" id="BL7" name="grupo1" onclick="BL7(); plotar2(5) ">
         <label for="BL7" data-label="Opcao 7"></label>
-        <input type="radio" id="BL8" name="grupo1" onclick="BL8()">
+        <input type="radio" id="BL8" name="grupo1" onclick="BL8(); plotar2(4) ">
         <label for="BL8" data-label="Opcao 8"></label>
-        <input type="radio" id="BL9" name="grupo1" onclick="BL9()">
+        <input type="radio" id="BL9" name="grupo1" onclick="BL9(); plotar2(3)">
         <label for="BL9" data-label="Opcao 9"></label>
-        <input type="radio" id="BL10" name="grupo1" onclick="BL10()">
+        <input type="radio" id="BL10" name="grupo1" onclick="BL10(); plotar2(2) ">
         <label for="BL10" data-label="Opcao 10"></label>
-        <input type="radio" id="BL11" name="grupo1" onclick="BL11()">
+        <input type="radio" id="BL11" name="grupo1" onclick="BL11(); plotar2(1) ">
         <label for="BL11" data-label="Opcao 11"></label>
       </div>
     </div>
@@ -390,6 +390,8 @@ function limpar(){
   // <-----------------------Gráficos da estação LUZ--------------------------->
 
   function BL1() {
+    fkEstacao = 11
+    
     limpar();
     var BL1Element = document.getElementById('BL1');
     var BG1Element = document.getElementById('BG1');
@@ -402,7 +404,7 @@ function limpar(){
   // <-----------------------Gráficos da estação REPÚBLICA---------------------->
   
   function BL2() {
-
+    fkEstacao = 10
 limpar();    var BL2Element = document.getElementById('BL2');
       var BG3Element = document.getElementById('BG3');
      
@@ -416,7 +418,7 @@ limpar();    var BL2Element = document.getElementById('BL2');
   //------------------------Gráficos da estação Higienópolis-------------------//
   
   function BL3() {
-
+    fkEstacao = 9
 limpar();    var BL3Element = document.getElementById('BL3');
       var BG3Element = document.getElementById('BG3');
      
@@ -431,7 +433,7 @@ limpar();    var BL3Element = document.getElementById('BL3');
   //-------------------Gráficos da estação Paulista----------------------------//
 
   function BL4() {
-
+    fkEstacao = 8
 limpar();    var BL4Element = document.getElementById('BL4');
       var BG3Element = document.getElementById('BG3');
      
@@ -446,6 +448,7 @@ limpar();    var BL4Element = document.getElementById('BL4');
 
 
   function BL5() {
+    fkEstacao = 7
 
 limpar();    var BL5Element = document.getElementById('BL5');
       var BG3Element = document.getElementById('BG3');
@@ -460,7 +463,7 @@ limpar();    var BL5Element = document.getElementById('BL5');
   //-------------------Gráficos da estação Fradique Coutinho------------------------//
 
   function BL6() {
-
+    fkEstacao = 6
 limpar();    var BL6Element = document.getElementById('BL6');
       var BG3Element = document.getElementById('BG3');
      
@@ -474,7 +477,7 @@ limpar();    var BL6Element = document.getElementById('BL6');
   //-------------------Gráficos da estação Faria Lima-------------------------------//
 
   function BL7() {
-
+    fkEstacao = 5
 limpar();    var BL7Element = document.getElementById('BL7');
       var BG3Element = document.getElementById('BG3');
      
@@ -488,6 +491,7 @@ limpar();    var BL7Element = document.getElementById('BL7');
   //-------------------Gráficos da estação Pinheiros--------------------------------//
 
   function BL8() {
+    fkEstacao = 4
 
 limpar();    var BL8Element = document.getElementById('BL8');
       var BG3Element = document.getElementById('BG3');
@@ -502,6 +506,7 @@ limpar();    var BL8Element = document.getElementById('BL8');
   //-------------------Gráficos da estação Butantã----------------------------------//
 
   function BL9() {
+    fkEstacao = 3
 
 limpar();    var BL9Element = document.getElementById('BL9');
       var BG3Element = document.getElementById('BG3');
@@ -516,6 +521,7 @@ limpar();    var BL9Element = document.getElementById('BL9');
   //-------------------Gráficos da estação São Paulo Morumbi------------------------//
 
   function BL10() {
+    fkEstacao = 2
     limpar();
       var BL10Element = document.getElementById('BL10');
       var BG3Element = document.getElementById('BG3');
@@ -530,6 +536,7 @@ limpar();    var BL9Element = document.getElementById('BL9');
   //-------------------Gráficos da estação Vila Sônia-------------------------------//
 
   function BL11() {
+    fkEstacao = 1
     limpar();
       var BL11Element = document.getElementById('BL11');
       var BG3Element = document.getElementById('BG3');
@@ -907,7 +914,37 @@ limpar();    var BL9Element = document.getElementById('BL9');
 <!----------  Luz---------------->
    <!-------Gráficos-------->
 <script>
+
+  let fkEstacao = 0;
+
+  const array_dados = [];
+
   function plotar() {
+    plotar2()
+    setTimeout(()=> plotar1(),500)  
+    }
+
+  function plotar2() {
+    // Esse select obtém: soma dos dados POR sensor POR estação dos últimos 2 meses (pode ser alterado, recomendo fazer média por hora...)
+      
+            fetch(`/avisos/plotarPorSensor`)
+              .then(function (resposta){
+              if (resposta.ok) {
+              resposta.json().then(dadosPlotar2 =>{
+                console.log(dadosPlotar2)
+                console.log(JSON.stringify(dadosPlotar2));
+                array_dados.push({dadosPorSensor : dadosPlotar2})
+                // console.log('dado1:', dado_1, 'dado2:', dado_2, 'dado3:', dado_3, 'dado4:', dado_4)
+              })
+        }
+      })
+  }
+  // method: "POST",
+  // headers: {
+  //   "Content-Type": "application/json"
+  // }
+  
+  function plotar1() {
 
     fetch(`/avisos/plotarSemana`)
     .then(function (resposta) {
@@ -915,19 +952,11 @@ limpar();    var BL9Element = document.getElementById('BL9');
         if (resposta.status == 204) {
                    throw "Nenhum resultado encontrado!!";
         }
-        resposta.json().then(json => {
-                  console.log(json);
-                  console.log(JSON.stringify(json));
-                  var domingo = json.domingo
-                  var segunda = json.segunda
-                  var terca = json.terca
-                  var quarta = json.quarta
-                  var quinta = json.quinta
-                  var sexta = json.sexta
-                  var sabado = json.sabado 
+        resposta.json().then(dadosPlotar1 => {
+                  console.log(dadosPlotar1);
+                  console.log(JSON.stringify(dadosPlotar1));
+                  array_dados.push({dadosPorDiaSemana : dadosPlotar1});
 
-              
-           
   const labels = [
     'Domingo',
     'Segunda',

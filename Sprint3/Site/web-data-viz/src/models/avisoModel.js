@@ -85,12 +85,18 @@ function deletar(idAviso) {
 function plotarSemana() {
     console.log("ACESSEI O AVISO  MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function plotarSemana()");
     var instrucaoSql = `
-    SELECT FluxoHora FROM (SELECT (sum(contagem)) as FluxoHora, date_format(horario, '%a') as dia 
-        FROM dadoSensor 
-        WHERE horario BETWEEN DATE_SUB(CURDATE(), INTERVAL 1 MONTH) AND CURDATE()
-        GROUP BY dia ORDER BY FIELD(dia, 'Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat')) as subQuerry;
+    SELECT * FROM plotar1;
     `;
     console.log("Executando a instrução SQL: \n" + instrucaoSql);
+    return database.executar(instrucaoSql);
+}
+
+function plotarPorSensor(fkEstacao) {
+    console.log ("ACESSEI O AVISO  MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function plotarPorSensor()");
+    var instrucaoSql = `
+    SELECT * FROM plotar2;
+    `
+    console.log("Executando a instrução SQL: \n", instrucaoSql);
     return database.executar(instrucaoSql);
 }
 
@@ -101,5 +107,6 @@ module.exports = {
     publicar,
     editar,
     deletar,
-    plotarSemana
+    plotarSemana,
+    plotarPorSensor
 }

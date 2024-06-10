@@ -31,4 +31,8 @@ router.get("/plotarSemana", function (req, res) {
     avisoController.plotarSemana(req, res);
 });
 
+router.get("/plotarPorSensor", function(req, res) {
+    avisoController.plotarPorSensor(req, res);
+})
+
 module.exports = router;
