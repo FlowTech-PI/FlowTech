@@ -563,3 +563,84 @@ input[type="range"]:active::-webkit-slider-thumb {
   left: 0;
   right: 0;
 }
+
+/*---------------------------------- Ajuda ---------------------------------*/
+
+.box_helps {
+  margin: 2% 0 0 2%;
+  display: flex;
+  width: 91%;
+  align-items: center;
+  justify-content: center;
+}
+
+.box_helps h2,
+.box_helps h6 {
+  margin-top: 0px;
+  color: #1d314d;
+}
+
+.box_helps h2 {
+  margin-bottom: 0px;
+  font-size: 40px;
+}
+
+.box_helps h6 {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.box_manual{
+  border: #07272c solid 2px;
+  border-radius: 16px;
+  height: 80px;
+  width: 250px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #cccccc;
+  margin-bottom: 10%;
+}
+
+.box_helps a{
+  text-decoration: none;
+}
+
+.box_HD{
+  border: #07272c solid 2px;
+  border-radius: 16px;
+  height: 80px;
+  width: 250px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #cccccc;
+}
+
+.box_ia{
+  border: #07272c solid 2px;
+  border-radius: 16px;
+  height: 80px;
+  width: 250px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #cccccc;
+
+  margin-left: 20%;
+  margin-bottom: 10%;
+}
+
+.box_doc{
+  border: #07272c solid 2px;
+  border-radius: 16px;
+  height: 80px;
+  width: 250px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #cccccc;
+
+  margin-left: 20%;
+}
+

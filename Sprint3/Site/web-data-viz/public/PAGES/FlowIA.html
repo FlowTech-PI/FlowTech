@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FlowTech | Dashboard</title>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+  <link rel="stylesheet" href="../CSS/styleDashboard.css">
+</head>
+
+<body id="Dashboard">
+  <div class="header">
+    <div id="NavDashboard" class="container">
+
+      <div class="menu">
+        <span id="menuH" class="material-symbols-outlined" onclick="clickMenu()">MENU</span>
+        <h1 class="titulo">FLOWTECH</h1>
+      </div>
+
+      <ul class="navbar">
+        <li><a href="../index.html">Início</a></li>
+        <li>|</li>
+        <li> <a href="perfil.html">Perfil</a></li>
+        <li>|</li>
+        <li><a href="simulador.html">Simulador Financeiro</a></li>
+        <li>|</li>
+        <li><u>Dashboard</u></li>
+        <li>|</li>
+        <li><a href="graficos.html">Gráficos</a></li>
+        <li>|</li>
+        <li><a href="heatmap/heatmap.html">Heatmap</a></li>
+        <li>|</li>
+        <li><a href="">Ajuda</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="main_conteudo">
+    <div id="itens-laterais">
+      <ul class="listaItens">
+        <div id="fp" class="fotoPerfil">
+          <a href="perfil.html"><img src="../CSS/IMG/perfil.png" alt="foto de perfil"></a>
+        </div>
+        <li><a href="simulador.html">🖥 Simulador Financeiro</a></li>
+        <li><a href="graficos.html">📊 Gráficos</a></li>
+        <li><a href="dashboard.html">🖥️ Dashboard</a></li>
+        <li><a href="heatmap/heatmap.html">🗺️ HeatMap </a></li>
+        <li><a href="ajuda.html">📞 Ajuda </a></li>
+        <li><a href="../index.html">Sair</a></li>
+      </ul>
+    </div>
+
+    <div class="conteudo">
+      <div class="box-title">
+        <h2>FowIA</h2>
+        <h6>FLOWTECH</h6>
+      </div>
+        <h1>A nossa IA para auxiliar o técnico!</h1>
+
+        <div class="box_helps"> 
+            <div id="container" style="width:50%; background-color: #1D314D; margin-top: 10%; color: aliceblue; border-radius: 26px; margin-top: 2%; padding: 20px;">
+                <center>
+                    <h1 style="color: aliceblue;">FlowIA</h1>
+                    <textarea id="pergunta" type="text" placeholder="Digite a pergunta..."></textarea>
+                    <br><br>
+                    <button onclick="gerarResposta()">Gerar Resposta</button>
+                    <h3>Resposta da IA:</h3>
+                    <div id="resposta"></div>
+                </center>
+            </div>
+        </div>
+      
+
+    
+    </div>
+  </div>
+</body>
+
+</html>
+
+
+<script>
+    async function gerarResposta() {
+        const pergunta = document.getElementById('pergunta').value;
+
+        const response = await fetch('http://localhost:3333/perguntar', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ pergunta })
+        });
+
+        const data = await response.json();
+
+        resposta.style.display = 'block';
+        document.getElementById('resposta').innerText = data.resultado;
+    }
+</script>
