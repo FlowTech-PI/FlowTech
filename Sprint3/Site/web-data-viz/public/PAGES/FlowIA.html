@@ -84,17 +84,29 @@
     async function gerarResposta() {
         const pergunta = document.getElementById('pergunta').value;
 
-        const response = await fetch('http://localhost:3333/perguntar', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({ pergunta })
-        });
+        let trava1 = pergunta.indexOf("sensor")
+        let trava2 = pergunta.indexOf("sensores")
+        let trava3 = pergunta.indexOf("arduino")
+        let trava4 = pergunta.indexOf("arduinos")
+        let trava5 = pergunta.indexOf("TCRT5000")
 
-        const data = await response.json();
+        if (trava1 >= 0 || trava2 >= 0 || trava3 >= 0 || trava4 >= 0 || trava5 >= 0){
+          const response = await fetch('http://localhost:3333/perguntar', {
+              method: 'POST',
+              headers: {
+                  'Content-Type': 'application/json'
+              },
+              body: JSON.stringify({ pergunta })
+          });
 
-        resposta.style.display = 'block';
-        document.getElementById('resposta').innerText = data.resultado;
+          const data = await response.json();
+
+          resposta.style.display = 'block';
+          document.getElementById('resposta').innerText = data.resultado;
+        } else {
+          document.getElementById('resposta').innerText = `Sua pergunta deve estar dentro do escopo do projeto! 
+                                                          Contendo ao menos uma das seguintes palavras:
+                                                          sensor, sensores, arduino, arduinos, TCRT5000.`;
+        }
     }
 </script>
