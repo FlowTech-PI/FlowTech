@@ -923,13 +923,14 @@ limpar();    var BL9Element = document.getElementById('BL9');
   const array_dados = [];
 
   function plotar() {
+    console.log('oi')
     plotar2()
     // setTimeout(()=> plotar1(),500)  
     }
 
   function plotar2() {
     // Esse select obtém: soma dos dados POR sensor POR estação dos últimos 2 meses (pode ser alterado, recomendo fazer média por hora...)
-      
+        console.log('oi2')
             fetch(`/avisos/plotarPorSensor`)
               .then(function (resposta){
               if (resposta.ok) {
@@ -940,8 +941,10 @@ limpar();    var BL9Element = document.getElementById('BL9');
                 // console.log('dado1:', dado_1, 'dado2:', dado_2, 'dado3:', dado_3, 'dado4:', dado_4)
               })
               setTimeout(()=> plotar3(), 4000)
+        } else {
+          // console.log('oi3')
         }
-      })
+      }) 
   }
 
   function plotar3() {
