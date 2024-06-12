@@ -91,7 +91,7 @@
         let trava5 = pergunta.indexOf("TCRT5000")
 
         if (trava1 >= 0 || trava2 >= 0 || trava3 >= 0 || trava4 >= 0 || trava5 >= 0){
-          const response = await fetch('http://localhost:3333/perguntar', {
+          const response = await fetch('http://10.18.36.227:3333/perguntar', {
               method: 'POST',
               headers: {
                   'Content-Type': 'application/json'

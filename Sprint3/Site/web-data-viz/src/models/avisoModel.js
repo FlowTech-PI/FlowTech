@@ -47,7 +47,7 @@ function listarPorUsuario(h1, h2) {
     `SELECT 
         sum(contagem) as contagem
     FROM dadoSensor 
-    where horario between '2024-05-01' and '2024-05-30' 
+    where horario between '2024-06-01' and '2024-06-30' 
     and time(horario) >= '${h1}:00:00' and time(horario) <= '${h2}:00:00';`;
 
 
