@@ -137,7 +137,7 @@
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
 <script>
-  atualizar();
+  // atualizar();
 
   function clickMenu() {
     var itensLaterais = document.getElementById('itens-laterais');
@@ -155,9 +155,9 @@
       E.style.backgroundColor = '#41BB4D';
       M.style.backgroundColor = '#41BB4D';
       D.style.backgroundColor = '#FF3131';
-      data_BoxE.innerHTML = '21.569 <br> Capturas';
-      data_BoxM.innerHTML = '21.089 <br> Capturas';
-      data_BoxD.innerHTML = '4.410 <br> Capturas';
+      data_BoxE.innerHTML = `${Number(array_dados[0].dadosPorDia.PinheirosDia.cont) + 21569} <br> Capturas`;
+      data_BoxM.innerHTML = `${Number(array_dados[0].dadosPorDia.HigienopolisDia.cont) + 21089} <br> Capturas`;
+      data_BoxD.innerHTML = `${Number(array_dados[0].dadosPorDia.PaulistaDia.cont) + 4410} <br> Capturas`;;
       estacao1.innerHTML = 'PINHEIROS';
       estacao2.innerHTML = 'HIGIENÓPOLIS';
       estacao3.innerHTML = 'PAULISTA';
@@ -302,8 +302,13 @@
     }
   }
 const array_dados =[];
-obterDados();
-  function obterDados(){
+const array_dia =[];
+const array_semana =[];
+const array_mes =[];
+
+obterDados(1);
+  function obterDados(param){
+    if (param == 1){
     fetch(`/avisos/obterDadosDia`)
               .then(function (resposta){
               if (resposta.ok) {
@@ -311,11 +316,16 @@ obterDados();
                 console.log(resultadoDadosDia)
                 console.log(JSON.stringify(resultadoDadosDia));
                 array_dados.push({dadosPorDia : resultadoDadosDia})
+                // array_dia.push()
                 // console.log('dado1:', dado_1, 'dado2:', dado_2, 'dado3:', dado_3, 'dado4:', dado_4)
               })
         }
       },
     )
+    setTimeout(()=>obterDados(2), 100)  
+    // atualizar()
+
+    } else if (param == 2){
     fetch(`/avisos/obterDadosSemana`)
               .then(function (resposta){
               if (resposta.ok) {
@@ -328,6 +338,8 @@ obterDados();
         }
       },
     )
+    setTimeout(()=>obterDados(3), 100)  
+  } else {
     fetch(`/avisos/obterDadosMes`)
               .then(function (resposta){
               if (resposta.ok) {
@@ -340,6 +352,8 @@ obterDados();
         }
       },
     )
+    atualizar()
+  }
   }
   
 </script>
