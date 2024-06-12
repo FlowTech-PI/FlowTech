@@ -58,9 +58,9 @@
       </div>
 
         <select id="select_freq" onchange="atualizar(1)">
-          <option value="dia">Últimas 24 horas</option>
-          <option value="semana">Na Semana</option>
-          <option value="mes">No Mês</option>
+          <option value="dia">Apenas Hoje</option>
+          <option value="semana">Últimos 7 dias</option>
+          <option value="mes">Últimos 30 dias</option>
         </select>
         
         <h1 style="color: #1D314D;">3 ESTAÇÕES COM MAIOR FLUXO</h1>
@@ -100,6 +100,10 @@
       </div>
 
       <!------------------------------- legenda -------------------------------------------->
+      <div class="legenda" style="height: 40px;">
+        O número representa os segundos em que o sensor ficou ativo, com os parâmetros categorizando os registros de 'pouco movimento'
+        até 'muito movimento'
+      </div>
       <div class="legenda">
         <div class="bloco">
           <div class="group">
