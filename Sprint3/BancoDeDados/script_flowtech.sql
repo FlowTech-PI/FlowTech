@@ -769,12 +769,15 @@ CREATE VIEW plotar3 AS SELECT fluxoPorHora FROM (SELECT ifnull(sum(contagem), 0)
         FROM dadoSensor
         RIGHT JOIN sensor ON fkSensor = idSensor
         JOIN estacao ON idEstacao = fkEstacao
-        WHERE horario BETWEEN DATE_SUB(CURDATE(), INTERVAL 1 MONTH) AND CURDATE()
+        WHERE horario BETWEEN DATE_SUB(CURDATE(), INTERVAL 2 MONTH) AND CURDATE()
         GROUP BY dia, estacao.idEstacao ORDER BY idEstacao DESC, FIELD(dia, '4', '0')) as querry3;
 
 SELECT * FROM plotar3;
+
+select * from DadoSensor;
 
 	SELECT FluxoHora FROM (SELECT (sum(contagem)) as FluxoHora, date_format(horario, '%a') as dia 
 		FROM dadoSensor 
 		WHERE horario BETWEEN DATE_SUB(CURDATE(), INTERVAL 2 MONTH) AND CURDATE()
 		GROUP BY dia ORDER BY FIELD(dia, 'Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat')) as subQuerry;
+
