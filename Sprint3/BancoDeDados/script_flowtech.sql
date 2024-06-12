@@ -647,7 +647,7 @@ INSERT INTO dadoSensor VALUES
 	(default, 55, 1, '2024-06-01 00:00:00'),
 	(default, 61, 1, '2024-06-01 00:00:00');
     
-    truncate table dadoSensor;
+-- truncate table dadoSensor;
     
 SELECT * FROM dadoSensor;
 /*----------------------------------------------------------------------------------------------------------------------------------------*/
@@ -761,9 +761,16 @@ SELECT * FROM plotar1;
 CREATE VIEW plotar2 AS SELECT fluxoPorSensor FROM  (SELECT estacao.nome, nomeLocal, ifnull(sum(contagem), 0) as fluxoPorSensor from dadoSensor
 	right join sensor on fkSensor = idSensor
     join estacao on fkEstacao = idEstacao
-    group by idSensor ORDER BY idEstacao DESC, nomeLocal) AS querry2;
-
+	WHERE horario BETWEEN DATE_SUB(CURDATE(), INTERVAL 1 MONTH) AND CURDATE()
+    group by idSensor ORDER BY idEstacao DESC, nomeLocal) AS
+    querry2;
+    
 SELECT * FROM plotar2;
+
+SELECT estacao.nome, nomeLocal, ifnull(sum(contagem), 0) as fluxoPorSensor from dadoSensor
+	right join sensor on fkSensor = idSensor
+    join estacao on fkEstacao = idEstacao
+    group by idSensor ORDER BY idEstacao DESC, nomeLocal;
 
 CREATE VIEW plotar3 AS SELECT fluxoPorHora FROM (SELECT ifnull(sum(contagem), 0) as fluxoPorHora, date_format(horario, '%H') as dia , estacao.nome
         FROM dadoSensor
