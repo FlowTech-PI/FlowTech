@@ -781,3 +781,86 @@ select * from DadoSensor;
 		WHERE horario BETWEEN DATE_SUB(CURDATE(), INTERVAL 2 MONTH) AND CURDATE()
 		GROUP BY dia ORDER BY FIELD(dia, 'Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat')) as subQuerry;
 
+-- Pega a contagem de todo o fluxo de todas as estaçoes, com tempo indefinido
+select * from estacao;
+select sum(contagem), fkSensor, fkEstacao, nome from dadoSensor
+join sensor ON fkSensor = idSensor
+join estacao ON fkEstacao = idEstacao
+group by fkSensor;
+
+-- Mesma coisa, só que do mês
+select * from estacao;
+select sum(contagem), fkSensor, fkEstacao, nome from dadoSensor
+join sensor ON fkSensor = idSensor
+join estacao ON fkEstacao = idEstacao
+where horario between DATE_SUB(CURDATE(), INTERVAL 30 day) AND CURDATE()
+group by fkSensor;
+
+-- Mesa coisa, só que da semana
+select * from estacao;
+select sum(contagem), fkSensor, fkEstacao, nome from dadoSensor
+join sensor ON fkSensor = idSensor
+join estacao ON fkEstacao = idEstacao
+where horario between DATE_SUB(CURDATE(), INTERVAL 7 day) AND CURDATE()
+group by fkSensor;
+
+-- Mesa coisa, só que do dia
+select * from estacao;
+select sum(contagem), fkSensor, fkEstacao, nome from dadoSensor
+join sensor ON fkSensor = idSensor
+join estacao ON fkEstacao = idEstacao
+where date_format(horario, '%d/%m/%y') = date_format(current_date(), '%d/%m/%y')
+group by fkSensor;
+
+SELECT * FROM dadoSensor ORDER BY horario;
+describe dadoSensor;
+
+INSERT INTO dadoSensor VALUES
+	(default, 1, 1, default),
+	(default, 7, 1, default),
+	(default, 13, 1, default),
+	(default, 19, 1, default),
+	(default, 25, 1, default),
+	(default, 31, 1, default),
+	(default, 37, 1, default),
+	(default, 43, 1, default),
+	(default, 49, 1, default),
+	(default, 55, 1, default),
+	(default, 61, 1, default);
+    
+
+SELECT cont FROM (select sum(contagem)as cont, fkSensor, fkEstacao, nome from dadoSensor
+join sensor ON fkSensor = idSensor
+join estacao ON fkEstacao = idEstacao
+where date_format(horario, '%d/%m/%y') = date_format(current_date(), '%d/%m/%y')
+group by fkSensor) as subQuerryDia;    
+
+CREATE VIEW dadoDashDia AS SELECT cont FROM (select sum(contagem)as cont, fkSensor, fkEstacao, nome from dadoSensor
+join sensor ON fkSensor = idSensor
+join estacao ON fkEstacao = idEstacao
+where date_format(horario, '%d/%m/%y') = date_format(current_date(), '%d/%m/%y')
+group by fkSensor) as subQuerryDia;
+
+select * from dadoDashDia;
+
+SELECT cont FROM (select sum(contagem) as cont, fkSensor, fkEstacao, nome from dadoSensor
+join sensor ON fkSensor = idSensor
+join estacao ON fkEstacao = idEstacao
+where horario between DATE_SUB(CURDATE(), INTERVAL 7 day) AND CURDATE()
+group by fkSensor) as subQuerrySemana;
+
+CREATE VIEW dadoDashSemana AS SELECT cont FROM (select sum(contagem) as cont, fkSensor, fkEstacao, nome from dadoSensor
+join sensor ON fkSensor = idSensor
+join estacao ON fkEstacao = idEstacao
+where horario between DATE_SUB(CURDATE(), INTERVAL 7 day) AND CURDATE()
+group by fkSensor) as subQuerrySemana;
+
+SELECT * FROM dadoDashSemana;
+
+CREATE VIEW dadoDashMes AS SELECT cont FROM (select sum(contagem) as cont, fkSensor, fkEstacao, nome from dadoSensor
+join sensor ON fkSensor = idSensor
+join estacao ON fkEstacao = idEstacao
+where horario between DATE_SUB(CURDATE(), INTERVAL 30 day) AND CURDATE()
+group by fkSensor) as subQuerryMes;
+
+SELECT * FROM dadoDashMes;
