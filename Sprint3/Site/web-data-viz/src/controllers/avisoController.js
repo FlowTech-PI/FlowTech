@@ -592,6 +592,94 @@ function plotarPorHorario(req, res) {
         })
 }
 
+function obterDadosDia(req, res) {
+    avisoModel.obterDadosDia().then(function (resultado) {
+        if (resultado.length > 0) {
+            res.json({ 
+                    LuzDia : resultado[0],        
+                    RepublicaDia : resultado[1],        
+                    HigienopolisDia : resultado[2],        
+                    PaulistaDia : resultado[3],        
+                    OscarFreireDia : resultado[4],        
+                    FradiqueDia : resultado[5],        
+                    FariaLimaDia : resultado[6],        
+                    PinheirosDia : resultado[7],        
+                    ButataDia : resultado[8],        
+                    MorumbiDia : resultado[9],        
+                    VilaSoniaDia : resultado[10],        
+                
+            });
+
+        } else {
+            res.status(204).send("Nenhum resultado encontrado!")
+            
+        }
+    }).catch(function (erro) {
+        console.log(erro);
+        console.log("Houve um erro ao buscar os avisos: ", erro.sqlMessage);
+        res.status(500).json(erro.sqlMessage);
+    });
+
+}
+
+function obterDadosSemana(req, res) {
+    avisoModel.obterDadosSemana().then(function (resultado) {
+        if (resultado.length > 0) {
+            res.json({ 
+                    LuzSemana : resultado[0],        
+                    RepublicaSemana : resultado[1],        
+                    HigienopolisSemana : resultado[2],        
+                    PaulistaSemana : resultado[3],        
+                    OscarFreireSemana : resultado[4],        
+                    FradiqueSemana : resultado[5],        
+                    FariaLimaSemana : resultado[6],        
+                    PinheirosSemana : resultado[7],        
+                    ButataSemana : resultado[8],        
+                    MorumbiSemana : resultado[9],        
+                    VilaSoniaSemana : resultado[10],        
+                
+            });
+
+        } else {
+            res.status(204).send("Nenhum resultado encontrado!")
+            
+        }
+    }).catch(function (erro) {
+        console.log(erro);
+        console.log("Houve um erro ao buscar os avisos: ", erro.sqlMessage);
+        res.status(500).json(erro.sqlMessage);
+    });
+}
+
+function obterDadosMes(req, res) {
+    avisoModel.obterDadosMes().then(function (resultado) {
+        if (resultado.length > 0) {
+            res.json({ 
+                    LuzMes : resultado[0],        
+                    RepublicaMes : resultado[1],        
+                    HigienopolisMes : resultado[2],        
+                    PaulistaMes : resultado[3],        
+                    OscarFreireMes : resultado[4],        
+                    FradiqueMes : resultado[5],        
+                    FariaLimaMes : resultado[6],        
+                    PinheirosMes : resultado[7],        
+                    ButataMes : resultado[8],        
+                    MorumbiMes : resultado[9],        
+                    VilaSoniaMes : resultado[10],        
+                
+            });
+
+        } else {
+            res.status(204).send("Nenhum resultado encontrado!")
+            
+        }
+    }).catch(function (erro) {
+        console.log(erro);
+        console.log("Houve um erro ao buscar os avisos: ", erro.sqlMessage);
+        res.status(500).json(erro.sqlMessage);
+    });
+}
+
 module.exports = {
     listar,
     listarPorUsuario,
@@ -601,5 +689,8 @@ module.exports = {
     deletar,
     plotarSemana,
     plotarPorSensor,
-    plotarPorHorario
+    plotarPorHorario,
+    obterDadosDia,
+    obterDadosSemana,
+    obterDadosMes
 }

@@ -109,6 +109,33 @@ function plotarPorHorario() {
     return database.executar(instrucaoSql);
 }
 
+function obterDadosDia() {
+    console.log ("ACESSEI O AVISO  MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function obterDadosDia()");
+    var instrucaoSql = `
+    select * from dadoDashDia;
+    `
+    console.log("Executando a instrução SQL: \n", instrucaoSql);
+    return database.executar(instrucaoSql);
+}
+
+function obterDadosSemana() {
+    console.log ("ACESSEI O AVISO  MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function obterDadosDia()");
+    var instrucaoSql = `
+    SELECT * FROM dadoDashSemana;
+    `
+    console.log("Executando a instrução SQL: \n", instrucaoSql);
+    return database.executar(instrucaoSql);
+}
+
+function obterDadosMes() {
+    console.log ("ACESSEI O AVISO  MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function obterDadosDia()");
+    var instrucaoSql = `
+    SELECT * FROM dadoDashMes;
+    `
+    console.log("Executando a instrução SQL: \n", instrucaoSql);
+    return database.executar(instrucaoSql);
+}
+
 module.exports = {
     listar,
     listarPorUsuario,
@@ -118,5 +145,8 @@ module.exports = {
     deletar,
     plotarSemana,
     plotarPorSensor,
-    plotarPorHorario
+    plotarPorHorario,
+    obterDadosDia,
+    obterDadosSemana,
+    obterDadosMes
 }
