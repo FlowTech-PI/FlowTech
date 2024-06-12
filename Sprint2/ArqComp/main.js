@@ -25,11 +25,11 @@ const serial = async (
         {
             // altere!
             // CREDENCIAIS DO BANCO - MYSQL WORKBENCH
-            host: '10.18.36.227',
-            user: 'flowtech',
-            password: 'FlowTech#2024',
+            host: 'localhost',
+            user: 'root',
+            password: '#Gf53598968841',
             database: 'flowtech',
-            port: 3307
+            port: 3306
         }
     ).promise();
 
@@ -73,7 +73,7 @@ const serial = async (
             // Este insert irá inserir dados de fk_aquario id=1 (fixo no comando do insert abaixo)
             // >> você deve ter o aquario de id 1 cadastrado.
             await poolBancoDados.execute(
-                'INSERT INTO dadoSensor (contagem, fkSensor) VALUES (?, 2)',
+                'INSERT INTO dadoSensor (contagem, fkSensor, horario) VALUES (?, 20, default)'
                 [chave]
             );
             console.log("valores inseridos no banco: ", chave)

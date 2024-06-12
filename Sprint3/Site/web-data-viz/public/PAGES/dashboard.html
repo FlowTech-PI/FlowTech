@@ -57,13 +57,13 @@
         <h6>FLOWTECH</h6>
       </div>
 
-        <select id="select_freq" onchange="atualizar()">
+        <select id="select_freq" onchange="atualizar(1)">
           <option value="dia">Últimas 24 horas</option>
           <option value="semana">Na Semana</option>
           <option value="mes">No Mês</option>
         </select>
         
-        <h1>3 ESTAÇÕES COM MAIOR FLUXO</h1>
+        <h1 style="color: #1D314D;">3 ESTAÇÕES COM MAIOR FLUXO</h1>
 
       <!------------------------- Dados da Dashboard -------------------------------------->
       <div class="container">
@@ -138,6 +138,7 @@
 
 <script>
   // atualizar();
+  let aux = 1
 
   function clickMenu() {
     var itensLaterais = document.getElementById('itens-laterais');
@@ -148,19 +149,22 @@
     }
   }
 
-  function atualizar() {
+  function atualizar(params) {
     var freq = select_freq.value;
 
     if (freq == "dia") {
-      E.style.backgroundColor = '#41BB4D';
-      M.style.backgroundColor = '#41BB4D';
-      D.style.backgroundColor = '#FF3131';
-      data_BoxE.innerHTML = `${Number(array_dados[0].dadosPorDia.PinheirosDia.cont) + 21569} <br> Capturas`;
-      data_BoxM.innerHTML = `${Number(array_dados[0].dadosPorDia.HigienopolisDia.cont) + 21089} <br> Capturas`;
-      data_BoxD.innerHTML = `${Number(array_dados[0].dadosPorDia.PaulistaDia.cont) + 4410} <br> Capturas`;;
+      data_BoxE.innerHTML = `${Number(array_dados[0].dadosPorDia.PinheirosDia.cont) + 22678} <br> Capturas`;
+      data_BoxM.innerHTML = `${Number(array_dados[0].dadosPorDia.PinheirosDia.cont) + 19990} <br> Capturas`;
+      data_BoxD.innerHTML = `${Number(array_dados[0].dadosPorDia.PinheirosDia.cont) + 1200} <br> Capturas`;
       estacao1.innerHTML = 'PINHEIROS';
       estacao2.innerHTML = 'HIGIENÓPOLIS';
       estacao3.innerHTML = 'PAULISTA';
+        E.style.backgroundColor = '#41BB4D' 
+        
+      M.style.backgroundColor = '#41BB4D';
+      D.style.backgroundColor = '#FF3131';
+
+      // LEGENDA GRÁFICO
       parametro6.innerHTML = 'Maior que 20.000';
       parametro5.innerHTML = '15.000 à 19.999';
       parametro4.innerHTML = '10.000 à 14.999';
@@ -168,15 +172,15 @@
       parametro2.innerHTML = '5.000 à 7.999';
       parametro1.innerHTML = '0 à 4.999';
 
-      piscarD();
+      if( params == 1)piscarD();
 
     } else if (freq == "semana") {
       E.style.backgroundColor = '#41BB4D';
       D.style.backgroundColor = '#C2E806';
-      M.style.backgroundColor = '#4EE888';
-      data_BoxE.innerHTML = '150.983 <br> Capturas';
-      data_BoxM.innerHTML = '108.983 <br> Capturas';
-      data_BoxD.innerHTML = '84.000 <br> Capturas';
+      M.style.backgroundColor = '#4EE888'; 
+      data_BoxE.innerHTML = `${Number(array_dados[1].dadosPorSemana.PinheirosSemana.cont) + 200000} <br> Capturas`;
+      data_BoxM.innerHTML = `${Number(array_dados[1].dadosPorSemana.PinheirosSemana.cont) + 129876} <br> Capturas`;
+      data_BoxD.innerHTML = `${Number(array_dados[1].dadosPorSemana.PinheirosSemana.cont) + 87990} <br> Capturas`;    
       estacao1.innerHTML = 'PAULISTA';
       estacao2.innerHTML = 'VILA SÔNIA';
       estacao3.innerHTML = 'PINHEIROS';
@@ -187,19 +191,17 @@
       parametro2.innerHTML = ' 20.000 à 39.999 ';
       parametro1.innerHTML = '0 à 19.999';
 
-      piscarS()
+      if( params == 1)piscarS()
 
       // OKAY
     } else if (freq == "mes") {
-      let dado1 = array_dados[2].dadosPorMes.LuzMes.cont
-      data_BoxE.innerHTML = `${dado1} <br> Capturas`;
-      data_BoxM.innerHTML = '340.070 <br> Capturas';
-      data_BoxD.innerHTML = '230.390 <br> Capturas';
-      if(dado1 < 19000)
-      {
-        E.style.backgroundColor = '#41BB4D';
-      }
       
+      
+      data_BoxE.innerHTML = `${Number(array_dados[2].dadosPorMes.PinheirosMes.cont) + 650000} <br> Capturas`;
+      data_BoxM.innerHTML = `${Number(array_dados[2].dadosPorMes.PinheirosMes.cont) + 489987} <br> Capturas`;
+      data_BoxD.innerHTML = `${Number(array_dados[2].dadosPorMes.PinheirosMes.cont) + 320989} <br> Capturas`;
+     
+      E.style.backgroundColor = '#41BB4D';
       M.style.backgroundColor = '#C2E806';
       D.style.backgroundColor = '#FFDE59';
       estacao1.innerHTML = 'LUZ';
@@ -212,65 +214,48 @@
       parametro2.innerHTML = '100.000 à 149.999'
       parametro1.innerHTML = '0 à 99.999'
 
-      piscarM()
+      if( params == 1)piscarM()
     }
   }
 
+  
   function piscarD() {
-    setTimeout(function () {
-      E.style.backgroundColor = '#209e2d';
-      M.style.backgroundColor = '#209e2d';
-      data_BoxE.style.color = '#FFF';
-      data_BoxM.style.color = '#FFF';
-    }, 500);
 
-    setTimeout(function () {
-      E.style.backgroundColor = '#41BB4D';
-      M.style.backgroundColor = '#41BB4D';
-      data_BoxE.style.color = '#1D314D'
-      data_BoxM.style.color = '#1D314D';
-    }, 1000);
+    var delay = 500;
+    for (var cont = 0; cont < 5; cont++) {
+      var picoD1 = setTimeout(function () {
+        E.style.backgroundColor = '#209e2d';
+        data_BoxE.style.color = '#FFF';
+        M.style.backgroundColor = '#209e2d';
+        data_BoxM.style.color = '#FFF';
+      }, delay);
 
-    setTimeout(function () {
-      E.style.backgroundColor = '#209e2d';
-      M.style.backgroundColor = '#209e2d';
-      data_BoxE.style.color = '#FFF';
-      data_BoxM.style.color = '#FFF';
+      delay += 500;
 
-    }, 1500);
+      var piscoD2 = setTimeout(function () {
+        E.style.backgroundColor = '#41BB4D';
+        data_BoxE.style.color = '#1D314D';
+        M.style.backgroundColor = '#41BB4D';
+        data_BoxM.style.color = '#1D314D';
 
-    setTimeout(function () {
-      E.style.backgroundColor = '#41BB4D';
-      M.style.backgroundColor = '#41BB4D';
-      data_BoxE.style.color = '#1D314D';
-      data_BoxM.style.color = '#1D314D';
+      }, delay);
+      delay += 500;
+    }
 
-    }, 2000);
+    return false
 
-    setTimeout(function () {
-      E.style.backgroundColor = '#209e2d';
-      M.style.backgroundColor = '#209e2d';
-      data_BoxE.style.color = '#FFF';
-      data_BoxM.style.color = '#FFF';
-
-    }, 2500);
-
-    setTimeout(function () {
-      E.style.backgroundColor = '#41BB4D';
-      M.style.backgroundColor = '#41BB4D';
-      data_BoxE.style.color = '#1D314D';
-      data_BoxM.style.color = '#1D314D';
-
-    }, 3000);
   }
 
   function piscarS() {
+    // clearTimeout(piscoD2)
+    
     var delay = 500;
 
-    for (var cont = 0; cont < 3; cont++) {
+    for (var cont = 0; cont < 5; cont++) {
       setTimeout(function () {
         E.style.backgroundColor = '#209e2d';
         data_BoxE.style.color = '#FFF';
+        
       }, delay);
 
       delay += 500;
@@ -286,7 +271,7 @@
 
   function piscarM() {
     var delay = 500;
-    for (var cont = 0; cont < 3; cont++) {
+    for (var cont = 0; cont < 5; cont++) {
       setTimeout(function () {
         E.style.backgroundColor = '#209e2d';
         data_BoxE.style.color = '#FFF';
@@ -301,29 +286,32 @@
       delay += 500;
     }
   }
-const array_dados =[];
+let array_dados =[];
 const array_dia =[];
 const array_semana =[];
 const array_mes =[];
 
 obterDados(1);
   function obterDados(param){
+    
     if (param == 1){
+      console.log('Atualizou')
     fetch(`/avisos/obterDadosDia`)
               .then(function (resposta){
               if (resposta.ok) {
               resposta.json().then(resultadoDadosDia =>{
                 console.log(resultadoDadosDia)
                 console.log(JSON.stringify(resultadoDadosDia));
-                array_dados.push({dadosPorDia : resultadoDadosDia})
+                array_dados[0] = ({dadosPorDia : resultadoDadosDia})
                 // array_dia.push()
                 // console.log('dado1:', dado_1, 'dado2:', dado_2, 'dado3:', dado_3, 'dado4:', dado_4)
               })
         }
       },
     )
-    setTimeout(()=>obterDados(2), 100)  
-    // atualizar()
+    setTimeout(()=>obterDados(2), 50)  
+    atualizar(aux)
+    aux = 2
 
     } else if (param == 2){
     fetch(`/avisos/obterDadosSemana`)
@@ -332,27 +320,29 @@ obterDados(1);
               resposta.json().then(resultadoDadosSemana =>{
                 console.log(resultadoDadosSemana)
                 console.log(JSON.stringify(resultadoDadosSemana));
-                array_dados.push({dadosPorSemana : resultadoDadosSemana})
+                array_dados[1] = ({dadosPorSemana : resultadoDadosSemana})
                 // console.log('dado1:', dado_1, 'dado2:', dado_2, 'dado3:', dado_3, 'dado4:', dado_4)
               })
         }
       },
     )
+    atualizar(2)
     setTimeout(()=>obterDados(3), 100)  
-  } else {
+  } else if (param == 3){
     fetch(`/avisos/obterDadosMes`)
               .then(function (resposta){
               if (resposta.ok) {
               resposta.json().then(resultadoDadosMes =>{
                 console.log(resultadoDadosMes)
                 console.log(JSON.stringify(resultadoDadosMes));
-                array_dados.push({dadosPorMes : resultadoDadosMes})
+                array_dados[2] = ({dadosPorMes : resultadoDadosMes})
                 // console.log('dado1:', dado_1, 'dado2:', dado_2, 'dado3:', dado_3, 'dado4:', dado_4)
               })
         }
       },
     )
-    atualizar()
+    atualizar(2)
+    setTimeout(()=>obterDados(1), 800)
   }
   }
   
