@@ -74,7 +74,7 @@
               <span id="estacao1">PINHEIROS</span>
             </div>
             <div class="data">
-              <span id="data_BoxE">21.569 Capturas</span>
+              <span id="data_BoxE">0 Capturas</span>
             </div>
           </div>
 
@@ -83,7 +83,7 @@
               <span id="estacao2">HIGIENÓPOLIS</span>
             </div>
             <div class="data">
-              <span id="data_BoxM">21.089 Capturas</span>
+              <span id="data_BoxM">0 Capturas</span>
             </div>
           </div>
 
@@ -92,7 +92,7 @@
               <span id="estacao3">PAULISTA</span>
             </div>
             <div class="data">
-              <span id="data_BoxD">4.410 Capturas</span>
+              <span id="data_BoxD">0 Capturas</span>
             </div>
           </div>
 
@@ -191,12 +191,17 @@
 
       // OKAY
     } else if (freq == "mes") {
-      E.style.backgroundColor = '#41BB4D';
-      M.style.backgroundColor = '#C2E806';
-      D.style.backgroundColor = '#FFDE59';
-      data_BoxE.innerHTML = '647.070 <br> Capturas';
+      let dado1 = array_dados[2].dadosPorMes.LuzMes.cont
+      data_BoxE.innerHTML = `${dado1} <br> Capturas`;
       data_BoxM.innerHTML = '340.070 <br> Capturas';
       data_BoxD.innerHTML = '230.390 <br> Capturas';
+      if(dado1 < 19000)
+      {
+        E.style.backgroundColor = '#41BB4D';
+      }
+      
+      M.style.backgroundColor = '#C2E806';
+      D.style.backgroundColor = '#FFDE59';
       estacao1.innerHTML = 'LUZ';
       estacao2.innerHTML = 'BUTANTÃ';
       estacao3.innerHTML = 'OSCAR FREIRE';
@@ -296,4 +301,45 @@
       delay += 500;
     }
   }
+const array_dados =[];
+obterDados();
+  function obterDados(){
+    fetch(`/avisos/obterDadosDia`)
+              .then(function (resposta){
+              if (resposta.ok) {
+              resposta.json().then(resultadoDadosDia =>{
+                console.log(resultadoDadosDia)
+                console.log(JSON.stringify(resultadoDadosDia));
+                array_dados.push({dadosPorDia : resultadoDadosDia})
+                // console.log('dado1:', dado_1, 'dado2:', dado_2, 'dado3:', dado_3, 'dado4:', dado_4)
+              })
+        }
+      },
+    )
+    fetch(`/avisos/obterDadosSemana`)
+              .then(function (resposta){
+              if (resposta.ok) {
+              resposta.json().then(resultadoDadosSemana =>{
+                console.log(resultadoDadosSemana)
+                console.log(JSON.stringify(resultadoDadosSemana));
+                array_dados.push({dadosPorSemana : resultadoDadosSemana})
+                // console.log('dado1:', dado_1, 'dado2:', dado_2, 'dado3:', dado_3, 'dado4:', dado_4)
+              })
+        }
+      },
+    )
+    fetch(`/avisos/obterDadosMes`)
+              .then(function (resposta){
+              if (resposta.ok) {
+              resposta.json().then(resultadoDadosMes =>{
+                console.log(resultadoDadosMes)
+                console.log(JSON.stringify(resultadoDadosMes));
+                array_dados.push({dadosPorMes : resultadoDadosMes})
+                // console.log('dado1:', dado_1, 'dado2:', dado_2, 'dado3:', dado_3, 'dado4:', dado_4)
+              })
+        }
+      },
+    )
+  }
+  
 </script>
