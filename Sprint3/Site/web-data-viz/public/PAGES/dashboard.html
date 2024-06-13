@@ -57,7 +57,7 @@
         <h6>FLOWTECH</h6>
       </div>
 
-        <select id="select_freq" onchange="atualizar(1)">
+        <select id="select_freq" onchange="atualizar(5)">
           <option value="dia">Apenas Hoje</option>
           <option value="semana">Últimos 7 dias</option>
           <option value="mes">Últimos 30 dias</option>
@@ -155,18 +155,45 @@
 
   function atualizar(params) {
     var freq = select_freq.value;
+    if (params == 5){
+      contDia = 0
+      contSem = 0
+      contMes = 0
+    }
 
     if (freq == "dia") {
-      data_BoxE.innerHTML = `${Number(array_dados[0].dadosPorDia.PinheirosDia.cont) + 22678} <br> Capturas`;
-      data_BoxM.innerHTML = `${Number(array_dados[0].dadosPorDia.PinheirosDia.cont) + 19990} <br> Capturas`;
-      data_BoxD.innerHTML = `${Number(array_dados[0].dadosPorDia.PinheirosDia.cont) + 1200} <br> Capturas`;
+      var BED = Number(array_dados[0].dadosPorDia.PinheirosDia.cont) + 22678;
+      var BMD = Number(array_dados[0].dadosPorDia.PinheirosDia.cont) + 19990
+      var BDD = Number(array_dados[0].dadosPorDia.PinheirosDia.cont) + 1200
+
+
+      data_BoxE.innerHTML = `${BED} <br> Capturas`;
+      data_BoxM.innerHTML = `${BMD} <br> Capturas`;
+      data_BoxD.innerHTML = `${BDD} <br> Capturas`;
       estacao1.innerHTML = 'PINHEIROS';
       estacao2.innerHTML = 'HIGIENÓPOLIS';
       estacao3.innerHTML = 'PAULISTA';
-        E.style.backgroundColor = '#41BB4D' 
+
+      if (BED > 20000) E.style.backgroundColor = '#41BB4D' 
+      else if (BED >= 15000) E.style.backgroundColor = '#4EE888' 
+      else if (BED >= 10000) E.style.backgroundColor = '#C2E806'
+      else if (BED >= 8000) E.style.backgroundColor = '#FFDE59'
+      else if (BED >= 5000) E.style.backgroundColor = '#FF914D'
+      else if (BED >= 0) E.style.backgroundColor = '#FF3131'
         
-      M.style.backgroundColor = '#41BB4D';
-      D.style.backgroundColor = '#FF3131';
+      if (BMD > 20000) M.style.backgroundColor = '#41BB4D' 
+      else if (BMD >= 15000) M.style.backgroundColor = '#4EE888' 
+      else if (BMD >= 10000) M.style.backgroundColor = '#C2E806'
+      else if (BMD >= 8000) M.style.backgroundColor = '#FFDE59'
+      else if (BMD >= 5000) M.style.backgroundColor = '#FF914D'
+      else if (BMD >= 0) M.style.backgroundColor = '#FF3131'
+      
+      if (BDD > 20000) D.style.backgroundColor = '#41BB4D' 
+      else if (BDD >= 15000) D.style.backgroundColor = '#4EE888' 
+      else if (BDD >= 10000) D.style.backgroundColor = '#C2E806'
+      else if (BDD >= 8000) D.style.backgroundColor = '#FFDE59'
+      else if (BDD >= 5000) D.style.backgroundColor = '#FF914D'
+      else if (BDD >= 0) D.style.backgroundColor = '#FF3131'
 
       // LEGENDA GRÁFICO
       parametro6.innerHTML = 'Maior que 20.000';
@@ -176,18 +203,43 @@
       parametro2.innerHTML = '5.000 à 7.999';
       parametro1.innerHTML = '0 à 4.999';
 
-      if( params == 1)piscarD();
+      if( params == 1 && contDia <= 1) piscarD();
 
     } else if (freq == "semana") {
-      E.style.backgroundColor = '#41BB4D';
-      D.style.backgroundColor = '#C2E806';
-      M.style.backgroundColor = '#4EE888'; 
-      data_BoxE.innerHTML = `${Number(array_dados[1].dadosPorSemana.PinheirosSemana.cont) + 200000} <br> Capturas`;
-      data_BoxM.innerHTML = `${Number(array_dados[1].dadosPorSemana.PinheirosSemana.cont) + 129876} <br> Capturas`;
-      data_BoxD.innerHTML = `${Number(array_dados[1].dadosPorSemana.PinheirosSemana.cont) + 87990} <br> Capturas`;    
+
+      var BES = Number(array_dados[1].dadosPorSemana.PinheirosSemana.cont) + 200000
+      var BMS = Number(array_dados[1].dadosPorSemana.PinheirosSemana.cont) + 129876
+      var BDS = Number(array_dados[1].dadosPorSemana.PinheirosSemana.cont) + 990
+
+      data_BoxE.innerHTML = `${BES} <br> Capturas`;
+      data_BoxM.innerHTML = `${BMS} <br> Capturas`;
+      data_BoxD.innerHTML = `${BDS} <br> Capturas`;  
+
       estacao1.innerHTML = 'PAULISTA';
       estacao2.innerHTML = 'VILA SÔNIA';
       estacao3.innerHTML = 'PINHEIROS';
+
+      if (BES > 150000) E.style.backgroundColor = '#41BB4D' 
+      else if (BES >= 100000) E.style.backgroundColor = '#4EE888' 
+      else if (BES >= 65000) E.style.backgroundColor = '#C2E806'
+      else if (BES >= 40000) E.style.backgroundColor = '#FFDE59'
+      else if (BES >= 20000) E.style.backgroundColor = '#FF914D'
+      else if (BES >= 0) E.style.backgroundColor = '#FF3131'
+        
+      if (BMS > 150000) M.style.backgroundColor = '#41BB4D' 
+      else if (BMS >= 100000) M.style.backgroundColor = '#4EE888' 
+      else if (BMS >= 650000) M.style.backgroundColor = '#C2E806'
+      else if (BMS >= 40000) M.style.backgroundColor = '#FFDE59'
+      else if (BMS >= 20000) M.style.backgroundColor = '#FF914D'
+      else if (BMS >= 0) M.style.backgroundColor = '#FF3131'
+      
+      if (BDS > 150000) D.style.backgroundColor = '#41BB4D' 
+      else if (BDS >= 100000) D.style.backgroundColor = '#4EE888' 
+      else if (BDS >= 65000) D.style.backgroundColor = '#C2E806'
+      else if (BDS >= 40000) D.style.backgroundColor = '#FFDE59'
+      else if (BDS >= 20000) D.style.backgroundColor = '#FF914D'
+      else if (BDS >= 0) D.style.backgroundColor = '#FF3131'
+
       parametro6.innerHTML = ' Maior que 150.000';
       parametro5.innerHTML = ' 100.000 à 149.999 ';
       parametro4.innerHTML = ' 65.000 à 99.999 ';
@@ -195,19 +247,41 @@
       parametro2.innerHTML = ' 20.000 à 39.999 ';
       parametro1.innerHTML = '0 à 19.999';
 
-      if( params == 1)piscarS()
+      if( params == 2 && contSem <= 1)piscarS()
 
       // OKAY
     } else if (freq == "mes") {
       
+      var BEM = Number(array_dados[2].dadosPorMes.PinheirosMes.cont) + 650000;
+      var BMM = Number(array_dados[2].dadosPorMes.PinheirosMes.cont) + 489987;
+      var BDM = Number(array_dados[2].dadosPorMes.PinheirosMes.cont) + 320989;
       
-      data_BoxE.innerHTML = `${Number(array_dados[2].dadosPorMes.PinheirosMes.cont) + 650000} <br> Capturas`;
-      data_BoxM.innerHTML = `${Number(array_dados[2].dadosPorMes.PinheirosMes.cont) + 489987} <br> Capturas`;
-      data_BoxD.innerHTML = `${Number(array_dados[2].dadosPorMes.PinheirosMes.cont) + 320989} <br> Capturas`;
+      data_BoxE.innerHTML = `${BEM} <br> Capturas`;
+      data_BoxM.innerHTML = `${BMM} <br> Capturas`;
+      data_BoxD.innerHTML = `${BDM} <br> Capturas`;
      
-      E.style.backgroundColor = '#41BB4D';
-      M.style.backgroundColor = '#C2E806';
-      D.style.backgroundColor = '#FFDE59';
+      if (BEM > 550000) E.style.backgroundColor = '#41BB4D' 
+      else if (BEM >= 350000) E.style.backgroundColor = '#4EE888' 
+      else if (BEM >= 250000) E.style.backgroundColor = '#C2E806'
+      else if (BEM >= 150000) E.style.backgroundColor = '#FFDE59'
+      else if (BEM >= 100000) E.style.backgroundColor = '#FF914D'
+      else if (BEM >= 0) E.style.backgroundColor = '#FF3131'
+        
+      if (BMM > 550000) M.style.backgroundColor = '#41BB4D' 
+      else if (BMM >= 350000) M.style.backgroundColor = '#4EE888' 
+      else if (BMM >= 250000) M.style.backgroundColor = '#C2E806'
+      else if (BMM >= 150000) M.style.backgroundColor = '#FFDE59'
+      else if (BMM >= 100000) M.style.backgroundColor = '#FF914D'
+      else if (BMM >= 0) M.style.backgroundColor = '#FF3131'
+      
+      if (BDM > 550000) D.style.backgroundColor = '#41BB4D' 
+      else if (BDM >= 350000) D.style.backgroundColor = '#4EE888' 
+      else if (BDM >= 250000) D.style.backgroundColor = '#C2E806'
+      else if (BDM >= 150000) D.style.backgroundColor = '#FFDE59'
+      else if (BDM >= 100000) D.style.backgroundColor = '#FF914D'
+      else if (BDM >= 0) D.style.backgroundColor = '#FF3131'
+
+
       estacao1.innerHTML = 'LUZ';
       estacao2.innerHTML = 'BUTANTÃ';
       estacao3.innerHTML = 'OSCAR FREIRE';
@@ -218,7 +292,7 @@
       parametro2.innerHTML = '100.000 à 149.999'
       parametro1.innerHTML = '0 à 99.999'
 
-      if( params == 1)piscarM()
+      if( params == 3 && contMes <= 1)piscarM()
     }
   }
 
@@ -226,12 +300,11 @@
   function piscarD() {
 
     var delay = 500;
-    for (var cont = 0; cont < 5; cont++) {
+    for (var cont = 0; cont < 4; cont++) {
       var picoD1 = setTimeout(function () {
         E.style.backgroundColor = '#209e2d';
         data_BoxE.style.color = '#FFF';
-        M.style.backgroundColor = '#209e2d';
-        data_BoxM.style.color = '#FFF';
+
       }, delay);
 
       delay += 500;
@@ -239,14 +312,10 @@
       var piscoD2 = setTimeout(function () {
         E.style.backgroundColor = '#41BB4D';
         data_BoxE.style.color = '#1D314D';
-        M.style.backgroundColor = '#41BB4D';
-        data_BoxM.style.color = '#1D314D';
 
       }, delay);
       delay += 500;
     }
-
-    return false
 
   }
 
@@ -255,7 +324,7 @@
     
     var delay = 500;
 
-    for (var cont = 0; cont < 5; cont++) {
+    for (var cont = 0; cont < 4; cont++) {
       setTimeout(function () {
         E.style.backgroundColor = '#209e2d';
         data_BoxE.style.color = '#FFF';
@@ -275,7 +344,7 @@
 
   function piscarM() {
     var delay = 500;
-    for (var cont = 0; cont < 5; cont++) {
+    for (var cont = 0; cont < 4; cont++) {
       setTimeout(function () {
         E.style.backgroundColor = '#209e2d';
         data_BoxE.style.color = '#FFF';
@@ -296,6 +365,11 @@ const array_semana =[];
 const array_mes =[];
 
 obterDados(1);
+
+var contDia = 0;
+var contSem = 0;
+var contMes = 0;
+
   function obterDados(param){
     
     if (param == 1){
@@ -307,15 +381,17 @@ obterDados(1);
                 console.log(resultadoDadosDia)
                 console.log(JSON.stringify(resultadoDadosDia));
                 array_dados[0] = ({dadosPorDia : resultadoDadosDia})
+
+                contDia++
                 // array_dia.push()
                 // console.log('dado1:', dado_1, 'dado2:', dado_2, 'dado3:', dado_3, 'dado4:', dado_4)
               })
         }
+        setTimeout(()=>obterDados(2), 50)  
+        atualizar(1)
+
       },
     )
-    setTimeout(()=>obterDados(2), 50)  
-    atualizar(aux)
-    aux = 2
 
     } else if (param == 2){
     fetch(`/avisos/obterDadosSemana`)
@@ -325,13 +401,15 @@ obterDados(1);
                 console.log(resultadoDadosSemana)
                 console.log(JSON.stringify(resultadoDadosSemana));
                 array_dados[1] = ({dadosPorSemana : resultadoDadosSemana})
+
+                contSem++
                 // console.log('dado1:', dado_1, 'dado2:', dado_2, 'dado3:', dado_3, 'dado4:', dado_4)
               })
         }
+      setTimeout(()=>obterDados(3), 50)  
+      atualizar(2)
       },
     )
-    atualizar(2)
-    setTimeout(()=>obterDados(3), 100)  
   } else if (param == 3){
     fetch(`/avisos/obterDadosMes`)
               .then(function (resposta){
@@ -340,13 +418,15 @@ obterDados(1);
                 console.log(resultadoDadosMes)
                 console.log(JSON.stringify(resultadoDadosMes));
                 array_dados[2] = ({dadosPorMes : resultadoDadosMes})
+
+                contMes++
                 // console.log('dado1:', dado_1, 'dado2:', dado_2, 'dado3:', dado_3, 'dado4:', dado_4)
               })
         }
+      atualizar(3)
+      setTimeout(()=>obterDados(1), 800)
       },
     )
-    atualizar(2)
-    setTimeout(()=>obterDados(1), 800)
   }
   }
   
